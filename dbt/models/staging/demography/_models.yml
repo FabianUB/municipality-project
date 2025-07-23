@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: stg_demography__population
+    description: "Standardized raw demography population data with basic cleaning"
+    columns:
+      - name: province_code
+        description: "Province code (INE standard, zero-padded)"
+        tests:
+          - not_null
+      - name: municipality_code
+        description: "Municipality code (INE standard, zero-padded)"
+        tests:
+          - not_null
+      - name: municipality_name
+        description: "Municipality name"
+        tests:
+          - not_null
+      - name: population_total
+        description: "Total population"
+        tests:
+          - not_null
+      - name: data_year
+        description: "Year of the data"
+        tests:
+          - not_null

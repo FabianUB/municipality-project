@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: fct_population
+    description: "Population fact table for demographic analytics"
+    tests:
+      - unique:
+          column_name: "municipality_key || '-' || year_key"
+    columns:
+      - name: municipality_key
+        description: "Surrogate key for municipality dimension"
+        tests:
+          - not_null
+      - name: year_key
+        description: "Year key for time dimension"
+        tests:
+          - not_null
+      - name: population_total
+        description: "Total population"
+        tests:
+          - not_null
+
+  - name: mart_population_summary
+    description: "Population summary mart for reporting and analytics"
+    columns:
+      - name: municipality_name
+        description: "Municipality name"
+        tests:
+          - not_null
+      - name: data_year
+        description: "Year of the data"
+        tests:
+          - not_null
+      - name: population_total
+        description: "Total population"
+        tests:
+          - not_null

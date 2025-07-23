@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw data loaded from Dagster ETL pipeline"
+    schema: raw
+    tables:
+      - name: raw_demography_population
+        description: "Municipal population data from INE (1996-2024)"
+        columns:
+          - name: province_code
+            description: "Province code (INE standard)"
+            tests:
+              - not_null
+          - name: municipality_name
+            description: "Municipality name"
+            tests:
+              - not_null
+          - name: population_total
+            description: "Total population"
+            tests:
+              - not_null
+          - name: data_year
+            description: "Year of the data"
+            tests:
+              - not_null
+              - accepted_values:
+                  values: [1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]

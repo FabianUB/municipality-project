@@ -20,13 +20,25 @@ clean-targets:
 # Configuring models
 models:
   municipality_analytics:
-    # Config indicated by + and applies to all files under models/example/
     staging:
       +materialized: view
       +schema: staging
+    intermediate:
+      +materialized: table
+      +schema: intermediate
     marts:
       +materialized: table
       +schema: marts
+      core:
+        +schema: marts_core
+      demography:
+        +schema: marts_demography
+      economy:
+        +schema: marts_economy
+      geography:
+        +schema: marts_geography
+      transportation:
+        +schema: marts_transportation
 
 # Configuring seeds
 seeds:
