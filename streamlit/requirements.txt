@@ -1,0 +1,10 @@
+streamlit==1.29.0
+pandas==2.1.4
+plotly==5.17.0
+psycopg2-binary==2.9.9
+sqlalchemy==2.0.23
+streamlit-aggrid==0.3.4
+altair==5.2.0
+numpy==1.24.3
+seaborn==0.12.2
+matplotlib==3.7.2
