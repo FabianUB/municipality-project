@@ -86,8 +86,25 @@ services:
       - municipality_network
     command: dagster-daemon run
 
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: municipality_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+      PGADMIN_CONFIG_SERVER_MODE: ${PGADMIN_CONFIG_SERVER_MODE}
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - postgres
+    networks:
+      - municipality_network
+
 volumes:
   postgres_data:
+  pgadmin_data:
 
 networks:
   municipality_network:

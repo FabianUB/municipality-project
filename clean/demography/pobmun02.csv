@@ -1,4 +1,4 @@
-CPRO,PROVINCIA,CMUN,NOMBRE,POB02,VARONES,MUJERES
+province_code,province_name,cmun,municipality_name,population_total,population_male,population_female
 Álava,,,,291860,145251,146609
 01,Álava,1.0,Alegría-Dulantzi,1598,828,770
 01,Álava,2.0,Amurrio,9594,4761,4833

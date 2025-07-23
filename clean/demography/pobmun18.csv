@@ -1,386 +1,386 @@
-CPRO,PROVINCIA,CMUN,NOMBRE,POB18,HOMBRES,MUJERES
-2,Albacete,1,Abengibre,757,363,394
-2,Albacete,2,Alatoz,529,300,229
-2,Albacete,3,Albacete,173050,84613,88437
-2,Albacete,4,Albatana,693,357,336
-2,Albacete,5,Alborea,650,339,311
-2,Albacete,6,Alcadozo,655,356,299
-2,Albacete,7,Alcalá del Júcar,1199,639,560
-2,Albacete,8,Alcaraz,1405,724,681
-2,Albacete,9,Almansa,24537,12215,12322
-2,Albacete,10,Alpera,2275,1183,1092
-2,Albacete,11,Ayna,638,341,297
-2,Albacete,12,Balazote,2360,1205,1155
-2,Albacete,14,"Ballestero, El",409,208,201
-2,Albacete,13,Balsa de Ves,150,85,65
-2,Albacete,15,Barrax,1864,941,923
-2,Albacete,16,Bienservida,610,326,284
-2,Albacete,17,Bogarra,873,462,411
-2,Albacete,18,Bonete,1057,538,519
-2,Albacete,19,"Bonillo, El",2837,1447,1390
-2,Albacete,20,Carcelén,508,279,229
-2,Albacete,21,Casas de Juan Núñez,1275,669,606
-2,Albacete,22,Casas de Lázaro,344,194,150
-2,Albacete,23,Casas de Ves,588,311,277
-2,Albacete,24,Casas-Ibáñez,4522,2291,2231
-2,Albacete,25,Caudete,10003,5089,4914
-2,Albacete,26,Cenizate,1182,601,581
-2,Albacete,29,Chinchilla de Monte-Aragón,4182,2183,1999
-2,Albacete,27,Corral-Rubio,330,177,153
-2,Albacete,28,Cotillas,128,64,64
-2,Albacete,30,Elche de la Sierra,3624,1819,1805
-2,Albacete,31,Férez,674,327,347
-2,Albacete,32,Fuensanta,297,168,129
-2,Albacete,33,Fuente-Álamo,2489,1303,1186
-2,Albacete,34,Fuentealbilla,1816,912,904
-2,Albacete,35,"Gineta, La",2448,1259,1189
-2,Albacete,36,Golosalvo,110,58,52
-2,Albacete,37,Hellín,30268,15124,15144
-2,Albacete,38,"Herrera, La",349,181,168
-2,Albacete,39,Higueruela,1184,610,574
-2,Albacete,40,Hoya-Gonzalo,621,332,289
-2,Albacete,41,Jorquera,360,195,165
-2,Albacete,42,Letur,928,448,480
-2,Albacete,43,Lezuza,1398,721,677
-2,Albacete,44,Liétor,1200,626,574
-2,Albacete,45,Madrigueras,4665,2387,2278
-2,Albacete,46,Mahora,1359,698,661
-2,Albacete,47,Masegoso,113,62,51
-2,Albacete,48,Minaya,1537,799,738
-2,Albacete,49,Molinicos,840,435,405
-2,Albacete,50,Montalvos,96,53,43
-2,Albacete,51,Montealegre del Castillo,2042,1036,1006
-2,Albacete,52,Motilleja,548,292,256
-2,Albacete,53,Munera,3513,1793,1720
-2,Albacete,54,Navas de Jorquera,518,271,247
-2,Albacete,55,Nerpio,1222,676,546
-2,Albacete,56,Ontur,2028,1022,1006
-2,Albacete,57,Ossa de Montiel,2352,1169,1183
-2,Albacete,58,Paterna del Madera,360,194,166
-2,Albacete,60,Peñas de San Pedro,1420,832,588
-2,Albacete,59,Peñascosa,331,181,150
-2,Albacete,61,Pétrola,696,359,337
-2,Albacete,62,Povedilla,446,247,199
-2,Albacete,901,Pozo Cañada,2786,1401,1385
-2,Albacete,63,Pozohondo,1635,853,782
-2,Albacete,64,Pozo-Lorente,401,205,196
-2,Albacete,65,Pozuelo,489,258,231
-2,Albacete,66,"Recueja, La",254,133,121
-2,Albacete,67,Riópar,1357,696,661
-2,Albacete,68,Robledo,363,200,163
-2,Albacete,69,"Roda, La",15515,7835,7680
-2,Albacete,70,Salobre,501,265,236
-2,Albacete,71,San Pedro,1153,587,566
-2,Albacete,72,Socovos,1790,920,870
-2,Albacete,73,Tarazona de la Mancha,6255,3198,3057
-2,Albacete,74,Tobarra,7738,3955,3783
-2,Albacete,75,Valdeganga,1943,1004,939
-2,Albacete,76,Vianos,355,179,176
-2,Albacete,77,Villa de Ves,57,34,23
-2,Albacete,78,Villalgordo del Júcar,1115,585,530
-2,Albacete,79,Villamalea,4112,2077,2035
-2,Albacete,80,Villapalacios,589,307,282
-2,Albacete,81,Villarrobledo,25241,12463,12778
-2,Albacete,82,Villatoya,95,58,37
-2,Albacete,83,Villavaliente,226,137,89
-2,Albacete,84,Villaverde de Guadalimar,340,174,166
-2,Albacete,85,Viveros,340,174,166
-2,Albacete,86,Yeste,2674,1371,1303
-3,Alicante/Alacant,2,Agost,4713,2344,2369
-3,Alicante/Alacant,3,Agres,551,294,257
-3,Alicante/Alacant,4,Aigües,936,493,443
-3,Alicante/Alacant,5,Albatera,12042,6172,5870
-3,Alicante/Alacant,6,Alcalalí,1298,645,653
-3,Alicante/Alacant,7,Alcocer de Planes,229,115,114
-3,Alicante/Alacant,8,Alcoleja,180,94,86
-3,Alicante/Alacant,9,Alcoy/Alcoi,58977,28806,30171
-3,Alicante/Alacant,10,Alfafara,407,198,209
-3,Alicante/Alacant,11,"Alfàs del Pi, l'",20053,9947,10106
-3,Alicante/Alacant,12,Algorfa,2838,1427,1411
-3,Alicante/Alacant,13,Algueña,1341,671,670
-3,Alicante/Alacant,14,Alicante/Alacant,331577,160595,170982
-3,Alicante/Alacant,15,Almoradí,20542,10398,10144
-3,Alicante/Alacant,16,Almudaina,104,54,50
-3,Alicante/Alacant,17,"Alqueria d'Asnar, l'",491,237,254
-3,Alicante/Alacant,18,Altea,21995,10756,11239
-3,Alicante/Alacant,19,Aspe,20537,10324,10213
-3,Alicante/Alacant,1,"Atzúbia, l'",661,346,315
-3,Alicante/Alacant,20,Balones,122,65,57
-3,Alicante/Alacant,21,Banyeres de Mariola,7113,3562,3551
-3,Alicante/Alacant,22,Benasau,156,77,79
-3,Alicante/Alacant,23,Beneixama,1703,866,837
-3,Alicante/Alacant,24,Benejúzar,5361,2689,2672
-3,Alicante/Alacant,25,Benferri,1940,1011,929
-3,Alicante/Alacant,26,Beniarbeig,1983,1005,978
-3,Alicante/Alacant,27,Beniardá,178,89,89
-3,Alicante/Alacant,28,Beniarrés,1118,566,552
-3,Alicante/Alacant,30,Benidoleig,1110,556,554
-3,Alicante/Alacant,31,Benidorm,67558,33581,33977
-3,Alicante/Alacant,32,Benifallim,108,59,49
-3,Alicante/Alacant,33,Benifato,149,74,75
-3,Alicante/Alacant,29,Benigembla,444,228,216
-3,Alicante/Alacant,34,Benijófar,3357,1634,1723
-3,Alicante/Alacant,35,Benilloba,742,384,358
-3,Alicante/Alacant,36,Benillup,94,43,51
-3,Alicante/Alacant,37,Benimantell,490,241,249
-3,Alicante/Alacant,38,Benimarfull,413,205,208
-3,Alicante/Alacant,39,Benimassot,96,55,41
-3,Alicante/Alacant,40,Benimeli,410,190,220
-3,Alicante/Alacant,41,Benissa,10768,5264,5504
-3,Alicante/Alacant,42,"Benitachell/Poble Nou de Benitatxell, el",4130,2039,2091
-3,Alicante/Alacant,43,Biar,3651,1792,1859
-3,Alicante/Alacant,44,Bigastro,6702,3380,3322
-3,Alicante/Alacant,45,Bolulla,418,221,197
-3,Alicante/Alacant,46,Busot,2925,1498,1427
-3,Alicante/Alacant,49,Callosa de Segura,18864,9602,9262
-3,Alicante/Alacant,48,Callosa d'en Sarrià,7257,3708,3549
-3,Alicante/Alacant,47,Calp,21633,10900,10733
-3,Alicante/Alacant,50,"Campello, el",27893,13565,14328
-3,Alicante/Alacant,51,"Campo de Mirra/Camp de Mirra, el",428,218,210
-3,Alicante/Alacant,52,Cañada,1214,609,605
-3,Alicante/Alacant,53,Castalla,9880,5016,4864
-3,Alicante/Alacant,54,Castell de Castells,435,223,212
-3,Alicante/Alacant,75,"Castell de Guadalest, el",209,104,105
-3,Alicante/Alacant,55,Catral,8631,4319,4312
-3,Alicante/Alacant,56,Cocentaina,11456,5822,5634
-3,Alicante/Alacant,57,Confrides,208,118,90
-3,Alicante/Alacant,58,Cox,7226,3698,3528
-3,Alicante/Alacant,59,Crevillent,28957,14640,14317
-3,Alicante/Alacant,61,Daya Nueva,1718,850,868
-3,Alicante/Alacant,62,Daya Vieja,685,356,329
-3,Alicante/Alacant,63,Dénia,41733,20245,21488
-3,Alicante/Alacant,64,Dolores,7383,3689,3694
-3,Alicante/Alacant,65,Elche/Elx,230625,114332,116293
-3,Alicante/Alacant,66,Elda,52404,25549,26855
-3,Alicante/Alacant,67,Facheca,101,52,49
-3,Alicante/Alacant,68,Famorca,53,29,24
-3,Alicante/Alacant,69,Finestrat,6381,3231,3150
-3,Alicante/Alacant,77,"Fondó de les Neus, el/Hondón de las Nieves",2474,1256,1218
-3,Alicante/Alacant,70,Formentera del Segura,4131,2069,2062
-3,Alicante/Alacant,72,Gaianes,471,241,230
-3,Alicante/Alacant,71,Gata de Gorgos,5893,2974,2919
-3,Alicante/Alacant,73,Gorga,258,144,114
-3,Alicante/Alacant,74,Granja de Rocamora,2489,1310,1179
-3,Alicante/Alacant,76,Guardamar del Segura,15058,7358,7700
-3,Alicante/Alacant,78,Hondón de los Frailes,1132,585,547
-3,Alicante/Alacant,79,Ibi,23403,11720,11683
-3,Alicante/Alacant,80,Jacarilla,1986,1009,977
-3,Alicante/Alacant,82,Jávea/Xàbia,27224,13528,13696
-3,Alicante/Alacant,83,Jijona/Xixona,6875,3342,3533
-3,Alicante/Alacant,85,Llíber,1051,529,522
-3,Alicante/Alacant,84,"Lorcha/Orxa, l'",596,293,303
-3,Alicante/Alacant,86,Millena,229,122,107
-3,Alicante/Alacant,88,Monforte del Cid,7944,4172,3772
-3,Alicante/Alacant,89,Monóvar/Monòver,12175,6077,6098
-3,Alicante/Alacant,903,"Montesinos, Los",4844,2453,2391
-3,Alicante/Alacant,91,Murla,493,233,260
-3,Alicante/Alacant,92,Muro de Alcoy,9328,4627,4701
-3,Alicante/Alacant,90,Mutxamel,25009,12458,12551
-3,Alicante/Alacant,93,Novelda,25725,12803,12922
-3,Alicante/Alacant,94,"Nucia, la",18242,9205,9037
-3,Alicante/Alacant,95,Ondara,6815,3418,3397
-3,Alicante/Alacant,96,Onil,7475,3734,3741
-3,Alicante/Alacant,97,Orba,2111,1036,1075
-3,Alicante/Alacant,99,Orihuela,76778,38144,38634
-3,Alicante/Alacant,98,Orxeta,738,373,365
-3,Alicante/Alacant,100,Parcent,908,443,465
-3,Alicante/Alacant,101,Pedreguer,7490,3717,3773
-3,Alicante/Alacant,102,Pego,10052,5036,5016
-3,Alicante/Alacant,103,Penàguila,301,158,143
-3,Alicante/Alacant,104,Petrer,34479,17121,17358
-3,Alicante/Alacant,902,Pilar de la Horadada,21418,10981,10437
-3,Alicante/Alacant,105,"Pinós, el/Pinoso",7845,3962,3883
-3,Alicante/Alacant,106,Planes,713,387,326
-3,Alicante/Alacant,901,"Poblets, els",2864,1360,1504
-3,Alicante/Alacant,107,Polop,4850,2499,2351
-3,Alicante/Alacant,60,Quatretondeta,121,68,53
-3,Alicante/Alacant,109,Rafal,4418,2207,2211
-3,Alicante/Alacant,110,"Ràfol d'Almúnia, el",644,328,316
-3,Alicante/Alacant,111,Redován,7797,4007,3790
-3,Alicante/Alacant,112,Relleu,1147,589,558
-3,Alicante/Alacant,113,Rojales,16560,8393,8167
-3,Alicante/Alacant,114,"Romana, la",2376,1230,1146
-3,Alicante/Alacant,115,Sagra,389,193,196
-3,Alicante/Alacant,116,Salinas,1585,813,772
-3,Alicante/Alacant,118,San Fulgencio,7943,4030,3913
-3,Alicante/Alacant,904,San Isidro,1933,988,945
-3,Alicante/Alacant,120,San Miguel de Salinas,5811,2949,2862
-3,Alicante/Alacant,122,San Vicente del Raspeig/Sant Vicent del Raspeig,57785,28588,29197
-3,Alicante/Alacant,117,Sanet y Negrals,648,331,317
-3,Alicante/Alacant,119,Sant Joan d'Alacant,23518,11376,12142
-3,Alicante/Alacant,121,Santa Pola,31745,15916,15829
-3,Alicante/Alacant,123,Sax,9771,4920,4851
-3,Alicante/Alacant,124,Sella,585,308,277
-3,Alicante/Alacant,125,Senija,581,303,278
-3,Alicante/Alacant,127,Tàrbena,627,324,303
-3,Alicante/Alacant,128,Teulada,10722,5331,5391
-3,Alicante/Alacant,129,Tibi,1564,824,740
-3,Alicante/Alacant,130,Tollos,56,30,26
-3,Alicante/Alacant,131,Tormos,336,164,172
-3,Alicante/Alacant,132,"Torremanzanas/Torre de les Maçanes, la",654,348,306
-3,Alicante/Alacant,133,Torrevieja,82599,41038,41561
-3,Alicante/Alacant,134,"Vall d'Alcalà, la",164,90,74
-3,Alicante/Alacant,136,Vall de Gallinera,589,319,270
-3,Alicante/Alacant,137,"Vall de Laguar, la",820,407,413
-3,Alicante/Alacant,135,"Vall d'Ebo, la",224,117,107
-3,Alicante/Alacant,138,"Verger, el",4520,2247,2273
-3,Alicante/Alacant,139,"Villajoyosa/Vila Joiosa, la",33969,16949,17020
-3,Alicante/Alacant,140,Villena,33983,16992,16991
-3,Alicante/Alacant,81,Xaló,2683,1338,1345
-4,Almería,1,Abla,1235,633,602
-4,Almería,2,Abrucena,1150,600,550
-4,Almería,3,Adra,24859,12639,12220
-4,Almería,4,Albanchez,753,384,369
-4,Almería,5,Alboloduy,621,307,314
-4,Almería,6,Albox,11696,6023,5673
-4,Almería,7,Alcolea,814,417,397
-4,Almería,8,Alcóntar,528,288,240
-4,Almería,9,Alcudia de Monteagud,135,59,76
-4,Almería,10,Alhabia,648,340,308
-4,Almería,11,Alhama de Almería,3615,1811,1804
-4,Almería,12,Alicún,212,111,101
-4,Almería,13,Almería,196851,95953,100898
-4,Almería,14,Almócita,176,91,85
-4,Almería,15,Alsodux,133,79,54
-4,Almería,16,Antas,3169,1595,1574
-4,Almería,17,Arboleas,4586,2311,2275
-4,Almería,18,Armuña de Almanzora,321,157,164
-4,Almería,19,Bacares,232,124,108
-4,Almería,904,Balanegra,2933,1528,1405
-4,Almería,20,Bayárcal,284,150,134
-4,Almería,21,Bayarque,206,101,105
-4,Almería,22,Bédar,927,463,464
-4,Almería,23,Beires,117,58,59
-4,Almería,24,Benahadux,4357,2157,2200
-4,Almería,26,Benitagla,68,39,29
-4,Almería,27,Benizalón,248,130,118
-4,Almería,28,Bentarique,243,140,103
-4,Almería,29,Berja,12381,6267,6114
-4,Almería,30,Canjáyar,1202,629,573
-4,Almería,31,Cantoria,3228,1630,1598
-4,Almería,32,Carboneras,7757,3977,3780
-4,Almería,33,Castro de Filabres,121,59,62
-4,Almería,36,Chercos,283,143,140
-4,Almería,37,Chirivel,1525,762,763
-4,Almería,34,Cóbdar,143,83,60
-4,Almería,35,Cuevas del Almanzora,13776,7168,6608
-4,Almería,38,Dalías,4031,1987,2044
-4,Almería,902,"Ejido, El",84710,44462,40248
-4,Almería,41,Enix,418,236,182
-4,Almería,43,Felix,642,363,279
-4,Almería,44,Fines,1992,1046,946
-4,Almería,45,Fiñana,1992,1005,987
-4,Almería,46,Fondón,975,512,463
-4,Almería,47,Gádor,3027,1575,1452
-4,Almería,48,"Gallardos, Los",2803,1417,1386
-4,Almería,49,Garrucha,8838,4562,4276
-4,Almería,50,Gérgal,1031,553,478
-4,Almería,51,Huécija,486,236,250
-4,Almería,52,Huércal de Almería,17418,8869,8549
-4,Almería,53,Huércal-Overa,18816,9359,9457
-4,Almería,54,Íllar,390,212,178
-4,Almería,55,Instinción,429,213,216
-4,Almería,56,Laroya,169,99,70
-4,Almería,57,Láujar de Andarax,1538,767,771
-4,Almería,58,Líjar,390,205,185
-4,Almería,59,Lubrín,1431,700,731
-4,Almería,60,Lucainena de las Torres,546,299,247
-4,Almería,61,Lúcar,766,377,389
-4,Almería,62,Macael,5539,2843,2696
-4,Almería,63,María,1261,649,612
-4,Almería,64,Mojácar,6301,3085,3216
-4,Almería,903,"Mojonera, La",9003,5027,3976
-4,Almería,65,Nacimiento,460,231,229
-4,Almería,66,Níjar,30122,16618,13504
-4,Almería,67,Ohanes,596,299,297
-4,Almería,68,Olula de Castro,180,100,80
-4,Almería,69,Olula del Río,6212,3194,3018
-4,Almería,70,Oria,2238,1172,1066
-4,Almería,71,Padules,419,216,203
-4,Almería,72,Partaloa,1055,530,525
-4,Almería,73,Paterna del Río,362,212,150
-4,Almería,74,Pechina,4018,2038,1980
-4,Almería,75,Pulpí,9502,4966,4536
-4,Almería,76,Purchena,1621,851,770
-4,Almería,77,Rágol,304,163,141
-4,Almería,78,Rioja,1364,690,674
-4,Almería,79,Roquetas de Mar,94925,49038,45887
-4,Almería,80,Santa Cruz de Marchena,218,107,111
-4,Almería,81,Santa Fe de Mondújar,432,219,213
-4,Almería,82,Senés,300,157,143
-4,Almería,83,Serón,2035,1035,1000
-4,Almería,84,Sierro,393,206,187
-4,Almería,85,Somontín,463,234,229
-4,Almería,86,Sorbas,2389,1254,1135
-4,Almería,87,Suflí,217,120,97
-4,Almería,88,Tabernas,3704,1916,1788
-4,Almería,89,Taberno,963,463,500
-4,Almería,90,Tahal,324,159,165
-4,Almería,91,Terque,381,192,189
-4,Almería,92,Tíjola,3569,1769,1800
-4,Almería,901,"Tres Villas, Las",570,307,263
-4,Almería,93,Turre,3384,1734,1650
-4,Almería,94,Turrillas,233,136,97
-4,Almería,95,Uleila del Campo,836,415,421
-4,Almería,96,Urrácal,329,172,157
-4,Almería,97,Velefique,253,137,116
-4,Almería,98,Vélez-Blanco,1938,995,943
-4,Almería,99,Vélez-Rubio,6630,3231,3399
-4,Almería,100,Vera,15837,8052,7785
-4,Almería,101,Viator,5791,2939,2852
-4,Almería,102,Vícar,25405,13547,11858
-4,Almería,103,Zurgena,2893,1441,1452
-1,Araba/Álava,51,Agurain/Salvatierra,5018,2497,2521
-1,Araba/Álava,1,Alegría-Dulantzi,2887,1507,1380
-1,Araba/Álava,2,Amurrio,10286,5075,5211
-1,Araba/Álava,49,Añana,151,87,64
-1,Araba/Álava,3,Aramaio,1483,774,709
-1,Araba/Álava,6,Armiñón,219,115,104
-1,Araba/Álava,37,Arraia-Maeztu,717,399,318
-1,Araba/Álava,8,Arratzua-Ubarrundia,982,535,447
-1,Araba/Álava,4,Artziniega,1831,912,919
-1,Araba/Álava,9,Asparrena,1643,833,810
-1,Araba/Álava,10,Ayala/Aiara,2967,1503,1464
-1,Araba/Álava,11,Baños de Ebro/Mañueta,286,159,127
-1,Araba/Álava,13,Barrundia,883,493,390
-1,Araba/Álava,14,Berantevilla,443,238,205
-1,Araba/Álava,16,Bernedo,511,303,208
-1,Araba/Álava,17,Campezo/Kanpezu,1040,548,492
-1,Araba/Álava,21,Elburgo/Burgelu,603,316,287
-1,Araba/Álava,22,Elciego,1025,513,512
-1,Araba/Álava,23,Elvillar/Bilar,348,170,178
-1,Araba/Álava,46,Erriberagoitia/Ribera Alta,780,447,333
-1,Araba/Álava,56,Harana/Valle de Arana,229,129,100
-1,Araba/Álava,901,Iruña Oka/Iruña de Oca,3333,1721,1612
-1,Araba/Álava,27,Iruraiz-Gauna,517,281,236
-1,Araba/Álava,19,Kripan,181,96,85
-1,Araba/Álava,20,Kuartango,381,222,159
-1,Araba/Álava,28,Labastida/Bastida,1445,759,686
-1,Araba/Álava,30,Lagrán,158,88,70
-1,Araba/Álava,31,Laguardia,1505,776,729
-1,Araba/Álava,32,Lanciego/Lantziego,667,341,326
-1,Araba/Álava,902,Lantarón,872,491,381
-1,Araba/Álava,33,Lapuebla de Labarca,857,441,416
-1,Araba/Álava,36,Laudio/Llodio,18205,8979,9226
-1,Araba/Álava,58,Legutio,1869,992,877
-1,Araba/Álava,34,Leza,196,100,96
-1,Araba/Álava,39,Moreda de Álava/Moreda Araba,229,113,116
-1,Araba/Álava,41,Navaridas,209,117,92
-1,Araba/Álava,42,Okondo,1162,601,561
-1,Araba/Álava,43,Oyón-Oion,3368,1718,1650
-1,Araba/Álava,44,Peñacerrada-Urizaharra,257,152,105
-1,Araba/Álava,47,Ribera Baja/Erribera Beitia,1374,745,629
-1,Araba/Álava,52,Samaniego,319,155,164
-1,Araba/Álava,53,San Millán/Donemiliaga,709,390,319
-1,Araba/Álava,54,Urkabustaiz,1336,688,648
-1,Araba/Álava,55,Valdegovía/Gaubea,991,546,445
-1,Araba/Álava,57,Villabuena de Álava/Eskuernaga,299,150,149
-1,Araba/Álava,59,Vitoria-Gasteiz,249176,121358,127818
-1,Araba/Álava,60,Yécora/Iekora,269,139,130
-1,Araba/Álava,61,Zalduondo,186,104,82
-1,Araba/Álava,62,Zambrana,400,214,186
-1,Araba/Álava,18,Zigoitia,1753,952,801
-1,Araba/Álava,63,Zuia,2313,1193,1120
+province_code,province_name,cmun,municipality_name,population_total,population_male,population_female
+02,Albacete,1,Abengibre,757,363,394
+02,Albacete,2,Alatoz,529,300,229
+02,Albacete,3,Albacete,173050,84613,88437
+02,Albacete,4,Albatana,693,357,336
+02,Albacete,5,Alborea,650,339,311
+02,Albacete,6,Alcadozo,655,356,299
+02,Albacete,7,Alcalá del Júcar,1199,639,560
+02,Albacete,8,Alcaraz,1405,724,681
+02,Albacete,9,Almansa,24537,12215,12322
+02,Albacete,10,Alpera,2275,1183,1092
+02,Albacete,11,Ayna,638,341,297
+02,Albacete,12,Balazote,2360,1205,1155
+02,Albacete,14,"Ballestero, El",409,208,201
+02,Albacete,13,Balsa de Ves,150,85,65
+02,Albacete,15,Barrax,1864,941,923
+02,Albacete,16,Bienservida,610,326,284
+02,Albacete,17,Bogarra,873,462,411
+02,Albacete,18,Bonete,1057,538,519
+02,Albacete,19,"Bonillo, El",2837,1447,1390
+02,Albacete,20,Carcelén,508,279,229
+02,Albacete,21,Casas de Juan Núñez,1275,669,606
+02,Albacete,22,Casas de Lázaro,344,194,150
+02,Albacete,23,Casas de Ves,588,311,277
+02,Albacete,24,Casas-Ibáñez,4522,2291,2231
+02,Albacete,25,Caudete,10003,5089,4914
+02,Albacete,26,Cenizate,1182,601,581
+02,Albacete,29,Chinchilla de Monte-Aragón,4182,2183,1999
+02,Albacete,27,Corral-Rubio,330,177,153
+02,Albacete,28,Cotillas,128,64,64
+02,Albacete,30,Elche de la Sierra,3624,1819,1805
+02,Albacete,31,Férez,674,327,347
+02,Albacete,32,Fuensanta,297,168,129
+02,Albacete,33,Fuente-Álamo,2489,1303,1186
+02,Albacete,34,Fuentealbilla,1816,912,904
+02,Albacete,35,"Gineta, La",2448,1259,1189
+02,Albacete,36,Golosalvo,110,58,52
+02,Albacete,37,Hellín,30268,15124,15144
+02,Albacete,38,"Herrera, La",349,181,168
+02,Albacete,39,Higueruela,1184,610,574
+02,Albacete,40,Hoya-Gonzalo,621,332,289
+02,Albacete,41,Jorquera,360,195,165
+02,Albacete,42,Letur,928,448,480
+02,Albacete,43,Lezuza,1398,721,677
+02,Albacete,44,Liétor,1200,626,574
+02,Albacete,45,Madrigueras,4665,2387,2278
+02,Albacete,46,Mahora,1359,698,661
+02,Albacete,47,Masegoso,113,62,51
+02,Albacete,48,Minaya,1537,799,738
+02,Albacete,49,Molinicos,840,435,405
+02,Albacete,50,Montalvos,96,53,43
+02,Albacete,51,Montealegre del Castillo,2042,1036,1006
+02,Albacete,52,Motilleja,548,292,256
+02,Albacete,53,Munera,3513,1793,1720
+02,Albacete,54,Navas de Jorquera,518,271,247
+02,Albacete,55,Nerpio,1222,676,546
+02,Albacete,56,Ontur,2028,1022,1006
+02,Albacete,57,Ossa de Montiel,2352,1169,1183
+02,Albacete,58,Paterna del Madera,360,194,166
+02,Albacete,60,Peñas de San Pedro,1420,832,588
+02,Albacete,59,Peñascosa,331,181,150
+02,Albacete,61,Pétrola,696,359,337
+02,Albacete,62,Povedilla,446,247,199
+02,Albacete,901,Pozo Cañada,2786,1401,1385
+02,Albacete,63,Pozohondo,1635,853,782
+02,Albacete,64,Pozo-Lorente,401,205,196
+02,Albacete,65,Pozuelo,489,258,231
+02,Albacete,66,"Recueja, La",254,133,121
+02,Albacete,67,Riópar,1357,696,661
+02,Albacete,68,Robledo,363,200,163
+02,Albacete,69,"Roda, La",15515,7835,7680
+02,Albacete,70,Salobre,501,265,236
+02,Albacete,71,San Pedro,1153,587,566
+02,Albacete,72,Socovos,1790,920,870
+02,Albacete,73,Tarazona de la Mancha,6255,3198,3057
+02,Albacete,74,Tobarra,7738,3955,3783
+02,Albacete,75,Valdeganga,1943,1004,939
+02,Albacete,76,Vianos,355,179,176
+02,Albacete,77,Villa de Ves,57,34,23
+02,Albacete,78,Villalgordo del Júcar,1115,585,530
+02,Albacete,79,Villamalea,4112,2077,2035
+02,Albacete,80,Villapalacios,589,307,282
+02,Albacete,81,Villarrobledo,25241,12463,12778
+02,Albacete,82,Villatoya,95,58,37
+02,Albacete,83,Villavaliente,226,137,89
+02,Albacete,84,Villaverde de Guadalimar,340,174,166
+02,Albacete,85,Viveros,340,174,166
+02,Albacete,86,Yeste,2674,1371,1303
+03,Alicante/Alacant,2,Agost,4713,2344,2369
+03,Alicante/Alacant,3,Agres,551,294,257
+03,Alicante/Alacant,4,Aigües,936,493,443
+03,Alicante/Alacant,5,Albatera,12042,6172,5870
+03,Alicante/Alacant,6,Alcalalí,1298,645,653
+03,Alicante/Alacant,7,Alcocer de Planes,229,115,114
+03,Alicante/Alacant,8,Alcoleja,180,94,86
+03,Alicante/Alacant,9,Alcoy/Alcoi,58977,28806,30171
+03,Alicante/Alacant,10,Alfafara,407,198,209
+03,Alicante/Alacant,11,"Alfàs del Pi, l'",20053,9947,10106
+03,Alicante/Alacant,12,Algorfa,2838,1427,1411
+03,Alicante/Alacant,13,Algueña,1341,671,670
+03,Alicante/Alacant,14,Alicante/Alacant,331577,160595,170982
+03,Alicante/Alacant,15,Almoradí,20542,10398,10144
+03,Alicante/Alacant,16,Almudaina,104,54,50
+03,Alicante/Alacant,17,"Alqueria d'Asnar, l'",491,237,254
+03,Alicante/Alacant,18,Altea,21995,10756,11239
+03,Alicante/Alacant,19,Aspe,20537,10324,10213
+03,Alicante/Alacant,1,"Atzúbia, l'",661,346,315
+03,Alicante/Alacant,20,Balones,122,65,57
+03,Alicante/Alacant,21,Banyeres de Mariola,7113,3562,3551
+03,Alicante/Alacant,22,Benasau,156,77,79
+03,Alicante/Alacant,23,Beneixama,1703,866,837
+03,Alicante/Alacant,24,Benejúzar,5361,2689,2672
+03,Alicante/Alacant,25,Benferri,1940,1011,929
+03,Alicante/Alacant,26,Beniarbeig,1983,1005,978
+03,Alicante/Alacant,27,Beniardá,178,89,89
+03,Alicante/Alacant,28,Beniarrés,1118,566,552
+03,Alicante/Alacant,30,Benidoleig,1110,556,554
+03,Alicante/Alacant,31,Benidorm,67558,33581,33977
+03,Alicante/Alacant,32,Benifallim,108,59,49
+03,Alicante/Alacant,33,Benifato,149,74,75
+03,Alicante/Alacant,29,Benigembla,444,228,216
+03,Alicante/Alacant,34,Benijófar,3357,1634,1723
+03,Alicante/Alacant,35,Benilloba,742,384,358
+03,Alicante/Alacant,36,Benillup,94,43,51
+03,Alicante/Alacant,37,Benimantell,490,241,249
+03,Alicante/Alacant,38,Benimarfull,413,205,208
+03,Alicante/Alacant,39,Benimassot,96,55,41
+03,Alicante/Alacant,40,Benimeli,410,190,220
+03,Alicante/Alacant,41,Benissa,10768,5264,5504
+03,Alicante/Alacant,42,"Benitachell/Poble Nou de Benitatxell, el",4130,2039,2091
+03,Alicante/Alacant,43,Biar,3651,1792,1859
+03,Alicante/Alacant,44,Bigastro,6702,3380,3322
+03,Alicante/Alacant,45,Bolulla,418,221,197
+03,Alicante/Alacant,46,Busot,2925,1498,1427
+03,Alicante/Alacant,49,Callosa de Segura,18864,9602,9262
+03,Alicante/Alacant,48,Callosa d'en Sarrià,7257,3708,3549
+03,Alicante/Alacant,47,Calp,21633,10900,10733
+03,Alicante/Alacant,50,"Campello, el",27893,13565,14328
+03,Alicante/Alacant,51,"Campo de Mirra/Camp de Mirra, el",428,218,210
+03,Alicante/Alacant,52,Cañada,1214,609,605
+03,Alicante/Alacant,53,Castalla,9880,5016,4864
+03,Alicante/Alacant,54,Castell de Castells,435,223,212
+03,Alicante/Alacant,75,"Castell de Guadalest, el",209,104,105
+03,Alicante/Alacant,55,Catral,8631,4319,4312
+03,Alicante/Alacant,56,Cocentaina,11456,5822,5634
+03,Alicante/Alacant,57,Confrides,208,118,90
+03,Alicante/Alacant,58,Cox,7226,3698,3528
+03,Alicante/Alacant,59,Crevillent,28957,14640,14317
+03,Alicante/Alacant,61,Daya Nueva,1718,850,868
+03,Alicante/Alacant,62,Daya Vieja,685,356,329
+03,Alicante/Alacant,63,Dénia,41733,20245,21488
+03,Alicante/Alacant,64,Dolores,7383,3689,3694
+03,Alicante/Alacant,65,Elche/Elx,230625,114332,116293
+03,Alicante/Alacant,66,Elda,52404,25549,26855
+03,Alicante/Alacant,67,Facheca,101,52,49
+03,Alicante/Alacant,68,Famorca,53,29,24
+03,Alicante/Alacant,69,Finestrat,6381,3231,3150
+03,Alicante/Alacant,77,"Fondó de les Neus, el/Hondón de las Nieves",2474,1256,1218
+03,Alicante/Alacant,70,Formentera del Segura,4131,2069,2062
+03,Alicante/Alacant,72,Gaianes,471,241,230
+03,Alicante/Alacant,71,Gata de Gorgos,5893,2974,2919
+03,Alicante/Alacant,73,Gorga,258,144,114
+03,Alicante/Alacant,74,Granja de Rocamora,2489,1310,1179
+03,Alicante/Alacant,76,Guardamar del Segura,15058,7358,7700
+03,Alicante/Alacant,78,Hondón de los Frailes,1132,585,547
+03,Alicante/Alacant,79,Ibi,23403,11720,11683
+03,Alicante/Alacant,80,Jacarilla,1986,1009,977
+03,Alicante/Alacant,82,Jávea/Xàbia,27224,13528,13696
+03,Alicante/Alacant,83,Jijona/Xixona,6875,3342,3533
+03,Alicante/Alacant,85,Llíber,1051,529,522
+03,Alicante/Alacant,84,"Lorcha/Orxa, l'",596,293,303
+03,Alicante/Alacant,86,Millena,229,122,107
+03,Alicante/Alacant,88,Monforte del Cid,7944,4172,3772
+03,Alicante/Alacant,89,Monóvar/Monòver,12175,6077,6098
+03,Alicante/Alacant,903,"Montesinos, Los",4844,2453,2391
+03,Alicante/Alacant,91,Murla,493,233,260
+03,Alicante/Alacant,92,Muro de Alcoy,9328,4627,4701
+03,Alicante/Alacant,90,Mutxamel,25009,12458,12551
+03,Alicante/Alacant,93,Novelda,25725,12803,12922
+03,Alicante/Alacant,94,"Nucia, la",18242,9205,9037
+03,Alicante/Alacant,95,Ondara,6815,3418,3397
+03,Alicante/Alacant,96,Onil,7475,3734,3741
+03,Alicante/Alacant,97,Orba,2111,1036,1075
+03,Alicante/Alacant,99,Orihuela,76778,38144,38634
+03,Alicante/Alacant,98,Orxeta,738,373,365
+03,Alicante/Alacant,100,Parcent,908,443,465
+03,Alicante/Alacant,101,Pedreguer,7490,3717,3773
+03,Alicante/Alacant,102,Pego,10052,5036,5016
+03,Alicante/Alacant,103,Penàguila,301,158,143
+03,Alicante/Alacant,104,Petrer,34479,17121,17358
+03,Alicante/Alacant,902,Pilar de la Horadada,21418,10981,10437
+03,Alicante/Alacant,105,"Pinós, el/Pinoso",7845,3962,3883
+03,Alicante/Alacant,106,Planes,713,387,326
+03,Alicante/Alacant,901,"Poblets, els",2864,1360,1504
+03,Alicante/Alacant,107,Polop,4850,2499,2351
+03,Alicante/Alacant,60,Quatretondeta,121,68,53
+03,Alicante/Alacant,109,Rafal,4418,2207,2211
+03,Alicante/Alacant,110,"Ràfol d'Almúnia, el",644,328,316
+03,Alicante/Alacant,111,Redován,7797,4007,3790
+03,Alicante/Alacant,112,Relleu,1147,589,558
+03,Alicante/Alacant,113,Rojales,16560,8393,8167
+03,Alicante/Alacant,114,"Romana, la",2376,1230,1146
+03,Alicante/Alacant,115,Sagra,389,193,196
+03,Alicante/Alacant,116,Salinas,1585,813,772
+03,Alicante/Alacant,118,San Fulgencio,7943,4030,3913
+03,Alicante/Alacant,904,San Isidro,1933,988,945
+03,Alicante/Alacant,120,San Miguel de Salinas,5811,2949,2862
+03,Alicante/Alacant,122,San Vicente del Raspeig/Sant Vicent del Raspeig,57785,28588,29197
+03,Alicante/Alacant,117,Sanet y Negrals,648,331,317
+03,Alicante/Alacant,119,Sant Joan d'Alacant,23518,11376,12142
+03,Alicante/Alacant,121,Santa Pola,31745,15916,15829
+03,Alicante/Alacant,123,Sax,9771,4920,4851
+03,Alicante/Alacant,124,Sella,585,308,277
+03,Alicante/Alacant,125,Senija,581,303,278
+03,Alicante/Alacant,127,Tàrbena,627,324,303
+03,Alicante/Alacant,128,Teulada,10722,5331,5391
+03,Alicante/Alacant,129,Tibi,1564,824,740
+03,Alicante/Alacant,130,Tollos,56,30,26
+03,Alicante/Alacant,131,Tormos,336,164,172
+03,Alicante/Alacant,132,"Torremanzanas/Torre de les Maçanes, la",654,348,306
+03,Alicante/Alacant,133,Torrevieja,82599,41038,41561
+03,Alicante/Alacant,134,"Vall d'Alcalà, la",164,90,74
+03,Alicante/Alacant,136,Vall de Gallinera,589,319,270
+03,Alicante/Alacant,137,"Vall de Laguar, la",820,407,413
+03,Alicante/Alacant,135,"Vall d'Ebo, la",224,117,107
+03,Alicante/Alacant,138,"Verger, el",4520,2247,2273
+03,Alicante/Alacant,139,"Villajoyosa/Vila Joiosa, la",33969,16949,17020
+03,Alicante/Alacant,140,Villena,33983,16992,16991
+03,Alicante/Alacant,81,Xaló,2683,1338,1345
+04,Almería,1,Abla,1235,633,602
+04,Almería,2,Abrucena,1150,600,550
+04,Almería,3,Adra,24859,12639,12220
+04,Almería,4,Albanchez,753,384,369
+04,Almería,5,Alboloduy,621,307,314
+04,Almería,6,Albox,11696,6023,5673
+04,Almería,7,Alcolea,814,417,397
+04,Almería,8,Alcóntar,528,288,240
+04,Almería,9,Alcudia de Monteagud,135,59,76
+04,Almería,10,Alhabia,648,340,308
+04,Almería,11,Alhama de Almería,3615,1811,1804
+04,Almería,12,Alicún,212,111,101
+04,Almería,13,Almería,196851,95953,100898
+04,Almería,14,Almócita,176,91,85
+04,Almería,15,Alsodux,133,79,54
+04,Almería,16,Antas,3169,1595,1574
+04,Almería,17,Arboleas,4586,2311,2275
+04,Almería,18,Armuña de Almanzora,321,157,164
+04,Almería,19,Bacares,232,124,108
+04,Almería,904,Balanegra,2933,1528,1405
+04,Almería,20,Bayárcal,284,150,134
+04,Almería,21,Bayarque,206,101,105
+04,Almería,22,Bédar,927,463,464
+04,Almería,23,Beires,117,58,59
+04,Almería,24,Benahadux,4357,2157,2200
+04,Almería,26,Benitagla,68,39,29
+04,Almería,27,Benizalón,248,130,118
+04,Almería,28,Bentarique,243,140,103
+04,Almería,29,Berja,12381,6267,6114
+04,Almería,30,Canjáyar,1202,629,573
+04,Almería,31,Cantoria,3228,1630,1598
+04,Almería,32,Carboneras,7757,3977,3780
+04,Almería,33,Castro de Filabres,121,59,62
+04,Almería,36,Chercos,283,143,140
+04,Almería,37,Chirivel,1525,762,763
+04,Almería,34,Cóbdar,143,83,60
+04,Almería,35,Cuevas del Almanzora,13776,7168,6608
+04,Almería,38,Dalías,4031,1987,2044
+04,Almería,902,"Ejido, El",84710,44462,40248
+04,Almería,41,Enix,418,236,182
+04,Almería,43,Felix,642,363,279
+04,Almería,44,Fines,1992,1046,946
+04,Almería,45,Fiñana,1992,1005,987
+04,Almería,46,Fondón,975,512,463
+04,Almería,47,Gádor,3027,1575,1452
+04,Almería,48,"Gallardos, Los",2803,1417,1386
+04,Almería,49,Garrucha,8838,4562,4276
+04,Almería,50,Gérgal,1031,553,478
+04,Almería,51,Huécija,486,236,250
+04,Almería,52,Huércal de Almería,17418,8869,8549
+04,Almería,53,Huércal-Overa,18816,9359,9457
+04,Almería,54,Íllar,390,212,178
+04,Almería,55,Instinción,429,213,216
+04,Almería,56,Laroya,169,99,70
+04,Almería,57,Láujar de Andarax,1538,767,771
+04,Almería,58,Líjar,390,205,185
+04,Almería,59,Lubrín,1431,700,731
+04,Almería,60,Lucainena de las Torres,546,299,247
+04,Almería,61,Lúcar,766,377,389
+04,Almería,62,Macael,5539,2843,2696
+04,Almería,63,María,1261,649,612
+04,Almería,64,Mojácar,6301,3085,3216
+04,Almería,903,"Mojonera, La",9003,5027,3976
+04,Almería,65,Nacimiento,460,231,229
+04,Almería,66,Níjar,30122,16618,13504
+04,Almería,67,Ohanes,596,299,297
+04,Almería,68,Olula de Castro,180,100,80
+04,Almería,69,Olula del Río,6212,3194,3018
+04,Almería,70,Oria,2238,1172,1066
+04,Almería,71,Padules,419,216,203
+04,Almería,72,Partaloa,1055,530,525
+04,Almería,73,Paterna del Río,362,212,150
+04,Almería,74,Pechina,4018,2038,1980
+04,Almería,75,Pulpí,9502,4966,4536
+04,Almería,76,Purchena,1621,851,770
+04,Almería,77,Rágol,304,163,141
+04,Almería,78,Rioja,1364,690,674
+04,Almería,79,Roquetas de Mar,94925,49038,45887
+04,Almería,80,Santa Cruz de Marchena,218,107,111
+04,Almería,81,Santa Fe de Mondújar,432,219,213
+04,Almería,82,Senés,300,157,143
+04,Almería,83,Serón,2035,1035,1000
+04,Almería,84,Sierro,393,206,187
+04,Almería,85,Somontín,463,234,229
+04,Almería,86,Sorbas,2389,1254,1135
+04,Almería,87,Suflí,217,120,97
+04,Almería,88,Tabernas,3704,1916,1788
+04,Almería,89,Taberno,963,463,500
+04,Almería,90,Tahal,324,159,165
+04,Almería,91,Terque,381,192,189
+04,Almería,92,Tíjola,3569,1769,1800
+04,Almería,901,"Tres Villas, Las",570,307,263
+04,Almería,93,Turre,3384,1734,1650
+04,Almería,94,Turrillas,233,136,97
+04,Almería,95,Uleila del Campo,836,415,421
+04,Almería,96,Urrácal,329,172,157
+04,Almería,97,Velefique,253,137,116
+04,Almería,98,Vélez-Blanco,1938,995,943
+04,Almería,99,Vélez-Rubio,6630,3231,3399
+04,Almería,100,Vera,15837,8052,7785
+04,Almería,101,Viator,5791,2939,2852
+04,Almería,102,Vícar,25405,13547,11858
+04,Almería,103,Zurgena,2893,1441,1452
+01,Araba/Álava,51,Agurain/Salvatierra,5018,2497,2521
+01,Araba/Álava,1,Alegría-Dulantzi,2887,1507,1380
+01,Araba/Álava,2,Amurrio,10286,5075,5211
+01,Araba/Álava,49,Añana,151,87,64
+01,Araba/Álava,3,Aramaio,1483,774,709
+01,Araba/Álava,6,Armiñón,219,115,104
+01,Araba/Álava,37,Arraia-Maeztu,717,399,318
+01,Araba/Álava,8,Arratzua-Ubarrundia,982,535,447
+01,Araba/Álava,4,Artziniega,1831,912,919
+01,Araba/Álava,9,Asparrena,1643,833,810
+01,Araba/Álava,10,Ayala/Aiara,2967,1503,1464
+01,Araba/Álava,11,Baños de Ebro/Mañueta,286,159,127
+01,Araba/Álava,13,Barrundia,883,493,390
+01,Araba/Álava,14,Berantevilla,443,238,205
+01,Araba/Álava,16,Bernedo,511,303,208
+01,Araba/Álava,17,Campezo/Kanpezu,1040,548,492
+01,Araba/Álava,21,Elburgo/Burgelu,603,316,287
+01,Araba/Álava,22,Elciego,1025,513,512
+01,Araba/Álava,23,Elvillar/Bilar,348,170,178
+01,Araba/Álava,46,Erriberagoitia/Ribera Alta,780,447,333
+01,Araba/Álava,56,Harana/Valle de Arana,229,129,100
+01,Araba/Álava,901,Iruña Oka/Iruña de Oca,3333,1721,1612
+01,Araba/Álava,27,Iruraiz-Gauna,517,281,236
+01,Araba/Álava,19,Kripan,181,96,85
+01,Araba/Álava,20,Kuartango,381,222,159
+01,Araba/Álava,28,Labastida/Bastida,1445,759,686
+01,Araba/Álava,30,Lagrán,158,88,70
+01,Araba/Álava,31,Laguardia,1505,776,729
+01,Araba/Álava,32,Lanciego/Lantziego,667,341,326
+01,Araba/Álava,902,Lantarón,872,491,381
+01,Araba/Álava,33,Lapuebla de Labarca,857,441,416
+01,Araba/Álava,36,Laudio/Llodio,18205,8979,9226
+01,Araba/Álava,58,Legutio,1869,992,877
+01,Araba/Álava,34,Leza,196,100,96
+01,Araba/Álava,39,Moreda de Álava/Moreda Araba,229,113,116
+01,Araba/Álava,41,Navaridas,209,117,92
+01,Araba/Álava,42,Okondo,1162,601,561
+01,Araba/Álava,43,Oyón-Oion,3368,1718,1650
+01,Araba/Álava,44,Peñacerrada-Urizaharra,257,152,105
+01,Araba/Álava,47,Ribera Baja/Erribera Beitia,1374,745,629
+01,Araba/Álava,52,Samaniego,319,155,164
+01,Araba/Álava,53,San Millán/Donemiliaga,709,390,319
+01,Araba/Álava,54,Urkabustaiz,1336,688,648
+01,Araba/Álava,55,Valdegovía/Gaubea,991,546,445
+01,Araba/Álava,57,Villabuena de Álava/Eskuernaga,299,150,149
+01,Araba/Álava,59,Vitoria-Gasteiz,249176,121358,127818
+01,Araba/Álava,60,Yécora/Iekora,269,139,130
+01,Araba/Álava,61,Zalduondo,186,104,82
+01,Araba/Álava,62,Zambrana,400,214,186
+01,Araba/Álava,18,Zigoitia,1753,952,801
+01,Araba/Álava,63,Zuia,2313,1193,1120
 33,Asturias,1,Allande,1697,854,843
 33,Asturias,2,Aller,10808,5326,5482
 33,Asturias,3,Amieva,675,379,296
@@ -459,797 +459,797 @@ CPRO,PROVINCIA,CMUN,NOMBRE,POB18,HOMBRES,MUJERES
 33,Asturias,76,Villaviciosa,14430,7120,7310
 33,Asturias,77,Villayón,1248,649,599
 33,Asturias,78,Yernes y Tameza,140,78,62
-5,Ávila,1,Adanero,202,113,89
-5,Ávila,2,"Adrada, La",2517,1298,1219
-5,Ávila,5,Albornos,190,100,90
-5,Ávila,7,Aldeanueva de Santa Cruz,119,63,56
-5,Ávila,8,Aldeaseca,233,115,118
-5,Ávila,10,"Aldehuela, La",168,85,83
-5,Ávila,12,Amavida,135,69,66
-5,Ávila,13,"Arenal, El",972,495,477
-5,Ávila,14,Arenas de San Pedro,6454,3135,3319
-5,Ávila,15,Arevalillo,75,35,40
-5,Ávila,16,Arévalo,8069,3919,4150
-5,Ávila,17,Aveinte,86,49,37
-5,Ávila,18,Avellaneda,26,15,11
-5,Ávila,19,Ávila,57657,27472,30185
-5,Ávila,21,"Barco de Ávila, El",2368,1145,1223
-5,Ávila,22,"Barraco, El",1889,976,913
-5,Ávila,23,Barromán,186,103,83
-5,Ávila,24,Becedas,206,108,98
-5,Ávila,25,Becedillas,90,50,40
-5,Ávila,26,Bercial de Zapardiel,199,106,93
-5,Ávila,27,"Berlanas, Las",323,164,159
-5,Ávila,29,Bernuy-Zapardiel,108,64,44
-5,Ávila,30,Berrocalejo de Aragona,43,22,21
-5,Ávila,33,Blascomillán,193,102,91
-5,Ávila,34,Blasconuño de Matacabras,16,8,8
-5,Ávila,35,Blascosancho,114,57,57
-5,Ávila,36,"Bohodón, El",126,62,64
-5,Ávila,37,Bohoyo,248,142,106
-5,Ávila,38,Bonilla de la Sierra,120,71,49
-5,Ávila,39,Brabos,44,27,17
-5,Ávila,40,Bularros,65,43,22
-5,Ávila,41,Burgohondo,1196,621,575
-5,Ávila,42,Cabezas de Alambre,157,77,80
-5,Ávila,43,Cabezas del Pozo,84,44,40
-5,Ávila,44,Cabezas del Villar,275,150,125
-5,Ávila,45,Cabizuela,82,43,39
-5,Ávila,46,Canales,48,26,22
-5,Ávila,47,Candeleda,4998,2528,2470
-5,Ávila,48,Cantiveros,112,63,49
-5,Ávila,49,Cardeñosa,452,239,213
-5,Ávila,51,"Carrera, La",181,98,83
-5,Ávila,52,Casas del Puerto,92,48,44
-5,Ávila,53,Casasola,84,46,38
-5,Ávila,54,Casavieja,1429,742,687
-5,Ávila,55,Casillas,637,338,299
-5,Ávila,56,Castellanos de Zapardiel,95,53,42
-5,Ávila,57,Cebreros,3056,1576,1480
-5,Ávila,58,Cepeda la Mora,76,43,33
-5,Ávila,67,Chamartín,79,47,32
-5,Ávila,59,Cillán,100,60,40
-5,Ávila,60,Cisla,109,56,53
-5,Ávila,61,"Colilla, La",329,172,157
-5,Ávila,62,Collado de Contreras,179,92,87
-5,Ávila,63,Collado del Mirón,32,20,12
-5,Ávila,64,Constanzana,106,60,46
-5,Ávila,65,Crespos,496,264,232
-5,Ávila,66,Cuevas del Valle,491,271,220
-5,Ávila,903,Diego del Carpio,147,83,64
-5,Ávila,69,Donjimeno,79,45,34
-5,Ávila,70,Donvidas,33,17,16
-5,Ávila,72,Espinosa de los Caballeros,106,57,49
-5,Ávila,73,Flores de Ávila,307,168,139
-5,Ávila,74,Fontiveros,751,391,360
-5,Ávila,75,Fresnedilla,121,56,65
-5,Ávila,76,"Fresno, El",601,312,289
-5,Ávila,77,Fuente el Saúz,165,88,77
-5,Ávila,78,Fuentes de Año,105,59,46
-5,Ávila,79,Gallegos de Altamiros,63,37,26
-5,Ávila,80,Gallegos de Sobrinos,43,21,22
-5,Ávila,81,Garganta del Villar,40,28,12
-5,Ávila,82,Gavilanes,587,317,270
-5,Ávila,83,Gemuño,155,82,73
-5,Ávila,85,Gil García,36,17,19
-5,Ávila,84,Gilbuena,68,40,28
-5,Ávila,86,Gimialcón,77,48,29
-5,Ávila,87,Gotarrendura,161,54,107
-5,Ávila,88,Grandes y San Martín,31,15,16
-5,Ávila,89,Guisando,511,252,259
-5,Ávila,90,Gutierre-Muñoz,78,38,40
-5,Ávila,92,Hernansancho,169,94,75
-5,Ávila,93,Herradón de Pinares,405,230,175
-5,Ávila,94,Herreros de Suso,135,74,61
-5,Ávila,95,Higuera de las Dueñas,267,148,119
-5,Ávila,96,"Hija de Dios, La",78,47,31
-5,Ávila,97,"Horcajada, La",518,274,244
-5,Ávila,99,Horcajo de las Torres,512,287,225
-5,Ávila,100,"Hornillo, El",295,155,140
-5,Ávila,102,"Hoyo de Pinares, El",2164,1123,1041
-5,Ávila,101,Hoyocasero,290,167,123
-5,Ávila,103,Hoyorredondo,67,34,33
-5,Ávila,106,Hoyos de Miguel Muñoz,29,15,14
-5,Ávila,104,Hoyos del Collado,34,20,14
-5,Ávila,105,Hoyos del Espino,363,197,166
-5,Ávila,107,Hurtumpascual,54,33,21
-5,Ávila,108,Junciana,40,21,19
-5,Ávila,109,Langa,487,255,232
-5,Ávila,110,Lanzahíta,844,431,413
-5,Ávila,113,"Llanos de Tormes, Los",64,30,34
-5,Ávila,112,"Losar del Barco, El",110,56,54
-5,Ávila,114,Madrigal de las Altas Torres,1440,732,708
-5,Ávila,115,Maello,596,310,286
-5,Ávila,116,Malpartida de Corneja,102,51,51
-5,Ávila,117,Mamblas,208,119,89
-5,Ávila,118,Mancera de Arriba,74,40,34
-5,Ávila,119,Manjabálago y Ortigosa de Rioalmar,27,18,9
-5,Ávila,120,Marlín,31,20,11
-5,Ávila,121,Martiherrero,317,165,152
-5,Ávila,122,Martínez,122,62,60
-5,Ávila,123,Mediana de Voltoya,105,52,53
-5,Ávila,124,Medinilla,99,45,54
-5,Ávila,125,Mengamuñoz,61,31,30
-5,Ávila,126,Mesegar de Corneja,60,36,24
-5,Ávila,127,Mijares,704,394,310
-5,Ávila,128,Mingorría,395,207,188
-5,Ávila,129,"Mirón, El",124,73,51
-5,Ávila,130,Mironcillo,95,50,45
-5,Ávila,131,Mirueña de los Infanzones,92,54,38
-5,Ávila,132,Mombeltrán,1006,520,486
-5,Ávila,133,Monsalupe,73,38,35
-5,Ávila,134,Moraleja de Matacabras,50,30,20
-5,Ávila,135,Muñana,394,208,186
-5,Ávila,136,Muñico,94,50,44
-5,Ávila,138,Muñogalindo,334,172,162
-5,Ávila,139,Muñogrande,67,37,30
-5,Ávila,140,Muñomer del Peco,128,71,57
-5,Ávila,141,Muñopepe,103,57,46
-5,Ávila,142,Muñosancho,96,45,51
-5,Ávila,143,Muñotello,62,31,31
-5,Ávila,144,Narrillos del Álamo,77,42,35
-5,Ávila,145,Narrillos del Rebollar,50,28,22
-5,Ávila,149,Narros de Saldueña,101,59,42
-5,Ávila,147,Narros del Castillo,161,91,70
-5,Ávila,148,Narros del Puerto,22,11,11
-5,Ávila,152,Nava de Arévalo,753,398,355
-5,Ávila,153,Nava del Barco,93,50,43
-5,Ávila,151,Navacepedilla de Corneja,98,50,48
-5,Ávila,154,Navadijos,34,24,10
-5,Ávila,155,Navaescurial,46,30,16
-5,Ávila,156,Navahondilla,310,180,130
-5,Ávila,157,Navalacruz,247,134,113
-5,Ávila,158,Navalmoral,336,182,154
-5,Ávila,159,Navalonguilla,236,116,120
-5,Ávila,160,Navalosa,321,176,145
-5,Ávila,161,Navalperal de Pinares,777,399,378
-5,Ávila,162,Navalperal de Tormes,90,47,43
-5,Ávila,163,Navaluenga,1878,924,954
-5,Ávila,164,Navaquesera,16,8,8
-5,Ávila,165,Navarredonda de Gredos,434,213,221
-5,Ávila,166,Navarredondilla,168,92,76
-5,Ávila,167,Navarrevisca,279,155,124
-5,Ávila,168,"Navas del Marqués, Las",5139,2616,2523
-5,Ávila,169,Navatalgordo,251,145,106
-5,Ávila,170,Navatejares,55,27,28
-5,Ávila,171,Neila de San Miguel,69,34,35
-5,Ávila,172,Niharra,184,103,81
-5,Ávila,173,Ojos-Albos,63,39,24
-5,Ávila,174,Orbita,75,41,34
-5,Ávila,175,"Oso, El",172,98,74
-5,Ávila,176,Padiernos,272,150,122
-5,Ávila,177,Pajares de Adaja,154,81,73
-5,Ávila,178,Palacios de Goda,402,211,191
-5,Ávila,179,Papatrigo,232,114,118
-5,Ávila,180,"Parral, El",72,39,33
-5,Ávila,181,Pascualcobo,43,29,14
-5,Ávila,182,Pedro Bernardo,844,444,400
-5,Ávila,183,Pedro-Rodríguez,140,74,66
-5,Ávila,184,Peguerinos,272,152,120
-5,Ávila,185,Peñalba de Ávila,113,58,55
-5,Ávila,186,Piedrahíta,1811,869,942
-5,Ávila,187,Piedralaves,2057,1025,1032
-5,Ávila,188,Poveda,45,28,17
-5,Ávila,189,Poyales del Hoyo,482,254,228
-5,Ávila,190,Pozanco,49,30,19
-5,Ávila,191,Pradosegar,126,64,62
-5,Ávila,192,Puerto Castilla,107,66,41
-5,Ávila,193,Rasueros,181,103,78
-5,Ávila,194,Riocabado,146,82,64
-5,Ávila,195,Riofrío,227,135,92
-5,Ávila,196,Rivilla de Barajas,65,28,37
-5,Ávila,197,Salobral,116,64,52
-5,Ávila,198,Salvadiós,75,35,40
-5,Ávila,199,San Bartolomé de Béjar,42,22,20
-5,Ávila,200,San Bartolomé de Corneja,43,21,22
-5,Ávila,201,San Bartolomé de Pinares,553,297,256
-5,Ávila,206,San Esteban de los Patos,30,18,12
-5,Ávila,208,San Esteban de Zapardiel,36,22,14
-5,Ávila,207,San Esteban del Valle,747,388,359
-5,Ávila,209,San García de Ingelmos,80,48,32
-5,Ávila,901,San Juan de Gredos,251,137,114
-5,Ávila,210,San Juan de la Encinilla,86,43,43
-5,Ávila,211,San Juan de la Nava,473,251,222
-5,Ávila,212,San Juan del Molinillo,199,111,88
-5,Ávila,213,San Juan del Olmo,105,64,41
-5,Ávila,214,San Lorenzo de Tormes,37,21,16
-5,Ávila,215,San Martín de la Vega del Alberche,174,104,70
-5,Ávila,216,San Martín del Pimpollar,189,109,80
-5,Ávila,217,San Miguel de Corneja,55,30,25
-5,Ávila,218,San Miguel de Serrezuela,125,68,57
-5,Ávila,219,San Pascual,44,26,18
-5,Ávila,220,San Pedro del Arroyo,428,226,202
-5,Ávila,231,San Vicente de Arévalo,171,100,71
-5,Ávila,204,Sanchidrián,726,373,353
-5,Ávila,205,Sanchorreja,86,43,43
-5,Ávila,222,Santa Cruz de Pinares,141,76,65
-5,Ávila,221,Santa Cruz del Valle,365,192,173
-5,Ávila,226,Santa María de los Caballeros,73,44,29
-5,Ávila,224,Santa María del Arroyo,111,58,53
-5,Ávila,225,Santa María del Berrocal,403,219,184
-5,Ávila,902,Santa María del Cubillo,314,183,131
-5,Ávila,227,Santa María del Tiétar,436,234,202
-5,Ávila,228,Santiago del Collado,176,109,67
-5,Ávila,904,Santiago del Tormes,122,69,53
-5,Ávila,229,Santo Domingo de las Posadas,75,40,35
-5,Ávila,230,Santo Tomé de Zabarcos,65,35,30
-5,Ávila,232,"Serrada, La",111,58,53
-5,Ávila,233,Serranillos,250,140,110
-5,Ávila,234,Sigeres,43,22,21
-5,Ávila,235,Sinlabajos,124,69,55
-5,Ávila,236,Solana de Ávila,113,66,47
-5,Ávila,237,Solana de Rioalmar,165,95,70
-5,Ávila,238,Solosancho,837,446,391
-5,Ávila,239,Sotalbo,251,134,117
-5,Ávila,240,Sotillo de la Adrada,4542,2252,2290
-5,Ávila,241,"Tiemblo, El",4097,2090,2007
-5,Ávila,242,Tiñosillos,796,411,385
-5,Ávila,243,Tolbaños,85,48,37
-5,Ávila,244,Tormellas,41,26,15
-5,Ávila,245,Tornadizos de Ávila,435,222,213
-5,Ávila,247,"Torre, La",239,131,108
-5,Ávila,246,Tórtoles,60,33,27
-5,Ávila,249,Umbrías,105,55,50
-5,Ávila,251,Vadillo de la Sierra,67,42,25
-5,Ávila,252,Valdecasa,62,37,25
-5,Ávila,253,Vega de Santa María,85,41,44
-5,Ávila,254,Velayos,213,106,107
-5,Ávila,256,Villaflor,117,62,55
-5,Ávila,257,Villafranca de la Sierra,132,71,61
-5,Ávila,905,Villanueva de Ávila,254,127,127
-5,Ávila,258,Villanueva de Gómez,132,76,56
-5,Ávila,259,Villanueva del Aceral,122,61,61
-5,Ávila,260,Villanueva del Campillo,103,57,46
-5,Ávila,261,Villar de Corneja,39,22,17
-5,Ávila,262,Villarejo del Valle,363,191,172
-5,Ávila,263,Villatoro,166,96,70
-5,Ávila,264,Viñegra de Moraña,58,34,24
-5,Ávila,265,Vita,87,52,35
-5,Ávila,266,Zapardiel de la Cañada,97,53,44
-5,Ávila,267,Zapardiel de la Ribera,115,60,55
-6,Badajoz,1,Acedera,798,418,380
-6,Badajoz,2,Aceuchal,5461,2706,2755
-6,Badajoz,3,Ahillones,893,443,450
-6,Badajoz,4,Alange,1880,945,935
-6,Badajoz,5,"Albuera, La",2029,1058,971
-6,Badajoz,6,Alburquerque,5340,2667,2673
-6,Badajoz,7,Alconchel,1704,859,845
-6,Badajoz,8,Alconera,730,359,371
-6,Badajoz,9,Aljucén,245,133,112
-6,Badajoz,10,Almendral,1240,607,633
-6,Badajoz,11,Almendralejo,33468,16588,16880
-6,Badajoz,12,Arroyo de San Serván,4126,2102,2024
-6,Badajoz,13,Atalaya,293,150,143
-6,Badajoz,14,Azuaga,7891,3914,3977
-6,Badajoz,15,Badajoz,150530,72988,77542
-6,Badajoz,16,Barcarrota,3580,1822,1758
-6,Badajoz,17,Baterno,293,156,137
-6,Badajoz,18,Benquerencia de la Serena,841,417,424
-6,Badajoz,19,Berlanga,2360,1192,1168
-6,Badajoz,20,Bienvenida,2128,1101,1027
-6,Badajoz,21,Bodonal de la Sierra,1052,539,513
-6,Badajoz,22,Burguillos del Cerro,3085,1524,1561
-6,Badajoz,23,Cabeza del Buey,4929,2441,2488
-6,Badajoz,24,Cabeza la Vaca,1331,679,652
-6,Badajoz,25,Calamonte,6241,3101,3140
-6,Badajoz,26,Calera de León,969,490,479
-6,Badajoz,27,Calzadilla de los Barros,769,383,386
-6,Badajoz,28,Campanario,4967,2442,2525
-6,Badajoz,29,Campillo de Llerena,1373,693,680
-6,Badajoz,30,Capilla,186,96,90
-6,Badajoz,31,Carmonita,551,276,275
-6,Badajoz,32,"Carrascalejo, El",67,33,34
-6,Badajoz,33,Casas de Don Pedro,1483,762,721
-6,Badajoz,34,Casas de Reina,191,94,97
-6,Badajoz,35,Castilblanco,972,498,474
-6,Badajoz,36,Castuera,5921,2919,3002
-6,Badajoz,42,Cheles,1210,587,623
-6,Badajoz,37,"Codosera, La",2119,1121,998
-6,Badajoz,38,Cordobilla de Lácara,916,471,445
-6,Badajoz,39,"Coronada, La",2182,1065,1117
-6,Badajoz,40,Corte de Peleas,1238,607,631
-6,Badajoz,41,Cristina,567,293,274
-6,Badajoz,43,Don Álvaro,768,395,373
-6,Badajoz,44,Don Benito,37010,18268,18742
-6,Badajoz,45,Entrín Bajo,569,287,282
-6,Badajoz,46,Esparragalejo,1459,720,739
-6,Badajoz,47,Esparragosa de la Serena,1031,528,503
-6,Badajoz,48,Esparragosa de Lares,938,451,487
-6,Badajoz,49,Feria,1150,560,590
-6,Badajoz,50,Fregenal de la Sierra,4918,2419,2499
-6,Badajoz,51,Fuenlabrada de los Montes,1879,931,948
-6,Badajoz,52,Fuente de Cantos,4784,2367,2417
-6,Badajoz,53,Fuente del Arco,697,350,347
-6,Badajoz,54,Fuente del Maestre,6774,3367,3407
-6,Badajoz,55,Fuentes de León,2311,1142,1169
-6,Badajoz,56,Garbayuela,522,277,245
-6,Badajoz,57,Garlitos,599,312,287
-6,Badajoz,58,"Garrovilla, La",2401,1206,1195
-6,Badajoz,59,Granja de Torrehermosa,2041,1013,1028
-6,Badajoz,903,Guadiana del Caudillo,2518,1237,1281
-6,Badajoz,60,Guareña,7006,3530,3476
-6,Badajoz,61,"Haba, La",1247,622,625
-6,Badajoz,62,Helechosa de los Montes,653,368,285
-6,Badajoz,63,Herrera del Duque,3485,1748,1737
-6,Badajoz,64,Higuera de la Serena,941,492,449
-6,Badajoz,65,Higuera de Llerena,343,174,169
-6,Badajoz,66,Higuera de Vargas,1950,982,968
-6,Badajoz,67,Higuera la Real,2264,1134,1130
-6,Badajoz,68,Hinojosa del Valle,489,238,251
-6,Badajoz,69,Hornachos,3639,1832,1807
-6,Badajoz,70,Jerez de los Caballeros,9367,4610,4757
-6,Badajoz,71,"Lapa, La",284,143,141
-6,Badajoz,73,Llera,860,446,414
-6,Badajoz,74,Llerena,5758,2861,2897
-6,Badajoz,72,Lobón,2757,1414,1343
-6,Badajoz,75,Magacela,526,280,246
-6,Badajoz,76,Maguilla,970,478,492
-6,Badajoz,77,Malcocinado,374,203,171
-6,Badajoz,78,Malpartida de la Serena,569,294,275
-6,Badajoz,79,Manchita,763,391,372
-6,Badajoz,80,Medellín,2276,1134,1142
-6,Badajoz,81,Medina de las Torres,1207,621,586
-6,Badajoz,82,Mengabril,472,254,218
-6,Badajoz,83,Mérida,59352,28958,30394
-6,Badajoz,84,Mirandilla,1300,659,641
-6,Badajoz,85,Monesterio,4254,2189,2065
-6,Badajoz,86,Montemolín,1367,659,708
-6,Badajoz,87,Monterrubio de la Serena,2415,1177,1238
-6,Badajoz,88,Montijo,15614,7721,7893
-6,Badajoz,89,"Morera, La",719,365,354
-6,Badajoz,90,"Nava de Santiago, La",949,482,467
-6,Badajoz,91,Navalvillar de Pela,4444,2258,2186
-6,Badajoz,92,Nogales,666,330,336
-6,Badajoz,93,Oliva de la Frontera,5195,2601,2594
-6,Badajoz,94,Oliva de Mérida,1734,892,842
-6,Badajoz,95,Olivenza,11986,5977,6009
-6,Badajoz,96,Orellana de la Sierra,235,123,112
-6,Badajoz,97,Orellana la Vieja,2729,1415,1314
-6,Badajoz,98,Palomas,686,342,344
-6,Badajoz,99,"Parra, La",1360,705,655
-6,Badajoz,100,Peñalsordo,949,450,499
-6,Badajoz,101,Peraleda del Zaucejo,512,259,253
-6,Badajoz,102,Puebla de Alcocer,1188,585,603
-6,Badajoz,103,Puebla de la Calzada,5876,2933,2943
-6,Badajoz,104,Puebla de la Reina,745,374,371
-6,Badajoz,107,Puebla de Obando,1868,938,930
-6,Badajoz,108,Puebla de Sancho Pérez,2731,1377,1354
-6,Badajoz,105,Puebla del Maestre,698,356,342
-6,Badajoz,106,Puebla del Prior,500,256,244
-6,Badajoz,902,Pueblonuevo del Guadiana,2033,1032,1001
-6,Badajoz,109,Quintana de la Serena,4650,2354,2296
-6,Badajoz,110,Reina,159,79,80
-6,Badajoz,111,Rena,622,320,302
-6,Badajoz,112,Retamal de Llerena,443,226,217
-6,Badajoz,113,Ribera del Fresno,3357,1664,1693
-6,Badajoz,114,Risco,141,72,69
-6,Badajoz,115,"Roca de la Sierra, La",1473,727,746
-6,Badajoz,116,Salvaleón,1800,907,893
-6,Badajoz,117,Salvatierra de los Barros,1664,811,853
-6,Badajoz,119,San Pedro de Mérida,837,433,404
-6,Badajoz,123,San Vicente de Alcántara,5475,2756,2719
-6,Badajoz,118,Sancti-Spíritus,175,100,75
-6,Badajoz,120,Santa Amalia,4059,2056,2003
-6,Badajoz,121,Santa Marta,4176,2109,2067
-6,Badajoz,122,"Santos de Maimona, Los",8126,4104,4022
-6,Badajoz,124,Segura de León,1921,951,970
-6,Badajoz,125,Siruela,1912,962,950
-6,Badajoz,126,Solana de los Barros,2645,1317,1328
-6,Badajoz,127,Talarrubias,3420,1704,1716
-6,Badajoz,128,Talavera la Real,5376,2681,2695
-6,Badajoz,129,Táliga,681,341,340
-6,Badajoz,130,Tamurejo,215,111,104
-6,Badajoz,131,Torre de Miguel Sesmero,1265,648,617
-6,Badajoz,132,Torremayor,973,465,508
-6,Badajoz,133,Torremejía,2264,1168,1096
-6,Badajoz,134,Trasierra,633,334,299
-6,Badajoz,135,Trujillanos,1401,720,681
-6,Badajoz,136,Usagre,1777,879,898
-6,Badajoz,137,Valdecaballeros,1074,555,519
-6,Badajoz,901,Valdelacalzada,2734,1398,1336
-6,Badajoz,138,Valdetorres,1179,577,602
-6,Badajoz,139,Valencia de las Torres,578,305,273
-6,Badajoz,140,Valencia del Mombuey,731,368,363
-6,Badajoz,141,Valencia del Ventoso,2008,994,1014
-6,Badajoz,146,Valle de la Serena,1224,620,604
-6,Badajoz,147,Valle de Matamoros,367,180,187
-6,Badajoz,148,Valle de Santa Ana,1152,565,587
-6,Badajoz,142,Valverde de Burguillos,281,150,131
-6,Badajoz,143,Valverde de Leganés,4176,2101,2075
-6,Badajoz,144,Valverde de Llerena,603,299,304
-6,Badajoz,145,Valverde de Mérida,1060,534,526
-6,Badajoz,149,Villafranca de los Barros,12926,6365,6561
-6,Badajoz,150,Villagarcía de la Torre,913,470,443
-6,Badajoz,151,Villagonzalo,1243,603,640
-6,Badajoz,152,Villalba de los Barros,1504,761,743
-6,Badajoz,153,Villanueva de la Serena,25759,12528,13231
-6,Badajoz,154,Villanueva del Fresno,3401,1700,1701
-6,Badajoz,156,Villar de Rena,1383,715,668
-6,Badajoz,155,Villar del Rey,2168,1157,1011
-6,Badajoz,157,Villarta de los Montes,444,226,218
-6,Badajoz,158,Zafra,16776,8086,8690
-6,Badajoz,159,Zahínos,2805,1399,1406
-6,Badajoz,160,Zalamea de la Serena,3606,1810,1796
-6,Badajoz,162,"Zarza, La",3508,1783,1725
-6,Badajoz,161,Zarza-Capilla,310,157,153
-7,"Balears, Illes",2,Alaior,9012,4520,4492
-7,"Balears, Illes",1,Alaró,5494,2658,2836
-7,"Balears, Illes",3,Alcúdia,19793,9974,9819
-7,"Balears, Illes",4,Algaida,5529,2822,2707
-7,"Balears, Illes",5,Andratx,11004,5470,5534
-7,"Balears, Illes",901,Ariany,860,451,409
-7,"Balears, Illes",6,Artà,7671,3844,3827
-7,"Balears, Illes",7,Banyalbufar,503,265,238
-7,"Balears, Illes",8,Binissalem,8316,4130,4186
-7,"Balears, Illes",9,Búger,1054,545,509
-7,"Balears, Illes",10,Bunyola,6714,3284,3430
-7,"Balears, Illes",11,Calvià,49333,24727,24606
-7,"Balears, Illes",12,Campanet,2612,1302,1310
-7,"Balears, Illes",13,Campos,10610,5268,5342
-7,"Balears, Illes",14,Capdepera,11600,5907,5693
-7,"Balears, Illes",64,"Castell, Es",7348,3723,3625
-7,"Balears, Illes",15,Ciutadella de Menorca,29223,14483,14740
-7,"Balears, Illes",16,Consell,4008,2012,1996
-7,"Balears, Illes",17,Costitx,1271,624,647
-7,"Balears, Illes",18,Deià,620,293,327
-7,"Balears, Illes",26,Eivissa,49727,24984,24743
-7,"Balears, Illes",19,Escorca,211,129,82
-7,"Balears, Illes",20,Esporles,5020,2478,2542
-7,"Balears, Illes",21,Estellencs,318,171,147
-7,"Balears, Illes",22,Felanitx,17497,8801,8696
-7,"Balears, Illes",23,Ferreries,4695,2335,2360
-7,"Balears, Illes",24,Formentera,12216,6428,5788
-7,"Balears, Illes",25,Fornalutx,678,332,346
-7,"Balears, Illes",27,Inca,32137,16169,15968
-7,"Balears, Illes",28,Lloret de Vistalegre,1289,652,637
-7,"Balears, Illes",29,Lloseta,5858,2941,2917
-7,"Balears, Illes",30,Llubí,2243,1131,1112
-7,"Balears, Illes",31,Llucmajor,36358,18444,17914
-7,"Balears, Illes",33,Manacor,42631,21270,21361
-7,"Balears, Illes",34,Mancor de la Vall,1455,738,717
-7,"Balears, Illes",32,Maó-Mahón,28592,13990,14602
-7,"Balears, Illes",35,Maria de la Salut,2143,1108,1035
-7,"Balears, Illes",36,Marratxí,36725,18495,18230
-7,"Balears, Illes",37,"Mercadal, Es",4788,2428,2360
-7,"Balears, Illes",902,"Migjorn Gran, Es",1370,683,687
-7,"Balears, Illes",38,Montuïri,2867,1449,1418
-7,"Balears, Illes",39,Muro,6931,3504,3427
-7,"Balears, Illes",40,Palma,409661,199652,210009
-7,"Balears, Illes",41,Petra,2825,1399,1426
-7,"Balears, Illes",44,"Pobla, Sa",13026,6623,6403
-7,"Balears, Illes",42,Pollença,16189,8059,8130
-7,"Balears, Illes",43,Porreres,5339,2722,2617
-7,"Balears, Illes",45,Puigpunyent,1967,974,993
-7,"Balears, Illes",59,"Salines, Ses",4877,2474,2403
-7,"Balears, Illes",46,Sant Antoni de Portmany,25779,13529,12250
-7,"Balears, Illes",49,Sant Joan,2083,1023,1060
-7,"Balears, Illes",50,Sant Joan de Labritja,6200,3153,3047
-7,"Balears, Illes",48,Sant Josep de sa Talaia,26496,13663,12833
-7,"Balears, Illes",51,Sant Llorenç des Cardassar,8405,4151,4254
-7,"Balears, Illes",52,Sant Lluís,6892,3494,3398
-7,"Balears, Illes",53,Santa Eugènia,1671,831,840
-7,"Balears, Illes",54,Santa Eulària des Riu,36457,18517,17940
-7,"Balears, Illes",55,Santa Margalida,11958,6108,5850
-7,"Balears, Illes",56,Santa María del Camí,7167,3564,3603
-7,"Balears, Illes",57,Santanyí,12112,6089,6023
-7,"Balears, Illes",58,Selva,3981,1994,1987
-7,"Balears, Illes",47,Sencelles,3195,1615,1580
-7,"Balears, Illes",60,Sineu,3764,1866,1898
-7,"Balears, Illes",61,Sóller,14041,7050,6991
-7,"Balears, Illes",62,Son Servera,11378,5696,5682
-7,"Balears, Illes",63,Valldemossa,1945,989,956
-7,"Balears, Illes",65,Vilafranca de Bonany,3176,1606,1570
-8,Barcelona,1,Abrera,12334,6248,6086
-8,Barcelona,2,Aguilar de Segarra,277,148,129
-8,Barcelona,14,Aiguafreda,2501,1204,1297
-8,Barcelona,3,Alella,9764,4751,5013
-8,Barcelona,4,Alpens,273,146,127
-8,Barcelona,5,"Ametlla del Vallès, L'",8496,4285,4211
-8,Barcelona,6,Arenys de Mar,15533,7536,7997
-8,Barcelona,7,Arenys de Munt,8838,4439,4399
-8,Barcelona,8,Argençola,219,110,109
-8,Barcelona,9,Argentona,12295,6053,6242
-8,Barcelona,10,Artés,5648,2851,2797
-8,Barcelona,11,Avià,2250,1120,1130
-8,Barcelona,12,Avinyó,2250,1120,1130
-8,Barcelona,13,Avinyonet del Penedès,1669,887,782
-8,Barcelona,15,Badalona,217741,107092,110649
-8,Barcelona,904,Badia del Vallès,13417,6565,6852
-8,Barcelona,16,Bagà,2152,1075,1077
-8,Barcelona,17,Balenyà,3783,1907,1876
-8,Barcelona,18,Balsareny,3205,1586,1619
-8,Barcelona,252,Barberà del Vallès,32839,16167,16672
-8,Barcelona,19,Barcelona,1620343,765962,854381
-8,Barcelona,20,Begues,6961,3440,3521
-8,Barcelona,21,Bellprat,74,46,28
-8,Barcelona,22,Berga,16199,7979,8220
-8,Barcelona,23,Bigues i Riells,9003,4587,4416
-8,Barcelona,24,Borredà,456,257,199
-8,Barcelona,25,"Bruc, El",2027,1095,932
-8,Barcelona,26,"Brull, El",257,142,115
-8,Barcelona,27,"Cabanyes, Les",965,492,473
-8,Barcelona,28,Cabrera d'Anoia,1376,726,650
-8,Barcelona,29,Cabrera de Mar,4664,2346,2318
-8,Barcelona,30,Cabrils,7348,3626,3722
-8,Barcelona,31,Calaf,3547,1790,1757
-8,Barcelona,34,Calders,946,488,458
-8,Barcelona,33,Caldes de Montbui,17449,8669,8780
-8,Barcelona,32,Caldes d'Estrac,2859,1380,1479
-8,Barcelona,35,Calella,18728,9152,9576
-8,Barcelona,37,Calldetenes,2497,1265,1232
-8,Barcelona,38,Callús,2095,1025,1070
-8,Barcelona,36,Calonge de Segarra,191,95,96
-8,Barcelona,39,Campins,515,272,243
-8,Barcelona,40,Canet de Mar,14583,7075,7508
-8,Barcelona,41,Canovelles,16317,8458,7859
-8,Barcelona,42,Cànoves i Samalús,2995,1521,1474
-8,Barcelona,43,Canyelles,4481,2310,2171
-8,Barcelona,44,Capellades,5211,2572,2639
-8,Barcelona,45,Capolat,96,45,51
-8,Barcelona,46,Cardedeu,18165,8892,9273
-8,Barcelona,47,Cardona,4652,2271,2381
-8,Barcelona,48,Carme,783,398,385
-8,Barcelona,49,Casserres,1572,780,792
-8,Barcelona,57,Castell de l'Areny,72,41,31
-8,Barcelona,52,Castellar de n'Hug,165,86,79
-8,Barcelona,50,Castellar del Riu,165,92,73
-8,Barcelona,51,Castellar del Vallès,24036,11855,12181
-8,Barcelona,53,Castellbell i el Vilar,3599,1841,1758
-8,Barcelona,54,Castellbisbal,12332,6244,6088
-8,Barcelona,55,Castellcir,728,377,351
-8,Barcelona,56,Castelldefels,66375,32747,33628
-8,Barcelona,58,Castellet i la Gornal,2247,1147,1100
-8,Barcelona,60,Castellfollit de Riubregós,156,90,66
-8,Barcelona,59,Castellfollit del Boix,446,228,218
-8,Barcelona,61,Castellgalí,2053,1065,988
-8,Barcelona,62,Castellnou de Bages,1319,666,653
-8,Barcelona,63,Castellolí,610,295,315
-8,Barcelona,64,Castellterçol,2418,1208,1210
-8,Barcelona,65,Castellví de la Marca,1534,772,762
-8,Barcelona,66,Castellví de Rosanes,1865,917,948
-8,Barcelona,67,Centelles,7423,3643,3780
-8,Barcelona,268,Cercs,1152,567,585
-8,Barcelona,266,Cerdanyola del Vallès,57740,28259,29481
-8,Barcelona,68,Cervelló,8970,4495,4475
-8,Barcelona,69,Collbató,4458,2304,2154
-8,Barcelona,70,Collsuspina,339,173,166
-8,Barcelona,71,Copons,306,151,155
-8,Barcelona,72,Corbera de Llobregat,14643,7357,7286
-8,Barcelona,73,Cornellà de Llobregat,87173,42226,44947
-8,Barcelona,74,Cubelles,14992,7554,7438
-8,Barcelona,75,Dosrius,5281,2681,2600
-8,Barcelona,76,Esparreguera,22045,11153,10892
-8,Barcelona,77,Esplugues de Llobregat,46355,22144,24211
-8,Barcelona,78,"Espunyola, L'",258,130,128
-8,Barcelona,254,"Esquirol, L'",2141,1083,1058
-8,Barcelona,79,"Estany, L'",393,193,200
-8,Barcelona,134,Figaró-Montmany,1109,551,558
-8,Barcelona,80,Fígols,42,25,17
-8,Barcelona,82,Fogars de la Selva,1467,753,714
-8,Barcelona,81,Fogars de Montclús,466,245,221
-8,Barcelona,83,Folgueroles,2276,1156,1120
-8,Barcelona,84,Fonollosa,1439,743,696
-8,Barcelona,85,Font-rubí,1354,702,652
-8,Barcelona,86,"Franqueses del Vallès, Les",19768,10003,9765
-8,Barcelona,90,Gaià,167,93,74
-8,Barcelona,87,Gallifa,169,90,79
-8,Barcelona,88,"Garriga, La",16227,7861,8366
-8,Barcelona,89,Gavà,46705,22916,23789
-8,Barcelona,91,Gelida,7371,3700,3671
-8,Barcelona,92,Gironella,4834,2396,2438
-8,Barcelona,93,Gisclareny,26,15,11
-8,Barcelona,94,"Granada, La",2130,1077,1053
-8,Barcelona,95,Granera,80,56,24
-8,Barcelona,96,Granollers,60981,30023,30958
-8,Barcelona,97,Gualba,1481,750,731
-8,Barcelona,99,Guardiola de Berguedà,887,458,429
-8,Barcelona,100,Gurb,2654,1360,1294
-8,Barcelona,101,"Hospitalet de Llobregat, L'",261068,126066,135002
-8,Barcelona,162,"Hostalets de Pierola, Els",2930,1502,1428
-8,Barcelona,102,Igualada,39540,19393,20147
-8,Barcelona,103,Jorba,841,431,410
-8,Barcelona,104,"Llacuna, La",863,469,394
-8,Barcelona,105,"Llagosta, La",13367,6595,6772
-8,Barcelona,107,Lliçà d'Amunt,15111,7738,7373
-8,Barcelona,108,Lliçà de Vall,6480,3299,3181
-8,Barcelona,106,Llinars del Vallès,9838,4907,4931
-8,Barcelona,109,Lluçà,276,135,141
-8,Barcelona,110,Malgrat de Mar,18439,9217,9222
-8,Barcelona,111,Malla,271,140,131
-8,Barcelona,112,Manlleu,20194,10068,10126
-8,Barcelona,113,Manresa,76250,37311,38939
-8,Barcelona,242,Marganell,258,127,131
-8,Barcelona,114,Martorell,27850,14179,13671
-8,Barcelona,115,Martorelles,4794,2410,2384
-8,Barcelona,116,"Masies de Roda, Les",704,354,350
-8,Barcelona,117,"Masies de Voltregà, Les",3124,1543,1581
-8,Barcelona,118,"Masnou, El",23340,11266,12074
-8,Barcelona,119,Masquefa,8641,4338,4303
-8,Barcelona,120,Matadepera,9291,4666,4625
-8,Barcelona,121,Mataró,126988,62945,64043
-8,Barcelona,122,Mediona,2331,1170,1161
-8,Barcelona,138,Moià,6190,3147,3043
-8,Barcelona,123,Molins de Rei,25687,12499,13188
-8,Barcelona,124,Mollet del Vallès,51133,25152,25981
-8,Barcelona,128,Monistrol de Calders,677,357,320
-8,Barcelona,127,Monistrol de Montserrat,2955,1501,1454
-8,Barcelona,125,Montcada i Reixac,35599,17522,18077
-8,Barcelona,130,Montclar,129,66,63
-8,Barcelona,131,Montesquiu,968,492,476
-8,Barcelona,126,Montgat,11819,5832,5987
-8,Barcelona,132,Montmajor,465,237,228
-8,Barcelona,133,Montmaneu,154,88,66
-8,Barcelona,135,Montmeló,8784,4298,4486
-8,Barcelona,136,Montornès del Vallès,16263,8167,8096
-8,Barcelona,137,Montseny,321,166,155
-8,Barcelona,129,Muntanyola,620,316,304
-8,Barcelona,139,Mura,223,121,102
-8,Barcelona,140,Navarcles,5966,2917,3049
-8,Barcelona,141,Navàs,6023,2988,3035
-8,Barcelona,142,"Nou de Berguedà, La",160,81,79
-8,Barcelona,143,Òdena,3608,1847,1761
-8,Barcelona,145,Olèrdola,3611,1855,1756
-8,Barcelona,146,Olesa de Bonesvalls,1787,941,846
-8,Barcelona,147,Olesa de Montserrat,23779,11860,11919
-8,Barcelona,148,Olivella,3729,1962,1767
-8,Barcelona,149,Olost,1188,587,601
-8,Barcelona,144,Olvan,837,405,432
-8,Barcelona,150,Orís,310,156,154
-8,Barcelona,151,Oristà,537,268,269
-8,Barcelona,152,Orpí,136,75,61
-8,Barcelona,153,Òrrius,730,375,355
-8,Barcelona,154,Pacs del Penedès,908,455,453
-8,Barcelona,155,Palafolls,9256,4652,4604
-8,Barcelona,156,Palau-solità i Plegamans,14636,7160,7476
-8,Barcelona,157,Pallejà,11486,5725,5761
-8,Barcelona,905,"Palma de Cervelló, La",2982,1458,1524
-8,Barcelona,158,"Papiol, El",4103,2031,2072
-8,Barcelona,159,Parets del Vallès,19041,9551,9490
-8,Barcelona,160,Perafita,412,210,202
-8,Barcelona,161,Piera,15362,7848,7514
-8,Barcelona,163,Pineda de Mar,26659,13254,13405
-8,Barcelona,164,"Pla del Penedès, El",1259,634,625
-8,Barcelona,165,"Pobla de Claramunt, La",2177,1109,1068
-8,Barcelona,166,"Pobla de Lillet, La",1101,535,566
-8,Barcelona,167,Polinyà,8389,4230,4159
-8,Barcelona,182,"Pont de Vilomara i Rocafort, El",3801,1959,1842
-8,Barcelona,168,Pontons,458,258,200
-8,Barcelona,169,"Prat de Llobregat, El",64132,31413,32719
-8,Barcelona,171,Prats de Lluçanès,2537,1273,1264
-8,Barcelona,170,"Prats de Rei, Els",545,288,257
-8,Barcelona,230,Premià de Dalt,10429,5206,5223
-8,Barcelona,172,Premià de Mar,28071,13720,14351
-8,Barcelona,174,Puigdàlber,518,257,261
-8,Barcelona,175,Puig-reig,4094,2024,2070
-8,Barcelona,176,Pujalt,207,113,94
-8,Barcelona,177,"Quar, La",60,32,28
-8,Barcelona,178,Rajadell,539,274,265
-8,Barcelona,179,Rellinars,747,386,361
-8,Barcelona,180,Ripollet,38347,18980,19367
-8,Barcelona,181,"Roca del Vallès, La",10666,5314,5352
-8,Barcelona,183,Roda de Ter,6197,3039,3158
-8,Barcelona,184,Rubí,76423,37840,38583
-8,Barcelona,185,Rubió,232,129,103
-8,Barcelona,901,Rupit i Pruit,279,139,140
-8,Barcelona,187,Sabadell,211734,102927,108807
-8,Barcelona,188,Sagàs,161,90,71
-8,Barcelona,190,Saldes,265,154,111
-8,Barcelona,191,Sallent,6636,3194,3442
-8,Barcelona,194,Sant Adrià de Besòs,36669,18028,18641
-8,Barcelona,195,Sant Agustí de Lluçanès,87,44,43
-8,Barcelona,196,Sant Andreu de la Barca,27332,13552,13780
-8,Barcelona,197,Sant Andreu de Llavaneres,10877,5370,5507
-8,Barcelona,198,Sant Antoni de Vilamajor,6095,3032,3063
-8,Barcelona,199,Sant Bartomeu del Grau,840,446,394
-8,Barcelona,200,Sant Boi de Llobregat,82904,40601,42303
-8,Barcelona,201,Sant Boi de Lluçanès,532,260,272
-8,Barcelona,203,Sant Cebrià de Vallalta,3344,1743,1601
-8,Barcelona,202,Sant Celoni,17754,8833,8921
-8,Barcelona,204,Sant Climent de Llobregat,4107,2074,2033
-8,Barcelona,205,Sant Cugat del Vallès,90664,44106,46558
-8,Barcelona,206,Sant Cugat Sesgarrigues,989,474,515
-8,Barcelona,207,Sant Esteve de Palautordera,2749,1359,1390
-8,Barcelona,208,Sant Esteve Sesrovires,7800,3920,3880
-8,Barcelona,210,Sant Feliu de Codines,6184,3132,3052
-8,Barcelona,211,Sant Feliu de Llobregat,44474,21536,22938
-8,Barcelona,212,Sant Feliu Sasserra,600,316,284
-8,Barcelona,209,Sant Fost de Campsentelles,8722,4330,4392
-8,Barcelona,213,Sant Fruitós de Bages,8593,4256,4337
-8,Barcelona,215,Sant Hipòlit de Voltregà,3475,1721,1754
-8,Barcelona,193,Sant Iscle de Vallalta,1313,677,636
-8,Barcelona,216,Sant Jaume de Frontanyà,30,18,12
-8,Barcelona,218,Sant Joan de Vilatorrada,10820,5422,5398
-8,Barcelona,217,Sant Joan Despí,34084,16569,17515
-8,Barcelona,903,Sant Julià de Cerdanyola,244,133,111
-8,Barcelona,220,Sant Julià de Vilatorta,3096,1529,1567
-8,Barcelona,221,Sant Just Desvern,17494,8361,9133
-8,Barcelona,222,Sant Llorenç d'Hortons,2598,1323,1275
-8,Barcelona,223,Sant Llorenç Savall,2371,1190,1181
-8,Barcelona,225,Sant Martí d'Albars,113,56,57
-8,Barcelona,224,Sant Martí de Centelles,1131,590,541
-8,Barcelona,226,Sant Martí de Tous,1206,616,590
-8,Barcelona,227,Sant Martí Sarroca,3231,1591,1640
-8,Barcelona,228,Sant Martí Sesgueioles,344,179,165
-8,Barcelona,229,Sant Mateu de Bages,600,300,300
-8,Barcelona,231,Sant Pere de Ribes,30658,15311,15347
-8,Barcelona,232,Sant Pere de Riudebitlles,2338,1161,1177
-8,Barcelona,233,Sant Pere de Torelló,2419,1251,1168
-8,Barcelona,234,Sant Pere de Vilamajor,4371,2168,2203
-8,Barcelona,189,Sant Pere Sallavinera,155,84,71
-8,Barcelona,235,Sant Pol de Mar,5178,2563,2615
-8,Barcelona,236,Sant Quintí de Mediona,2179,1119,1060
-8,Barcelona,237,Sant Quirze de Besora,2107,1027,1080
-8,Barcelona,238,Sant Quirze del Vallès,19939,9754,10185
-8,Barcelona,239,Sant Quirze Safaja,637,332,305
-8,Barcelona,240,Sant Sadurní d'Anoia,12866,6322,6544
-8,Barcelona,241,Sant Sadurní d'Osormort,79,46,33
-8,Barcelona,98,Sant Salvador de Guardiola,3168,1624,1544
-8,Barcelona,262,Sant Vicenç de Castellet,9274,4620,4654
-8,Barcelona,264,Sant Vicenç de Montalt,6372,3194,3178
-8,Barcelona,265,Sant Vicenç de Torelló,2014,993,1021
-8,Barcelona,263,Sant Vicenç dels Horts,27901,13846,14055
-8,Barcelona,243,Santa Cecília de Voltregà,187,96,91
-8,Barcelona,244,Santa Coloma de Cervelló,8179,4018,4161
-8,Barcelona,245,Santa Coloma de Gramenet,118821,58849,59972
-8,Barcelona,246,Santa Eugènia de Berga,2226,1130,1096
-8,Barcelona,247,Santa Eulàlia de Riuprimer,1309,670,639
-8,Barcelona,248,Santa Eulàlia de Ronçana,7192,3601,3591
-8,Barcelona,249,Santa Fe del Penedès,379,191,188
-8,Barcelona,250,Santa Margarida de Montbui,9874,4940,4934
-8,Barcelona,251,Santa Margarida i els Monjos,7503,3802,3701
-8,Barcelona,253,Santa Maria de Besora,143,72,71
-8,Barcelona,256,Santa Maria de Martorelles,882,439,443
-8,Barcelona,255,Santa Maria de Merlès,183,90,93
-8,Barcelona,257,Santa Maria de Miralles,128,69,59
-8,Barcelona,259,Santa Maria de Palautordera,9325,4673,4652
-8,Barcelona,258,Santa Maria d'Oló,1024,516,508
-8,Barcelona,260,Santa Perpètua de Mogoda,25705,12933,12772
-8,Barcelona,261,Santa Susanna,3381,1700,1681
-8,Barcelona,192,Santpedor,7532,3739,3793
-8,Barcelona,267,Sentmenat,8957,4532,4425
-8,Barcelona,269,Seva,3472,1746,1726
-8,Barcelona,270,Sitges,28969,14476,14493
-8,Barcelona,271,Sobremunt,79,34,45
-8,Barcelona,272,Sora,205,115,90
-8,Barcelona,273,Subirats,3025,1556,1469
-8,Barcelona,274,Súria,5895,2874,3021
-8,Barcelona,276,Tagamanent,333,174,159
-8,Barcelona,277,Talamanca,202,115,87
-8,Barcelona,278,Taradell,6412,3188,3224
-8,Barcelona,275,Tavèrnoles,320,159,161
-8,Barcelona,280,Tavertet,111,58,53
-8,Barcelona,281,Teià,6312,3093,3219
-8,Barcelona,279,Terrassa,218535,107540,110995
-8,Barcelona,282,Tiana,8709,4170,4539
-8,Barcelona,283,Tona,8131,4024,4107
-8,Barcelona,284,Tordera,16937,8576,8361
-8,Barcelona,285,Torelló,14172,7021,7151
-8,Barcelona,286,"Torre de Claramunt, La",3716,1911,1805
-8,Barcelona,287,Torrelavit,1430,736,694
-8,Barcelona,288,Torrelles de Foix,2281,1219,1062
-8,Barcelona,289,Torrelles de Llobregat,5945,2941,3004
-8,Barcelona,290,Ullastrell,2069,1038,1031
-8,Barcelona,291,Vacarisses,6486,3340,3146
-8,Barcelona,292,Vallbona d'Anoia,1399,729,670
-8,Barcelona,293,Vallcebre,246,139,107
-8,Barcelona,294,Vallgorguina,2854,1427,1427
-8,Barcelona,295,Vallirana,14877,7441,7436
-8,Barcelona,296,Vallromanes,2530,1297,1233
-8,Barcelona,297,Veciana,170,95,75
-8,Barcelona,298,Vic,45040,22626,22414
-8,Barcelona,299,Vilada,430,226,204
-8,Barcelona,301,Viladecans,66168,32785,33383
-8,Barcelona,300,Viladecavalls,7480,3707,3773
-8,Barcelona,305,Vilafranca del Penedès,40055,19552,20503
-8,Barcelona,306,Vilalba Sasserra,688,343,345
-8,Barcelona,303,Vilanova de Sau,308,143,165
-8,Barcelona,302,Vilanova del Camí,12361,6178,6183
-8,Barcelona,902,Vilanova del Vallès,5339,2701,2638
-8,Barcelona,307,Vilanova i la Geltrú,66274,32079,34195
-8,Barcelona,214,Vilassar de Dalt,9013,4435,4578
-8,Barcelona,219,Vilassar de Mar,20764,10018,10746
-8,Barcelona,304,Vilobí del Penedès,1106,582,524
-8,Barcelona,308,Viver i Serrateix,164,86,78
+05,Ávila,1,Adanero,202,113,89
+05,Ávila,2,"Adrada, La",2517,1298,1219
+05,Ávila,5,Albornos,190,100,90
+05,Ávila,7,Aldeanueva de Santa Cruz,119,63,56
+05,Ávila,8,Aldeaseca,233,115,118
+05,Ávila,10,"Aldehuela, La",168,85,83
+05,Ávila,12,Amavida,135,69,66
+05,Ávila,13,"Arenal, El",972,495,477
+05,Ávila,14,Arenas de San Pedro,6454,3135,3319
+05,Ávila,15,Arevalillo,75,35,40
+05,Ávila,16,Arévalo,8069,3919,4150
+05,Ávila,17,Aveinte,86,49,37
+05,Ávila,18,Avellaneda,26,15,11
+05,Ávila,19,Ávila,57657,27472,30185
+05,Ávila,21,"Barco de Ávila, El",2368,1145,1223
+05,Ávila,22,"Barraco, El",1889,976,913
+05,Ávila,23,Barromán,186,103,83
+05,Ávila,24,Becedas,206,108,98
+05,Ávila,25,Becedillas,90,50,40
+05,Ávila,26,Bercial de Zapardiel,199,106,93
+05,Ávila,27,"Berlanas, Las",323,164,159
+05,Ávila,29,Bernuy-Zapardiel,108,64,44
+05,Ávila,30,Berrocalejo de Aragona,43,22,21
+05,Ávila,33,Blascomillán,193,102,91
+05,Ávila,34,Blasconuño de Matacabras,16,8,8
+05,Ávila,35,Blascosancho,114,57,57
+05,Ávila,36,"Bohodón, El",126,62,64
+05,Ávila,37,Bohoyo,248,142,106
+05,Ávila,38,Bonilla de la Sierra,120,71,49
+05,Ávila,39,Brabos,44,27,17
+05,Ávila,40,Bularros,65,43,22
+05,Ávila,41,Burgohondo,1196,621,575
+05,Ávila,42,Cabezas de Alambre,157,77,80
+05,Ávila,43,Cabezas del Pozo,84,44,40
+05,Ávila,44,Cabezas del Villar,275,150,125
+05,Ávila,45,Cabizuela,82,43,39
+05,Ávila,46,Canales,48,26,22
+05,Ávila,47,Candeleda,4998,2528,2470
+05,Ávila,48,Cantiveros,112,63,49
+05,Ávila,49,Cardeñosa,452,239,213
+05,Ávila,51,"Carrera, La",181,98,83
+05,Ávila,52,Casas del Puerto,92,48,44
+05,Ávila,53,Casasola,84,46,38
+05,Ávila,54,Casavieja,1429,742,687
+05,Ávila,55,Casillas,637,338,299
+05,Ávila,56,Castellanos de Zapardiel,95,53,42
+05,Ávila,57,Cebreros,3056,1576,1480
+05,Ávila,58,Cepeda la Mora,76,43,33
+05,Ávila,67,Chamartín,79,47,32
+05,Ávila,59,Cillán,100,60,40
+05,Ávila,60,Cisla,109,56,53
+05,Ávila,61,"Colilla, La",329,172,157
+05,Ávila,62,Collado de Contreras,179,92,87
+05,Ávila,63,Collado del Mirón,32,20,12
+05,Ávila,64,Constanzana,106,60,46
+05,Ávila,65,Crespos,496,264,232
+05,Ávila,66,Cuevas del Valle,491,271,220
+05,Ávila,903,Diego del Carpio,147,83,64
+05,Ávila,69,Donjimeno,79,45,34
+05,Ávila,70,Donvidas,33,17,16
+05,Ávila,72,Espinosa de los Caballeros,106,57,49
+05,Ávila,73,Flores de Ávila,307,168,139
+05,Ávila,74,Fontiveros,751,391,360
+05,Ávila,75,Fresnedilla,121,56,65
+05,Ávila,76,"Fresno, El",601,312,289
+05,Ávila,77,Fuente el Saúz,165,88,77
+05,Ávila,78,Fuentes de Año,105,59,46
+05,Ávila,79,Gallegos de Altamiros,63,37,26
+05,Ávila,80,Gallegos de Sobrinos,43,21,22
+05,Ávila,81,Garganta del Villar,40,28,12
+05,Ávila,82,Gavilanes,587,317,270
+05,Ávila,83,Gemuño,155,82,73
+05,Ávila,85,Gil García,36,17,19
+05,Ávila,84,Gilbuena,68,40,28
+05,Ávila,86,Gimialcón,77,48,29
+05,Ávila,87,Gotarrendura,161,54,107
+05,Ávila,88,Grandes y San Martín,31,15,16
+05,Ávila,89,Guisando,511,252,259
+05,Ávila,90,Gutierre-Muñoz,78,38,40
+05,Ávila,92,Hernansancho,169,94,75
+05,Ávila,93,Herradón de Pinares,405,230,175
+05,Ávila,94,Herreros de Suso,135,74,61
+05,Ávila,95,Higuera de las Dueñas,267,148,119
+05,Ávila,96,"Hija de Dios, La",78,47,31
+05,Ávila,97,"Horcajada, La",518,274,244
+05,Ávila,99,Horcajo de las Torres,512,287,225
+05,Ávila,100,"Hornillo, El",295,155,140
+05,Ávila,102,"Hoyo de Pinares, El",2164,1123,1041
+05,Ávila,101,Hoyocasero,290,167,123
+05,Ávila,103,Hoyorredondo,67,34,33
+05,Ávila,106,Hoyos de Miguel Muñoz,29,15,14
+05,Ávila,104,Hoyos del Collado,34,20,14
+05,Ávila,105,Hoyos del Espino,363,197,166
+05,Ávila,107,Hurtumpascual,54,33,21
+05,Ávila,108,Junciana,40,21,19
+05,Ávila,109,Langa,487,255,232
+05,Ávila,110,Lanzahíta,844,431,413
+05,Ávila,113,"Llanos de Tormes, Los",64,30,34
+05,Ávila,112,"Losar del Barco, El",110,56,54
+05,Ávila,114,Madrigal de las Altas Torres,1440,732,708
+05,Ávila,115,Maello,596,310,286
+05,Ávila,116,Malpartida de Corneja,102,51,51
+05,Ávila,117,Mamblas,208,119,89
+05,Ávila,118,Mancera de Arriba,74,40,34
+05,Ávila,119,Manjabálago y Ortigosa de Rioalmar,27,18,9
+05,Ávila,120,Marlín,31,20,11
+05,Ávila,121,Martiherrero,317,165,152
+05,Ávila,122,Martínez,122,62,60
+05,Ávila,123,Mediana de Voltoya,105,52,53
+05,Ávila,124,Medinilla,99,45,54
+05,Ávila,125,Mengamuñoz,61,31,30
+05,Ávila,126,Mesegar de Corneja,60,36,24
+05,Ávila,127,Mijares,704,394,310
+05,Ávila,128,Mingorría,395,207,188
+05,Ávila,129,"Mirón, El",124,73,51
+05,Ávila,130,Mironcillo,95,50,45
+05,Ávila,131,Mirueña de los Infanzones,92,54,38
+05,Ávila,132,Mombeltrán,1006,520,486
+05,Ávila,133,Monsalupe,73,38,35
+05,Ávila,134,Moraleja de Matacabras,50,30,20
+05,Ávila,135,Muñana,394,208,186
+05,Ávila,136,Muñico,94,50,44
+05,Ávila,138,Muñogalindo,334,172,162
+05,Ávila,139,Muñogrande,67,37,30
+05,Ávila,140,Muñomer del Peco,128,71,57
+05,Ávila,141,Muñopepe,103,57,46
+05,Ávila,142,Muñosancho,96,45,51
+05,Ávila,143,Muñotello,62,31,31
+05,Ávila,144,Narrillos del Álamo,77,42,35
+05,Ávila,145,Narrillos del Rebollar,50,28,22
+05,Ávila,149,Narros de Saldueña,101,59,42
+05,Ávila,147,Narros del Castillo,161,91,70
+05,Ávila,148,Narros del Puerto,22,11,11
+05,Ávila,152,Nava de Arévalo,753,398,355
+05,Ávila,153,Nava del Barco,93,50,43
+05,Ávila,151,Navacepedilla de Corneja,98,50,48
+05,Ávila,154,Navadijos,34,24,10
+05,Ávila,155,Navaescurial,46,30,16
+05,Ávila,156,Navahondilla,310,180,130
+05,Ávila,157,Navalacruz,247,134,113
+05,Ávila,158,Navalmoral,336,182,154
+05,Ávila,159,Navalonguilla,236,116,120
+05,Ávila,160,Navalosa,321,176,145
+05,Ávila,161,Navalperal de Pinares,777,399,378
+05,Ávila,162,Navalperal de Tormes,90,47,43
+05,Ávila,163,Navaluenga,1878,924,954
+05,Ávila,164,Navaquesera,16,8,8
+05,Ávila,165,Navarredonda de Gredos,434,213,221
+05,Ávila,166,Navarredondilla,168,92,76
+05,Ávila,167,Navarrevisca,279,155,124
+05,Ávila,168,"Navas del Marqués, Las",5139,2616,2523
+05,Ávila,169,Navatalgordo,251,145,106
+05,Ávila,170,Navatejares,55,27,28
+05,Ávila,171,Neila de San Miguel,69,34,35
+05,Ávila,172,Niharra,184,103,81
+05,Ávila,173,Ojos-Albos,63,39,24
+05,Ávila,174,Orbita,75,41,34
+05,Ávila,175,"Oso, El",172,98,74
+05,Ávila,176,Padiernos,272,150,122
+05,Ávila,177,Pajares de Adaja,154,81,73
+05,Ávila,178,Palacios de Goda,402,211,191
+05,Ávila,179,Papatrigo,232,114,118
+05,Ávila,180,"Parral, El",72,39,33
+05,Ávila,181,Pascualcobo,43,29,14
+05,Ávila,182,Pedro Bernardo,844,444,400
+05,Ávila,183,Pedro-Rodríguez,140,74,66
+05,Ávila,184,Peguerinos,272,152,120
+05,Ávila,185,Peñalba de Ávila,113,58,55
+05,Ávila,186,Piedrahíta,1811,869,942
+05,Ávila,187,Piedralaves,2057,1025,1032
+05,Ávila,188,Poveda,45,28,17
+05,Ávila,189,Poyales del Hoyo,482,254,228
+05,Ávila,190,Pozanco,49,30,19
+05,Ávila,191,Pradosegar,126,64,62
+05,Ávila,192,Puerto Castilla,107,66,41
+05,Ávila,193,Rasueros,181,103,78
+05,Ávila,194,Riocabado,146,82,64
+05,Ávila,195,Riofrío,227,135,92
+05,Ávila,196,Rivilla de Barajas,65,28,37
+05,Ávila,197,Salobral,116,64,52
+05,Ávila,198,Salvadiós,75,35,40
+05,Ávila,199,San Bartolomé de Béjar,42,22,20
+05,Ávila,200,San Bartolomé de Corneja,43,21,22
+05,Ávila,201,San Bartolomé de Pinares,553,297,256
+05,Ávila,206,San Esteban de los Patos,30,18,12
+05,Ávila,208,San Esteban de Zapardiel,36,22,14
+05,Ávila,207,San Esteban del Valle,747,388,359
+05,Ávila,209,San García de Ingelmos,80,48,32
+05,Ávila,901,San Juan de Gredos,251,137,114
+05,Ávila,210,San Juan de la Encinilla,86,43,43
+05,Ávila,211,San Juan de la Nava,473,251,222
+05,Ávila,212,San Juan del Molinillo,199,111,88
+05,Ávila,213,San Juan del Olmo,105,64,41
+05,Ávila,214,San Lorenzo de Tormes,37,21,16
+05,Ávila,215,San Martín de la Vega del Alberche,174,104,70
+05,Ávila,216,San Martín del Pimpollar,189,109,80
+05,Ávila,217,San Miguel de Corneja,55,30,25
+05,Ávila,218,San Miguel de Serrezuela,125,68,57
+05,Ávila,219,San Pascual,44,26,18
+05,Ávila,220,San Pedro del Arroyo,428,226,202
+05,Ávila,231,San Vicente de Arévalo,171,100,71
+05,Ávila,204,Sanchidrián,726,373,353
+05,Ávila,205,Sanchorreja,86,43,43
+05,Ávila,222,Santa Cruz de Pinares,141,76,65
+05,Ávila,221,Santa Cruz del Valle,365,192,173
+05,Ávila,226,Santa María de los Caballeros,73,44,29
+05,Ávila,224,Santa María del Arroyo,111,58,53
+05,Ávila,225,Santa María del Berrocal,403,219,184
+05,Ávila,902,Santa María del Cubillo,314,183,131
+05,Ávila,227,Santa María del Tiétar,436,234,202
+05,Ávila,228,Santiago del Collado,176,109,67
+05,Ávila,904,Santiago del Tormes,122,69,53
+05,Ávila,229,Santo Domingo de las Posadas,75,40,35
+05,Ávila,230,Santo Tomé de Zabarcos,65,35,30
+05,Ávila,232,"Serrada, La",111,58,53
+05,Ávila,233,Serranillos,250,140,110
+05,Ávila,234,Sigeres,43,22,21
+05,Ávila,235,Sinlabajos,124,69,55
+05,Ávila,236,Solana de Ávila,113,66,47
+05,Ávila,237,Solana de Rioalmar,165,95,70
+05,Ávila,238,Solosancho,837,446,391
+05,Ávila,239,Sotalbo,251,134,117
+05,Ávila,240,Sotillo de la Adrada,4542,2252,2290
+05,Ávila,241,"Tiemblo, El",4097,2090,2007
+05,Ávila,242,Tiñosillos,796,411,385
+05,Ávila,243,Tolbaños,85,48,37
+05,Ávila,244,Tormellas,41,26,15
+05,Ávila,245,Tornadizos de Ávila,435,222,213
+05,Ávila,247,"Torre, La",239,131,108
+05,Ávila,246,Tórtoles,60,33,27
+05,Ávila,249,Umbrías,105,55,50
+05,Ávila,251,Vadillo de la Sierra,67,42,25
+05,Ávila,252,Valdecasa,62,37,25
+05,Ávila,253,Vega de Santa María,85,41,44
+05,Ávila,254,Velayos,213,106,107
+05,Ávila,256,Villaflor,117,62,55
+05,Ávila,257,Villafranca de la Sierra,132,71,61
+05,Ávila,905,Villanueva de Ávila,254,127,127
+05,Ávila,258,Villanueva de Gómez,132,76,56
+05,Ávila,259,Villanueva del Aceral,122,61,61
+05,Ávila,260,Villanueva del Campillo,103,57,46
+05,Ávila,261,Villar de Corneja,39,22,17
+05,Ávila,262,Villarejo del Valle,363,191,172
+05,Ávila,263,Villatoro,166,96,70
+05,Ávila,264,Viñegra de Moraña,58,34,24
+05,Ávila,265,Vita,87,52,35
+05,Ávila,266,Zapardiel de la Cañada,97,53,44
+05,Ávila,267,Zapardiel de la Ribera,115,60,55
+06,Badajoz,1,Acedera,798,418,380
+06,Badajoz,2,Aceuchal,5461,2706,2755
+06,Badajoz,3,Ahillones,893,443,450
+06,Badajoz,4,Alange,1880,945,935
+06,Badajoz,5,"Albuera, La",2029,1058,971
+06,Badajoz,6,Alburquerque,5340,2667,2673
+06,Badajoz,7,Alconchel,1704,859,845
+06,Badajoz,8,Alconera,730,359,371
+06,Badajoz,9,Aljucén,245,133,112
+06,Badajoz,10,Almendral,1240,607,633
+06,Badajoz,11,Almendralejo,33468,16588,16880
+06,Badajoz,12,Arroyo de San Serván,4126,2102,2024
+06,Badajoz,13,Atalaya,293,150,143
+06,Badajoz,14,Azuaga,7891,3914,3977
+06,Badajoz,15,Badajoz,150530,72988,77542
+06,Badajoz,16,Barcarrota,3580,1822,1758
+06,Badajoz,17,Baterno,293,156,137
+06,Badajoz,18,Benquerencia de la Serena,841,417,424
+06,Badajoz,19,Berlanga,2360,1192,1168
+06,Badajoz,20,Bienvenida,2128,1101,1027
+06,Badajoz,21,Bodonal de la Sierra,1052,539,513
+06,Badajoz,22,Burguillos del Cerro,3085,1524,1561
+06,Badajoz,23,Cabeza del Buey,4929,2441,2488
+06,Badajoz,24,Cabeza la Vaca,1331,679,652
+06,Badajoz,25,Calamonte,6241,3101,3140
+06,Badajoz,26,Calera de León,969,490,479
+06,Badajoz,27,Calzadilla de los Barros,769,383,386
+06,Badajoz,28,Campanario,4967,2442,2525
+06,Badajoz,29,Campillo de Llerena,1373,693,680
+06,Badajoz,30,Capilla,186,96,90
+06,Badajoz,31,Carmonita,551,276,275
+06,Badajoz,32,"Carrascalejo, El",67,33,34
+06,Badajoz,33,Casas de Don Pedro,1483,762,721
+06,Badajoz,34,Casas de Reina,191,94,97
+06,Badajoz,35,Castilblanco,972,498,474
+06,Badajoz,36,Castuera,5921,2919,3002
+06,Badajoz,42,Cheles,1210,587,623
+06,Badajoz,37,"Codosera, La",2119,1121,998
+06,Badajoz,38,Cordobilla de Lácara,916,471,445
+06,Badajoz,39,"Coronada, La",2182,1065,1117
+06,Badajoz,40,Corte de Peleas,1238,607,631
+06,Badajoz,41,Cristina,567,293,274
+06,Badajoz,43,Don Álvaro,768,395,373
+06,Badajoz,44,Don Benito,37010,18268,18742
+06,Badajoz,45,Entrín Bajo,569,287,282
+06,Badajoz,46,Esparragalejo,1459,720,739
+06,Badajoz,47,Esparragosa de la Serena,1031,528,503
+06,Badajoz,48,Esparragosa de Lares,938,451,487
+06,Badajoz,49,Feria,1150,560,590
+06,Badajoz,50,Fregenal de la Sierra,4918,2419,2499
+06,Badajoz,51,Fuenlabrada de los Montes,1879,931,948
+06,Badajoz,52,Fuente de Cantos,4784,2367,2417
+06,Badajoz,53,Fuente del Arco,697,350,347
+06,Badajoz,54,Fuente del Maestre,6774,3367,3407
+06,Badajoz,55,Fuentes de León,2311,1142,1169
+06,Badajoz,56,Garbayuela,522,277,245
+06,Badajoz,57,Garlitos,599,312,287
+06,Badajoz,58,"Garrovilla, La",2401,1206,1195
+06,Badajoz,59,Granja de Torrehermosa,2041,1013,1028
+06,Badajoz,903,Guadiana del Caudillo,2518,1237,1281
+06,Badajoz,60,Guareña,7006,3530,3476
+06,Badajoz,61,"Haba, La",1247,622,625
+06,Badajoz,62,Helechosa de los Montes,653,368,285
+06,Badajoz,63,Herrera del Duque,3485,1748,1737
+06,Badajoz,64,Higuera de la Serena,941,492,449
+06,Badajoz,65,Higuera de Llerena,343,174,169
+06,Badajoz,66,Higuera de Vargas,1950,982,968
+06,Badajoz,67,Higuera la Real,2264,1134,1130
+06,Badajoz,68,Hinojosa del Valle,489,238,251
+06,Badajoz,69,Hornachos,3639,1832,1807
+06,Badajoz,70,Jerez de los Caballeros,9367,4610,4757
+06,Badajoz,71,"Lapa, La",284,143,141
+06,Badajoz,73,Llera,860,446,414
+06,Badajoz,74,Llerena,5758,2861,2897
+06,Badajoz,72,Lobón,2757,1414,1343
+06,Badajoz,75,Magacela,526,280,246
+06,Badajoz,76,Maguilla,970,478,492
+06,Badajoz,77,Malcocinado,374,203,171
+06,Badajoz,78,Malpartida de la Serena,569,294,275
+06,Badajoz,79,Manchita,763,391,372
+06,Badajoz,80,Medellín,2276,1134,1142
+06,Badajoz,81,Medina de las Torres,1207,621,586
+06,Badajoz,82,Mengabril,472,254,218
+06,Badajoz,83,Mérida,59352,28958,30394
+06,Badajoz,84,Mirandilla,1300,659,641
+06,Badajoz,85,Monesterio,4254,2189,2065
+06,Badajoz,86,Montemolín,1367,659,708
+06,Badajoz,87,Monterrubio de la Serena,2415,1177,1238
+06,Badajoz,88,Montijo,15614,7721,7893
+06,Badajoz,89,"Morera, La",719,365,354
+06,Badajoz,90,"Nava de Santiago, La",949,482,467
+06,Badajoz,91,Navalvillar de Pela,4444,2258,2186
+06,Badajoz,92,Nogales,666,330,336
+06,Badajoz,93,Oliva de la Frontera,5195,2601,2594
+06,Badajoz,94,Oliva de Mérida,1734,892,842
+06,Badajoz,95,Olivenza,11986,5977,6009
+06,Badajoz,96,Orellana de la Sierra,235,123,112
+06,Badajoz,97,Orellana la Vieja,2729,1415,1314
+06,Badajoz,98,Palomas,686,342,344
+06,Badajoz,99,"Parra, La",1360,705,655
+06,Badajoz,100,Peñalsordo,949,450,499
+06,Badajoz,101,Peraleda del Zaucejo,512,259,253
+06,Badajoz,102,Puebla de Alcocer,1188,585,603
+06,Badajoz,103,Puebla de la Calzada,5876,2933,2943
+06,Badajoz,104,Puebla de la Reina,745,374,371
+06,Badajoz,107,Puebla de Obando,1868,938,930
+06,Badajoz,108,Puebla de Sancho Pérez,2731,1377,1354
+06,Badajoz,105,Puebla del Maestre,698,356,342
+06,Badajoz,106,Puebla del Prior,500,256,244
+06,Badajoz,902,Pueblonuevo del Guadiana,2033,1032,1001
+06,Badajoz,109,Quintana de la Serena,4650,2354,2296
+06,Badajoz,110,Reina,159,79,80
+06,Badajoz,111,Rena,622,320,302
+06,Badajoz,112,Retamal de Llerena,443,226,217
+06,Badajoz,113,Ribera del Fresno,3357,1664,1693
+06,Badajoz,114,Risco,141,72,69
+06,Badajoz,115,"Roca de la Sierra, La",1473,727,746
+06,Badajoz,116,Salvaleón,1800,907,893
+06,Badajoz,117,Salvatierra de los Barros,1664,811,853
+06,Badajoz,119,San Pedro de Mérida,837,433,404
+06,Badajoz,123,San Vicente de Alcántara,5475,2756,2719
+06,Badajoz,118,Sancti-Spíritus,175,100,75
+06,Badajoz,120,Santa Amalia,4059,2056,2003
+06,Badajoz,121,Santa Marta,4176,2109,2067
+06,Badajoz,122,"Santos de Maimona, Los",8126,4104,4022
+06,Badajoz,124,Segura de León,1921,951,970
+06,Badajoz,125,Siruela,1912,962,950
+06,Badajoz,126,Solana de los Barros,2645,1317,1328
+06,Badajoz,127,Talarrubias,3420,1704,1716
+06,Badajoz,128,Talavera la Real,5376,2681,2695
+06,Badajoz,129,Táliga,681,341,340
+06,Badajoz,130,Tamurejo,215,111,104
+06,Badajoz,131,Torre de Miguel Sesmero,1265,648,617
+06,Badajoz,132,Torremayor,973,465,508
+06,Badajoz,133,Torremejía,2264,1168,1096
+06,Badajoz,134,Trasierra,633,334,299
+06,Badajoz,135,Trujillanos,1401,720,681
+06,Badajoz,136,Usagre,1777,879,898
+06,Badajoz,137,Valdecaballeros,1074,555,519
+06,Badajoz,901,Valdelacalzada,2734,1398,1336
+06,Badajoz,138,Valdetorres,1179,577,602
+06,Badajoz,139,Valencia de las Torres,578,305,273
+06,Badajoz,140,Valencia del Mombuey,731,368,363
+06,Badajoz,141,Valencia del Ventoso,2008,994,1014
+06,Badajoz,146,Valle de la Serena,1224,620,604
+06,Badajoz,147,Valle de Matamoros,367,180,187
+06,Badajoz,148,Valle de Santa Ana,1152,565,587
+06,Badajoz,142,Valverde de Burguillos,281,150,131
+06,Badajoz,143,Valverde de Leganés,4176,2101,2075
+06,Badajoz,144,Valverde de Llerena,603,299,304
+06,Badajoz,145,Valverde de Mérida,1060,534,526
+06,Badajoz,149,Villafranca de los Barros,12926,6365,6561
+06,Badajoz,150,Villagarcía de la Torre,913,470,443
+06,Badajoz,151,Villagonzalo,1243,603,640
+06,Badajoz,152,Villalba de los Barros,1504,761,743
+06,Badajoz,153,Villanueva de la Serena,25759,12528,13231
+06,Badajoz,154,Villanueva del Fresno,3401,1700,1701
+06,Badajoz,156,Villar de Rena,1383,715,668
+06,Badajoz,155,Villar del Rey,2168,1157,1011
+06,Badajoz,157,Villarta de los Montes,444,226,218
+06,Badajoz,158,Zafra,16776,8086,8690
+06,Badajoz,159,Zahínos,2805,1399,1406
+06,Badajoz,160,Zalamea de la Serena,3606,1810,1796
+06,Badajoz,162,"Zarza, La",3508,1783,1725
+06,Badajoz,161,Zarza-Capilla,310,157,153
+07,"Balears, Illes",2,Alaior,9012,4520,4492
+07,"Balears, Illes",1,Alaró,5494,2658,2836
+07,"Balears, Illes",3,Alcúdia,19793,9974,9819
+07,"Balears, Illes",4,Algaida,5529,2822,2707
+07,"Balears, Illes",5,Andratx,11004,5470,5534
+07,"Balears, Illes",901,Ariany,860,451,409
+07,"Balears, Illes",6,Artà,7671,3844,3827
+07,"Balears, Illes",7,Banyalbufar,503,265,238
+07,"Balears, Illes",8,Binissalem,8316,4130,4186
+07,"Balears, Illes",9,Búger,1054,545,509
+07,"Balears, Illes",10,Bunyola,6714,3284,3430
+07,"Balears, Illes",11,Calvià,49333,24727,24606
+07,"Balears, Illes",12,Campanet,2612,1302,1310
+07,"Balears, Illes",13,Campos,10610,5268,5342
+07,"Balears, Illes",14,Capdepera,11600,5907,5693
+07,"Balears, Illes",64,"Castell, Es",7348,3723,3625
+07,"Balears, Illes",15,Ciutadella de Menorca,29223,14483,14740
+07,"Balears, Illes",16,Consell,4008,2012,1996
+07,"Balears, Illes",17,Costitx,1271,624,647
+07,"Balears, Illes",18,Deià,620,293,327
+07,"Balears, Illes",26,Eivissa,49727,24984,24743
+07,"Balears, Illes",19,Escorca,211,129,82
+07,"Balears, Illes",20,Esporles,5020,2478,2542
+07,"Balears, Illes",21,Estellencs,318,171,147
+07,"Balears, Illes",22,Felanitx,17497,8801,8696
+07,"Balears, Illes",23,Ferreries,4695,2335,2360
+07,"Balears, Illes",24,Formentera,12216,6428,5788
+07,"Balears, Illes",25,Fornalutx,678,332,346
+07,"Balears, Illes",27,Inca,32137,16169,15968
+07,"Balears, Illes",28,Lloret de Vistalegre,1289,652,637
+07,"Balears, Illes",29,Lloseta,5858,2941,2917
+07,"Balears, Illes",30,Llubí,2243,1131,1112
+07,"Balears, Illes",31,Llucmajor,36358,18444,17914
+07,"Balears, Illes",33,Manacor,42631,21270,21361
+07,"Balears, Illes",34,Mancor de la Vall,1455,738,717
+07,"Balears, Illes",32,Maó-Mahón,28592,13990,14602
+07,"Balears, Illes",35,Maria de la Salut,2143,1108,1035
+07,"Balears, Illes",36,Marratxí,36725,18495,18230
+07,"Balears, Illes",37,"Mercadal, Es",4788,2428,2360
+07,"Balears, Illes",902,"Migjorn Gran, Es",1370,683,687
+07,"Balears, Illes",38,Montuïri,2867,1449,1418
+07,"Balears, Illes",39,Muro,6931,3504,3427
+07,"Balears, Illes",40,Palma,409661,199652,210009
+07,"Balears, Illes",41,Petra,2825,1399,1426
+07,"Balears, Illes",44,"Pobla, Sa",13026,6623,6403
+07,"Balears, Illes",42,Pollença,16189,8059,8130
+07,"Balears, Illes",43,Porreres,5339,2722,2617
+07,"Balears, Illes",45,Puigpunyent,1967,974,993
+07,"Balears, Illes",59,"Salines, Ses",4877,2474,2403
+07,"Balears, Illes",46,Sant Antoni de Portmany,25779,13529,12250
+07,"Balears, Illes",49,Sant Joan,2083,1023,1060
+07,"Balears, Illes",50,Sant Joan de Labritja,6200,3153,3047
+07,"Balears, Illes",48,Sant Josep de sa Talaia,26496,13663,12833
+07,"Balears, Illes",51,Sant Llorenç des Cardassar,8405,4151,4254
+07,"Balears, Illes",52,Sant Lluís,6892,3494,3398
+07,"Balears, Illes",53,Santa Eugènia,1671,831,840
+07,"Balears, Illes",54,Santa Eulària des Riu,36457,18517,17940
+07,"Balears, Illes",55,Santa Margalida,11958,6108,5850
+07,"Balears, Illes",56,Santa María del Camí,7167,3564,3603
+07,"Balears, Illes",57,Santanyí,12112,6089,6023
+07,"Balears, Illes",58,Selva,3981,1994,1987
+07,"Balears, Illes",47,Sencelles,3195,1615,1580
+07,"Balears, Illes",60,Sineu,3764,1866,1898
+07,"Balears, Illes",61,Sóller,14041,7050,6991
+07,"Balears, Illes",62,Son Servera,11378,5696,5682
+07,"Balears, Illes",63,Valldemossa,1945,989,956
+07,"Balears, Illes",65,Vilafranca de Bonany,3176,1606,1570
+08,Barcelona,1,Abrera,12334,6248,6086
+08,Barcelona,2,Aguilar de Segarra,277,148,129
+08,Barcelona,14,Aiguafreda,2501,1204,1297
+08,Barcelona,3,Alella,9764,4751,5013
+08,Barcelona,4,Alpens,273,146,127
+08,Barcelona,5,"Ametlla del Vallès, L'",8496,4285,4211
+08,Barcelona,6,Arenys de Mar,15533,7536,7997
+08,Barcelona,7,Arenys de Munt,8838,4439,4399
+08,Barcelona,8,Argençola,219,110,109
+08,Barcelona,9,Argentona,12295,6053,6242
+08,Barcelona,10,Artés,5648,2851,2797
+08,Barcelona,11,Avià,2250,1120,1130
+08,Barcelona,12,Avinyó,2250,1120,1130
+08,Barcelona,13,Avinyonet del Penedès,1669,887,782
+08,Barcelona,15,Badalona,217741,107092,110649
+08,Barcelona,904,Badia del Vallès,13417,6565,6852
+08,Barcelona,16,Bagà,2152,1075,1077
+08,Barcelona,17,Balenyà,3783,1907,1876
+08,Barcelona,18,Balsareny,3205,1586,1619
+08,Barcelona,252,Barberà del Vallès,32839,16167,16672
+08,Barcelona,19,Barcelona,1620343,765962,854381
+08,Barcelona,20,Begues,6961,3440,3521
+08,Barcelona,21,Bellprat,74,46,28
+08,Barcelona,22,Berga,16199,7979,8220
+08,Barcelona,23,Bigues i Riells,9003,4587,4416
+08,Barcelona,24,Borredà,456,257,199
+08,Barcelona,25,"Bruc, El",2027,1095,932
+08,Barcelona,26,"Brull, El",257,142,115
+08,Barcelona,27,"Cabanyes, Les",965,492,473
+08,Barcelona,28,Cabrera d'Anoia,1376,726,650
+08,Barcelona,29,Cabrera de Mar,4664,2346,2318
+08,Barcelona,30,Cabrils,7348,3626,3722
+08,Barcelona,31,Calaf,3547,1790,1757
+08,Barcelona,34,Calders,946,488,458
+08,Barcelona,33,Caldes de Montbui,17449,8669,8780
+08,Barcelona,32,Caldes d'Estrac,2859,1380,1479
+08,Barcelona,35,Calella,18728,9152,9576
+08,Barcelona,37,Calldetenes,2497,1265,1232
+08,Barcelona,38,Callús,2095,1025,1070
+08,Barcelona,36,Calonge de Segarra,191,95,96
+08,Barcelona,39,Campins,515,272,243
+08,Barcelona,40,Canet de Mar,14583,7075,7508
+08,Barcelona,41,Canovelles,16317,8458,7859
+08,Barcelona,42,Cànoves i Samalús,2995,1521,1474
+08,Barcelona,43,Canyelles,4481,2310,2171
+08,Barcelona,44,Capellades,5211,2572,2639
+08,Barcelona,45,Capolat,96,45,51
+08,Barcelona,46,Cardedeu,18165,8892,9273
+08,Barcelona,47,Cardona,4652,2271,2381
+08,Barcelona,48,Carme,783,398,385
+08,Barcelona,49,Casserres,1572,780,792
+08,Barcelona,57,Castell de l'Areny,72,41,31
+08,Barcelona,52,Castellar de n'Hug,165,86,79
+08,Barcelona,50,Castellar del Riu,165,92,73
+08,Barcelona,51,Castellar del Vallès,24036,11855,12181
+08,Barcelona,53,Castellbell i el Vilar,3599,1841,1758
+08,Barcelona,54,Castellbisbal,12332,6244,6088
+08,Barcelona,55,Castellcir,728,377,351
+08,Barcelona,56,Castelldefels,66375,32747,33628
+08,Barcelona,58,Castellet i la Gornal,2247,1147,1100
+08,Barcelona,60,Castellfollit de Riubregós,156,90,66
+08,Barcelona,59,Castellfollit del Boix,446,228,218
+08,Barcelona,61,Castellgalí,2053,1065,988
+08,Barcelona,62,Castellnou de Bages,1319,666,653
+08,Barcelona,63,Castellolí,610,295,315
+08,Barcelona,64,Castellterçol,2418,1208,1210
+08,Barcelona,65,Castellví de la Marca,1534,772,762
+08,Barcelona,66,Castellví de Rosanes,1865,917,948
+08,Barcelona,67,Centelles,7423,3643,3780
+08,Barcelona,268,Cercs,1152,567,585
+08,Barcelona,266,Cerdanyola del Vallès,57740,28259,29481
+08,Barcelona,68,Cervelló,8970,4495,4475
+08,Barcelona,69,Collbató,4458,2304,2154
+08,Barcelona,70,Collsuspina,339,173,166
+08,Barcelona,71,Copons,306,151,155
+08,Barcelona,72,Corbera de Llobregat,14643,7357,7286
+08,Barcelona,73,Cornellà de Llobregat,87173,42226,44947
+08,Barcelona,74,Cubelles,14992,7554,7438
+08,Barcelona,75,Dosrius,5281,2681,2600
+08,Barcelona,76,Esparreguera,22045,11153,10892
+08,Barcelona,77,Esplugues de Llobregat,46355,22144,24211
+08,Barcelona,78,"Espunyola, L'",258,130,128
+08,Barcelona,254,"Esquirol, L'",2141,1083,1058
+08,Barcelona,79,"Estany, L'",393,193,200
+08,Barcelona,134,Figaró-Montmany,1109,551,558
+08,Barcelona,80,Fígols,42,25,17
+08,Barcelona,82,Fogars de la Selva,1467,753,714
+08,Barcelona,81,Fogars de Montclús,466,245,221
+08,Barcelona,83,Folgueroles,2276,1156,1120
+08,Barcelona,84,Fonollosa,1439,743,696
+08,Barcelona,85,Font-rubí,1354,702,652
+08,Barcelona,86,"Franqueses del Vallès, Les",19768,10003,9765
+08,Barcelona,90,Gaià,167,93,74
+08,Barcelona,87,Gallifa,169,90,79
+08,Barcelona,88,"Garriga, La",16227,7861,8366
+08,Barcelona,89,Gavà,46705,22916,23789
+08,Barcelona,91,Gelida,7371,3700,3671
+08,Barcelona,92,Gironella,4834,2396,2438
+08,Barcelona,93,Gisclareny,26,15,11
+08,Barcelona,94,"Granada, La",2130,1077,1053
+08,Barcelona,95,Granera,80,56,24
+08,Barcelona,96,Granollers,60981,30023,30958
+08,Barcelona,97,Gualba,1481,750,731
+08,Barcelona,99,Guardiola de Berguedà,887,458,429
+08,Barcelona,100,Gurb,2654,1360,1294
+08,Barcelona,101,"Hospitalet de Llobregat, L'",261068,126066,135002
+08,Barcelona,162,"Hostalets de Pierola, Els",2930,1502,1428
+08,Barcelona,102,Igualada,39540,19393,20147
+08,Barcelona,103,Jorba,841,431,410
+08,Barcelona,104,"Llacuna, La",863,469,394
+08,Barcelona,105,"Llagosta, La",13367,6595,6772
+08,Barcelona,107,Lliçà d'Amunt,15111,7738,7373
+08,Barcelona,108,Lliçà de Vall,6480,3299,3181
+08,Barcelona,106,Llinars del Vallès,9838,4907,4931
+08,Barcelona,109,Lluçà,276,135,141
+08,Barcelona,110,Malgrat de Mar,18439,9217,9222
+08,Barcelona,111,Malla,271,140,131
+08,Barcelona,112,Manlleu,20194,10068,10126
+08,Barcelona,113,Manresa,76250,37311,38939
+08,Barcelona,242,Marganell,258,127,131
+08,Barcelona,114,Martorell,27850,14179,13671
+08,Barcelona,115,Martorelles,4794,2410,2384
+08,Barcelona,116,"Masies de Roda, Les",704,354,350
+08,Barcelona,117,"Masies de Voltregà, Les",3124,1543,1581
+08,Barcelona,118,"Masnou, El",23340,11266,12074
+08,Barcelona,119,Masquefa,8641,4338,4303
+08,Barcelona,120,Matadepera,9291,4666,4625
+08,Barcelona,121,Mataró,126988,62945,64043
+08,Barcelona,122,Mediona,2331,1170,1161
+08,Barcelona,138,Moià,6190,3147,3043
+08,Barcelona,123,Molins de Rei,25687,12499,13188
+08,Barcelona,124,Mollet del Vallès,51133,25152,25981
+08,Barcelona,128,Monistrol de Calders,677,357,320
+08,Barcelona,127,Monistrol de Montserrat,2955,1501,1454
+08,Barcelona,125,Montcada i Reixac,35599,17522,18077
+08,Barcelona,130,Montclar,129,66,63
+08,Barcelona,131,Montesquiu,968,492,476
+08,Barcelona,126,Montgat,11819,5832,5987
+08,Barcelona,132,Montmajor,465,237,228
+08,Barcelona,133,Montmaneu,154,88,66
+08,Barcelona,135,Montmeló,8784,4298,4486
+08,Barcelona,136,Montornès del Vallès,16263,8167,8096
+08,Barcelona,137,Montseny,321,166,155
+08,Barcelona,129,Muntanyola,620,316,304
+08,Barcelona,139,Mura,223,121,102
+08,Barcelona,140,Navarcles,5966,2917,3049
+08,Barcelona,141,Navàs,6023,2988,3035
+08,Barcelona,142,"Nou de Berguedà, La",160,81,79
+08,Barcelona,143,Òdena,3608,1847,1761
+08,Barcelona,145,Olèrdola,3611,1855,1756
+08,Barcelona,146,Olesa de Bonesvalls,1787,941,846
+08,Barcelona,147,Olesa de Montserrat,23779,11860,11919
+08,Barcelona,148,Olivella,3729,1962,1767
+08,Barcelona,149,Olost,1188,587,601
+08,Barcelona,144,Olvan,837,405,432
+08,Barcelona,150,Orís,310,156,154
+08,Barcelona,151,Oristà,537,268,269
+08,Barcelona,152,Orpí,136,75,61
+08,Barcelona,153,Òrrius,730,375,355
+08,Barcelona,154,Pacs del Penedès,908,455,453
+08,Barcelona,155,Palafolls,9256,4652,4604
+08,Barcelona,156,Palau-solità i Plegamans,14636,7160,7476
+08,Barcelona,157,Pallejà,11486,5725,5761
+08,Barcelona,905,"Palma de Cervelló, La",2982,1458,1524
+08,Barcelona,158,"Papiol, El",4103,2031,2072
+08,Barcelona,159,Parets del Vallès,19041,9551,9490
+08,Barcelona,160,Perafita,412,210,202
+08,Barcelona,161,Piera,15362,7848,7514
+08,Barcelona,163,Pineda de Mar,26659,13254,13405
+08,Barcelona,164,"Pla del Penedès, El",1259,634,625
+08,Barcelona,165,"Pobla de Claramunt, La",2177,1109,1068
+08,Barcelona,166,"Pobla de Lillet, La",1101,535,566
+08,Barcelona,167,Polinyà,8389,4230,4159
+08,Barcelona,182,"Pont de Vilomara i Rocafort, El",3801,1959,1842
+08,Barcelona,168,Pontons,458,258,200
+08,Barcelona,169,"Prat de Llobregat, El",64132,31413,32719
+08,Barcelona,171,Prats de Lluçanès,2537,1273,1264
+08,Barcelona,170,"Prats de Rei, Els",545,288,257
+08,Barcelona,230,Premià de Dalt,10429,5206,5223
+08,Barcelona,172,Premià de Mar,28071,13720,14351
+08,Barcelona,174,Puigdàlber,518,257,261
+08,Barcelona,175,Puig-reig,4094,2024,2070
+08,Barcelona,176,Pujalt,207,113,94
+08,Barcelona,177,"Quar, La",60,32,28
+08,Barcelona,178,Rajadell,539,274,265
+08,Barcelona,179,Rellinars,747,386,361
+08,Barcelona,180,Ripollet,38347,18980,19367
+08,Barcelona,181,"Roca del Vallès, La",10666,5314,5352
+08,Barcelona,183,Roda de Ter,6197,3039,3158
+08,Barcelona,184,Rubí,76423,37840,38583
+08,Barcelona,185,Rubió,232,129,103
+08,Barcelona,901,Rupit i Pruit,279,139,140
+08,Barcelona,187,Sabadell,211734,102927,108807
+08,Barcelona,188,Sagàs,161,90,71
+08,Barcelona,190,Saldes,265,154,111
+08,Barcelona,191,Sallent,6636,3194,3442
+08,Barcelona,194,Sant Adrià de Besòs,36669,18028,18641
+08,Barcelona,195,Sant Agustí de Lluçanès,87,44,43
+08,Barcelona,196,Sant Andreu de la Barca,27332,13552,13780
+08,Barcelona,197,Sant Andreu de Llavaneres,10877,5370,5507
+08,Barcelona,198,Sant Antoni de Vilamajor,6095,3032,3063
+08,Barcelona,199,Sant Bartomeu del Grau,840,446,394
+08,Barcelona,200,Sant Boi de Llobregat,82904,40601,42303
+08,Barcelona,201,Sant Boi de Lluçanès,532,260,272
+08,Barcelona,203,Sant Cebrià de Vallalta,3344,1743,1601
+08,Barcelona,202,Sant Celoni,17754,8833,8921
+08,Barcelona,204,Sant Climent de Llobregat,4107,2074,2033
+08,Barcelona,205,Sant Cugat del Vallès,90664,44106,46558
+08,Barcelona,206,Sant Cugat Sesgarrigues,989,474,515
+08,Barcelona,207,Sant Esteve de Palautordera,2749,1359,1390
+08,Barcelona,208,Sant Esteve Sesrovires,7800,3920,3880
+08,Barcelona,210,Sant Feliu de Codines,6184,3132,3052
+08,Barcelona,211,Sant Feliu de Llobregat,44474,21536,22938
+08,Barcelona,212,Sant Feliu Sasserra,600,316,284
+08,Barcelona,209,Sant Fost de Campsentelles,8722,4330,4392
+08,Barcelona,213,Sant Fruitós de Bages,8593,4256,4337
+08,Barcelona,215,Sant Hipòlit de Voltregà,3475,1721,1754
+08,Barcelona,193,Sant Iscle de Vallalta,1313,677,636
+08,Barcelona,216,Sant Jaume de Frontanyà,30,18,12
+08,Barcelona,218,Sant Joan de Vilatorrada,10820,5422,5398
+08,Barcelona,217,Sant Joan Despí,34084,16569,17515
+08,Barcelona,903,Sant Julià de Cerdanyola,244,133,111
+08,Barcelona,220,Sant Julià de Vilatorta,3096,1529,1567
+08,Barcelona,221,Sant Just Desvern,17494,8361,9133
+08,Barcelona,222,Sant Llorenç d'Hortons,2598,1323,1275
+08,Barcelona,223,Sant Llorenç Savall,2371,1190,1181
+08,Barcelona,225,Sant Martí d'Albars,113,56,57
+08,Barcelona,224,Sant Martí de Centelles,1131,590,541
+08,Barcelona,226,Sant Martí de Tous,1206,616,590
+08,Barcelona,227,Sant Martí Sarroca,3231,1591,1640
+08,Barcelona,228,Sant Martí Sesgueioles,344,179,165
+08,Barcelona,229,Sant Mateu de Bages,600,300,300
+08,Barcelona,231,Sant Pere de Ribes,30658,15311,15347
+08,Barcelona,232,Sant Pere de Riudebitlles,2338,1161,1177
+08,Barcelona,233,Sant Pere de Torelló,2419,1251,1168
+08,Barcelona,234,Sant Pere de Vilamajor,4371,2168,2203
+08,Barcelona,189,Sant Pere Sallavinera,155,84,71
+08,Barcelona,235,Sant Pol de Mar,5178,2563,2615
+08,Barcelona,236,Sant Quintí de Mediona,2179,1119,1060
+08,Barcelona,237,Sant Quirze de Besora,2107,1027,1080
+08,Barcelona,238,Sant Quirze del Vallès,19939,9754,10185
+08,Barcelona,239,Sant Quirze Safaja,637,332,305
+08,Barcelona,240,Sant Sadurní d'Anoia,12866,6322,6544
+08,Barcelona,241,Sant Sadurní d'Osormort,79,46,33
+08,Barcelona,98,Sant Salvador de Guardiola,3168,1624,1544
+08,Barcelona,262,Sant Vicenç de Castellet,9274,4620,4654
+08,Barcelona,264,Sant Vicenç de Montalt,6372,3194,3178
+08,Barcelona,265,Sant Vicenç de Torelló,2014,993,1021
+08,Barcelona,263,Sant Vicenç dels Horts,27901,13846,14055
+08,Barcelona,243,Santa Cecília de Voltregà,187,96,91
+08,Barcelona,244,Santa Coloma de Cervelló,8179,4018,4161
+08,Barcelona,245,Santa Coloma de Gramenet,118821,58849,59972
+08,Barcelona,246,Santa Eugènia de Berga,2226,1130,1096
+08,Barcelona,247,Santa Eulàlia de Riuprimer,1309,670,639
+08,Barcelona,248,Santa Eulàlia de Ronçana,7192,3601,3591
+08,Barcelona,249,Santa Fe del Penedès,379,191,188
+08,Barcelona,250,Santa Margarida de Montbui,9874,4940,4934
+08,Barcelona,251,Santa Margarida i els Monjos,7503,3802,3701
+08,Barcelona,253,Santa Maria de Besora,143,72,71
+08,Barcelona,256,Santa Maria de Martorelles,882,439,443
+08,Barcelona,255,Santa Maria de Merlès,183,90,93
+08,Barcelona,257,Santa Maria de Miralles,128,69,59
+08,Barcelona,259,Santa Maria de Palautordera,9325,4673,4652
+08,Barcelona,258,Santa Maria d'Oló,1024,516,508
+08,Barcelona,260,Santa Perpètua de Mogoda,25705,12933,12772
+08,Barcelona,261,Santa Susanna,3381,1700,1681
+08,Barcelona,192,Santpedor,7532,3739,3793
+08,Barcelona,267,Sentmenat,8957,4532,4425
+08,Barcelona,269,Seva,3472,1746,1726
+08,Barcelona,270,Sitges,28969,14476,14493
+08,Barcelona,271,Sobremunt,79,34,45
+08,Barcelona,272,Sora,205,115,90
+08,Barcelona,273,Subirats,3025,1556,1469
+08,Barcelona,274,Súria,5895,2874,3021
+08,Barcelona,276,Tagamanent,333,174,159
+08,Barcelona,277,Talamanca,202,115,87
+08,Barcelona,278,Taradell,6412,3188,3224
+08,Barcelona,275,Tavèrnoles,320,159,161
+08,Barcelona,280,Tavertet,111,58,53
+08,Barcelona,281,Teià,6312,3093,3219
+08,Barcelona,279,Terrassa,218535,107540,110995
+08,Barcelona,282,Tiana,8709,4170,4539
+08,Barcelona,283,Tona,8131,4024,4107
+08,Barcelona,284,Tordera,16937,8576,8361
+08,Barcelona,285,Torelló,14172,7021,7151
+08,Barcelona,286,"Torre de Claramunt, La",3716,1911,1805
+08,Barcelona,287,Torrelavit,1430,736,694
+08,Barcelona,288,Torrelles de Foix,2281,1219,1062
+08,Barcelona,289,Torrelles de Llobregat,5945,2941,3004
+08,Barcelona,290,Ullastrell,2069,1038,1031
+08,Barcelona,291,Vacarisses,6486,3340,3146
+08,Barcelona,292,Vallbona d'Anoia,1399,729,670
+08,Barcelona,293,Vallcebre,246,139,107
+08,Barcelona,294,Vallgorguina,2854,1427,1427
+08,Barcelona,295,Vallirana,14877,7441,7436
+08,Barcelona,296,Vallromanes,2530,1297,1233
+08,Barcelona,297,Veciana,170,95,75
+08,Barcelona,298,Vic,45040,22626,22414
+08,Barcelona,299,Vilada,430,226,204
+08,Barcelona,301,Viladecans,66168,32785,33383
+08,Barcelona,300,Viladecavalls,7480,3707,3773
+08,Barcelona,305,Vilafranca del Penedès,40055,19552,20503
+08,Barcelona,306,Vilalba Sasserra,688,343,345
+08,Barcelona,303,Vilanova de Sau,308,143,165
+08,Barcelona,302,Vilanova del Camí,12361,6178,6183
+08,Barcelona,902,Vilanova del Vallès,5339,2701,2638
+08,Barcelona,307,Vilanova i la Geltrú,66274,32079,34195
+08,Barcelona,214,Vilassar de Dalt,9013,4435,4578
+08,Barcelona,219,Vilassar de Mar,20764,10018,10746
+08,Barcelona,304,Vilobí del Penedès,1106,582,524
+08,Barcelona,308,Viver i Serrateix,164,86,78
 48,Bizkaia,1,Abadiño,7533,3771,3762
 48,Bizkaia,2,Abanto y Ciérvana-Abanto Zierbena,9545,4701,4844
 48,Bizkaia,911,Ajangiz,482,253,229
@@ -1362,377 +1362,377 @@ CPRO,PROVINCIA,CMUN,NOMBRE,POB18,HOMBRES,MUJERES
 48,Bizkaia,25,Zeberio,1059,544,515
 48,Bizkaia,913,Zierbena,1492,792,700
 48,Bizkaia,915,Ziortza-Bolibar,427,227,200
-9,Burgos,1,Abajas,27,19,8
-9,Burgos,3,Adrada de Haza,219,110,109
-9,Burgos,6,Aguas Cándidas,57,35,22
-9,Burgos,7,Aguilar de Bureba,61,38,23
-9,Burgos,9,Albillos,214,111,103
-9,Burgos,10,Alcocero de Mola,36,26,10
-9,Burgos,11,Alfoz de Bricia,77,46,31
-9,Burgos,907,Alfoz de Quintanadueñas,2007,1071,936
-9,Burgos,12,Alfoz de Santa Gadea,100,57,43
-9,Burgos,13,Altable,53,31,22
-9,Burgos,14,"Altos, Los",186,111,75
-9,Burgos,16,Ameyugo,105,60,45
-9,Burgos,17,Anguix,135,74,61
-9,Burgos,18,Aranda de Duero,32523,15805,16718
-9,Burgos,19,Arandilla,161,99,62
-9,Burgos,20,Arauzo de Miel,326,176,150
-9,Burgos,21,Arauzo de Salce,56,34,22
-9,Burgos,22,Arauzo de Torre,73,42,31
-9,Burgos,23,Arcos,1684,895,789
-9,Burgos,24,Arenillas de Riopisuerga,182,107,75
-9,Burgos,25,Arija,126,65,61
-9,Burgos,26,Arlanzón,408,252,156
-9,Burgos,27,Arraya de Oca,49,29,20
-9,Burgos,29,Atapuerca,172,98,74
-9,Burgos,30,"Ausines, Los",129,75,54
-9,Burgos,32,Avellanosa de Muñó,112,60,52
-9,Burgos,33,Bahabón de Esgueva,73,45,28
-9,Burgos,34,"Balbases, Los",311,173,138
-9,Burgos,35,Baños de Valdearados,342,201,141
-9,Burgos,36,Bañuelos de Bureba,34,19,15
-9,Burgos,37,Barbadillo de Herreros,109,64,45
-9,Burgos,38,Barbadillo del Mercado,143,76,67
-9,Burgos,39,Barbadillo del Pez,67,41,26
-9,Burgos,41,Barrio de Muñó,33,19,14
-9,Burgos,43,"Barrios de Bureba, Los",194,115,79
-9,Burgos,44,Barrios de Colina,53,28,25
-9,Burgos,45,Basconcillos del Tozo,285,159,126
-9,Burgos,46,Bascuñana,25,16,9
-9,Burgos,47,Belbimbre,67,34,33
-9,Burgos,48,Belorado,1816,926,890
-9,Burgos,50,Berberana,55,31,24
-9,Burgos,51,Berlangas de Roa,184,100,84
-9,Burgos,52,Berzosa de Bureba,29,21,8
-9,Burgos,54,Bozoó,98,61,37
-9,Burgos,55,Brazacorta,55,31,24
-9,Burgos,56,Briviesca,6675,3323,3352
-9,Burgos,57,Bugedo,173,114,59
-9,Burgos,58,Buniel,543,299,244
-9,Burgos,59,Burgos,175921,83728,92193
-9,Burgos,60,Busto de Bureba,149,79,70
-9,Burgos,61,Cabañes de Esgueva,169,94,75
-9,Burgos,62,Cabezón de la Sierra,53,26,27
-9,Burgos,64,Caleruega,433,227,206
-9,Burgos,65,Campillo de Aranda,162,98,64
-9,Burgos,66,Campolara,61,45,16
-9,Burgos,67,Canicosa de la Sierra,470,246,224
-9,Burgos,68,Cantabrana,27,15,12
-9,Burgos,70,Carazo,33,24,9
-9,Burgos,71,Carcedo de Bureba,44,25,19
-9,Burgos,72,Carcedo de Burgos,411,223,188
-9,Burgos,73,Cardeñadijo,1313,722,591
-9,Burgos,74,Cardeñajimeno,1101,569,532
-9,Burgos,75,Cardeñuela Riopico,112,65,47
-9,Burgos,76,Carrias,25,19,6
-9,Burgos,77,Cascajares de Bureba,33,16,17
-9,Burgos,78,Cascajares de la Sierra,37,21,16
-9,Burgos,79,Castellanos de Castro,50,30,20
-9,Burgos,83,Castil de Peones,32,18,14
-9,Burgos,82,Castildelgado,36,21,15
-9,Burgos,84,Castrillo de la Reina,185,119,66
-9,Burgos,85,Castrillo de la Vega,632,345,287
-9,Burgos,88,Castrillo de Riopisuerga,62,38,24
-9,Burgos,86,Castrillo del Val,792,453,339
-9,Burgos,90,Castrillo Mota de Judíos,52,28,24
-9,Burgos,91,Castrojeriz,803,417,386
-9,Burgos,63,Cavia,233,138,95
-9,Burgos,93,Cayuela,177,94,83
-9,Burgos,94,Cebrecos,54,33,21
-9,Burgos,95,Celada del Camino,115,57,58
-9,Burgos,98,Cerezo de Río Tirón,575,313,262
-9,Burgos,100,Cerratón de Juarros,57,37,20
-9,Burgos,101,Ciadoncha,78,46,32
-9,Burgos,102,Cillaperlata,33,22,11
-9,Burgos,103,Cilleruelo de Abajo,224,124,100
-9,Burgos,104,Cilleruelo de Arriba,44,23,21
-9,Burgos,105,Ciruelos de Cervera,101,58,43
-9,Burgos,108,Cogollos,545,299,246
-9,Burgos,109,Condado de Treviño,1352,768,584
-9,Burgos,110,Contreras,80,50,30
-9,Burgos,112,Coruña del Conde,112,69,43
-9,Burgos,113,Covarrubias,545,289,256
-9,Burgos,114,Cubillo del Campo,95,53,42
-9,Burgos,115,Cubo de Bureba,98,55,43
-9,Burgos,117,"Cueva de Roa, La",85,43,42
-9,Burgos,119,Cuevas de San Clemente,45,16,29
-9,Burgos,120,Encío,42,24,18
-9,Burgos,122,Espinosa de Cervera,95,60,35
-9,Burgos,124,Espinosa de los Monteros,1696,891,805
-9,Burgos,123,Espinosa del Camino,44,27,17
-9,Burgos,125,Estépar,608,363,245
-9,Burgos,127,Fontioso,52,31,21
-9,Burgos,128,Frandovínez,84,49,35
-9,Burgos,129,Fresneda de la Sierra Tirón,101,66,35
-9,Burgos,130,Fresneña,76,47,29
-9,Burgos,131,Fresnillo de las Dueñas,653,342,311
-9,Burgos,132,Fresno de Río Tirón,181,112,69
-9,Burgos,133,Fresno de Rodilla,45,25,20
-9,Burgos,134,Frías,254,133,121
-9,Burgos,135,Fuentebureba,41,22,19
-9,Burgos,136,Fuentecén,227,124,103
-9,Burgos,137,Fuentelcésped,235,118,117
-9,Burgos,138,Fuentelisendo,83,45,38
-9,Burgos,139,Fuentemolinos,107,69,38
-9,Burgos,140,Fuentenebro,126,77,49
-9,Burgos,141,Fuentespina,775,400,375
-9,Burgos,143,Galbarros,29,18,11
-9,Burgos,144,"Gallega, La",45,29,16
-9,Burgos,148,Grijalba,100,51,49
-9,Burgos,149,Grisaleña,37,28,9
-9,Burgos,151,Gumiel de Izán,548,310,238
-9,Burgos,152,Gumiel de Mercado,310,171,139
-9,Burgos,154,Hacinas,155,89,66
-9,Burgos,155,Haza,26,16,10
-9,Burgos,159,Hontanas,69,43,26
-9,Burgos,160,Hontangas,91,59,32
-9,Burgos,162,Hontoria de la Cantera,156,82,74
-9,Burgos,164,Hontoria de Valdearados,180,109,71
-9,Burgos,163,Hontoria del Pinar,669,371,298
-9,Burgos,166,"Hormazas, Las",105,61,44
-9,Burgos,167,Hornillos del Camino,58,36,22
-9,Burgos,168,"Horra, La",337,182,155
-9,Burgos,169,Hortigüela,103,69,34
-9,Burgos,170,Hoyales de Roa,223,120,103
-9,Burgos,172,Huérmeces,136,70,66
-9,Burgos,173,Huerta de Arriba,133,75,58
-9,Burgos,174,Huerta de Rey,932,507,425
-9,Burgos,175,Humada,121,82,39
-9,Burgos,176,Hurones,62,42,20
-9,Burgos,177,Ibeas de Juarros,1405,764,641
-9,Burgos,178,Ibrillos,45,29,16
-9,Burgos,179,Iglesiarrubia,41,22,19
-9,Burgos,180,Iglesias,137,76,61
-9,Burgos,181,Isar,307,160,147
-9,Burgos,182,Itero del Castillo,78,45,33
-9,Burgos,183,Jaramillo de la Fuente,49,31,18
-9,Burgos,184,Jaramillo Quemado,8,6,2
-9,Burgos,189,Junta de Traslaloma,131,72,59
-9,Burgos,190,Junta de Villalba de Losa,86,48,38
-9,Burgos,191,Jurisdicción de Lara,33,20,13
-9,Burgos,192,Jurisdicción de San Zadornil,55,31,24
-9,Burgos,194,Lerma,2560,1281,1279
-9,Burgos,195,Llano de Bureba,60,39,21
-9,Burgos,196,Madrigal del Monte,147,89,58
-9,Burgos,197,Madrigalejo del Monte,168,109,59
-9,Burgos,198,Mahamud,112,65,47
-9,Burgos,199,Mambrilla de Castrejón,100,56,44
-9,Burgos,200,Mambrillas de Lara,52,31,21
-9,Burgos,201,Mamolar,29,21,8
-9,Burgos,202,Manciles,22,14,8
-9,Burgos,206,Mazuela,56,32,24
-9,Burgos,208,Mecerreyes,211,111,100
-9,Burgos,209,Medina de Pomar,5816,2958,2858
-9,Burgos,211,Melgar de Fernamental,1611,866,745
-9,Burgos,213,Merindad de Cuesta-Urria,313,172,141
-9,Burgos,214,Merindad de Montija,733,438,295
-9,Burgos,906,Merindad de Río Ubierna,1443,798,645
-9,Burgos,215,Merindad de Sotoscueva,402,227,175
-9,Burgos,216,Merindad de Valdeporres,429,222,207
-9,Burgos,217,Merindad de Valdivielso,386,222,164
-9,Burgos,218,Milagros,451,244,207
-9,Burgos,219,Miranda de Ebro,35477,17433,18044
-9,Burgos,220,Miraveche,71,47,24
-9,Burgos,221,Modúbar de la Emparedada,669,369,300
-9,Burgos,223,Monasterio de la Sierra,44,29,15
-9,Burgos,224,Monasterio de Rodilla,164,89,75
-9,Burgos,225,Moncalvillo,87,52,35
-9,Burgos,226,Monterrubio de la Demanda,59,36,23
-9,Burgos,227,Montorio,148,78,70
-9,Burgos,228,Moradillo de Roa,172,92,80
-9,Burgos,229,Nava de Roa,224,121,103
-9,Burgos,230,Navas de Bureba,35,18,17
-9,Burgos,231,Nebreda,65,47,18
-9,Burgos,232,Neila,158,93,65
-9,Burgos,235,Olmedillo de Roa,189,110,79
-9,Burgos,236,Olmillos de Muñó,37,22,15
-9,Burgos,238,Oña,1024,538,486
-9,Burgos,239,Oquillas,55,31,24
-9,Burgos,241,Orbaneja Riopico,328,177,151
-9,Burgos,242,Padilla de Abajo,78,44,34
-9,Burgos,243,Padilla de Arriba,77,47,30
-9,Burgos,244,Padrones de Bureba,50,25,25
-9,Burgos,246,Palacios de la Sierra,721,371,350
-9,Burgos,247,Palacios de Riopisuerga,24,12,12
-9,Burgos,248,Palazuelos de la Sierra,82,48,34
-9,Burgos,249,Palazuelos de Muñó,52,29,23
-9,Burgos,250,Pampliega,282,152,130
-9,Burgos,251,Pancorbo,436,239,197
-9,Burgos,253,Pardilla,117,69,48
-9,Burgos,255,Partido de la Sierra en Tobalina,90,52,38
-9,Burgos,256,Pedrosa de Duero,438,253,185
-9,Burgos,259,Pedrosa de Río Úrbel,251,149,102
-9,Burgos,257,Pedrosa del Páramo,94,57,37
-9,Burgos,258,Pedrosa del Príncipe,174,93,81
-9,Burgos,261,Peñaranda de Duero,527,261,266
-9,Burgos,262,Peral de Arlanza,167,91,76
-9,Burgos,265,Piérnigas,38,22,16
-9,Burgos,266,Pineda de la Sierra,103,66,37
-9,Burgos,267,Pineda Trasmonte,111,66,45
-9,Burgos,268,Pinilla de los Barruecos,111,62,49
-9,Burgos,269,Pinilla de los Moros,36,21,15
-9,Burgos,270,Pinilla Trasmonte,167,96,71
-9,Burgos,272,Poza de la Sal,294,155,139
-9,Burgos,273,Prádanos de Bureba,53,33,20
-9,Burgos,274,Pradoluengo,1169,586,583
-9,Burgos,275,Presencio,179,110,69
-9,Burgos,276,"Puebla de Arganzón, La",495,269,226
-9,Burgos,277,Puentedura,115,78,37
-9,Burgos,279,Quemada,238,142,96
-9,Burgos,281,Quintana del Pidio,154,80,74
-9,Burgos,280,Quintanabureba,24,14,10
-9,Burgos,283,Quintanaélez,46,24,22
-9,Burgos,287,Quintanaortuño,267,154,113
-9,Burgos,288,Quintanapalla,111,63,48
-9,Burgos,289,Quintanar de la Sierra,1690,892,798
-9,Burgos,292,Quintanavides,79,48,31
-9,Burgos,294,Quintanilla de la Mata,114,69,45
-9,Burgos,901,Quintanilla del Agua y Tordueles,383,200,183
-9,Burgos,295,Quintanilla del Coco,57,28,29
-9,Burgos,298,Quintanilla San García,87,49,38
-9,Burgos,301,Quintanilla Vivar,803,426,377
-9,Burgos,297,"Quintanillas, Las",376,217,159
-9,Burgos,302,Rabanera del Pinar,108,66,42
-9,Burgos,303,Rábanos,83,51,32
-9,Burgos,304,Rabé de las Calzadas,208,111,97
-9,Burgos,306,Rebolledo de la Torre,112,61,51
-9,Burgos,307,Redecilla del Camino,115,72,43
-9,Burgos,308,Redecilla del Campo,68,39,29
-9,Burgos,309,Regumiel de la Sierra,349,185,164
-9,Burgos,310,Reinoso,11,8,3
-9,Burgos,311,Retuerta,59,37,22
-9,Burgos,314,Revilla del Campo,94,60,34
-9,Burgos,316,Revilla Vallejera,115,73,42
-9,Burgos,312,"Revilla y Ahedo, La",107,60,47
-9,Burgos,315,Revillarruz,523,269,254
-9,Burgos,317,Rezmondo,19,7,12
-9,Burgos,318,Riocavado de la Sierra,60,38,22
-9,Burgos,321,Roa,2185,1104,1081
-9,Burgos,323,Rojas,65,43,22
-9,Burgos,325,Royuela de Río Franco,193,117,76
-9,Burgos,326,Rubena,183,106,77
-9,Burgos,327,Rublacedo de Abajo,36,18,18
-9,Burgos,328,Rucandio,65,31,34
-9,Burgos,329,Salas de Bureba,131,76,55
-9,Burgos,330,Salas de los Infantes,1955,1007,948
-9,Burgos,332,Saldaña de Burgos,169,92,77
-9,Burgos,334,Salinillas de Bureba,51,41,10
-9,Burgos,335,San Adrián de Juarros,88,55,33
-9,Burgos,337,San Juan del Monte,142,79,63
-9,Burgos,338,San Mamés de Burgos,298,168,130
-9,Burgos,339,San Martín de Rubiales,141,82,59
-9,Burgos,340,San Millán de Lara,79,56,23
-9,Burgos,360,San Vicente del Valle,25,20,5
-9,Burgos,343,Santa Cecilia,101,61,40
-9,Burgos,345,Santa Cruz de la Salceda,140,87,53
-9,Burgos,346,Santa Cruz del Valle Urbión,99,65,34
-9,Burgos,347,Santa Gadea del Cid,145,74,71
-9,Burgos,348,Santa Inés,141,74,67
-9,Burgos,350,Santa María del Campo,537,291,246
-9,Burgos,351,Santa María del Invierno,62,45,17
-9,Burgos,352,Santa María del Mercadillo,104,66,38
-9,Burgos,353,Santa María Rivarredonda,91,54,37
-9,Burgos,354,Santa Olalla de Bureba,35,26,9
-9,Burgos,355,Santibáñez de Esgueva,85,46,39
-9,Burgos,356,Santibáñez del Val,45,28,17
-9,Burgos,358,Santo Domingo de Silos,279,172,107
-9,Burgos,361,Sargentes de la Lora,114,64,50
-9,Burgos,362,Sarracín,245,135,110
-9,Burgos,363,Sasamón,995,562,433
-9,Burgos,365,"Sequera de Haza, La",31,22,9
-9,Burgos,366,Solarana,77,45,32
-9,Burgos,368,Sordillos,23,16,7
-9,Burgos,369,Sotillo de la Ribera,490,255,235
-9,Burgos,372,Sotragero,268,143,125
-9,Burgos,373,Sotresgudo,448,258,190
-9,Burgos,374,Susinos del Páramo,103,66,37
-9,Burgos,375,Tamarón,38,21,17
-9,Burgos,377,Tardajos,782,422,360
-9,Burgos,378,Tejada,29,17,12
-9,Burgos,380,Terradillos de Esgueva,80,38,42
-9,Burgos,381,Tinieblas de la Sierra,34,20,14
-9,Burgos,382,Tobar,24,17,7
-9,Burgos,384,Tordómar,346,189,157
-9,Burgos,386,Torrecilla del Monte,65,37,28
-9,Burgos,387,Torregalindo,126,81,45
-9,Burgos,388,Torrelara,30,16,14
-9,Burgos,389,Torrepadre,68,39,29
-9,Burgos,390,Torresandino,657,356,301
-9,Burgos,391,Tórtoles de Esgueva,458,242,216
-9,Burgos,392,Tosantos,57,32,25
-9,Burgos,394,Trespaderne,809,414,395
-9,Burgos,395,Tubilla del Agua,134,81,53
-9,Burgos,396,Tubilla del Lago,160,85,75
-9,Burgos,398,Úrbel del Castillo,79,52,27
-9,Burgos,400,Vadocondes,369,201,168
-9,Burgos,403,Valdeande,104,62,42
-9,Burgos,405,Valdezate,136,75,61
-9,Burgos,406,Valdorros,333,189,144
-9,Burgos,408,Vallarta de Bureba,42,26,16
-9,Burgos,904,Valle de las Navas,514,300,214
-9,Burgos,908,Valle de Losa,498,290,208
-9,Burgos,409,Valle de Manzanedo,126,67,59
-9,Burgos,410,Valle de Mena,3739,1911,1828
-9,Burgos,411,Valle de Oca,157,96,61
-9,Burgos,902,Valle de Santibáñez,480,277,203
-9,Burgos,905,Valle de Sedano,427,244,183
-9,Burgos,412,Valle de Tobalina,948,515,433
-9,Burgos,413,Valle de Valdebezana,477,247,230
-9,Burgos,414,Valle de Valdelaguna,195,114,81
-9,Burgos,415,Valle de Valdelucio,321,176,145
-9,Burgos,416,Valle de Zamanzas,50,28,22
-9,Burgos,417,Vallejera,42,24,18
-9,Burgos,418,Valles de Palenzuela,83,42,41
-9,Burgos,419,Valluércanes,76,48,28
-9,Burgos,407,Valmala,29,17,12
-9,Burgos,422,"Vid de Bureba, La",17,9,8
-9,Burgos,421,"Vid y Barrios, La",239,139,100
-9,Burgos,423,Vileña,29,19,10
-9,Burgos,427,Villadiego,1527,843,684
-9,Burgos,428,Villaescusa de Roa,105,61,44
-9,Burgos,429,Villaescusa la Sombría,59,44,15
-9,Burgos,430,Villaespasa,24,15,9
-9,Burgos,431,Villafranca Montes de Oca,119,73,46
-9,Burgos,432,Villafruela,191,110,81
-9,Burgos,433,Villagalijo,61,39,22
-9,Burgos,434,Villagonzalo Pedernales,1785,938,847
-9,Burgos,437,Villahoz,309,167,142
-9,Burgos,438,Villalba de Duero,673,354,319
-9,Burgos,439,Villalbilla de Burgos,1406,763,643
-9,Burgos,440,Villalbilla de Gumiel,88,54,34
-9,Burgos,441,Villaldemiro,71,42,29
-9,Burgos,442,Villalmanzo,438,236,202
-9,Burgos,443,Villamayor de los Montes,175,85,90
-9,Burgos,444,Villamayor de Treviño,68,35,33
-9,Burgos,445,Villambistia,45,32,13
-9,Burgos,446,Villamedianilla,12,7,5
-9,Burgos,447,Villamiel de la Sierra,46,28,18
-9,Burgos,448,Villangómez,217,133,84
-9,Burgos,449,Villanueva de Argaño,108,63,45
-9,Burgos,450,Villanueva de Carazo,30,19,11
-9,Burgos,451,Villanueva de Gumiel,278,144,134
-9,Burgos,454,Villanueva de Teba,41,27,14
-9,Burgos,455,Villaquirán de la Puebla,45,28,17
-9,Burgos,456,Villaquirán de los Infantes,150,80,70
-9,Burgos,903,Villarcayo de Merindad de Castilla la Vieja,4207,2152,2055
-9,Burgos,458,Villariezo,644,358,286
-9,Burgos,460,Villasandino,189,112,77
-9,Burgos,463,Villasur de Herreros,276,170,106
-9,Burgos,464,Villatuelda,40,23,17
-9,Burgos,466,Villaverde del Monte,112,65,47
-9,Burgos,467,Villaverde-Mogina,75,50,25
-9,Burgos,471,Villayerno Morquillas,194,98,96
-9,Burgos,472,Villazopeque,58,36,22
-9,Burgos,473,Villegas,87,50,37
-9,Burgos,476,Villoruebo,74,47,27
-9,Burgos,424,Viloria de Rioja,42,25,17
-9,Burgos,425,Vilviestre del Pinar,549,301,248
-9,Burgos,478,Vizcaínos,43,30,13
-9,Burgos,480,Zael,112,58,54
-9,Burgos,482,Zarzosa de Río Pisuerga,31,19,12
-9,Burgos,483,Zazuar,226,117,109
-9,Burgos,485,Zuñeda,58,36,22
+09,Burgos,1,Abajas,27,19,8
+09,Burgos,3,Adrada de Haza,219,110,109
+09,Burgos,6,Aguas Cándidas,57,35,22
+09,Burgos,7,Aguilar de Bureba,61,38,23
+09,Burgos,9,Albillos,214,111,103
+09,Burgos,10,Alcocero de Mola,36,26,10
+09,Burgos,11,Alfoz de Bricia,77,46,31
+09,Burgos,907,Alfoz de Quintanadueñas,2007,1071,936
+09,Burgos,12,Alfoz de Santa Gadea,100,57,43
+09,Burgos,13,Altable,53,31,22
+09,Burgos,14,"Altos, Los",186,111,75
+09,Burgos,16,Ameyugo,105,60,45
+09,Burgos,17,Anguix,135,74,61
+09,Burgos,18,Aranda de Duero,32523,15805,16718
+09,Burgos,19,Arandilla,161,99,62
+09,Burgos,20,Arauzo de Miel,326,176,150
+09,Burgos,21,Arauzo de Salce,56,34,22
+09,Burgos,22,Arauzo de Torre,73,42,31
+09,Burgos,23,Arcos,1684,895,789
+09,Burgos,24,Arenillas de Riopisuerga,182,107,75
+09,Burgos,25,Arija,126,65,61
+09,Burgos,26,Arlanzón,408,252,156
+09,Burgos,27,Arraya de Oca,49,29,20
+09,Burgos,29,Atapuerca,172,98,74
+09,Burgos,30,"Ausines, Los",129,75,54
+09,Burgos,32,Avellanosa de Muñó,112,60,52
+09,Burgos,33,Bahabón de Esgueva,73,45,28
+09,Burgos,34,"Balbases, Los",311,173,138
+09,Burgos,35,Baños de Valdearados,342,201,141
+09,Burgos,36,Bañuelos de Bureba,34,19,15
+09,Burgos,37,Barbadillo de Herreros,109,64,45
+09,Burgos,38,Barbadillo del Mercado,143,76,67
+09,Burgos,39,Barbadillo del Pez,67,41,26
+09,Burgos,41,Barrio de Muñó,33,19,14
+09,Burgos,43,"Barrios de Bureba, Los",194,115,79
+09,Burgos,44,Barrios de Colina,53,28,25
+09,Burgos,45,Basconcillos del Tozo,285,159,126
+09,Burgos,46,Bascuñana,25,16,9
+09,Burgos,47,Belbimbre,67,34,33
+09,Burgos,48,Belorado,1816,926,890
+09,Burgos,50,Berberana,55,31,24
+09,Burgos,51,Berlangas de Roa,184,100,84
+09,Burgos,52,Berzosa de Bureba,29,21,8
+09,Burgos,54,Bozoó,98,61,37
+09,Burgos,55,Brazacorta,55,31,24
+09,Burgos,56,Briviesca,6675,3323,3352
+09,Burgos,57,Bugedo,173,114,59
+09,Burgos,58,Buniel,543,299,244
+09,Burgos,59,Burgos,175921,83728,92193
+09,Burgos,60,Busto de Bureba,149,79,70
+09,Burgos,61,Cabañes de Esgueva,169,94,75
+09,Burgos,62,Cabezón de la Sierra,53,26,27
+09,Burgos,64,Caleruega,433,227,206
+09,Burgos,65,Campillo de Aranda,162,98,64
+09,Burgos,66,Campolara,61,45,16
+09,Burgos,67,Canicosa de la Sierra,470,246,224
+09,Burgos,68,Cantabrana,27,15,12
+09,Burgos,70,Carazo,33,24,9
+09,Burgos,71,Carcedo de Bureba,44,25,19
+09,Burgos,72,Carcedo de Burgos,411,223,188
+09,Burgos,73,Cardeñadijo,1313,722,591
+09,Burgos,74,Cardeñajimeno,1101,569,532
+09,Burgos,75,Cardeñuela Riopico,112,65,47
+09,Burgos,76,Carrias,25,19,6
+09,Burgos,77,Cascajares de Bureba,33,16,17
+09,Burgos,78,Cascajares de la Sierra,37,21,16
+09,Burgos,79,Castellanos de Castro,50,30,20
+09,Burgos,83,Castil de Peones,32,18,14
+09,Burgos,82,Castildelgado,36,21,15
+09,Burgos,84,Castrillo de la Reina,185,119,66
+09,Burgos,85,Castrillo de la Vega,632,345,287
+09,Burgos,88,Castrillo de Riopisuerga,62,38,24
+09,Burgos,86,Castrillo del Val,792,453,339
+09,Burgos,90,Castrillo Mota de Judíos,52,28,24
+09,Burgos,91,Castrojeriz,803,417,386
+09,Burgos,63,Cavia,233,138,95
+09,Burgos,93,Cayuela,177,94,83
+09,Burgos,94,Cebrecos,54,33,21
+09,Burgos,95,Celada del Camino,115,57,58
+09,Burgos,98,Cerezo de Río Tirón,575,313,262
+09,Burgos,100,Cerratón de Juarros,57,37,20
+09,Burgos,101,Ciadoncha,78,46,32
+09,Burgos,102,Cillaperlata,33,22,11
+09,Burgos,103,Cilleruelo de Abajo,224,124,100
+09,Burgos,104,Cilleruelo de Arriba,44,23,21
+09,Burgos,105,Ciruelos de Cervera,101,58,43
+09,Burgos,108,Cogollos,545,299,246
+09,Burgos,109,Condado de Treviño,1352,768,584
+09,Burgos,110,Contreras,80,50,30
+09,Burgos,112,Coruña del Conde,112,69,43
+09,Burgos,113,Covarrubias,545,289,256
+09,Burgos,114,Cubillo del Campo,95,53,42
+09,Burgos,115,Cubo de Bureba,98,55,43
+09,Burgos,117,"Cueva de Roa, La",85,43,42
+09,Burgos,119,Cuevas de San Clemente,45,16,29
+09,Burgos,120,Encío,42,24,18
+09,Burgos,122,Espinosa de Cervera,95,60,35
+09,Burgos,124,Espinosa de los Monteros,1696,891,805
+09,Burgos,123,Espinosa del Camino,44,27,17
+09,Burgos,125,Estépar,608,363,245
+09,Burgos,127,Fontioso,52,31,21
+09,Burgos,128,Frandovínez,84,49,35
+09,Burgos,129,Fresneda de la Sierra Tirón,101,66,35
+09,Burgos,130,Fresneña,76,47,29
+09,Burgos,131,Fresnillo de las Dueñas,653,342,311
+09,Burgos,132,Fresno de Río Tirón,181,112,69
+09,Burgos,133,Fresno de Rodilla,45,25,20
+09,Burgos,134,Frías,254,133,121
+09,Burgos,135,Fuentebureba,41,22,19
+09,Burgos,136,Fuentecén,227,124,103
+09,Burgos,137,Fuentelcésped,235,118,117
+09,Burgos,138,Fuentelisendo,83,45,38
+09,Burgos,139,Fuentemolinos,107,69,38
+09,Burgos,140,Fuentenebro,126,77,49
+09,Burgos,141,Fuentespina,775,400,375
+09,Burgos,143,Galbarros,29,18,11
+09,Burgos,144,"Gallega, La",45,29,16
+09,Burgos,148,Grijalba,100,51,49
+09,Burgos,149,Grisaleña,37,28,9
+09,Burgos,151,Gumiel de Izán,548,310,238
+09,Burgos,152,Gumiel de Mercado,310,171,139
+09,Burgos,154,Hacinas,155,89,66
+09,Burgos,155,Haza,26,16,10
+09,Burgos,159,Hontanas,69,43,26
+09,Burgos,160,Hontangas,91,59,32
+09,Burgos,162,Hontoria de la Cantera,156,82,74
+09,Burgos,164,Hontoria de Valdearados,180,109,71
+09,Burgos,163,Hontoria del Pinar,669,371,298
+09,Burgos,166,"Hormazas, Las",105,61,44
+09,Burgos,167,Hornillos del Camino,58,36,22
+09,Burgos,168,"Horra, La",337,182,155
+09,Burgos,169,Hortigüela,103,69,34
+09,Burgos,170,Hoyales de Roa,223,120,103
+09,Burgos,172,Huérmeces,136,70,66
+09,Burgos,173,Huerta de Arriba,133,75,58
+09,Burgos,174,Huerta de Rey,932,507,425
+09,Burgos,175,Humada,121,82,39
+09,Burgos,176,Hurones,62,42,20
+09,Burgos,177,Ibeas de Juarros,1405,764,641
+09,Burgos,178,Ibrillos,45,29,16
+09,Burgos,179,Iglesiarrubia,41,22,19
+09,Burgos,180,Iglesias,137,76,61
+09,Burgos,181,Isar,307,160,147
+09,Burgos,182,Itero del Castillo,78,45,33
+09,Burgos,183,Jaramillo de la Fuente,49,31,18
+09,Burgos,184,Jaramillo Quemado,8,6,2
+09,Burgos,189,Junta de Traslaloma,131,72,59
+09,Burgos,190,Junta de Villalba de Losa,86,48,38
+09,Burgos,191,Jurisdicción de Lara,33,20,13
+09,Burgos,192,Jurisdicción de San Zadornil,55,31,24
+09,Burgos,194,Lerma,2560,1281,1279
+09,Burgos,195,Llano de Bureba,60,39,21
+09,Burgos,196,Madrigal del Monte,147,89,58
+09,Burgos,197,Madrigalejo del Monte,168,109,59
+09,Burgos,198,Mahamud,112,65,47
+09,Burgos,199,Mambrilla de Castrejón,100,56,44
+09,Burgos,200,Mambrillas de Lara,52,31,21
+09,Burgos,201,Mamolar,29,21,8
+09,Burgos,202,Manciles,22,14,8
+09,Burgos,206,Mazuela,56,32,24
+09,Burgos,208,Mecerreyes,211,111,100
+09,Burgos,209,Medina de Pomar,5816,2958,2858
+09,Burgos,211,Melgar de Fernamental,1611,866,745
+09,Burgos,213,Merindad de Cuesta-Urria,313,172,141
+09,Burgos,214,Merindad de Montija,733,438,295
+09,Burgos,906,Merindad de Río Ubierna,1443,798,645
+09,Burgos,215,Merindad de Sotoscueva,402,227,175
+09,Burgos,216,Merindad de Valdeporres,429,222,207
+09,Burgos,217,Merindad de Valdivielso,386,222,164
+09,Burgos,218,Milagros,451,244,207
+09,Burgos,219,Miranda de Ebro,35477,17433,18044
+09,Burgos,220,Miraveche,71,47,24
+09,Burgos,221,Modúbar de la Emparedada,669,369,300
+09,Burgos,223,Monasterio de la Sierra,44,29,15
+09,Burgos,224,Monasterio de Rodilla,164,89,75
+09,Burgos,225,Moncalvillo,87,52,35
+09,Burgos,226,Monterrubio de la Demanda,59,36,23
+09,Burgos,227,Montorio,148,78,70
+09,Burgos,228,Moradillo de Roa,172,92,80
+09,Burgos,229,Nava de Roa,224,121,103
+09,Burgos,230,Navas de Bureba,35,18,17
+09,Burgos,231,Nebreda,65,47,18
+09,Burgos,232,Neila,158,93,65
+09,Burgos,235,Olmedillo de Roa,189,110,79
+09,Burgos,236,Olmillos de Muñó,37,22,15
+09,Burgos,238,Oña,1024,538,486
+09,Burgos,239,Oquillas,55,31,24
+09,Burgos,241,Orbaneja Riopico,328,177,151
+09,Burgos,242,Padilla de Abajo,78,44,34
+09,Burgos,243,Padilla de Arriba,77,47,30
+09,Burgos,244,Padrones de Bureba,50,25,25
+09,Burgos,246,Palacios de la Sierra,721,371,350
+09,Burgos,247,Palacios de Riopisuerga,24,12,12
+09,Burgos,248,Palazuelos de la Sierra,82,48,34
+09,Burgos,249,Palazuelos de Muñó,52,29,23
+09,Burgos,250,Pampliega,282,152,130
+09,Burgos,251,Pancorbo,436,239,197
+09,Burgos,253,Pardilla,117,69,48
+09,Burgos,255,Partido de la Sierra en Tobalina,90,52,38
+09,Burgos,256,Pedrosa de Duero,438,253,185
+09,Burgos,259,Pedrosa de Río Úrbel,251,149,102
+09,Burgos,257,Pedrosa del Páramo,94,57,37
+09,Burgos,258,Pedrosa del Príncipe,174,93,81
+09,Burgos,261,Peñaranda de Duero,527,261,266
+09,Burgos,262,Peral de Arlanza,167,91,76
+09,Burgos,265,Piérnigas,38,22,16
+09,Burgos,266,Pineda de la Sierra,103,66,37
+09,Burgos,267,Pineda Trasmonte,111,66,45
+09,Burgos,268,Pinilla de los Barruecos,111,62,49
+09,Burgos,269,Pinilla de los Moros,36,21,15
+09,Burgos,270,Pinilla Trasmonte,167,96,71
+09,Burgos,272,Poza de la Sal,294,155,139
+09,Burgos,273,Prádanos de Bureba,53,33,20
+09,Burgos,274,Pradoluengo,1169,586,583
+09,Burgos,275,Presencio,179,110,69
+09,Burgos,276,"Puebla de Arganzón, La",495,269,226
+09,Burgos,277,Puentedura,115,78,37
+09,Burgos,279,Quemada,238,142,96
+09,Burgos,281,Quintana del Pidio,154,80,74
+09,Burgos,280,Quintanabureba,24,14,10
+09,Burgos,283,Quintanaélez,46,24,22
+09,Burgos,287,Quintanaortuño,267,154,113
+09,Burgos,288,Quintanapalla,111,63,48
+09,Burgos,289,Quintanar de la Sierra,1690,892,798
+09,Burgos,292,Quintanavides,79,48,31
+09,Burgos,294,Quintanilla de la Mata,114,69,45
+09,Burgos,901,Quintanilla del Agua y Tordueles,383,200,183
+09,Burgos,295,Quintanilla del Coco,57,28,29
+09,Burgos,298,Quintanilla San García,87,49,38
+09,Burgos,301,Quintanilla Vivar,803,426,377
+09,Burgos,297,"Quintanillas, Las",376,217,159
+09,Burgos,302,Rabanera del Pinar,108,66,42
+09,Burgos,303,Rábanos,83,51,32
+09,Burgos,304,Rabé de las Calzadas,208,111,97
+09,Burgos,306,Rebolledo de la Torre,112,61,51
+09,Burgos,307,Redecilla del Camino,115,72,43
+09,Burgos,308,Redecilla del Campo,68,39,29
+09,Burgos,309,Regumiel de la Sierra,349,185,164
+09,Burgos,310,Reinoso,11,8,3
+09,Burgos,311,Retuerta,59,37,22
+09,Burgos,314,Revilla del Campo,94,60,34
+09,Burgos,316,Revilla Vallejera,115,73,42
+09,Burgos,312,"Revilla y Ahedo, La",107,60,47
+09,Burgos,315,Revillarruz,523,269,254
+09,Burgos,317,Rezmondo,19,7,12
+09,Burgos,318,Riocavado de la Sierra,60,38,22
+09,Burgos,321,Roa,2185,1104,1081
+09,Burgos,323,Rojas,65,43,22
+09,Burgos,325,Royuela de Río Franco,193,117,76
+09,Burgos,326,Rubena,183,106,77
+09,Burgos,327,Rublacedo de Abajo,36,18,18
+09,Burgos,328,Rucandio,65,31,34
+09,Burgos,329,Salas de Bureba,131,76,55
+09,Burgos,330,Salas de los Infantes,1955,1007,948
+09,Burgos,332,Saldaña de Burgos,169,92,77
+09,Burgos,334,Salinillas de Bureba,51,41,10
+09,Burgos,335,San Adrián de Juarros,88,55,33
+09,Burgos,337,San Juan del Monte,142,79,63
+09,Burgos,338,San Mamés de Burgos,298,168,130
+09,Burgos,339,San Martín de Rubiales,141,82,59
+09,Burgos,340,San Millán de Lara,79,56,23
+09,Burgos,360,San Vicente del Valle,25,20,5
+09,Burgos,343,Santa Cecilia,101,61,40
+09,Burgos,345,Santa Cruz de la Salceda,140,87,53
+09,Burgos,346,Santa Cruz del Valle Urbión,99,65,34
+09,Burgos,347,Santa Gadea del Cid,145,74,71
+09,Burgos,348,Santa Inés,141,74,67
+09,Burgos,350,Santa María del Campo,537,291,246
+09,Burgos,351,Santa María del Invierno,62,45,17
+09,Burgos,352,Santa María del Mercadillo,104,66,38
+09,Burgos,353,Santa María Rivarredonda,91,54,37
+09,Burgos,354,Santa Olalla de Bureba,35,26,9
+09,Burgos,355,Santibáñez de Esgueva,85,46,39
+09,Burgos,356,Santibáñez del Val,45,28,17
+09,Burgos,358,Santo Domingo de Silos,279,172,107
+09,Burgos,361,Sargentes de la Lora,114,64,50
+09,Burgos,362,Sarracín,245,135,110
+09,Burgos,363,Sasamón,995,562,433
+09,Burgos,365,"Sequera de Haza, La",31,22,9
+09,Burgos,366,Solarana,77,45,32
+09,Burgos,368,Sordillos,23,16,7
+09,Burgos,369,Sotillo de la Ribera,490,255,235
+09,Burgos,372,Sotragero,268,143,125
+09,Burgos,373,Sotresgudo,448,258,190
+09,Burgos,374,Susinos del Páramo,103,66,37
+09,Burgos,375,Tamarón,38,21,17
+09,Burgos,377,Tardajos,782,422,360
+09,Burgos,378,Tejada,29,17,12
+09,Burgos,380,Terradillos de Esgueva,80,38,42
+09,Burgos,381,Tinieblas de la Sierra,34,20,14
+09,Burgos,382,Tobar,24,17,7
+09,Burgos,384,Tordómar,346,189,157
+09,Burgos,386,Torrecilla del Monte,65,37,28
+09,Burgos,387,Torregalindo,126,81,45
+09,Burgos,388,Torrelara,30,16,14
+09,Burgos,389,Torrepadre,68,39,29
+09,Burgos,390,Torresandino,657,356,301
+09,Burgos,391,Tórtoles de Esgueva,458,242,216
+09,Burgos,392,Tosantos,57,32,25
+09,Burgos,394,Trespaderne,809,414,395
+09,Burgos,395,Tubilla del Agua,134,81,53
+09,Burgos,396,Tubilla del Lago,160,85,75
+09,Burgos,398,Úrbel del Castillo,79,52,27
+09,Burgos,400,Vadocondes,369,201,168
+09,Burgos,403,Valdeande,104,62,42
+09,Burgos,405,Valdezate,136,75,61
+09,Burgos,406,Valdorros,333,189,144
+09,Burgos,408,Vallarta de Bureba,42,26,16
+09,Burgos,904,Valle de las Navas,514,300,214
+09,Burgos,908,Valle de Losa,498,290,208
+09,Burgos,409,Valle de Manzanedo,126,67,59
+09,Burgos,410,Valle de Mena,3739,1911,1828
+09,Burgos,411,Valle de Oca,157,96,61
+09,Burgos,902,Valle de Santibáñez,480,277,203
+09,Burgos,905,Valle de Sedano,427,244,183
+09,Burgos,412,Valle de Tobalina,948,515,433
+09,Burgos,413,Valle de Valdebezana,477,247,230
+09,Burgos,414,Valle de Valdelaguna,195,114,81
+09,Burgos,415,Valle de Valdelucio,321,176,145
+09,Burgos,416,Valle de Zamanzas,50,28,22
+09,Burgos,417,Vallejera,42,24,18
+09,Burgos,418,Valles de Palenzuela,83,42,41
+09,Burgos,419,Valluércanes,76,48,28
+09,Burgos,407,Valmala,29,17,12
+09,Burgos,422,"Vid de Bureba, La",17,9,8
+09,Burgos,421,"Vid y Barrios, La",239,139,100
+09,Burgos,423,Vileña,29,19,10
+09,Burgos,427,Villadiego,1527,843,684
+09,Burgos,428,Villaescusa de Roa,105,61,44
+09,Burgos,429,Villaescusa la Sombría,59,44,15
+09,Burgos,430,Villaespasa,24,15,9
+09,Burgos,431,Villafranca Montes de Oca,119,73,46
+09,Burgos,432,Villafruela,191,110,81
+09,Burgos,433,Villagalijo,61,39,22
+09,Burgos,434,Villagonzalo Pedernales,1785,938,847
+09,Burgos,437,Villahoz,309,167,142
+09,Burgos,438,Villalba de Duero,673,354,319
+09,Burgos,439,Villalbilla de Burgos,1406,763,643
+09,Burgos,440,Villalbilla de Gumiel,88,54,34
+09,Burgos,441,Villaldemiro,71,42,29
+09,Burgos,442,Villalmanzo,438,236,202
+09,Burgos,443,Villamayor de los Montes,175,85,90
+09,Burgos,444,Villamayor de Treviño,68,35,33
+09,Burgos,445,Villambistia,45,32,13
+09,Burgos,446,Villamedianilla,12,7,5
+09,Burgos,447,Villamiel de la Sierra,46,28,18
+09,Burgos,448,Villangómez,217,133,84
+09,Burgos,449,Villanueva de Argaño,108,63,45
+09,Burgos,450,Villanueva de Carazo,30,19,11
+09,Burgos,451,Villanueva de Gumiel,278,144,134
+09,Burgos,454,Villanueva de Teba,41,27,14
+09,Burgos,455,Villaquirán de la Puebla,45,28,17
+09,Burgos,456,Villaquirán de los Infantes,150,80,70
+09,Burgos,903,Villarcayo de Merindad de Castilla la Vieja,4207,2152,2055
+09,Burgos,458,Villariezo,644,358,286
+09,Burgos,460,Villasandino,189,112,77
+09,Burgos,463,Villasur de Herreros,276,170,106
+09,Burgos,464,Villatuelda,40,23,17
+09,Burgos,466,Villaverde del Monte,112,65,47
+09,Burgos,467,Villaverde-Mogina,75,50,25
+09,Burgos,471,Villayerno Morquillas,194,98,96
+09,Burgos,472,Villazopeque,58,36,22
+09,Burgos,473,Villegas,87,50,37
+09,Burgos,476,Villoruebo,74,47,27
+09,Burgos,424,Viloria de Rioja,42,25,17
+09,Burgos,425,Vilviestre del Pinar,549,301,248
+09,Burgos,478,Vizcaínos,43,30,13
+09,Burgos,480,Zael,112,58,54
+09,Burgos,482,Zarzosa de Río Pisuerga,31,19,12
+09,Burgos,483,Zazuar,226,117,109
+09,Burgos,485,Zuñeda,58,36,22
 10,Cáceres,1,Abadía,335,189,146
 10,Cáceres,2,Abertura,403,207,196
 10,Cáceres,3,Acebo,580,294,286

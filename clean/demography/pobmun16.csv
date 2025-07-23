@@ -1,4 +1,4 @@
-CPRO,PROVINCIA,CMUN,NOMBRE,POB16,HOMBRES,MUJERES
+province_code,province_name,cmun,municipality_name,population_total,population_male,population_female
 2.0,Albacete,1.0,Abengibre,761,366,395
 2.0,Albacete,2.0,Alatoz,582,325,257
 2.0,Albacete,3.0,Albacete,172426,84366,88060
@@ -8124,4 +8124,4 @@ CPRO,PROVINCIA,CMUN,NOMBRE,POB16,HOMBRES,MUJERES
 50.0,Zaragoza,298.0,Zuera,7978,4093,3885
 51.0,Ceuta,1.0,Ceuta,84519,42846,41673
 52.0,Melilla,1.0,Melilla,86026,43768,42258
-,,,,46557008,22843610,23713398
+nan,,,,46557008,22843610,23713398

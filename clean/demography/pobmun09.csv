@@ -1,4 +1,5 @@
-Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
+province_code,province_name,cmun,municipality_name,population_total,population_male,population_female
+nan,Total Álava,,,313819,156418,157401
 1.0,Álava,1.0,Alegría-Dulantzi,2620,1353,1267
 1.0,Álava,2.0,Amurrio,10089,5069,5020
 1.0,Álava,49.0,Añana,176,92,84
@@ -50,7 +51,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 1.0,Álava,62.0,Zambrana,377,203,174
 1.0,Álava,18.0,Zigoitia,1649,866,783
 1.0,Álava,63.0,Zuia,2390,1237,1153
-,Total Albacete,,,400891,201162,199729
+nan,Total Albacete,,,400891,201162,199729
 2.0,Albacete,1.0,Abengibre,930,473,457
 2.0,Albacete,2.0,Alatoz,591,322,269
 2.0,Albacete,3.0,Albacete,169716,83838,85878
@@ -138,7 +139,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 2.0,Albacete,84.0,Villaverde de Guadalimar,424,226,198
 2.0,Albacete,85.0,Viveros,395,203,192
 2.0,Albacete,86.0,Yeste,3397,1734,1663
-,Total Alicante/Alacant,,,1917012,958200,958812
+nan,Total Alicante/Alacant,,,1917012,958200,958812
 3.0,Alicante/Alacant,1.0,Adsubia,693,353,340
 3.0,Alicante/Alacant,2.0,Agost,4810,2432,2378
 3.0,Alicante/Alacant,3.0,Agres,619,325,294
@@ -280,7 +281,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 3.0,Alicante/Alacant,139.0,Villajoyosa/Vila Joiosa (la),33797,16940,16857
 3.0,Alicante/Alacant,140.0,Villena,35222,17559,17663
 3.0,Alicante/Alacant,81.0,Xaló,3235,1632,1603
-,Total Almería,,,684426,352395,332031
+nan,Total Almería,,,684426,352395,332031
 4.0,Almería,1.0,Abla,1504,783,721
 4.0,Almería,2.0,Abrucena,1341,682,659
 4.0,Almería,3.0,Adra,24373,12338,12035
@@ -383,7 +384,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 4.0,Almería,101.0,Viator,4860,2448,2412
 4.0,Almería,102.0,Vícar,22853,12114,10739
 4.0,Almería,103.0,Zurgena,3066,1518,1548
-,Total Asturias,,,1085289,520916,564373
+nan,Total Asturias,,,1085289,520916,564373
 33.0,Asturias,1.0,Allande,2068,1056,1012
 33.0,Asturias,2.0,Aller,12766,6260,6506
 33.0,Asturias,3.0,Amieva,815,437,378
@@ -462,7 +463,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 33.0,Asturias,76.0,Villaviciosa,14775,7247,7528
 33.0,Asturias,77.0,Villayón,1582,797,785
 33.0,Asturias,78.0,Yernes y Tameza,185,95,90
-,Total Ávila,,,171680,86720,84960
+nan,Total Ávila,,,171680,86720,84960
 5.0,Ávila,1.0,Adanero,295,152,143
 5.0,Ávila,2.0,Adrada (La),2734,1432,1302
 5.0,Ávila,5.0,Albornos,243,130,113
@@ -711,7 +712,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 5.0,Ávila,265.0,Vita,99,62,37
 5.0,Ávila,266.0,Zapardiel de la Cañada,126,59,67
 5.0,Ávila,267.0,Zapardiel de la Ribera,131,66,65
-,Total Badajoz,,,688777,341912,346865
+nan,Total Badajoz,,,688777,341912,346865
 6.0,Badajoz,1.0,Acedera,821,429,392
 6.0,Badajoz,2.0,Aceuchal,5679,2822,2857
 6.0,Badajoz,3.0,Ahillones,1052,526,526
@@ -876,7 +877,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 6.0,Badajoz,160.0,Zalamea de la Serena,3978,1976,2002
 6.0,Badajoz,162.0,Zarza (La),3563,1804,1759
 6.0,Badajoz,161.0,Zarza-Capilla,403,202,201
-,Total Balears (Illes),,,1095426,551079,544347
+nan,Total Balears (Illes),,,1095426,551079,544347
 7.0,Balears (Illes),2.0,Alaior,9257,4643,4614
 7.0,Balears (Illes),1.0,Alaró,5327,2629,2698
 7.0,Balears (Illes),3.0,Alcúdia,19071,9704,9367
@@ -944,7 +945,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 7.0,Balears (Illes),62.0,Son Servera,12215,6179,6036
 7.0,Balears (Illes),63.0,Valldemossa,1995,1024,971
 7.0,Balears (Illes),65.0,Vilafranca de Bonany,2908,1457,1451
-,Total Barcelona,,,5487935,2703137,2784798
+nan,Total Barcelona,,,5487935,2703137,2784798
 8.0,Barcelona,1.0,Abrera,11521,5974,5547
 8.0,Barcelona,2.0,Aguilar de Segarra,257,135,122
 8.0,Barcelona,14.0,Aiguafreda,2464,1195,1269
@@ -1256,7 +1257,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 8.0,Barcelona,219.0,Vilassar de Mar,19482,9453,10029
 8.0,Barcelona,304.0,Vilobí del Penedès,1112,574,538
 8.0,Barcelona,308.0,Viver i Serrateix,186,98,88
-,Total Burgos,,,375563,190271,185292
+nan,Total Burgos,,,375563,190271,185292
 9.0,Burgos,1.0,Abajas,26,16,10
 9.0,Burgos,3.0,Adrada de Haza,252,140,112
 9.0,Burgos,6.0,Aguas Cándidas,61,39,22
@@ -1628,7 +1629,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 9.0,Burgos,482.0,Zarzosa de Río Pisuerga,38,24,14
 9.0,Burgos,483.0,Zazuar,255,136,119
 9.0,Burgos,485.0,Zuñeda,60,35,25
-,Total Cáceres,,,413633,205638,207995
+nan,Total Cáceres,,,413633,205638,207995
 10.0,Cáceres,1.0,Abadía,325,175,150
 10.0,Cáceres,2.0,Abertura,454,233,221
 10.0,Cáceres,3.0,Acebo,685,356,329
@@ -1848,7 +1849,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 10.0,Cáceres,217.0,Zarza de Montánchez,619,300,319
 10.0,Cáceres,218.0,Zarza la Mayor,1409,714,695
 10.0,Cáceres,219.0,Zorita,1673,816,857
-,Total Cádiz,,,1230594,609984,620610
+nan,Total Cádiz,,,1230594,609984,620610
 11.0,Cádiz,1.0,Alcalá de los Gazules,5619,2852,2767
 11.0,Cádiz,2.0,Alcalá del Valle,5300,2697,2603
 11.0,Cádiz,3.0,Algar,1544,802,742
@@ -1893,7 +1894,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 11.0,Cádiz,40.0,Villaluenga del Rosario,479,251,228
 11.0,Cádiz,41.0,Villamartín,12526,6245,6281
 11.0,Cádiz,42.0,Zahara,1513,769,744
-,Total Cantabria,,,589235,288735,300500
+nan,Total Cantabria,,,589235,288735,300500
 39.0,Cantabria,1.0,Alfoz de Lloredo,2496,1258,1238
 39.0,Cantabria,2.0,Ampuero,4179,2133,2046
 39.0,Cantabria,3.0,Anievas,366,180,186
@@ -1996,7 +1997,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 39.0,Cantabria,99.0,Villaescusa,3581,1813,1768
 39.0,Cantabria,100.0,Villafufre,1109,573,536
 39.0,Cantabria,102.0,Voto,2664,1417,1247
-,Total Castellón/Castelló,,,602301,303460,298841
+nan,Total Castellón/Castelló,,,602301,303460,298841
 12.0,Castellón/Castelló,2.0,Aín,141,72,69
 12.0,Castellón/Castelló,3.0,Albocàsser,1447,730,717
 12.0,Castellón/Castelló,4.0,Alcalà de Xivert,7926,4087,3839
@@ -2132,7 +2133,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 12.0,Castellón/Castelló,140.0,Viver,1754,916,838
 12.0,Castellón/Castelló,141.0,Zorita del Maestrazgo,146,68,78
 12.0,Castellón/Castelló,142.0,Zucaina,182,100,82
-,Total Ciudad Real,,,527273,263038,264235
+nan,Total Ciudad Real,,,527273,263038,264235
 13.0,Ciudad Real,1.0,Abenójar,1592,817,775
 13.0,Ciudad Real,2.0,Agudo,1871,942,929
 13.0,Ciudad Real,3.0,Alamillo,554,279,275
@@ -2235,7 +2236,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 13.0,Ciudad Real,96.0,Villarrubia de los Ojos,11191,5670,5521
 13.0,Ciudad Real,97.0,Villarta de San Juan,3115,1599,1516
 13.0,Ciudad Real,98.0,Viso del Marqués,2811,1409,1402
-,Total Córdoba,,,803998,395225,408773
+nan,Total Córdoba,,,803998,395225,408773
 14.0,Córdoba,1.0,Adamuz,4419,2267,2152
 14.0,Córdoba,2.0,Aguilar de la Frontera,13746,6891,6855
 14.0,Córdoba,3.0,Alcaracejos,1528,757,771
@@ -2311,7 +2312,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 14.0,Córdoba,73.0,Villaviciosa de Córdoba,3558,1822,1736
 14.0,Córdoba,74.0,Viso (El),2810,1381,1429
 14.0,Córdoba,75.0,Zuheros,784,401,383
-,Total Coruña (A),,,1145488,550841,594647
+nan,Total Coruña (A),,,1145488,550841,594647
 15.0,Coruña (A),1.0,Abegondo,5798,2876,2922
 15.0,Coruña (A),2.0,Ames,26983,13079,13904
 15.0,Coruña (A),3.0,Aranga,2142,1066,1076
@@ -2406,7 +2407,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 15.0,Coruña (A),90.0,Vilasantar,1415,737,678
 15.0,Coruña (A),92.0,Vimianzo,8204,4010,4194
 15.0,Coruña (A),93.0,Zas,5385,2634,2751
-,Total Cuenca,,,217363,110282,107081
+nan,Total Cuenca,,,217363,110282,107081
 16.0,Cuenca,1.0,Abia de la Obispalía,80,48,32
 16.0,Cuenca,2.0,Acebrón (El),282,147,135
 16.0,Cuenca,3.0,Alarcón,191,88,103
@@ -2645,7 +2646,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 16.0,Cuenca,278.0,Zafrilla,95,43,52
 16.0,Cuenca,279.0,Zarza de Tajo,398,216,182
 16.0,Cuenca,280.0,Zarzuela,235,128,107
-,Total Girona,,,747782,379629,368153
+nan,Total Girona,,,747782,379629,368153
 17.0,Girona,1.0,Agullana,812,429,383
 17.0,Girona,2.0,Aiguaviva,714,362,352
 17.0,Girona,3.0,Albanyà,152,81,71
@@ -2867,7 +2868,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 17.0,Girona,222.0,Vilaür,140,68,72
 17.0,Girona,233.0,Vilobí d'Onyar,2956,1548,1408
 17.0,Girona,232.0,Vilopriu,221,120,101
-,Total Granada,,,907428,448784,458644
+nan,Total Granada,,,907428,448784,458644
 18.0,Granada,1.0,Agrón,358,182,176
 18.0,Granada,2.0,Alamedilla,721,364,357
 18.0,Granada,3.0,Albolote,17089,8583,8506
@@ -3036,7 +3037,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 18.0,Granada,913.0,Zagra,968,475,493
 18.0,Granada,193.0,Zubia (La),17803,8810,8993
 18.0,Granada,194.0,Zújar,2997,1588,1409
-,Total Guadalajara,,,246151,126608,119543
+nan,Total Guadalajara,,,246151,126608,119543
 19.0,Guadalajara,1.0,Abánades,83,42,41
 19.0,Guadalajara,2.0,Ablanque,110,60,50
 19.0,Guadalajara,3.0,Adobes,55,27,28
@@ -3325,7 +3326,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 19.0,Guadalajara,333.0,Zaorejas,169,102,67
 19.0,Guadalajara,334.0,Zarzuela de Jadraque,50,29,21
 19.0,Guadalajara,335.0,Zorita de los Canes,84,44,40
-,Total Guipúzcoa,,,705698,346820,358878
+nan,Total Guipúzcoa,,,705698,346820,358878
 20.0,Guipúzcoa,1.0,Abaltzisketa,316,178,138
 20.0,Guipúzcoa,2.0,Aduna,401,223,178
 20.0,Guipúzcoa,16.0,Aia,1958,1076,882
@@ -3414,7 +3415,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 20.0,Guipúzcoa,28.0,Zizurkil,2797,1419,1378
 20.0,Guipúzcoa,81.0,Zumaia,9285,4633,4652
 20.0,Guipúzcoa,80.0,Zumarraga,10104,5015,5089
-,Total Huelva,,,513403,255144,258259
+nan,Total Huelva,,,513403,255144,258259
 21.0,Huelva,1.0,Alájar,808,410,398
 21.0,Huelva,2.0,Aljaraque,17960,8981,8979
 21.0,Huelva,3.0,Almendro (El),867,451,416
@@ -3494,7 +3495,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 21.0,Huelva,77.0,Villarrasa,2151,1086,1065
 21.0,Huelva,78.0,Zalamea la Real,3414,1691,1723
 21.0,Huelva,79.0,Zufre,973,498,475
-,Total Huesca,,,228409,116630,111779
+nan,Total Huesca,,,228409,116630,111779
 22.0,Huesca,1.0,Abiego,286,153,133
 22.0,Huesca,2.0,Abizanda,126,65,61
 22.0,Huesca,3.0,Adahuesca,168,83,85
@@ -3697,7 +3698,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 22.0,Huesca,252.0,Yebra de Basa,158,91,67
 22.0,Huesca,253.0,Yésero,77,46,31
 22.0,Huesca,254.0,Zaidín,1729,889,840
-,Total Jaén,,,669782,332517,337265
+nan,Total Jaén,,,669782,332517,337265
 23.0,Jaén,1.0,Albanchez de Mágina,1228,620,608
 23.0,Jaén,2.0,Alcalá la Real,22783,11343,11440
 23.0,Jaén,3.0,Alcaudete,11135,5522,5613
@@ -3795,7 +3796,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 23.0,Jaén,99.0,Villares (Los),5783,2876,2907
 23.0,Jaén,101.0,Villarrodrigo,474,243,231
 23.0,Jaén,903.0,Villatorres,4445,2255,2190
-,Total León,,,500169,244716,255453
+nan,Total León,,,500169,244716,255453
 24.0,León,1.0,Acebedo,267,164,103
 24.0,León,2.0,Algadefe,325,166,159
 24.0,León,3.0,Alija del Infantado,809,417,392
@@ -4007,7 +4008,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 24.0,León,228.0,Villazala,844,443,401
 24.0,León,229.0,Villazanzo de Valderaduey,549,307,242
 24.0,León,230.0,Zotes del Páramo,495,279,216
-,Total Lleida,,,436402,223095,213307
+nan,Total Lleida,,,436402,223095,213307
 25.0,Lleida,1.0,Abella de la Conca,183,102,81
 25.0,Lleida,2.0,Àger,575,304,271
 25.0,Lleida,3.0,Agramunt,5608,2866,2742
@@ -4239,7 +4240,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 25.0,Lleida,252.0,Vila-sana,696,347,349
 25.0,Lleida,253.0,Vilosell (El),200,98,102
 25.0,Lleida,255.0,Vinaixa,607,313,294
-,Total Lugo,,,355195,172943,182252
+nan,Total Lugo,,,355195,172943,182252
 27.0,Lugo,1.0,Abadín,2896,1405,1491
 27.0,Lugo,2.0,Alfoz,2107,1021,1086
 27.0,Lugo,3.0,Antas de Ulla,2407,1175,1232
@@ -4307,7 +4308,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 27.0,Lugo,66.0,Viveiro,16238,7995,8243
 27.0,Lugo,21.0,Xermade,2256,1107,1149
 27.0,Lugo,25.0,Xove,3518,1757,1761
-,Total Madrid,,,6386932,3094874,3292058
+nan,Total Madrid,,,6386932,3094874,3292058
 28.0,Madrid,1.0,Acebeda (La),61,33,28
 28.0,Madrid,2.0,Ajalvir,3780,1967,1813
 28.0,Madrid,3.0,Alameda del Valle,237,136,101
@@ -4487,7 +4488,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 28.0,Madrid,181.0,Villaviciosa de Odón,26475,12917,13558
 28.0,Madrid,182.0,Villavieja del Lozoya,258,136,122
 28.0,Madrid,183.0,Zarzalejo,1488,785,703
-,Total Málaga,,,1593068,786393,806675
+nan,Total Málaga,,,1593068,786393,806675
 29.0,Málaga,1.0,Alameda,5481,2732,2749
 29.0,Málaga,2.0,Alcaucín,2576,1305,1271
 29.0,Málaga,3.0,Alfarnate,1348,698,650
@@ -4588,7 +4589,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 29.0,Málaga,97.0,Villanueva del Trabuco,5408,2711,2697
 29.0,Málaga,99.0,Viñuela,1994,1010,984
 29.0,Málaga,100.0,Yunquera,3237,1651,1586
-,Total Murcia,,,1446520,731609,714911
+nan,Total Murcia,,,1446520,731609,714911
 30.0,Murcia,1.0,Abanilla,6589,3315,3274
 30.0,Murcia,2.0,Abarán,12991,6536,6455
 30.0,Murcia,3.0,Águilas,34533,17426,17107
@@ -4634,7 +4635,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 30.0,Murcia,41.0,Unión (La),17737,8906,8831
 30.0,Murcia,42.0,Villanueva del Río Segura,2270,1124,1146
 30.0,Murcia,43.0,Yecla,35025,17668,17357
-,Total Navarra,,,630578,315486,315092
+nan,Total Navarra,,,630578,315486,315092
 31.0,Navarra,1.0,Abáigar,102,54,48
 31.0,Navarra,2.0,Abárzuza,574,286,288
 31.0,Navarra,3.0,Abaurregaina/Abaurrea Alta,140,85,55
@@ -4907,7 +4908,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 31.0,Navarra,263.0,Zubieta,315,175,140
 31.0,Navarra,264.0,Zugarramurdi,218,111,107
 31.0,Navarra,265.0,Zúñiga,127,79,48
-,Total Ourense,,,335642,161454,174188
+nan,Total Ourense,,,335642,161454,174188
 32.0,Ourense,1.0,Allariz,5821,2886,2935
 32.0,Ourense,2.0,Amoeiro,2327,1130,1197
 32.0,Ourense,3.0,Arnoia (A),1103,544,559
@@ -5000,7 +5001,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 32.0,Ourense,32.0,Xinzo de Limia,10161,5005,5156
 32.0,Ourense,36.0,Xunqueira de Ambía,1789,898,891
 32.0,Ourense,37.0,Xunqueira de Espadanedo,962,472,490
-,Total Palencia,,,173306,85950,87356
+nan,Total Palencia,,,173306,85950,87356
 34.0,Palencia,1.0,Abarca de Campos,41,24,17
 34.0,Palencia,3.0,Abia de las Torres,176,96,80
 34.0,Palencia,4.0,Aguilar de Campoo,7242,3515,3727
@@ -5192,7 +5193,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 34.0,Palencia,243.0,Villoldo,417,226,191
 34.0,Palencia,245.0,Villota del Páramo,368,218,150
 34.0,Palencia,246.0,Villovieco,92,48,44
-,Total Palmas (Las),,,1083502,545990,537512
+nan,Total Palmas (Las),,,1083502,545990,537512
 35.0,Palmas (Las),1.0,Agaete,5782,2903,2879
 35.0,Palmas (Las),2.0,Agüimes,28924,14814,14110
 35.0,Palmas (Las),20.0,Aldea de San Nicolás (La),8539,4299,4240
@@ -5227,7 +5228,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 35.0,Palmas (Las),31.0,Valsequillo de Gran Canaria,9067,4617,4450
 35.0,Palmas (Las),33.0,Vega de San Mateo,7636,3908,3728
 35.0,Palmas (Las),34.0,Yaiza,13941,7570,6371
-,Total Pontevedra,,,959764,464365,495399
+nan,Total Pontevedra,,,959764,464365,495399
 36.0,Pontevedra,20.0,Agolada,3094,1513,1581
 36.0,Pontevedra,1.0,Arbo,3833,1894,1939
 36.0,Pontevedra,3.0,Baiona,12091,6000,6091
@@ -5290,7 +5291,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 36.0,Pontevedra,58.0,Vilaboa,5978,2903,3075
 36.0,Pontevedra,60.0,Vilagarcía de Arousa,37576,18110,19466
 36.0,Pontevedra,61.0,Vilanova de Arousa,10719,5203,5516
-,Total Rioja (La),,,321702,162173,159529
+nan,Total Rioja (La),,,321702,162173,159529
 26.0,Rioja (La),1.0,Ábalos,387,239,148
 26.0,Rioja (La),2.0,Agoncillo,1191,684,507
 26.0,Rioja (La),3.0,Aguilar del Río Alhama,573,271,302
@@ -5465,7 +5466,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 26.0,Rioja (La),180.0,Zarratón,328,188,140
 26.0,Rioja (La),181.0,Zarzosa,14,11,3
 26.0,Rioja (La),183.0,Zorraquín,83,45,38
-,Total Salamanca,,,354608,173512,181096
+nan,Total Salamanca,,,354608,173512,181096
 37.0,Salamanca,1.0,Abusejo,236,123,113
 37.0,Salamanca,2.0,Agallas,164,86,78
 37.0,Salamanca,3.0,Ahigal de los Aceiteros,159,81,78
@@ -5828,7 +5829,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 37.0,Salamanca,380.0,Zarapicos,69,35,34
 37.0,Salamanca,381.0,Zarza de Pumareda (La),157,89,68
 37.0,Salamanca,382.0,Zorita de la Frontera,232,124,108
-,Total Santa Cruz de Tenerife,,,1020490,506646,513844
+nan,Total Santa Cruz de Tenerife,,,1020490,506646,513844
 38.0,Santa Cruz de Tenerife,1.0,Adeje,43204,22277,20927
 38.0,Santa Cruz de Tenerife,2.0,Agulo,1200,599,601
 38.0,Santa Cruz de Tenerife,3.0,Alajeró,2110,1141,969
@@ -5883,7 +5884,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 38.0,Santa Cruz de Tenerife,51.0,Victoria de Acentejo (La),9023,4509,4514
 38.0,Santa Cruz de Tenerife,52.0,Vilaflor,1854,956,898
 38.0,Santa Cruz de Tenerife,53.0,Villa de Mazo,4802,2414,2388
-,Total Segovia,,,164854,83636,81218
+nan,Total Segovia,,,164854,83636,81218
 40.0,Segovia,1.0,Abades,906,462,444
 40.0,Segovia,2.0,Adrada de Pirón,50,25,25
 40.0,Segovia,3.0,Adrados,168,93,75
@@ -6093,7 +6094,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 40.0,Segovia,231.0,Yanguas de Eresma,165,84,81
 40.0,Segovia,233.0,Zarzuela del Monte,613,327,286
 40.0,Segovia,234.0,Zarzuela del Pinar,534,275,259
-,Total Sevilla,,,1900224,932941,967283
+nan,Total Sevilla,,,1900224,932941,967283
 41.0,Sevilla,1.0,Aguadulce,2124,1070,1054
 41.0,Sevilla,2.0,Alanís,1894,939,955
 41.0,Sevilla,3.0,Albaida del Aljarafe,2881,1465,1416
@@ -6199,7 +6200,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 41.0,Sevilla,99.0,Villanueva del Río y Minas,5283,2620,2663
 41.0,Sevilla,101.0,Villaverde del Río,7337,3741,3596
 41.0,Sevilla,102.0,Viso del Alcor (El),18351,9251,9100
-,Total Soria,,,95101,48286,46815
+nan,Total Soria,,,95101,48286,46815
 42.0,Soria,1.0,Abejar,383,210,173
 42.0,Soria,3.0,Adradas,75,43,32
 42.0,Soria,4.0,Ágreda,3293,1676,1617
@@ -6383,7 +6384,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 42.0,Soria,217.0,Vozmediano,44,28,16
 42.0,Soria,218.0,Yanguas,114,70,44
 42.0,Soria,219.0,Yelo,52,30,22
-,Total Tarragona,,,803301,407904,395397
+nan,Total Tarragona,,,803301,407904,395397
 43.0,Tarragona,1.0,Aiguamúrcia,906,480,426
 43.0,Tarragona,2.0,Albinyana,2275,1146,1129
 43.0,Tarragona,3.0,Albiol (L'),405,210,195
@@ -6567,7 +6568,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 43.0,Tarragona,177.0,Vinebre,483,238,245
 43.0,Tarragona,178.0,Vinyols i els Arcs,1829,949,880
 43.0,Tarragona,52.0,Xerta,1300,641,659
-,Total Teruel,,,146751,75733,71018
+nan,Total Teruel,,,146751,75733,71018
 44.0,Teruel,1.0,Ababuj,80,52,28
 44.0,Teruel,2.0,Abejuela,57,38,19
 44.0,Teruel,3.0,Aguatón,21,10,11
@@ -6804,7 +6805,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 44.0,Teruel,266.0,Visiedo,154,70,84
 44.0,Teruel,267.0,Vivel del Río Martín,91,47,44
 44.0,Teruel,268.0,Zoma (La),22,9,13
-,Total Toledo,,,689635,350578,339057
+nan,Total Toledo,,,689635,350578,339057
 45.0,Toledo,1.0,Ajofrín,2290,1187,1103
 45.0,Toledo,2.0,Alameda de la Sagra,3385,1799,1586
 45.0,Toledo,3.0,Albarreal de Tajo,718,369,349
@@ -7009,7 +7010,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 45.0,Toledo,203.0,Yuncler,3332,1699,1633
 45.0,Toledo,204.0,Yunclillos,794,415,379
 45.0,Toledo,205.0,Yuncos,9185,4796,4389
-,Total Valencia/València,,,2575362,1276238,1299124
+nan,Total Valencia/València,,,2575362,1276238,1299124
 46.0,Valencia/València,1.0,Ademuz,1286,689,597
 46.0,Valencia/València,2.0,Ador,1474,766,708
 46.0,Valencia/València,4.0,Agullent,2449,1199,1250
@@ -7276,7 +7277,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 46.0,Valencia/València,261.0,Yátova,2199,1140,1059
 46.0,Valencia/València,262.0,Yesa (La),260,141,119
 46.0,Valencia/València,263.0,Zarra,551,302,249
-,Total Valladolid,,,532575,261785,270790
+nan,Total Valladolid,,,532575,261785,270790
 47.0,Valladolid,1.0,Adalia,61,33,28
 47.0,Valladolid,2.0,Aguasal,32,20,12
 47.0,Valladolid,3.0,Aguilar de Campos,296,165,131
@@ -7502,7 +7503,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 47.0,Valladolid,230.0,Wamba,363,195,168
 47.0,Valladolid,231.0,Zaratán,4992,2571,2421
 47.0,Valladolid,232.0,Zarza (La),136,76,60
-,Total Vizcaya,,,1152658,559174,593484
+nan,Total Vizcaya,,,1152658,559174,593484
 48.0,Vizcaya,1.0,Abadiño,7260,3647,3613
 48.0,Vizcaya,2.0,Abanto y Ciérvana-Abanto Zierbena,9647,4779,4868
 48.0,Vizcaya,911.0,Ajangiz,445,216,229
@@ -7615,7 +7616,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 48.0,Vizcaya,25.0,Zeberio,1054,523,531
 48.0,Vizcaya,913.0,Zierbena,1382,753,629
 48.0,Vizcaya,915.0,Ziortza-Bolibar,396,212,184
-,Total Zamora,,,195665,97144,98521
+nan,Total Zamora,,,195665,97144,98521
 49.0,Zamora,2.0,Abezames,88,45,43
 49.0,Zamora,3.0,Alcañices,1122,573,549
 49.0,Zamora,4.0,Alcubilla de Nogales,146,73,73
@@ -7864,7 +7865,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 49.0,Zamora,271.0,Villaveza del Agua,249,127,122
 49.0,Zamora,273.0,Viñas,229,122,107
 49.0,Zamora,275.0,Zamora,66293,31380,34913
-,Total Zaragoza,,,970313,481456,488857
+nan,Total Zaragoza,,,970313,481456,488857
 50.0,Zaragoza,1.0,Abanto,125,66,59
 50.0,Zaragoza,2.0,Acered,169,91,78
 50.0,Zaragoza,3.0,Agón,170,91,79
@@ -8158,7 +8159,7 @@ Unnamed: 0,Total Álava,Unnamed: 2,Unnamed: 3,313819,156418,157401
 50.0,Zaragoza,296.0,Zaida (La),534,265,269
 50.0,Zaragoza,297.0,Zaragoza,674317,328470,345847
 50.0,Zaragoza,298.0,Zuera,7427,3879,3548
-,Total Ceuta,,,78674,40118,38556
+nan,Total Ceuta,,,78674,40118,38556
 51.0,Ceuta,1.0,Ceuta,78674,40118,38556
-,Total Melilla,,,73460,37244,36216
+nan,Total Melilla,,,73460,37244,36216
 52.0,Melilla,1.0,Melilla,73460,37244,36216

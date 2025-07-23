@@ -1,5 +1,5 @@
-CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
-,Total Álava,,,305459,152040,153419
+province_code,province_name,cmun,municipality_name,population_total,population_male,population_female
+nan,Total Álava,,,305459,152040,153419
 1.0,Álava,1.0,Alegría-Dulantzi,2305,1210,1095
 1.0,Álava,2.0,Amurrio,9879,4948,4931
 1.0,Álava,49.0,Añana,181,92,89
@@ -51,7 +51,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 1.0,Álava,62.0,Zambrana,360,203,157
 1.0,Álava,18.0,Zigoitia,1513,801,712
 1.0,Álava,63.0,Zuia,2372,1227,1145
-,Total Albacete,,,392110,196772,195338
+nan,Total Albacete,,,392110,196772,195338
 2.0,Albacete,1.0,Abengibre,965,490,475
 2.0,Albacete,2.0,Alatoz,585,317,268
 2.0,Albacete,3.0,Albacete,164771,81442,83329
@@ -139,7 +139,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 2.0,Albacete,84.0,Villaverde de Guadalimar,431,230,201
 2.0,Albacete,85.0,Viveros,440,227,213
 2.0,Albacete,86.0,Yeste,3456,1763,1693
-,Total Alicante/Alacant,,,1825264,913455,911809
+nan,Total Alicante/Alacant,,,1825264,913455,911809
 3.0,Alicante/Alacant,1.0,Adsubia,668,340,328
 3.0,Alicante/Alacant,2.0,Agost,4766,2403,2363
 3.0,Alicante/Alacant,3.0,Agres,623,332,291
@@ -281,7 +281,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 3.0,Alicante/Alacant,138.0,Verger (el),4688,2415,2273
 3.0,Alicante/Alacant,139.0,Villajoyosa/Vila Joiosa (la),30550,15288,15262
 3.0,Alicante/Alacant,140.0,Villena,34523,17233,17290
-,Total Almería,,,646633,333227,313406
+nan,Total Almería,,,646633,333227,313406
 4.0,Almería,1.0,Abla,1514,767,747
 4.0,Almería,2.0,Abrucena,1379,690,689
 4.0,Almería,3.0,Adra,23742,12009,11733
@@ -384,7 +384,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 4.0,Almería,101.0,Viator,4448,2247,2201
 4.0,Almería,102.0,Vícar,20743,11123,9620
 4.0,Almería,103.0,Zurgena,2713,1339,1374
-,Total Ávila,,,168638,84897,83741
+nan,Total Ávila,,,168638,84897,83741
 5.0,Ávila,1.0,Adanero,304,152,152
 5.0,Ávila,2.0,Adrada (La),2469,1272,1197
 5.0,Ávila,5.0,Albornos,235,127,108
@@ -633,7 +633,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 5.0,Ávila,265.0,Vita,94,59,35
 5.0,Ávila,266.0,Zapardiel de la Cañada,138,66,72
 5.0,Ávila,267.0,Zapardiel de la Ribera,143,72,71
-,Total Badajoz,,,678459,336211,342248
+nan,Total Badajoz,,,678459,336211,342248
 6.0,Badajoz,1.0,Acedera,842,437,405
 6.0,Badajoz,2.0,Aceuchal,5583,2800,2783
 6.0,Badajoz,3.0,Ahillones,1064,530,534
@@ -798,7 +798,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 6.0,Badajoz,160.0,Zalamea de la Serena,4120,2064,2056
 6.0,Badajoz,162.0,Zarza (La),3546,1792,1754
 6.0,Badajoz,161.0,Zarza-Capilla,422,211,211
-,Total Balears (Illes),,,1030650,517593,513057
+nan,Total Balears (Illes),,,1030650,517593,513057
 7.0,Balears (Illes),2.0,Alaior,8972,4551,4421
 7.0,Balears (Illes),1.0,Alaró,5018,2490,2528
 7.0,Balears (Illes),3.0,Alcúdia,17435,8981,8454
@@ -866,7 +866,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 7.0,Balears (Illes),62.0,Son Servera,11392,5795,5597
 7.0,Balears (Illes),63.0,Valldemossa,1976,1007,969
 7.0,Balears (Illes),65.0,Vilafranca de Bonany,2625,1315,1310
-,Total Barcelona,,,5332513,2623719,2708794
+nan,Total Barcelona,,,5332513,2623719,2708794
 8.0,Barcelona,1.0,Abrera,10840,5648,5192
 8.0,Barcelona,2.0,Aguilar de Segarra,252,131,121
 8.0,Barcelona,14.0,Aiguafreda,2375,1144,1231
@@ -1178,7 +1178,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 8.0,Barcelona,219.0,Vilassar de Mar,19052,9298,9754
 8.0,Barcelona,304.0,Vilobí del Penedès,1071,557,514
 8.0,Barcelona,308.0,Viver i Serrateix,192,99,93
-,Total Burgos,,,365972,184713,181259
+nan,Total Burgos,,,365972,184713,181259
 9.0,Burgos,1.0,Abajas,35,17,18
 9.0,Burgos,3.0,Adrada de Haza,263,145,118
 9.0,Burgos,6.0,Aguas Cándidas,70,41,29
@@ -1550,7 +1550,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 9.0,Burgos,482.0,Zarzosa de Río Pisuerga,42,25,17
 9.0,Burgos,483.0,Zazuar,260,140,120
 9.0,Burgos,485.0,Zuñeda,63,35,28
-,Total Cáceres,,,411531,205481,206050
+nan,Total Cáceres,,,411531,205481,206050
 10.0,Cáceres,1.0,Abadía,321,177,144
 10.0,Cáceres,2.0,Abertura,471,246,225
 10.0,Cáceres,3.0,Acebo,709,378,331
@@ -1770,7 +1770,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 10.0,Cáceres,217.0,Zarza de Montánchez,632,317,315
 10.0,Cáceres,218.0,Zarza la Mayor,1462,753,709
 10.0,Cáceres,219.0,Zorita,1731,847,884
-,Total Cádiz,,,1207343,601832,605511
+nan,Total Cádiz,,,1207343,601832,605511
 11.0,Cádiz,1.0,Alcalá de los Gazules,5673,2900,2773
 11.0,Cádiz,2.0,Alcalá del Valle,5372,2766,2606
 11.0,Cádiz,3.0,Algar,1588,829,759
@@ -1815,7 +1815,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 11.0,Cádiz,40.0,Villaluenga del Rosario,476,246,230
 11.0,Cádiz,41.0,Villamartín,12362,6200,6162
 11.0,Cádiz,42.0,Zahara,1529,783,746
-,Total Castellón/Castelló,,,573282,288079,285203
+nan,Total Castellón/Castelló,,,573282,288079,285203
 12.0,Castellón/Castelló,2.0,Aín,149,76,73
 12.0,Castellón/Castelló,3.0,Albocàsser,1381,683,698
 12.0,Castellón/Castelló,4.0,Alcalà de Xivert,7358,3763,3595
@@ -1951,7 +1951,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 12.0,Castellón/Castelló,140.0,Viver,1611,836,775
 12.0,Castellón/Castelló,141.0,Zorita del Maestrazgo,145,66,79
 12.0,Castellón/Castelló,142.0,Zucaina,178,99,79
-,Total Ciudad Real,,,510122,253473,256649
+nan,Total Ciudad Real,,,510122,253473,256649
 13.0,Ciudad Real,1.0,Abenójar,1618,821,797
 13.0,Ciudad Real,2.0,Agudo,1891,952,939
 13.0,Ciudad Real,3.0,Alamillo,604,298,306
@@ -2054,7 +2054,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 13.0,Ciudad Real,96.0,Villarrubia de los Ojos,10628,5357,5271
 13.0,Ciudad Real,97.0,Villarta de San Juan,3063,1585,1478
 13.0,Ciudad Real,98.0,Viso del Marqués,2879,1447,1432
-,Total Córdoba,,,792182,389173,403009
+nan,Total Córdoba,,,792182,389173,403009
 14.0,Córdoba,1.0,Adamuz,4469,2274,2195
 14.0,Córdoba,2.0,Aguilar de la Frontera,13653,6811,6842
 14.0,Córdoba,3.0,Alcaracejos,1500,737,763
@@ -2130,7 +2130,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 14.0,Córdoba,73.0,Villaviciosa de Córdoba,3587,1830,1757
 14.0,Córdoba,74.0,Viso (El),2824,1377,1447
 14.0,Córdoba,75.0,Zuheros,812,422,390
-,Total Coruña (A),,,1132792,544352,588440
+nan,Total Coruña (A),,,1132792,544352,588440
 15.0,Coruña (A),1.0,Abegondo,5808,2898,2910
 15.0,Coruña (A),2.0,Ames,24553,11942,12611
 15.0,Coruña (A),3.0,Aranga,2219,1123,1096
@@ -2225,7 +2225,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 15.0,Coruña (A),90.0,Vilasantar,1469,761,708
 15.0,Coruña (A),92.0,Vimianzo,8364,4079,4285
 15.0,Coruña (A),93.0,Zas,5549,2713,2836
-,Total Cuenca,,,211375,106633,104742
+nan,Total Cuenca,,,211375,106633,104742
 16.0,Cuenca,1.0,Abia de la Obispalía,78,45,33
 16.0,Cuenca,2.0,Acebrón (El),268,136,132
 16.0,Cuenca,3.0,Alarcón,176,78,98
@@ -2464,7 +2464,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 16.0,Cuenca,278.0,Zafrilla,108,50,58
 16.0,Cuenca,279.0,Zarza de Tajo,369,196,173
 16.0,Cuenca,280.0,Zarzuela,245,133,112
-,Total Girona,,,706185,358108,348077
+nan,Total Girona,,,706185,358108,348077
 17.0,Girona,1.0,Agullana,753,397,356
 17.0,Girona,2.0,Aiguaviva,614,310,304
 17.0,Girona,3.0,Albanyà,137,70,67
@@ -2686,7 +2686,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 17.0,Girona,222.0,Vilaür,142,73,69
 17.0,Girona,233.0,Vilobí d'Onyar,2756,1453,1303
 17.0,Girona,232.0,Vilopriu,187,100,87
-,Total Granada,,,884099,437782,446317
+nan,Total Granada,,,884099,437782,446317
 18.0,Granada,1.0,Agrón,374,190,184
 18.0,Granada,2.0,Alamedilla,777,397,380
 18.0,Granada,3.0,Albolote,16450,8266,8184
@@ -2855,7 +2855,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 18.0,Granada,913.0,Zagra,1022,495,527
 18.0,Granada,193.0,Zubia (La),16941,8407,8534
 18.0,Granada,194.0,Zújar,2834,1503,1331
-,Total Guadalajara,,,224076,114798,109278
+nan,Total Guadalajara,,,224076,114798,109278
 19.0,Guadalajara,1.0,Abánades,94,48,46
 19.0,Guadalajara,2.0,Ablanque,115,59,56
 19.0,Guadalajara,3.0,Adobes,57,30,27
@@ -3144,7 +3144,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 19.0,Guadalajara,333.0,Zaorejas,197,114,83
 19.0,Guadalajara,334.0,Zarzuela de Jadraque,48,26,22
 19.0,Guadalajara,335.0,Zorita de los Canes,100,55,45
-,Total Guipúzcoa,,,694944,341400,353544
+nan,Total Guipúzcoa,,,694944,341400,353544
 20.0,Guipúzcoa,1.0,Abaltzisketa,304,174,130
 20.0,Guipúzcoa,2.0,Aduna,370,202,168
 20.0,Guipúzcoa,16.0,Aia,1829,1003,826
@@ -3233,7 +3233,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 20.0,Guipúzcoa,28.0,Zizurkil,2790,1426,1364
 20.0,Guipúzcoa,81.0,Zumaia,8976,4469,4507
 20.0,Guipúzcoa,80.0,Zumarraga,10059,5009,5050
-,Total Huelva,,,497671,248151,249520
+nan,Total Huelva,,,497671,248151,249520
 21.0,Huelva,1.0,Alájar,811,414,397
 21.0,Huelva,2.0,Aljaraque,16368,8196,8172
 21.0,Huelva,3.0,Almendro (El),845,434,411
@@ -3313,7 +3313,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 21.0,Huelva,77.0,Villarrasa,2142,1086,1056
 21.0,Huelva,78.0,Zalamea la Real,3477,1724,1753
 21.0,Huelva,79.0,Zufre,987,509,478
-,Total Huesca,,,220107,111978,108129
+nan,Total Huesca,,,220107,111978,108129
 22.0,Huesca,1.0,Abiego,292,159,133
 22.0,Huesca,2.0,Abizanda,133,66,67
 22.0,Huesca,3.0,Adahuesca,169,81,88
@@ -3516,7 +3516,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 22.0,Huesca,252.0,Yebra de Basa,152,89,63
 22.0,Huesca,253.0,Yésero,77,47,30
 22.0,Huesca,254.0,Zaidín,1827,947,880
-,Total Jaén,,,664742,330543,334199
+nan,Total Jaén,,,664742,330543,334199
 23.0,Jaén,1.0,Albanchez de Mágina,1272,658,614
 23.0,Jaén,2.0,Alcalá la Real,22324,11065,11259
 23.0,Jaén,3.0,Alcaudete,11113,5526,5587
@@ -3614,7 +3614,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 23.0,Jaén,99.0,Villares (Los),5431,2708,2723
 23.0,Jaén,101.0,Villarrodrigo,532,270,262
 23.0,Jaén,903.0,Villatorres,4392,2275,2117
-,Total León,,,497387,242939,254448
+nan,Total León,,,497387,242939,254448
 24.0,León,1.0,Acebedo,278,162,116
 24.0,León,2.0,Algadefe,324,169,155
 24.0,León,3.0,Alija del Infantado,893,458,435
@@ -3826,7 +3826,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 24.0,León,228.0,Villazala,904,475,429
 24.0,León,229.0,Villazanzo de Valderaduey,616,335,281
 24.0,León,230.0,Zotes del Páramo,520,282,238
-,Total Lleida,,,414015,211268,202747
+nan,Total Lleida,,,414015,211268,202747
 25.0,Lleida,1.0,Abella de la Conca,188,102,86
 25.0,Lleida,2.0,Àger,555,302,253
 25.0,Lleida,3.0,Agramunt,5434,2845,2589
@@ -4058,7 +4058,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 25.0,Lleida,252.0,Vila-sana,618,312,306
 25.0,Lleida,253.0,Vilosell (El),205,104,101
 25.0,Lleida,255.0,Vinaixa,591,305,286
-,Total Rioja (La),,,308968,155773,153195
+nan,Total Rioja (La),,,308968,155773,153195
 26.0,Rioja (La),1.0,Ábalos,377,235,142
 26.0,Rioja (La),2.0,Agoncillo,1137,630,507
 26.0,Rioja (La),3.0,Aguilar del Río Alhama,598,298,300
@@ -4233,7 +4233,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 26.0,Rioja (La),180.0,Zarratón,265,159,106
 26.0,Rioja (La),181.0,Zarzosa,14,9,5
 26.0,Rioja (La),183.0,Zorraquín,80,52,28
-,Total Lugo,,,355176,172422,182754
+nan,Total Lugo,,,355176,172422,182754
 27.0,Lugo,1.0,Abadín,3065,1485,1580
 27.0,Lugo,2.0,Alfoz,2159,1042,1117
 27.0,Lugo,3.0,Antas de Ulla,2549,1231,1318
@@ -4301,7 +4301,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 27.0,Lugo,66.0,Viveiro,15706,7601,8105
 27.0,Lugo,21.0,Xermade,2318,1142,1176
 27.0,Lugo,25.0,Xove,3602,1789,1813
-,Total Madrid,,,6081689,2943778,3137911
+nan,Total Madrid,,,6081689,2943778,3137911
 28.0,Madrid,1.0,Acebeda (La),58,31,27
 28.0,Madrid,2.0,Ajalvir,3448,1800,1648
 28.0,Madrid,3.0,Alameda del Valle,244,152,92
@@ -4481,7 +4481,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 28.0,Madrid,181.0,Villaviciosa de Odón,25709,12480,13229
 28.0,Madrid,182.0,Villavieja del Lozoya,254,130,124
 28.0,Madrid,183.0,Zarzalejo,1404,723,681
-,Total Málaga,,,1517523,750682,766841
+nan,Total Málaga,,,1517523,750682,766841
 29.0,Málaga,1.0,Alameda,5367,2654,2713
 29.0,Málaga,2.0,Alcaucín,2286,1157,1129
 29.0,Málaga,3.0,Alfarnate,1365,704,661
@@ -4582,7 +4582,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 29.0,Málaga,97.0,Villanueva del Trabuco,5306,2674,2632
 29.0,Málaga,99.0,Viñuela,1881,946,935
 29.0,Málaga,100.0,Yunquera,3271,1688,1583
-,Total Murcia,,,1392117,706326,685791
+nan,Total Murcia,,,1392117,706326,685791
 30.0,Murcia,1.0,Abanilla,6568,3350,3218
 30.0,Murcia,2.0,Abarán,12968,6548,6420
 30.0,Murcia,3.0,Águilas,33134,16670,16464
@@ -4628,7 +4628,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 30.0,Murcia,41.0,Unión (La),16471,8273,8198
 30.0,Murcia,42.0,Villanueva del Río Segura,2042,999,1043
 30.0,Murcia,43.0,Yecla,34161,17280,16881
-,Total Navarra,,,605876,302330,303546
+nan,Total Navarra,,,605876,302330,303546
 31.0,Navarra,1.0,Abáigar,101,55,46
 31.0,Navarra,2.0,Abárzuza,579,291,288
 31.0,Navarra,3.0,Abaurregaina/Abaurrea Alta,142,88,54
@@ -4901,7 +4901,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 31.0,Navarra,263.0,Zubieta,309,172,137
 31.0,Navarra,264.0,Zugarramurdi,226,117,109
 31.0,Navarra,265.0,Zúñiga,157,96,61
-,Total Ourense,,,336926,162026,174900
+nan,Total Ourense,,,336926,162026,174900
 32.0,Ourense,1.0,Allariz,5506,2663,2843
 32.0,Ourense,2.0,Amoeiro,2334,1145,1189
 32.0,Ourense,3.0,Arnoia (A),1171,568,603
@@ -4994,7 +4994,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 32.0,Ourense,32.0,Xinzo de Limia,10022,4945,5077
 32.0,Ourense,36.0,Xunqueira de Ambía,1834,917,917
 32.0,Ourense,37.0,Xunqueira de Espadanedo,1002,491,511
-,Total Asturias,,,1074862,515292,559570
+nan,Total Asturias,,,1074862,515292,559570
 33.0,Asturias,1.0,Allande,2169,1107,1062
 33.0,Asturias,2.0,Aller,13193,6470,6723
 33.0,Asturias,3.0,Amieva,847,463,384
@@ -5073,7 +5073,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 33.0,Asturias,76.0,Villaviciosa,14520,7137,7383
 33.0,Asturias,77.0,Villayón,1656,819,837
 33.0,Asturias,78.0,Yernes y Tameza,213,104,109
-,Total Palencia,,,173281,85505,87776
+nan,Total Palencia,,,173281,85505,87776
 34.0,Palencia,1.0,Abarca de Campos,42,24,18
 34.0,Palencia,3.0,Abia de las Torres,166,86,80
 34.0,Palencia,4.0,Aguilar de Campoo,7263,3537,3726
@@ -5265,7 +5265,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 34.0,Palencia,243.0,Villoldo,419,217,202
 34.0,Palencia,245.0,Villota del Páramo,384,224,160
 34.0,Palencia,246.0,Villovieco,95,49,46
-,Total Palmas (Las),,,1042131,526349,515782
+nan,Total Palmas (Las),,,1042131,526349,515782
 35.0,Palmas (Las),1.0,Agaete,5710,2899,2811
 35.0,Palmas (Las),2.0,Agüimes,27310,13969,13341
 35.0,Palmas (Las),20.0,Aldea de San Nicolás (La),8431,4301,4130
@@ -5300,7 +5300,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 35.0,Palmas (Las),31.0,Valsequillo de Gran Canaria,8853,4521,4332
 35.0,Palmas (Las),33.0,Vega de San Mateo,7611,3945,3666
 35.0,Palmas (Las),34.0,Yaiza,10894,6060,4834
-,Total Pontevedra,,,947639,458359,489280
+nan,Total Pontevedra,,,947639,458359,489280
 36.0,Pontevedra,20.0,Agolada,3216,1573,1643
 36.0,Pontevedra,1.0,Arbo,3887,1933,1954
 36.0,Pontevedra,3.0,Baiona,11839,5868,5971
@@ -5363,7 +5363,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 36.0,Pontevedra,58.0,Vilaboa,6015,2943,3072
 36.0,Pontevedra,60.0,Vilagarcía de Arousa,36743,17762,18981
 36.0,Pontevedra,61.0,Vilanova de Arousa,10638,5152,5486
-,Total Salamanca,,,351326,171572,179754
+nan,Total Salamanca,,,351326,171572,179754
 37.0,Salamanca,1.0,Abusejo,249,128,121
 37.0,Salamanca,2.0,Agallas,181,96,85
 37.0,Salamanca,3.0,Ahigal de los Aceiteros,161,82,79
@@ -5726,7 +5726,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 37.0,Salamanca,380.0,Zarapicos,69,35,34
 37.0,Salamanca,381.0,Zarza de Pumareda (La),157,86,71
 37.0,Salamanca,382.0,Zorita de la Frontera,244,125,119
-,Total Santa Cruz de Tenerife,,,983820,489144,494676
+nan,Total Santa Cruz de Tenerife,,,983820,489144,494676
 38.0,Santa Cruz de Tenerife,1.0,Adeje,38245,19828,18417
 38.0,Santa Cruz de Tenerife,2.0,Agulo,1174,576,598
 38.0,Santa Cruz de Tenerife,3.0,Alajeró,2142,1174,968
@@ -5780,7 +5780,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 38.0,Santa Cruz de Tenerife,51.0,Victoria de Acentejo (La),8676,4322,4354
 38.0,Santa Cruz de Tenerife,52.0,Vilaflor,1900,966,934
 38.0,Santa Cruz de Tenerife,53.0,Villa de Mazo,4880,2478,2402
-,Total Cantabria,,,572824,280283,292541
+nan,Total Cantabria,,,572824,280283,292541
 39.0,Cantabria,1.0,Alfoz de Lloredo,2529,1288,1241
 39.0,Cantabria,2.0,Ampuero,3951,1995,1956
 39.0,Cantabria,3.0,Anievas,360,182,178
@@ -5883,7 +5883,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 39.0,Cantabria,99.0,Villaescusa,3468,1755,1713
 39.0,Cantabria,100.0,Villafufre,1091,563,528
 39.0,Cantabria,102.0,Voto,2386,1247,1139
-,Total Segovia,,,159322,80492,78830
+nan,Total Segovia,,,159322,80492,78830
 40.0,Segovia,1.0,Abades,905,460,445
 40.0,Segovia,2.0,Adrada de Pirón,45,22,23
 40.0,Segovia,3.0,Adrados,196,108,88
@@ -6093,7 +6093,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 40.0,Segovia,231.0,Yanguas de Eresma,168,84,84
 40.0,Segovia,233.0,Zarzuela del Monte,578,308,270
 40.0,Segovia,234.0,Zarzuela del Pinar,552,288,264
-,Total Sevilla,,,1849268,907853,941415
+nan,Total Sevilla,,,1849268,907853,941415
 41.0,Sevilla,1.0,Aguadulce,2060,1038,1022
 41.0,Sevilla,2.0,Alanís,1887,942,945
 41.0,Sevilla,3.0,Albaida del Aljarafe,2586,1328,1258
@@ -6199,7 +6199,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 41.0,Sevilla,99.0,Villanueva del Río y Minas,5229,2579,2650
 41.0,Sevilla,101.0,Villaverde del Río,6912,3529,3383
 41.0,Sevilla,102.0,Viso del Alcor (El),17714,8896,8818
-,Total Soria,,,93593,47174,46419
+nan,Total Soria,,,93593,47174,46419
 42.0,Soria,1.0,Abejar,405,211,194
 42.0,Soria,3.0,Adradas,78,45,33
 42.0,Soria,4.0,Ágreda,3215,1614,1601
@@ -6383,7 +6383,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 42.0,Soria,217.0,Vozmediano,42,26,16
 42.0,Soria,218.0,Yanguas,123,67,56
 42.0,Soria,219.0,Yelo,56,30,26
-,Total Tarragona,,,757795,385081,372714
+nan,Total Tarragona,,,757795,385081,372714
 43.0,Tarragona,1.0,Aiguamúrcia,864,460,404
 43.0,Tarragona,2.0,Albinyana,2200,1119,1081
 43.0,Tarragona,3.0,Albiol (L'),377,196,181
@@ -6567,7 +6567,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 43.0,Tarragona,177.0,Vinebre,478,249,229
 43.0,Tarragona,178.0,Vinyols i els Arcs,1594,813,781
 43.0,Tarragona,52.0,Xerta,1296,644,652
-,Total Teruel,,,144046,74262,69784
+nan,Total Teruel,,,144046,74262,69784
 44.0,Teruel,1.0,Ababuj,82,51,31
 44.0,Teruel,2.0,Abejuela,68,44,24
 44.0,Teruel,3.0,Aguatón,21,9,12
@@ -6804,7 +6804,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 44.0,Teruel,266.0,Visiedo,157,69,88
 44.0,Teruel,267.0,Vivel del Río Martín,92,47,45
 44.0,Teruel,268.0,Zoma (La),23,9,14
-,Total Toledo,,,639621,323992,315629
+nan,Total Toledo,,,639621,323992,315629
 45.0,Toledo,1.0,Ajofrín,2297,1187,1110
 45.0,Toledo,2.0,Alameda de la Sagra,3242,1708,1534
 45.0,Toledo,3.0,Albarreal de Tajo,662,336,326
@@ -7009,7 +7009,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 45.0,Toledo,203.0,Yuncler,2905,1497,1408
 45.0,Toledo,204.0,Yunclillos,749,391,358
 45.0,Toledo,205.0,Yuncos,7645,3975,3670
-,Total Valencia/València,,,2486483,1230628,1255855
+nan,Total Valencia/València,,,2486483,1230628,1255855
 46.0,Valencia/València,1.0,Ademuz,1242,647,595
 46.0,Valencia/València,2.0,Ador,1463,757,706
 46.0,Valencia/València,4.0,Agullent,2364,1154,1210
@@ -7276,7 +7276,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 46.0,Valencia/València,261.0,Yátova,2123,1093,1030
 46.0,Valencia/València,262.0,Yesa (La),264,146,118
 46.0,Valencia/València,263.0,Zarra,543,299,244
-,Total Valladolid,,,521661,255983,265678
+nan,Total Valladolid,,,521661,255983,265678
 47.0,Valladolid,1.0,Adalia,65,34,31
 47.0,Valladolid,2.0,Aguasal,27,18,9
 47.0,Valladolid,3.0,Aguilar de Campos,313,170,143
@@ -7502,7 +7502,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 47.0,Valladolid,230.0,Wamba,371,197,174
 47.0,Valladolid,231.0,Zaratán,4268,2189,2079
 47.0,Valladolid,232.0,Zarza (La),148,83,65
-,Total Vizcaya,,,1141457,553355,588102
+nan,Total Vizcaya,,,1141457,553355,588102
 48.0,Vizcaya,1.0,Abadiño,7140,3594,3546
 48.0,Vizcaya,2.0,Abanto y Ciérvana-Abanto Zierbena,9609,4738,4871
 48.0,Vizcaya,911.0,Ajangiz,442,217,225
@@ -7615,7 +7615,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 48.0,Vizcaya,25.0,Zeberio,1072,545,527
 48.0,Vizcaya,913.0,Zierbena,1299,699,600
 48.0,Vizcaya,915.0,Ziortza-Bolibar,395,214,181
-,Total Zamora,,,197237,97807,99430
+nan,Total Zamora,,,197237,97807,99430
 49.0,Zamora,2.0,Abezames,94,49,45
 49.0,Zamora,3.0,Alcañices,1052,528,524
 49.0,Zamora,4.0,Alcubilla de Nogales,163,82,81
@@ -7864,7 +7864,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 49.0,Zamora,271.0,Villaveza del Agua,257,131,126
 49.0,Zamora,273.0,Viñas,250,127,123
 49.0,Zamora,275.0,Zamora,66138,31244,34894
-,Total Zaragoza,,,932502,460756,471746
+nan,Total Zaragoza,,,932502,460756,471746
 50.0,Zaragoza,1.0,Abanto,145,77,68
 50.0,Zaragoza,2.0,Acered,204,112,92
 50.0,Zaragoza,3.0,Agón,172,91,81
@@ -8158,7 +8158,7 @@ CPRO,PROVINCIA,CMUN,MUNICIPIO,Ambos sexos,Varones,Mujeres
 50.0,Zaragoza,296.0,Zaida (La),522,260,262
 50.0,Zaragoza,297.0,Zaragoza,654390,317274,337116
 50.0,Zaragoza,298.0,Zuera,6759,3511,3248
-,Total Ceuta,,,76603,38913,37690
+nan,Total Ceuta,,,76603,38913,37690
 51.0,Ceuta,1.0,Ceuta,76603,38913,37690
-,Total Melilla,,,69440,35208,34232
+nan,Total Melilla,,,69440,35208,34232
 52.0,Melilla,1.0,Melilla,69440,35208,34232

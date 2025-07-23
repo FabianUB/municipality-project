@@ -10,9 +10,209 @@ from dagster import (
 import pandas as pd
 import glob
 from pathlib import Path
+from sqlalchemy import create_engine, text
+import logging
+
+# Data source configuration
+DATA_SOURCES = {
+    'demography': {
+        'source_name': 'INE',
+        'source_full_name': 'Instituto Nacional de Estadística',
+        'category': 'demography',
+        'url': 'https://www.ine.es/jaxiT3/Tabla.htm?t=2852',
+        'description': 'Municipal population data by year'
+    }
+    # Future data sources can be added here
+    # 'economy': {
+    #     'source_name': 'Banco de España',
+    #     'category': 'economy',
+    #     'url': 'https://...',
+    #     'description': 'Economic indicators'
+    # }
+}
+
+# Database connection setup
+def get_db_connection():
+    """Create database connection using environment variables"""
+    db_user = os.getenv('DAGSTER_POSTGRES_USER')
+    db_password = os.getenv('DAGSTER_POSTGRES_PASSWORD')
+    db_host = os.getenv('DAGSTER_POSTGRES_HOSTNAME')
+    db_port = os.getenv('DAGSTER_POSTGRES_PORT')
+    db_name = os.getenv('DAGSTER_POSTGRES_DB')
+    
+    connection_string = f"postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
+    return create_engine(connection_string)
+
+def detect_header_row(df, max_rows_to_check=10):
+    """Detect which row contains the actual headers by looking for text vs numeric patterns"""
+    for row_idx in range(min(max_rows_to_check, len(df))):
+        row_data = df.iloc[row_idx]
+        
+        # Skip completely empty rows
+        if row_data.isna().all():
+            continue
+            
+        # Check if this row looks like headers (mostly text, not numbers)
+        non_null_values = row_data.dropna()
+        if len(non_null_values) < 2:  # Need at least 2 non-null values
+            continue
+            
+        # Count text vs numeric values
+        text_count = sum(1 for val in non_null_values if isinstance(val, str) and not str(val).replace('.', '').replace(',', '').isdigit())
+        numeric_count = len(non_null_values) - text_count
+        
+        # If mostly text, this is likely the header row
+        if text_count >= numeric_count and len(non_null_values) >= 3:
+            return row_idx
+    
+    # Default to row 1 (index 1) if no clear header found
+    return 1
+
+def standardize_demography_columns(df, year):
+    """Standardize column names across different years of demography data"""
+    import re
+    
+    new_columns = []
+    for col in df.columns:
+        col_str = str(col).strip().lower()
+        
+        # Standardize population columns (pob98, pob99, etc.)
+        if re.match(r'pob\d{2}', col_str):
+            new_columns.append('population_total')
+        # Standardize municipality code columns
+        elif any(term in col_str for term in ['codigo', 'cod', 'cmun']) and 'municipio' in col_str:
+            new_columns.append('municipality_code')
+        # Standardize municipality name columns
+        elif any(term in col_str for term in ['municipio', 'nombre']) and 'codigo' not in col_str:
+            new_columns.append('municipality_name')
+        # Standardize province CODE columns (cpro, codigo_provincia, etc.)
+        elif any(term in col_str for term in ['cpro', 'cod_prov', 'codigo_prov']):
+            new_columns.append('province_code')
+        # Standardize province NAME columns (provincia, nombre_provincia, etc.)
+        elif 'provincia' in col_str and 'codigo' not in col_str and 'cpro' not in col_str:
+            new_columns.append('province_name')
+        # Handle the specific case where "province" appears as a standalone column
+        elif col_str == 'province':
+            # Determine if this is code or name based on data inspection
+            # If it contains numeric data, it's likely a code
+            if len(df) > 0:
+                sample_values = df[col].dropna().head(10)
+                if sample_values.dtype in ['int64', 'float64'] or all(str(val).isdigit() for val in sample_values if pd.notna(val)):
+                    new_columns.append('province_code')
+                else:
+                    new_columns.append('province_name')
+            else:
+                new_columns.append('province_code')  # Default assumption
+        # Standardize male population columns
+        elif any(term in col_str for term in ['varon', 'hombre', 'varones', 'hombres', 'masculino']):
+            new_columns.append('population_male')
+        # Standardize female population columns
+        elif any(term in col_str for term in ['mujer', 'mujeres', 'femenino', 'femenina']):
+            new_columns.append('population_female')
+        # Standardize total/both sexes columns
+        elif any(term in col_str for term in ['total', 'ambos_sexos', 'ambos', 'suma', 'totales']):
+            new_columns.append('population_total')
+        # Standardize community/autonomy columns
+        elif any(term in col_str for term in ['comunidad', 'autonoma', 'ccaa']):
+            new_columns.append('autonomous_community')
+        # Standardize island columns (for Canarias/Baleares)
+        elif any(term in col_str for term in ['isla', 'island']):
+            new_columns.append('island')
+        else:
+            # Keep other columns as cleaned names
+            clean_name = col_str
+            clean_name = clean_name.replace(' ', '_')
+            clean_name = clean_name.replace('/', '_')
+            clean_name = clean_name.replace('-', '_')
+            clean_name = clean_name.replace('(', '')
+            clean_name = clean_name.replace(')', '')
+            clean_name = clean_name.replace('.', '')
+            clean_name = clean_name.replace(',', '')
+            # Remove any remaining special characters
+            clean_name = ''.join(c for c in clean_name if c.isalnum() or c == '_')
+            # Ensure it doesn't start with a number
+            if clean_name and clean_name[0].isdigit():
+                clean_name = 'col_' + clean_name
+            new_columns.append(clean_name or f'unnamed_column_{len(new_columns)}')
+    
+    # Handle duplicate column names by adding suffixes
+    seen = {}
+    final_columns = []
+    for col in new_columns:
+        if col in seen:
+            seen[col] += 1
+            final_columns.append(f"{col}_{seen[col]}")
+        else:
+            seen[col] = 0
+            final_columns.append(col)
+    
+    df.columns = final_columns
+    
+    # Standardize data types to ensure consistency across years
+    if 'province_code' in df.columns:
+        # Convert province codes to strings (zero-padded to 2 digits)
+        df['province_code'] = df['province_code'].astype(str).str.zfill(2)
+    
+    if 'municipality_code' in df.columns:
+        # Convert municipality codes to strings (zero-padded to 5 digits)
+        df['municipality_code'] = df['municipality_code'].astype(str).str.zfill(5)
+    
+    # Ensure population columns are numeric
+    for col in df.columns:
+        if 'population' in col:
+            df[col] = pd.to_numeric(df[col], errors='coerce')
+    
+    return df
+
+def clean_dataframe(df, year=None):
+    """Clean the dataframe by removing empty rows/columns and fixing column names"""
+    # Remove completely empty rows
+    df = df.dropna(how='all')
+    
+    # Remove completely empty columns
+    df = df.dropna(how='all', axis=1)
+    
+    # Standardize column names for demography data
+    if year:
+        df = standardize_demography_columns(df, year)
+    else:
+        # Generic column cleaning
+        new_columns = []
+        for col in df.columns:
+            if pd.isna(col) or str(col).strip() == '':
+                # Generate a name for unnamed columns
+                new_columns.append(f'unnamed_column_{len(new_columns)}')
+            else:
+                # Clean the column name
+                clean_name = str(col).strip()
+                clean_name = clean_name.lower()
+                clean_name = clean_name.replace(' ', '_')
+                clean_name = clean_name.replace('/', '_')
+                clean_name = clean_name.replace('-', '_')
+                clean_name = clean_name.replace('(', '')
+                clean_name = clean_name.replace(')', '')
+                clean_name = clean_name.replace('.', '')
+                clean_name = clean_name.replace(',', '')
+                # Remove any remaining special characters
+                clean_name = ''.join(c for c in clean_name if c.isalnum() or c == '_')
+                # Ensure it doesn't start with a number
+                if clean_name and clean_name[0].isdigit():
+                    clean_name = 'col_' + clean_name
+                new_columns.append(clean_name or f'unnamed_column_{len(new_columns)}')
+        
+        df.columns = new_columns
+    
+    # Remove rows that appear to be subtotals or totals (often contain aggregate data)
+    # Look for rows where the first column contains words like 'total', 'suma', etc.
+    if len(df.columns) > 0:
+        first_col = df.columns[0]
+        if first_col in df.columns:
+            df = df[~df[first_col].astype(str).str.lower().str.contains('total|suma|agregado', na=False)]
+    
+    return df
 
 @asset
-def convert_demography_excel_to_csv() -> Output[dict]:
+def convert_demography_excel_to_csv(context) -> Output[dict]:
     """Convert Excel files from raw/demography/ to CSV files in clean/demography/"""
     
     raw_path = "/opt/dagster/raw/demography"
@@ -22,28 +222,70 @@ def convert_demography_excel_to_csv() -> Output[dict]:
     os.makedirs(clean_path, exist_ok=True)
     
     excel_files = glob.glob(f"{raw_path}/*.xls*")
+    context.log.info(f"Found {len(excel_files)} Excel files in {raw_path}")
+    context.log.info(f"Files: {[Path(f).name for f in excel_files]}")
+    
     converted_files = []
     
     for file_path in excel_files:
         filename = Path(file_path).stem
         
+        # Extract year from filename for column standardization
+        year_str = filename.replace('pobmun', '')
+        if len(year_str) == 2:
+            if int(year_str) >= 96:
+                year = 1900 + int(year_str)
+            else:
+                year = 2000 + int(year_str)
+        else:
+            year = int(year_str)
+        
         try:
-            # Demography files have headers on row 2 (index 1)
-            df = pd.read_excel(file_path, header=1)
+            context.log.info(f"Processing {filename} (year {year})")
             
+            # First, read without specifying header to analyze structure
+            df_raw = pd.read_excel(file_path, header=None)
+            context.log.info(f"Raw Excel shape: {df_raw.shape}")
+            
+            # Detect the actual header row
+            header_row = detect_header_row(df_raw)
+            context.log.info(f"Detected header row: {header_row}")
+            
+            # Re-read with the detected header
+            df = pd.read_excel(file_path, header=header_row)
+            context.log.info(f"After reading with header - shape: {df.shape}")
+            context.log.info(f"Original columns: {list(df.columns)[:10]}")  # First 10 columns
+            
+            # Clean the dataframe with year info for column standardization
+            df = clean_dataframe(df, year=year)
+            context.log.info(f"After cleaning - shape: {df.shape}")
+            context.log.info(f"Standardized columns: {list(df.columns)[:10]}")  # First 10 columns
+            
+            # Additional validation - ensure we have meaningful data
+            if len(df) == 0 or len(df.columns) == 0:
+                context.log.warning(f"Skipping {filename} - no data after cleaning")
+                continue
+                
             # Save as CSV
             csv_path = f"{clean_path}/{filename}.csv"
-            df.to_csv(csv_path, index=False)
+            df.to_csv(csv_path, index=False, encoding='utf-8')
+            context.log.info(f"Saved CSV: {csv_path}")
             
             converted_files.append({
                 "source": filename,
                 "output": f"{filename}.csv",
                 "rows": len(df),
-                "columns": len(df.columns)
+                "columns": len(df.columns),
+                "header_row_detected": header_row,
+                "year": year,
+                "column_names": list(df.columns)[:5]  # First 5 column names for debugging
             })
             
         except Exception as e:
-            context.log.warning(f"Failed to convert {file_path}: {e}")
+            # Log more details about the error
+            context.log.error(f"Failed to convert {file_path}: {e}")
+            import traceback
+            context.log.error(f"Traceback: {traceback.format_exc()}")
             continue
     
     return Output(
@@ -54,21 +296,177 @@ def convert_demography_excel_to_csv() -> Output[dict]:
         }
     )
 
+@asset(deps=[convert_demography_excel_to_csv])
+def create_raw_schema(context) -> Output[str]:
+    """Create raw schema in PostgreSQL if it doesn't exist"""
+    
+    context.log.info("Creating raw schema in PostgreSQL")
+    
+    try:
+        engine = get_db_connection()
+        context.log.info("Database connection established for schema creation")
+        
+        with engine.connect() as conn:
+            # Create raw schema
+            result = conn.execute(text("CREATE SCHEMA IF NOT EXISTS raw;"))
+            conn.commit()
+            context.log.info("Raw schema created successfully")
+            
+        return Output(
+            "raw",
+            metadata={
+                "schema_created": "raw"
+            }
+        )
+    except Exception as e:
+        context.log.error(f"Failed to create raw schema: {e}")
+        import traceback
+        context.log.error(f"Traceback: {traceback.format_exc()}")
+        raise Exception(f"Failed to create raw schema: {e}")
+
+@asset(deps=[create_raw_schema])
+def load_demography_to_postgres(context) -> Output[dict]:
+    """Load CSV files from clean/demography/ into PostgreSQL raw schema"""
+    
+    clean_path = "/opt/dagster/clean/demography"
+    csv_files = glob.glob(f"{clean_path}/*.csv")
+    context.log.info(f"Found {len(csv_files)} CSV files in {clean_path}")
+    context.log.info(f"CSV files: {[Path(f).name for f in csv_files]}")
+    
+    if len(csv_files) == 0:
+        context.log.warning("No CSV files found! Check if Excel to CSV conversion worked.")
+        return Output(
+            {"loaded_tables": []},
+            metadata={"error": "No CSV files found to load"}
+        )
+    
+    engine = get_db_connection()
+    context.log.info("Database connection established")
+    
+    # Step 1: Read and standardize ALL CSV files first
+    all_dataframes = []
+    loaded_tables = []
+    
+    context.log.info("STEP 1: Reading and standardizing all CSV files")
+    
+    for csv_file in csv_files:
+        filename = Path(csv_file).stem
+        
+        # Extract year from filename (e.g., pobmun24 -> 2024)
+        year_str = filename.replace('pobmun', '')
+        if len(year_str) == 2:
+            if int(year_str) >= 96:
+                year = 1900 + int(year_str)
+            else:
+                year = 2000 + int(year_str)
+        else:
+            year = int(year_str)
+        
+        try:
+            context.log.info(f"Loading CSV: {filename}")
+            
+            # Read CSV file
+            df = pd.read_csv(csv_file)
+            context.log.info(f"CSV shape: {df.shape}")
+            context.log.info(f"CSV columns: {list(df.columns)}")
+            
+            # Additional validation - skip files with no data or suspicious column names
+            if len(df) == 0:
+                context.log.warning(f"Skipping {filename} - empty CSV file")
+                continue
+                
+            # Apply standardized column names using our existing function
+            df = standardize_demography_columns(df, year)
+            context.log.info(f"Standardized columns: {list(df.columns)[:10]}")
+            
+            # Add metadata columns for data lineage
+            source_config = DATA_SOURCES['demography']
+            df['data_year'] = year
+            df['source_file'] = filename
+            df['data_source'] = source_config['source_name']
+            df['data_source_full'] = source_config['source_full_name']
+            df['data_category'] = source_config['category']
+            df['source_url'] = source_config['url']
+            df['source_description'] = source_config['description']
+            df['ingestion_timestamp'] = pd.Timestamp.now()
+            
+            all_dataframes.append(df)
+            loaded_tables.append({
+                "source_file": filename,
+                "year": year,
+                "rows_loaded": len(df),
+                "columns": list(df.columns),
+            })
+            
+            context.log.info(f"Successfully standardized {len(df)} rows from {filename}")
+            
+        except Exception as e:
+            context.log.error(f"Failed to read/standardize {filename}: {e}")
+            import traceback
+            context.log.error(f"Traceback: {traceback.format_exc()}")
+            continue
+    
+    if not all_dataframes:
+        context.log.error("No dataframes were successfully processed!")
+        return Output(
+            {"loaded_tables": []},
+            metadata={"error": "No dataframes were successfully processed"}
+        )
+    
+    # Step 2: Combine all dataframes and load to PostgreSQL
+    context.log.info("STEP 2: Combining all standardized dataframes")
+    
+    try:
+        # Combine all dataframes with consistent columns
+        combined_df = pd.concat(all_dataframes, ignore_index=True)
+        context.log.info(f"Combined dataframe shape: {combined_df.shape}")
+        context.log.info(f"Final columns: {list(combined_df.columns)}")
+        
+        # Load the combined dataframe to PostgreSQL
+        table_name = "raw_demography_population"
+        context.log.info(f"Loading combined data to {table_name}")
+        
+        combined_df.to_sql(
+            name=table_name,
+            con=engine,
+            schema='raw',
+            if_exists='replace',  # Always replace to ensure clean schema
+            index=False,
+            method='multi'
+        )
+        
+        context.log.info(f"Successfully loaded {len(combined_df)} total rows to PostgreSQL")
+        
+        return Output(
+            {"loaded_tables": loaded_tables},
+            metadata={
+                "table_name": "raw.raw_demography_population",
+                "years_loaded": [table["year"] for table in loaded_tables],
+                "total_rows": len(combined_df),
+                "files_processed": len(loaded_tables),
+                "final_columns": list(combined_df.columns),
+            }
+        )
+        
+    except Exception as e:
+        context.log.error(f"Failed to combine and load dataframes: {e}")
+        import traceback
+        context.log.error(f"Traceback: {traceback.format_exc()}")
+        raise
+
 @job
-def excel_to_csv_pipeline():
-    """Pipeline to convert Excel files to CSV"""
-    convert_demography_excel_to_csv()
+def demography_etl_pipeline():
+    """Complete ETL pipeline: Excel → CSV → PostgreSQL (manual execution only)"""
+    csv_conversion = convert_demography_excel_to_csv()
+    schema_creation = create_raw_schema()
+    db_loading = load_demography_to_postgres()
 
-@schedule(
-    job=excel_to_csv_pipeline,
-    cron_schedule="0 1 * * *",  # Run daily at 1 AM
-)
-def daily_conversion_schedule(context):
-    return {}
-
-# Define all assets and jobs
+# Define all assets and jobs (no schedules - manual execution only)
 defs = Definitions(
-    assets=[convert_demography_excel_to_csv],
-    jobs=[excel_to_csv_pipeline],
-    schedules=[daily_conversion_schedule],
+    assets=[
+        convert_demography_excel_to_csv,
+        create_raw_schema,
+        load_demography_to_postgres
+    ],
+    jobs=[demography_etl_pipeline],
 )

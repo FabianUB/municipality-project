@@ -14,7 +14,9 @@ RUN pip install --no-cache-dir \
     dagster-postgres==0.21.8 \
     pandas \
     openpyxl \
-    xlrd
+    xlrd \
+    sqlalchemy \
+    psycopg2-binary
 
 # Set working directory
 WORKDIR /opt/dagster/app
