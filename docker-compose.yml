@@ -1,0 +1,94 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: municipality_db
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-db:/docker-entrypoint-initdb.d
+    networks:
+      - municipality_network
+
+  dbt:
+    build:
+      context: .
+      dockerfile: dbt/Dockerfile
+    container_name: municipality_dbt
+    environment:
+      DBT_PROFILES_DIR: /app/profiles
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - ./dbt:/app/dbt
+      - ./dbt/profiles:/app/profiles
+      - ./raw:/app/raw
+      - ./clean:/app/clean
+    depends_on:
+      - postgres
+    networks:
+      - municipality_network
+    command: tail -f /dev/null
+
+  dagster:
+    build:
+      context: .
+      dockerfile: dagster/Dockerfile
+    container_name: municipality_dagster
+    environment:
+      DAGSTER_POSTGRES_USER: ${POSTGRES_USER}
+      DAGSTER_POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      DAGSTER_POSTGRES_DB: ${POSTGRES_DB}
+      DAGSTER_POSTGRES_HOSTNAME: postgres
+      DAGSTER_POSTGRES_PORT: 5432
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./dbt:/opt/dagster/dbt
+      - ./raw:/opt/dagster/raw
+      - ./clean:/opt/dagster/clean
+    depends_on:
+      - postgres
+    networks:
+      - municipality_network
+    command: >
+      bash -c "
+        dagster-webserver -h 0.0.0.0 -p 3000 -w /opt/dagster/app/workspace.yaml
+      "
+
+  dagster-daemon:
+    build:
+      context: .
+      dockerfile: dagster/Dockerfile
+    container_name: municipality_dagster_daemon
+    environment:
+      DAGSTER_POSTGRES_USER: ${POSTGRES_USER}
+      DAGSTER_POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      DAGSTER_POSTGRES_DB: ${POSTGRES_DB}
+      DAGSTER_POSTGRES_HOSTNAME: postgres
+      DAGSTER_POSTGRES_PORT: 5432
+    volumes:
+      - ./dbt:/opt/dagster/dbt
+      - ./raw:/opt/dagster/raw
+      - ./clean:/opt/dagster/clean
+    depends_on:
+      - postgres
+    networks:
+      - municipality_network
+    command: dagster-daemon run
+
+volumes:
+  postgres_data:
+
+networks:
+  municipality_network:
+    driver: bridge

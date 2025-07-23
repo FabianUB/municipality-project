@@ -1,0 +1,38 @@
+# Environment
+.env
+*.log
+
+# dbt
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+
+# Airflow
+airflow/logs/*
+!airflow/logs/.gitkeep
+
+# Evidence
+evidence/node_modules/
+evidence/.evidence/template/
+evidence/build/
+
+# Docker
+.docker/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Raw (maybe)
+raw/demography/*.xls
+raw/*.csv
+raw/*.json
+raw/*.parquet
+!raw/.gitkeep
+
+# IDE
+CLAUDE.md
