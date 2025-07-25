@@ -1,0 +1,98 @@
+version: 2
+
+models:
+  - name: stg_codes_data__municipalities
+    description: |
+      **Staging layer for municipality dictionary - our atomic geographic reference**
+      
+      Provides the authoritative source of Spanish municipality codes and names.
+      This model serves as the geographic foundation for all municipality analysis,
+      containing the complete official registry of 8,132 Spanish municipalities.
+      
+      **Source of Truth**: 
+      - All geographic codes are integers (no padding, no decimals)
+      - Other models are standardized to match these formats
+      - Contains official INE municipality identifiers
+      
+      **Coverage**:
+      - All 8,132 Spanish municipalities as of 2025
+      - Complete administrative hierarchy: Autonomous Community → Province → Municipality
+      - Includes check digits for validation
+      
+      **Usage**: 
+      Primary reference for joins with demographic data and geographic analysis.
+    columns:
+      - name: autonomous_community_code
+        description: "Autonomous community code (1-19)"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 19
+      
+      - name: province_code
+        description: "Province code as integer (1-52)"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 52
+      
+      - name: municipality_code
+        description: "Municipality code as integer within province"
+        tests:
+          - not_null
+      
+      - name: municipality_name
+        description: "Official municipality name"
+        tests:
+          - not_null
+
+  - name: stg_codes_data__provinces
+    description: |
+      **Staging layer for provinces and autonomous communities mapping**
+      
+      Provides the official mapping between Spain's 52 provinces and 19 autonomous communities.
+      This model enables geographic aggregation and analysis at the provincial and regional levels.
+      
+      **Administrative Structure**:
+      - 19 Autonomous Communities (e.g., Andalucía, Cataluña, Madrid)
+      - 52 Provinces (e.g., Barcelona, Madrid, Sevilla)
+      - Complete coverage of Spanish administrative divisions
+      
+      **Data Quality**:
+      - All province codes are unique integers
+      - Clean, official names from INE
+      - No missing or duplicate records
+      
+      **Usage**:
+      - Geographic aggregation (municipality → province → autonomous community)
+      - Regional analysis and comparisons
+      - Administrative hierarchy reference
+    columns:
+      - name: autonomous_community_code
+        description: "Autonomous community code (1-19)"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 19
+      
+      - name: autonomous_community_name
+        description: "Autonomous community name"
+        tests:
+          - not_null
+      
+      - name: province_code
+        description: "Province code as integer (1-52)"
+        tests:
+          - not_null
+          - unique
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 52
+      
+      - name: province_name
+        description: "Province name"
+        tests:
+          - not_null

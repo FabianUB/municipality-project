@@ -1,46 +1,17 @@
 {{
   config(
     materialized='view',
-    description='Standardized raw demography population data with basic cleaning'
+    description='Staging layer for demography population data - our atomic building blocks'
   )
 }}
 
 with source_data as (
     select 
-        -- Geographic identifiers  
-        province_code,
-        coalesce(province_name, '') as province_name,
-        case 
-            when cmun is not null then lpad(cast(cmun as text), 3, '0')
-            else null
-        end as municipality_code,
+        -- Geographic identifiers (converted to integers to match codes_data)
+        province_code::numeric::integer as province_code,
+        province_name,
+        cmun::integer as municipality_code,
         municipality_name,
-        
-        -- Population metrics
-        population_total,
-        population_male,
-        population_female,
-        
-        -- Data lineage
-        data_year,
-        source_file,
-        data_source,
-        data_source_full,
-        data_category,
-        source_url,
-        source_description,
-        ingestion_timestamp
-        
-    from {{ source('raw', 'raw_demography_population') }}
-),
-
-cleaned_data as (
-    select
-        -- Geographic identifiers (standardized)
-        lpad(province_code::text, 2, '0') as province_code,
-        trim(province_name) as province_name,
-        municipality_code,
-        trim(municipality_name) as municipality_name,
         
         -- Population metrics (validated)
         case 
@@ -56,20 +27,21 @@ cleaned_data as (
             else null 
         end as population_female,
         
-        -- Data lineage
+        -- Time dimension
         data_year,
+        
+        -- Data lineage
         source_file,
         data_source,
-        data_source_full,
-        data_category,
-        source_url,
-        source_description,
         ingestion_timestamp
         
-    from source_data
+    from {{ source('raw', 'raw_demography_population') }}
+    
+    -- Basic data quality filters
     where municipality_name is not null
       and municipality_name != ''
       and data_year between 1996 and 2024
+      and population_total is not null
 )
 
-select * from cleaned_data
+select * from source_data

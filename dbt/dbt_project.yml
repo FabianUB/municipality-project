@@ -1,3 +1,6 @@
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
 name: 'municipality_analytics'
 version: '1.0.0'
 config-version: 2
@@ -6,6 +9,8 @@ config-version: 2
 profile: 'municipality_analytics'
 
 # These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
 model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
@@ -13,40 +18,33 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
-clean-targets:
+clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
 # Configuring models
+# Full documentation: https://docs.getdbt.com/reference/model-configs
+
+# In this example config, we tell dbt to build all models in the example/
+# directory as views. These settings can be overridden in the individual model files
+# using the `{{ config(...) }}` macro.
 models:
   municipality_analytics:
+    # Staging - our atomic building blocks from source data
     staging:
       +materialized: view
       +schema: staging
+      demography:
+        +description: "Demography staging models - population data atoms"
+      codes_data:
+        +description: "Geographic codes staging models - reference data atoms"
+    
+    # Intermediate - logical layers with specific purposes
     intermediate:
       +materialized: table
       +schema: intermediate
+    
+    # Marts - wide, rich entities for our organization
     marts:
       +materialized: table
       +schema: marts
-      core:
-        +schema: marts_core
-      demography:
-        +schema: marts_demography
-      economy:
-        +schema: marts_economy
-      geography:
-        +schema: marts_geography
-      transportation:
-        +schema: marts_transportation
-
-# Configuring seeds
-seeds:
-  municipality_analytics:
-    +schema: raw
-    population_data:
-      +column_types:
-        year: int
-        municipality_code: varchar(10)
-        municipality_name: varchar(100)
-        population: int

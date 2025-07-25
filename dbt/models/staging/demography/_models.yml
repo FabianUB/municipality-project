@@ -2,25 +2,68 @@ version: 2
 
 models:
   - name: stg_demography__population
-    description: "Standardized raw demography population data with basic cleaning"
+    description: |
+      **Staging layer for demography population data - our atomic building blocks**
+      
+      Transforms raw demographic data into standardized format with integer geographic codes.
+      This model serves as the foundation for all demographic analysis by creating clean,
+      consistently typed atomic data blocks.
+      
+      **Key Transformations**:
+      - Province codes: Text "01" → Integer 1 (to match codes_data source of truth)
+      - Municipality codes: Numeric 2.0 → Integer 2 (standardization)
+      - Population validation: Ensures non-negative values
+      - Data filtering: Removes records with missing critical fields
+      
+      **Data Quality**: 
+      - Filters 227,400+ raw records to valid demographic data
+      - Known issue: 8,098 records with null municipality codes (upstream data quality)
+      - Covers 28 years of demographic data (1996-2024)
+      
+      **Join Compatibility**: 
+      Integer geographic codes enable reliable joins with codes_data models.
     columns:
       - name: province_code
-        description: "Province code (INE standard, zero-padded)"
+        description: "Province code as integer (1-52)"
         tests:
           - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 52
+      
       - name: municipality_code
-        description: "Municipality code (INE standard, zero-padded)"
+        description: "Municipality code as integer within province"
         tests:
           - not_null
+      
       - name: municipality_name
-        description: "Municipality name"
+        description: "Municipality name (cleaned)"
         tests:
           - not_null
+      
       - name: population_total
-        description: "Total population"
+        description: "Total population (validated >= 0)"
         tests:
           - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+      
+      - name: population_male
+        description: "Male population (validated >= 0)"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+      
+      - name: population_female
+        description: "Female population (validated >= 0)"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+      
       - name: data_year
         description: "Year of the data"
         tests:
           - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1996
+              max_value: 2024
