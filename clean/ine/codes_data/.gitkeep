@@ -1,0 +1,2 @@
+# This file ensures the clean/codes_data directory is tracked in git
+# Cleaned CSV files will be placed here by the Dagster pipeline

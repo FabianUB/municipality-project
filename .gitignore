@@ -52,7 +52,9 @@ raw/demography/*.xlsx
 raw/*.csv
 raw/*.json
 raw/*.parquet
-clean/
+clean/*.csv
+clean/*.json
+clean/*.parquet
 processed/
 exports/
 !raw/.gitkeep
