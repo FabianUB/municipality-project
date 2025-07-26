@@ -1,13 +1,6 @@
 FROM python:3.10-slim
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    git \
-    curl \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
-
-# Install Dagster and additional packages
+# Install Dagster and additional packages (without dbt to avoid build issues)
 RUN pip install --no-cache-dir \
     dagster==1.5.8 \
     dagster-webserver==1.5.8 \
