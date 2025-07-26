@@ -1,4 +1,5 @@
 import os
+import shutil
 from dagster import (
     asset,
     job,
@@ -213,10 +214,10 @@ def clean_dataframe(df, year=None):
 
 @asset
 def convert_demography_excel_to_csv(context) -> Output[dict]:
-    """Convert Excel files from raw/demography/ to CSV files in clean/demography/"""
+    """Convert Excel files from raw/ine/demography/ to CSV files in clean/ine/demography/"""
     
-    raw_path = "/opt/dagster/raw/demography"
-    clean_path = "/opt/dagster/clean/demography"
+    raw_path = "/opt/dagster/raw/ine/demography"
+    clean_path = "/opt/dagster/clean/ine/demography"
     
     # Create clean directory if it doesn't exist
     os.makedirs(clean_path, exist_ok=True)
@@ -326,9 +327,9 @@ def create_raw_schema(context) -> Output[str]:
 
 @asset(deps=[create_raw_schema])
 def load_demography_to_postgres(context) -> Output[dict]:
-    """Load CSV files from clean/demography/ into PostgreSQL raw schema"""
+    """Load CSV files from clean/ine/demography/ into PostgreSQL raw schema"""
     
-    clean_path = "/opt/dagster/clean/demography"
+    clean_path = "/opt/dagster/clean/ine/demography"
     csv_files = glob.glob(f"{clean_path}/*.csv")
     context.log.info(f"Found {len(csv_files)} CSV files in {clean_path}")
     context.log.info(f"CSV files: {[Path(f).name for f in csv_files]}")
@@ -426,14 +427,45 @@ def load_demography_to_postgres(context) -> Output[dict]:
         table_name = "raw_demography_population"
         context.log.info(f"Loading combined data to {table_name}")
         
-        combined_df.to_sql(
-            name=table_name,
-            con=engine,
-            schema='raw',
-            if_exists='replace',  # Always replace to ensure clean schema
-            index=False,
-            method='multi'
-        )
+        # Handle existing table that might have dependent views
+        with engine.connect() as conn:
+            # Check if table exists
+            table_exists_query = text("""
+                SELECT EXISTS (
+                    SELECT FROM information_schema.tables 
+                    WHERE table_schema = 'raw' 
+                    AND table_name = 'raw_demography_population'
+                );
+            """)
+            table_exists = conn.execute(table_exists_query).fetchone()[0]
+            
+            if table_exists:
+                # Truncate existing table instead of dropping (to preserve dependent views)
+                context.log.info("Table exists, truncating data to preserve dependent views")
+                truncate_query = text("TRUNCATE TABLE raw.raw_demography_population")
+                conn.execute(truncate_query)
+                conn.commit()
+                
+                # Use append mode since table structure already exists
+                combined_df.to_sql(
+                    name=table_name,
+                    con=engine,
+                    schema='raw',
+                    if_exists='append',
+                    index=False,
+                    method='multi'
+                )
+            else:
+                # Create new table normally
+                context.log.info("Creating new table")
+                combined_df.to_sql(
+                    name=table_name,
+                    con=engine,
+                    schema='raw',
+                    if_exists='replace',
+                    index=False,
+                    method='multi'
+                )
         
         context.log.info(f"Successfully loaded {len(combined_df)} total rows to PostgreSQL")
         
@@ -462,8 +494,8 @@ def load_demography_to_postgres(context) -> Output[dict]:
 def convert_municipality_dictionary_to_csv(context) -> Output[dict]:
     """Convert municipality dictionary Excel to CSV with standardized columns"""
     
-    raw_file = "/opt/dagster/raw/codes_data/diccionario25.xlsx"
-    clean_path = "/opt/dagster/clean/codes_data"
+    raw_file = "/opt/dagster/raw/ine/codes_data/diccionario25.xlsx"
+    clean_path = "/opt/dagster/clean/ine/codes_data"
     
     # Create clean directory if it doesn't exist
     os.makedirs(clean_path, exist_ok=True)
@@ -505,6 +537,13 @@ def convert_municipality_dictionary_to_csv(context) -> Output[dict]:
         df.to_csv(csv_path, index=False, encoding='utf-8')
         context.log.info(f"Saved clean CSV: {csv_path}")
         
+        # Copy to dbt seeds directory (shared volume between containers)
+        seeds_path = "/opt/dagster/dbt/seeds"
+        os.makedirs(seeds_path, exist_ok=True)
+        seeds_file_path = f"{seeds_path}/municipality_dictionary.csv"
+        shutil.copy2(csv_path, seeds_file_path)
+        context.log.info(f"Copied to dbt seeds: {seeds_file_path}")
+        
         return Output(
             {
                 "source_file": "diccionario25.xlsx",
@@ -532,8 +571,8 @@ def convert_municipality_dictionary_to_csv(context) -> Output[dict]:
 def convert_provinces_mapping_to_csv(context) -> Output[dict]:
     """Convert provinces-autonomous communities mapping Excel to CSV with cleaning"""
     
-    raw_file = "/opt/dagster/raw/codes_data/provinces_ccaa.xlsx"
-    clean_path = "/opt/dagster/clean/codes_data"
+    raw_file = "/opt/dagster/raw/ine/codes_data/provinces_ccaa.xlsx"
+    clean_path = "/opt/dagster/clean/ine/codes_data"
     
     # Create clean directory if it doesn't exist
     os.makedirs(clean_path, exist_ok=True)
@@ -582,6 +621,13 @@ def convert_provinces_mapping_to_csv(context) -> Output[dict]:
         df.to_csv(csv_path, index=False, encoding='utf-8')
         context.log.info(f"Saved clean CSV: {csv_path}")
         
+        # Copy to dbt seeds directory (shared volume between containers)
+        seeds_path = "/opt/dagster/dbt/seeds"
+        os.makedirs(seeds_path, exist_ok=True)
+        seeds_file_path = f"{seeds_path}/provinces_autonomous_communities.csv"
+        shutil.copy2(csv_path, seeds_file_path)
+        context.log.info(f"Copied to dbt seeds: {seeds_file_path}")
+        
         return Output(
             {
                 "source_file": "provinces_ccaa.xlsx", 
@@ -609,7 +655,7 @@ def convert_provinces_mapping_to_csv(context) -> Output[dict]:
 def validate_codes_data(context) -> Output[dict]:
     """Validate consistency between municipality dictionary and provinces mapping"""
     
-    clean_path = "/opt/dagster/clean/codes_data"
+    clean_path = "/opt/dagster/clean/ine/codes_data"
     
     try:
         context.log.info("Validating codes data consistency")

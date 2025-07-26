@@ -34,10 +34,12 @@ models:
     staging:
       +materialized: view
       +schema: staging
-      demography:
-        +description: "Demography staging models - population data atoms"
-      codes_data:
-        +description: "Geographic codes staging models - reference data atoms"
+      ine:
+        +description: "INE (Instituto Nacional de Estadística) staging models"
+        demography:
+          +description: "Demography staging models - population data atoms"
+        codes_data:
+          +description: "Geographic codes staging models - reference data atoms"
     
     # Intermediate - logical layers with specific purposes
     intermediate:
