@@ -55,7 +55,7 @@ municipality_code   -- Source of truth: 1, 2, 51
 
 ### Staging Models
 
-#### `stg_demography__population`
+#### `stg_ine_demography__population`
 - **Source**: `raw.raw_demography_population`
 - **Purpose**: Standardized population atoms with integer geographic codes
 - **Key Transformations**:
@@ -64,13 +64,13 @@ municipality_code   -- Source of truth: 1, 2, 51
   - Population validation: Ensure non-negative values
 - **Data Quality**: Filters out invalid records, maintains 28 years of data
 
-#### `stg_codes_data__municipalities`
+#### `stg_ine_codes_data__municipalities`
 - **Source**: `municipality_dictionary` (seed)
 - **Purpose**: Authoritative municipality reference with 8,132 Spanish municipalities
 - **Coverage**: All official municipalities as of 2025
 - **Key Fields**: Geographic hierarchy (autonomous community → province → municipality)
 
-#### `stg_codes_data__provinces`
+#### `stg_ine_codes_data__provinces`
 - **Source**: `provinces_autonomous_communities` (seed)
 - **Purpose**: Province-to-autonomous community mapping
 - **Coverage**: 52 provinces across 19 autonomous communities
@@ -96,11 +96,11 @@ All joins use standardized integer keys:
 
 ```sql
 -- Demography ↔ Municipalities
-stg_demography__population.province_code = stg_codes_data__municipalities.province_code
-AND stg_demography__population.municipality_code = stg_codes_data__municipalities.municipality_code
+stg_ine_demography__population.province_code = stg_ine_codes_data__municipalities.province_code
+AND stg_ine_demography__population.municipality_code = stg_ine_codes_data__municipalities.municipality_code
 
 -- Municipalities ↔ Provinces  
-stg_codes_data__municipalities.province_code = stg_codes_data__provinces.province_code
+stg_ine_codes_data__municipalities.province_code = stg_ine_codes_data__provinces.province_code
 ```
 
 ## 📈 Analytics Capabilities

@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_codes_data__municipalities
+  - name: stg_ine_codes_data__municipalities
     description: |
       **Staging layer for municipality dictionary - our atomic geographic reference**
       
@@ -48,7 +48,7 @@ models:
         tests:
           - not_null
 
-  - name: stg_codes_data__provinces
+  - name: stg_ine_codes_data__provinces
     description: |
       **Staging layer for provinces and autonomous communities mapping**
       

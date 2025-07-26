@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_demography__population
+  - name: stg_ine_demography__population
     description: |
       **Staging layer for demography population data - our atomic building blocks**
       
