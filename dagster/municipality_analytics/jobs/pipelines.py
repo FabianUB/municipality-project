@@ -19,6 +19,7 @@ from ..assets.codes_data import (
     validate_codes_data
 )
 from ..assets.dbt_models import municipality_dbt_models
+from ..assets.sepe_unemployment import sepe_raw_xls_files, sepe_files_inventory
 
 
 @job
@@ -108,3 +109,29 @@ def full_analytics_pipeline():
     
     # dbt transformations (depends on both data sources being ready)
     dbt_models = municipality_dbt_models()
+
+
+@job
+def sepe_unemployment_etl_pipeline():
+    """
+    ETL pipeline for SEPE unemployment data extraction.
+    
+    Downloads raw XLS files from SEPE (Servicio Público de Empleo Estatal) website:
+    1. Scrapes SEPE municipality unemployment statistics page
+    2. Downloads "Libro completo" XLS files for available months
+    3. Creates inventory of downloaded files
+    
+    Key features:
+    - Respectful web scraping with delays
+    - Downloads latest data and historical files (last 2 years)
+    - Handles complex SEPE website structure
+    - Raw file storage for later manual processing
+    
+    Outputs:
+    - Raw XLS files in raw/sepe/ directory
+    - File inventory with metadata
+    
+    Use case: Run to collect SEPE unemployment data files for manual analysis
+    """
+    raw_files = sepe_raw_xls_files()
+    inventory = sepe_files_inventory()

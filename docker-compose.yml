@@ -108,12 +108,11 @@ services:
 
   streamlit:
     build:
-      context: ./streamlit
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: streamlit/Dockerfile
     container_name: municipality_streamlit
     environment:
       POSTGRES_HOST: postgres
-      POSTGRES_PORT: 5432
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
@@ -121,6 +120,7 @@ services:
       - "8501:8501"
     volumes:
       - ./streamlit:/app
+      - ./dbt/target:/app/dbt_target
     depends_on:
       - postgres
       - dbt

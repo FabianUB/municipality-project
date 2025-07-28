@@ -9,7 +9,10 @@ RUN pip install --no-cache-dir \
     openpyxl \
     xlrd \
     sqlalchemy \
-    psycopg2-binary
+    psycopg2-binary \
+    requests \
+    beautifulsoup4 \
+    lxml
 
 # Set working directory
 WORKDIR /opt/dagster/app

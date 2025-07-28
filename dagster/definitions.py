@@ -28,12 +28,14 @@ from municipality_analytics.assets.codes_data import (
     validate_codes_data
 )
 from municipality_analytics.assets.dbt_models import municipality_dbt_models
+from municipality_analytics.assets.sepe_unemployment import sepe_raw_xls_files, sepe_files_inventory
 
 # Import all jobs from pipelines module
 from municipality_analytics.jobs.pipelines import (
     codes_data_etl_pipeline,
     demography_etl_pipeline,
-    full_analytics_pipeline
+    full_analytics_pipeline,
+    sepe_unemployment_etl_pipeline
 )
 
 
@@ -51,12 +53,17 @@ defs = Definitions(
         validate_codes_data,
         
         # dbt transformation assets
-        municipality_dbt_models
+        municipality_dbt_models,
+        
+        # SEPE unemployment data assets
+        sepe_raw_xls_files,
+        sepe_files_inventory
     ],
     jobs=[
         # Domain-specific pipelines for focused execution
         demography_etl_pipeline,
         codes_data_etl_pipeline,
+        sepe_unemployment_etl_pipeline,
         
         # Complete integrated analytics pipeline
         full_analytics_pipeline

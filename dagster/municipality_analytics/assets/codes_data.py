@@ -11,10 +11,162 @@ Handles the ETL process for Spanish municipality and province reference data:
 import os
 import shutil
 import pandas as pd
+import requests
+from bs4 import BeautifulSoup
 from dagster import asset, Output, AssetExecutionContext
 
 
-@asset
+@asset(
+    description="Download INE municipality dictionary Excel file",
+    group_name="codes_data_etl"
+)
+def download_ine_dictionary(context: AssetExecutionContext) -> Output[dict]:
+    """
+    Download the INE municipality dictionary from https://www.ine.es/daco/daco42/codmun/diccionario25.xlsx
+    
+    This asset downloads the official municipality dictionary that contains
+    all Spanish municipality codes and names.
+    
+    Returns:
+        Output containing download statistics
+    """
+    dictionary_url = "https://www.ine.es/daco/daco42/codmun/diccionario25.xlsx"
+    raw_path = "/opt/dagster/raw/ine/codes_data"
+    file_path = f"{raw_path}/diccionario25.xlsx"
+    
+    # Create directory if it doesn't exist
+    os.makedirs(raw_path, exist_ok=True)
+    
+    try:
+        # Check if file already exists
+        if os.path.exists(file_path):
+            context.log.info(f"File already exists: {file_path}")
+            file_size = os.path.getsize(file_path)
+        else:
+            context.log.info(f"Downloading INE dictionary from: {dictionary_url}")
+            
+            # Download the Excel file
+            response = requests.get(dictionary_url, stream=True)
+            response.raise_for_status()
+            
+            # Save file
+            with open(file_path, 'wb') as f:
+                for chunk in response.iter_content(chunk_size=8192):
+                    if chunk:
+                        f.write(chunk)
+            
+            context.log.info(f"Downloaded dictionary: {file_path}")
+            
+            # Get file size
+            file_size = os.path.getsize(file_path)
+        
+        return Output(
+            {
+                "download_url": dictionary_url,
+                "file_path": file_path,
+                "file_size": file_size
+            },
+            metadata={
+                "file_size_mb": round(file_size / (1024 * 1024), 2),
+                "download_url": dictionary_url
+            }
+        )
+        
+    except Exception as e:
+        context.log.error(f"Failed to download INE dictionary: {e}")
+        import traceback
+        context.log.error(f"Traceback: {traceback.format_exc()}")
+        raise
+
+
+@asset(
+    description="Download provinces CCAA data from INE HTML table",
+    group_name="codes_data_etl"
+)
+def download_provinces_ccaa_data(context: AssetExecutionContext) -> Output[dict]:
+    """
+    Extract provinces and autonomous communities data from INE HTML table
+    at https://www.ine.es/daco/daco42/codmun/cod_ccaa_provincia.htm
+    
+    This asset scrapes the HTML table and converts it to Excel format
+    for consistent processing with other INE data.
+    
+    Returns:
+        Output containing extraction statistics
+    """
+    html_url = "https://www.ine.es/daco/daco42/codmun/cod_ccaa_provincia.htm"
+    raw_path = "/opt/dagster/raw/ine/codes_data"
+    file_path = f"{raw_path}/provinces_ccaa.xlsx"
+    
+    # Create directory if it doesn't exist
+    os.makedirs(raw_path, exist_ok=True)
+    
+    try:
+        # Check if file already exists
+        if os.path.exists(file_path):
+            context.log.info(f"File already exists: {file_path}")
+            # Read existing file to get metadata
+            df = pd.read_excel(file_path, sheet_name='Hoja 1', header=0)
+        else:
+            context.log.info(f"Extracting provinces data from: {html_url}")
+            
+            # Fetch the HTML page
+            response = requests.get(html_url)
+            response.raise_for_status()
+            
+            # Parse HTML with BeautifulSoup
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # Find the table - it's usually the first table on the page
+            table = soup.find('table')
+            if not table:
+                raise ValueError("No table found in the HTML page")
+            
+            # Extract table data
+            rows = []
+            for tr in table.find_all('tr'):
+                cells = [td.get_text(strip=True) for td in tr.find_all(['td', 'th'])]
+                if cells:  # Only add non-empty rows
+                    rows.append(cells)
+            
+            context.log.info(f"Extracted {len(rows)} rows from HTML table")
+            
+            # Convert to DataFrame
+            if len(rows) > 1:
+                # First row as headers
+                df = pd.DataFrame(rows[1:], columns=rows[0])
+            else:
+                raise ValueError("Not enough data rows found in table")
+            
+            context.log.info(f"Table shape: {df.shape}")
+            context.log.info(f"Columns: {list(df.columns)}")
+            
+            # Save as Excel file for consistency with other INE data processing
+            df.to_excel(file_path, sheet_name='Hoja 1', index=False)
+            context.log.info(f"Saved as Excel: {file_path}")
+        
+        return Output(
+            {
+                "source_url": html_url,
+                "file_path": file_path,
+                "rows_extracted": len(df),
+                "columns": list(df.columns)
+            },
+            metadata={
+                "rows_extracted": len(df),
+                "columns_count": len(df.columns),
+                "source_url": html_url
+            }
+        )
+        
+    except Exception as e:
+        context.log.error(f"Failed to extract provinces CCAA data: {e}")
+        import traceback
+        context.log.error(f"Traceback: {traceback.format_exc()}")
+        raise
+
+
+@asset(deps=[download_ine_dictionary])
 def convert_municipality_dictionary_to_csv(context: AssetExecutionContext) -> Output[dict]:
     """
     Convert municipality dictionary Excel to CSV with standardized columns.
@@ -115,7 +267,7 @@ def convert_municipality_dictionary_to_csv(context: AssetExecutionContext) -> Ou
         raise
 
 
-@asset  
+@asset(deps=[download_provinces_ccaa_data])
 def convert_provinces_mapping_to_csv(context: AssetExecutionContext) -> Output[dict]:
     """
     Convert provinces-autonomous communities mapping Excel to CSV with cleaning.

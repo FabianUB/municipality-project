@@ -50,6 +50,8 @@ kubernetes/secrets/
 # Raw Data Files (sensitive)
 raw/demography/*.xls
 raw/demography/*.xlsx
+raw/
+clean/
 raw/*.csv
 raw/*.json
 raw/*.parquet

@@ -10,6 +10,8 @@ Handles the complete ETL process for Spanish municipality population data:
 import os
 import glob
 import pandas as pd
+import requests
+import zipfile
 from pathlib import Path
 from sqlalchemy import text
 from dagster import asset, Output, AssetExecutionContext
@@ -18,7 +20,91 @@ from ..utils.data_processing import detect_header_row, clean_dataframe, standard
 from ..resources.database import get_db_connection, get_data_source_config
 
 
-@asset
+@asset(
+    description="Download and extract INE demography ZIP file",
+    group_name="demography_etl"
+)
+def download_ine_demography_zip(context: AssetExecutionContext) -> Output[dict]:
+    """
+    Download and extract the INE demography ZIP file from https://www.ine.es/pob_xls/pobmun.zip
+    
+    This asset downloads the complete demographic dataset and extracts all XLS files 
+    to the raw/ine/demography directory.
+    
+    Returns:
+        Output containing download and extraction statistics
+    """
+    zip_url = "https://www.ine.es/pob_xls/pobmun.zip"
+    raw_path = "/opt/dagster/raw/ine/demography"
+    zip_path = "/opt/dagster/raw/ine/pobmun.zip"
+    
+    # Create directory if it doesn't exist
+    os.makedirs(raw_path, exist_ok=True)
+    os.makedirs("/opt/dagster/raw/ine", exist_ok=True)
+    
+    try:
+        # Check if files already exist (check for a few key files)
+        existing_files = glob.glob(f"{raw_path}/*.xls*")
+        if existing_files:
+            context.log.info(f"Files already exist in {raw_path}: {len(existing_files)} files found")
+            extracted_files = [os.path.basename(f) for f in existing_files if f.endswith(('.xls', '.xlsx'))]
+            zip_files = extracted_files  # For metadata
+        else:
+            context.log.info(f"Downloading INE demography ZIP from: {zip_url}")
+            
+            # Download the ZIP file
+            response = requests.get(zip_url, stream=True)
+            response.raise_for_status()
+            
+            # Save ZIP file
+            with open(zip_path, 'wb') as f:
+                for chunk in response.iter_content(chunk_size=8192):
+                    if chunk:
+                        f.write(chunk)
+            
+            context.log.info(f"Downloaded ZIP file: {zip_path}")
+            
+            # Extract ZIP file
+            extracted_files = []
+            with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+                # Get list of files in ZIP
+                zip_files = zip_ref.namelist()
+                context.log.info(f"Found {len(zip_files)} files in ZIP")
+                
+                # Extract all files
+                zip_ref.extractall(raw_path)
+                
+                # Log extracted files
+                for file in zip_files:
+                    if file.endswith(('.xls', '.xlsx')):
+                        extracted_files.append(file)
+                        context.log.info(f"Extracted: {file}")
+            
+            # Clean up ZIP file
+            os.remove(zip_path)
+            context.log.info("Cleaned up ZIP file")
+        
+        return Output(
+            {
+                "zip_url": zip_url,
+                "extracted_files": extracted_files,
+                "extraction_path": raw_path
+            },
+            metadata={
+                "files_extracted": len(extracted_files),
+                "total_files_in_zip": len(zip_files),
+                "download_url": zip_url
+            }
+        )
+        
+    except Exception as e:
+        context.log.error(f"Failed to download/extract INE ZIP: {e}")
+        import traceback
+        context.log.error(f"Traceback: {traceback.format_exc()}")
+        raise
+
+
+@asset(deps=[download_ine_demography_zip])
 def convert_demography_excel_to_csv(context: AssetExecutionContext) -> Output[dict]:
     """
     Convert Excel files from raw/ine/demography/ to CSV files in clean/ine/demography/.

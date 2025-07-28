@@ -1,1 +1,0 @@
-# Assets module for municipality analytics pipeline
