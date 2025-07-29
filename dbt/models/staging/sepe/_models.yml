@@ -1,0 +1,373 @@
+version: 2
+
+models:
+  - name: stg_sepe__unemployment
+    description: |
+      **Staging layer for SEPE unemployment data - standardized and cleaned with municipality code completion**
+      
+      Transforms raw SEPE unemployment data into standardized format with enhanced data quality features.
+      This model serves as the foundation for all unemployment analysis by creating clean, consistently 
+      typed data with geographic standardization.
+      
+      **Key Transformations**:
+      - **Municipality Code Completion**: Automatically assigns missing municipality codes by leveraging 
+        municipality names from records where both name and code are present. Uses a validated one-to-one 
+        mapping to ensure data integrity.
+      - Province name standardization for reliable joins with geographic reference data
+      - Age/gender demographic validation and percentage calculations
+      - Sector breakdown validation with proper integer typing
+      - Date dimension creation (reporting_date) for time series analysis
+      
+      **Data Quality Enhancements**:
+      - Municipality code completion reduces missing geographic identifiers
+      - Validates one-to-one relationship between municipality names and codes
+      - Tracks which records had their municipality codes completed via `municipality_code_completed` flag
+      - Filters records with negative or null unemployment values
+      - Ensures proper date ranges (2005-2025, months 1-12)
+      
+      **Municipality Code Completion Logic**:
+      1. Creates mapping from records with both municipality_name and municipality_code
+      2. Validates one-to-one relationship (one code per name, one name per code)
+      3. Uses validated mapping to complete missing municipality codes
+      4. Flags completed records for transparency and testing
+      
+      **Coverage**: 
+      - Original records: ~1.95M from SEPE unemployment data
+      - Enhanced with municipality code completion for better geographic analysis
+      - Time period: May 2005 to June 2025 (monthly data)
+      
+      **Join Compatibility**: 
+      Standardized geographic codes enable reliable joins with municipality and province reference data.
+    columns:
+      - name: municipality_code
+        description: |
+          Municipality code as integer. May be original from source data or completed via name-based lookup.
+          Use `municipality_code_completed` flag to identify completed records.
+        tests:
+          - not_null:
+              config:
+                severity: warn
+                warn_if: "> 1000"  # Allow some nulls but warn if too many
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 99999
+              where: "municipality_code is not null"
+      
+      - name: municipality_code_completed
+        description: |
+          **Data Quality Flag**: TRUE if municipality_code was null in source and completed via name-based lookup.
+          FALSE if municipality_code was originally present in source data.
+          
+          This flag enables:
+          - Data quality monitoring of municipality code completion success rate
+          - Identification of records that relied on name-based matching
+          - Validation that completion logic is working correctly
+        tests:
+          - not_null
+          - accepted_values:
+              values: [true, false]
+      
+      - name: municipality_name
+        description: "Municipality name (cleaned from SEPE source)"
+        tests:
+          - not_null
+          - dbt_utils.not_empty_string
+      
+      - name: province_code
+        description: |
+          Province code as integer (1-52) from provinces_autonomous_communities mapping.
+          May be null if province name doesn't match reference data.
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 52
+              where: "province_code is not null"
+      
+      - name: province_name
+        description: "Standardized province name for joining with reference data"
+        tests:
+          - not_null
+      
+      - name: data_year
+        description: "Year of the unemployment data"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 2005
+              max_value: 2025
+      
+      - name: data_month
+        description: "Month of the unemployment data"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 12
+      
+      - name: reporting_date
+        description: "First day of the reporting month as DATE for time series analysis"
+        tests:
+          - not_null
+      
+      - name: total_unemployment
+        description: "Total unemployment count (validated >= 0)"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+      
+      - name: total_men_unemployment
+        description: "Calculated total: sum of all male age groups"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+      
+      - name: total_women_unemployment
+        description: "Calculated total: sum of all female age groups"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+      
+      - name: men_unemployment_percentage
+        description: |
+          Percentage of unemployment that is male (0-100).
+          Note: May exceed 100% due to data quality issues in source where demographic breakdowns 
+          don't sum exactly to totals.
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 100
+              where: "men_unemployment_percentage is not null"
+              config:
+                severity: warn
+                warn_if: "> 1000"  # Only warn if many records exceed 100%
+      
+      - name: women_unemployment_percentage
+        description: |
+          Percentage of unemployment that is female (0-100).
+          Note: May exceed 100% due to data quality issues in source where demographic breakdowns 
+          don't sum exactly to totals.
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 100
+              where: "women_unemployment_percentage is not null"
+              config:
+                severity: warn
+                warn_if: "> 1000"  # Only warn if many records exceed 100%
+
+  - name: stg_sepe__contracts
+    description: |
+      **Staging layer for SEPE contracts data - standardized and cleaned with municipality code completion**
+      
+      Transforms raw SEPE contracts data into standardized format with enhanced data quality features.
+      This model serves as the foundation for all employment contracts analysis by creating clean, 
+      consistently typed data with geographic standardization.
+      
+      **Key Transformations**:
+      - **Municipality Code Completion**: Automatically assigns missing municipality codes by leveraging 
+        municipality names from records where both name and code are present. Uses a validated one-to-one 
+        mapping to ensure data integrity.
+      - Province name standardization for reliable joins with geographic reference data
+      - Contract type categorization (indefinite initial, temporary initial, conversions)
+      - Gender-based contract analysis with percentage calculations
+      - Sector breakdown validation with proper integer typing
+      - Contract stability indicators (permanent vs temporary contract ratios)
+      
+      **Data Quality Enhancements**:
+      - Municipality code completion reduces missing geographic identifiers
+      - Validates one-to-one relationship between municipality names and codes
+      - Tracks which records had their municipality codes completed via `municipality_code_completed` flag
+      - Filters records with negative or null contract values
+      - Ensures proper date ranges (2005-2025, months 1-12)
+      
+      **Municipality Code Completion Logic**:
+      Same logic as unemployment model - creates validated name-to-code mapping and completes missing codes.
+      
+      **Coverage**: 
+      - Original records: ~1.94M from SEPE contracts data
+      - Enhanced with municipality code completion for better geographic analysis
+      - Time period: May 2005 to June 2025 (monthly data)
+      
+      **Contract Analysis Features**:
+      - Contract stability analysis (permanent vs temporary ratios)
+      - Gender breakdown with percentages
+      - Contract type transitions (temporary to permanent conversions)
+      
+      **Join Compatibility**: 
+      Standardized geographic codes enable reliable joins with municipality and province reference data.
+    columns:
+      - name: municipality_code
+        description: |
+          Municipality code as integer. May be original from source data or completed via name-based lookup.
+          Use `municipality_code_completed` flag to identify completed records.
+        tests:
+          - not_null:
+              config:
+                severity: warn
+                warn_if: "> 1000"  # Allow some nulls but warn if too many
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 99999
+              where: "municipality_code is not null"
+      
+      - name: municipality_code_completed
+        description: |
+          **Data Quality Flag**: TRUE if municipality_code was null in source and completed via name-based lookup.
+          FALSE if municipality_code was originally present in source data.
+          
+          Enables data quality monitoring and validation of completion logic effectiveness.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [true, false]
+      
+      - name: municipality_name
+        description: "Municipality name (cleaned from SEPE source)"
+        tests:
+          - not_null
+          - dbt_utils.not_empty_string
+      
+      - name: province_code
+        description: |
+          Province code as integer (1-52) from provinces_autonomous_communities mapping.
+          May be null if province name doesn't match reference data.
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 52
+              where: "province_code is not null"
+      
+      - name: total_contracts
+        description: "Total contracts count (validated >= 0)"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+      
+      - name: total_men_contracts
+        description: "Calculated total: sum of all male contract types"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+      
+      - name: total_women_contracts
+        description: "Calculated total: sum of all female contract types"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+      
+      - name: permanent_contracts_percentage
+        description: |
+          **Contract Stability Indicator**: Percentage of contracts that are permanent 
+          (indefinite initial + indefinite conversions). Higher values indicate more stable employment.
+          Note: May exceed 100% due to data quality issues in source where breakdowns don't sum to totals.
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 100
+              where: "permanent_contracts_percentage is not null"
+              config:
+                severity: warn
+                warn_if: "> 1000"  # Only warn if many records exceed 100%
+      
+      - name: men_contracts_percentage
+        description: |
+          Percentage of contracts that are for men (0-100).
+          Note: May exceed 100% due to data quality issues in source where gender breakdowns 
+          don't sum exactly to totals.
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 100
+              where: "men_contracts_percentage is not null"
+              config:
+                severity: warn
+                warn_if: "> 1000"  # Only warn if many records exceed 100%
+      
+      - name: women_contracts_percentage
+        description: |
+          Percentage of contracts that are for women (0-100).
+          Note: May exceed 100% due to data quality issues in source where gender breakdowns 
+          don't sum exactly to totals.
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 100
+              where: "women_contracts_percentage is not null"
+              config:
+                severity: warn
+                warn_if: "> 1000"  # Only warn if many records exceed 100%
+
+# Custom tests for municipality code completion validation
+tests:
+  - name: test_municipality_code_completion_effectiveness_unemployment
+    description: |
+      **Data Quality Test**: Validates that municipality code completion is working effectively.
+      
+      This test ensures that:
+      1. The completion rate is reasonable (most records should have municipality codes)
+      2. Completed codes are valid and consistent
+      3. The completion logic is not creating invalid mappings
+      
+      **Success Criteria**: 
+      - At least 95% of records should have municipality_code (original or completed)
+      - Municipality code completion should improve data completeness significantly
+    sql: |
+      select 
+        count(*) as total_records,
+        count(municipality_code) as records_with_code,
+        sum(case when municipality_code_completed then 1 else 0 end) as codes_completed,
+        round((count(municipality_code)::numeric / count(*)) * 100, 2) as code_completeness_rate,
+        round((sum(case when municipality_code_completed then 1 else 0 end)::numeric / count(*)) * 100, 2) as completion_rate
+      from {{ ref('stg_sepe__unemployment') }}
+      having code_completeness_rate < 95
+
+  - name: test_municipality_code_completion_effectiveness_contracts
+    description: |
+      **Data Quality Test**: Validates that municipality code completion is working effectively for contracts data.
+      Same validation logic as unemployment model.
+    sql: |
+      select 
+        count(*) as total_records,
+        count(municipality_code) as records_with_code,
+        sum(case when municipality_code_completed then 1 else 0 end) as codes_completed,
+        round((count(municipality_code)::numeric / count(*)) * 100, 2) as code_completeness_rate,
+        round((sum(case when municipality_code_completed then 1 else 0 end)::numeric / count(*)) * 100, 2) as completion_rate
+      from {{ ref('stg_sepe__contracts') }}
+      having code_completeness_rate < 95
+
+  - name: test_municipality_mapping_consistency
+    description: |
+      **Data Integrity Test**: Ensures municipality name-to-code mappings are consistent between 
+      unemployment and contracts data.
+      
+      This test validates that the same municipality name maps to the same code across both datasets,
+      preventing data integrity issues in downstream analysis.
+    sql: |
+      with unemployment_mapping as (
+        select distinct municipality_name, municipality_code
+        from {{ ref('stg_sepe__unemployment') }}
+        where municipality_code is not null
+      ),
+      contracts_mapping as (
+        select distinct municipality_name, municipality_code  
+        from {{ ref('stg_sepe__contracts') }}
+        where municipality_code is not null
+      ),
+      inconsistent_mappings as (
+        select 
+          coalesce(u.municipality_name, c.municipality_name) as municipality_name,
+          u.municipality_code as unemployment_code,
+          c.municipality_code as contracts_code
+        from unemployment_mapping u
+        full outer join contracts_mapping c using (municipality_name)
+        where u.municipality_code != c.municipality_code
+           or (u.municipality_code is null and c.municipality_code is not null)
+           or (u.municipality_code is not null and c.municipality_code is null)
+      )
+      select * from inconsistent_mappings

@@ -39,6 +39,122 @@ sources:
           - name: ingestion_timestamp
             description: "Timestamp when data was ingested by Dagster pipeline"
 
+      - name: raw_sepe_unemployment
+        description: |
+          Raw unemployment data by municipality and month (2005-2025) from SEPE (Servicio Público de Empleo Estatal).
+          Contains 1,953,743+ records covering unemployment statistics with demographic and sectoral breakdowns
+          for Spanish municipalities.
+          
+          **Data Coverage**:
+          - Time period: May 2005 to June 2025 (monthly data)
+          - Geographic: All Spanish municipalities with unemployment data
+          - Demographics: Age groups (under 25, 25-44, 45+) by gender
+          - Sectors: Agriculture, Industry, Construction, Services, No previous employment
+        columns:
+          - name: municipality_code
+            description: "Municipality code as integer. Links to municipality_dictionary seed."
+          - name: municipality_name
+            description: "Municipality name (cleaned by SEPE data processor)"
+          - name: total_unemployment
+            description: "Total unemployment count for the municipality/month"
+          - name: men_under_25
+            description: "Unemployed men under 25 years old"
+          - name: men_25_44
+            description: "Unemployed men aged 25-44"
+          - name: men_45_plus
+            description: "Unemployed men aged 45 and above"
+          - name: women_under_25
+            description: "Unemployed women under 25 years old"
+          - name: women_25_44
+            description: "Unemployed women aged 25-44"
+          - name: women_45_plus
+            description: "Unemployed women aged 45 and above"
+          - name: agriculture_sector
+            description: "Unemployment in agriculture sector"
+          - name: industry_sector
+            description: "Unemployment in industry sector"
+          - name: construction_sector
+            description: "Unemployment in construction sector"
+          - name: services_sector
+            description: "Unemployment in services sector"
+          - name: no_previous_employment
+            description: "Unemployed with no previous employment history"
+          - name: province
+            description: "Province name (needs to be mapped to province codes for joins)"
+          - name: year
+            description: "Year of the data (2005-2025)"
+          - name: month
+            description: "Month of the data (1-12)"
+          - name: data_type
+            description: "Data type identifier ('unemployment')"
+          - name: source_file
+            description: "Source CSV file name for data lineage"
+          - name: data_source
+            description: "Data source identifier ('SEPE')"
+          - name: data_source_full
+            description: "Full data source name ('Servicio Público de Empleo Estatal')"
+          - name: data_category
+            description: "Data category ('unemployment')"
+          - name: ingestion_timestamp
+            description: "Timestamp when data was ingested by Dagster pipeline"
+
+      - name: raw_sepe_contracts
+        description: |
+          Raw contracts data by municipality and month (2005-2025) from SEPE (Servicio Público de Empleo Estatal).
+          Contains 1,940,058+ records covering employment contract statistics with contract type and sectoral breakdowns
+          for Spanish municipalities.
+          
+          **Data Coverage**:
+          - Time period: May 2005 to June 2025 (monthly data)
+          - Geographic: All Spanish municipalities with contract activity
+          - Contract types: Indefinite initial, Temporary initial, Indefinite conversion by gender
+          - Sectors: Agriculture, Industry, Construction, Services
+        columns:
+          - name: municipality_code
+            description: "Municipality code as integer. Links to municipality_dictionary seed."
+          - name: municipality_name
+            description: "Municipality name (cleaned by SEPE data processor)"
+          - name: total_contracts
+            description: "Total contracts count for the municipality/month"
+          - name: men_indefinite_initial
+            description: "New indefinite contracts for men"
+          - name: men_temporary_initial
+            description: "New temporary contracts for men"
+          - name: men_indefinite_conversion
+            description: "Temporary to indefinite conversions for men"
+          - name: women_indefinite_initial
+            description: "New indefinite contracts for women"
+          - name: women_temporary_initial
+            description: "New temporary contracts for women"
+          - name: women_indefinite_conversion
+            description: "Temporary to indefinite conversions for women"
+          - name: agriculture_sector
+            description: "Contracts in agriculture sector"
+          - name: industry_sector
+            description: "Contracts in industry sector"
+          - name: construction_sector
+            description: "Contracts in construction sector"
+          - name: services_sector
+            description: "Contracts in services sector"
+          - name: province
+            description: "Province name (needs to be mapped to province codes for joins)"
+          - name: year
+            description: "Year of the data (2005-2025)"
+          - name: month
+            description: "Month of the data (1-12)"
+          - name: data_type
+            description: "Data type identifier ('contracts')"
+          - name: source_file
+            description: "Source CSV file name for data lineage"
+          - name: data_source
+            description: "Data source identifier ('SEPE')"
+          - name: data_source_full
+            description: "Full data source name ('Servicio Público de Empleo Estatal')"
+          - name: data_category
+            description: "Data category ('contracts')"
+          - name: ingestion_timestamp
+            description: "Timestamp when data was ingested by Dagster pipeline"
+
 seeds:
   - name: municipality_dictionary
     description: |

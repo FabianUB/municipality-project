@@ -1,0 +1,200 @@
+SUCCESS: dbt build completed successfully
+--- dbt output ---
+[0m18:17:59  Running with dbt=1.6.0
+[0m18:17:59  Registered adapter: postgres=1.6.0
+[0m18:17:59  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.municipality_analytics.intermediate
+- models.municipality_analytics.marts
+[0m18:17:59  Found 3 seeds, 5 models, 63 tests, 3 sources, 0 exposures, 0 metrics, 724 macros, 0 groups, 0 semantic models
+[0m18:17:59  
+[0m18:17:59  Concurrency: 4 threads (target='dev')
+[0m18:17:59  
+[0m18:17:59  1 of 71 START sql view model public_staging.stg_ine_demography__population ..... [RUN]
+[0m18:17:59  2 of 71 START seed file public.municipality_dictionary ......................... [RUN]
+[0m18:17:59  3 of 71 START seed file public.provinces_autonomous_communities ................ [RUN]
+[0m18:17:59  4 of 71 START seed file public.test ............................................ [RUN]
+[0m18:18:00  3 of 71 OK loaded seed file public.provinces_autonomous_communities ............ [[32mINSERT 52[0m in 0.87s]
+[0m18:18:00  4 of 71 OK loaded seed file public.test ........................................ [[32mINSERT 3[0m in 0.92s]
+[0m18:18:01  5 of 71 START sql view model public_staging.stg_ine_codes_data__provinces ...... [RUN]
+[0m18:18:01  1 of 71 OK created sql view model public_staging.stg_ine_demography__population  [[32mCREATE VIEW[0m in 1.08s]
+[0m18:18:01  6 of 71 START sql view model public_staging.stg_sepe__contracts ................ [RUN]
+[0m18:18:01  7 of 71 START sql view model public_staging.stg_sepe__unemployment ............. [RUN]
+[0m18:18:03  5 of 71 OK created sql view model public_staging.stg_ine_codes_data__provinces . [[32mCREATE VIEW[0m in 2.12s]
+[0m18:18:03  6 of 71 OK created sql view model public_staging.stg_sepe__contracts ........... [[32mCREATE VIEW[0m in 2.07s]
+[0m18:18:03  8 of 71 START test assert_municipality_count_consistency_stg_ine_demography_population  [RUN]
+[0m18:18:03  9 of 71 START test assert_year_completeness_stg_ine_demography_population ...... [RUN]
+[0m18:18:03  7 of 71 OK created sql view model public_staging.stg_sepe__unemployment ........ [[32mCREATE VIEW[0m in 1.85s]
+[0m18:18:03  10 of 71 START test dbt_utils_accepted_range_stg_ine_demography__population_data_year__2024__1996  [RUN]
+[0m18:18:03  2 of 71 OK loaded seed file public.municipality_dictionary ..................... [[32mINSERT 8132[0m in 3.33s]
+[0m18:18:03  11 of 71 START test dbt_utils_accepted_range_stg_ine_demography__population_population_female__0  [RUN]
+[0m18:18:03  9 of 71 PASS assert_year_completeness_stg_ine_demography_population ............ [[32mPASS[0m in 0.07s]
+[0m18:18:03  10 of 71 PASS dbt_utils_accepted_range_stg_ine_demography__population_data_year__2024__1996  [[32mPASS[0m in 0.05s]
+[0m18:18:03  11 of 71 PASS dbt_utils_accepted_range_stg_ine_demography__population_population_female__0  [[32mPASS[0m in 0.04s]
+[0m18:18:03  12 of 71 START test dbt_utils_accepted_range_stg_ine_demography__population_population_male__0  [RUN]
+[0m18:18:03  13 of 71 START test dbt_utils_accepted_range_stg_ine_demography__population_population_total__0  [RUN]
+[0m18:18:03  14 of 71 START test dbt_utils_accepted_range_stg_ine_demography__population_province_code__52__1  [RUN]
+[0m18:18:03  12 of 71 PASS dbt_utils_accepted_range_stg_ine_demography__population_population_male__0  [[32mPASS[0m in 0.04s]
+[0m18:18:03  13 of 71 PASS dbt_utils_accepted_range_stg_ine_demography__population_population_total__0  [[32mPASS[0m in 0.05s]
+[0m18:18:03  15 of 71 START test not_null_stg_ine_demography__population_data_year .......... [RUN]
+[0m18:18:03  16 of 71 START test not_null_stg_ine_demography__population_municipality_name .. [RUN]
+[0m18:18:03  14 of 71 PASS dbt_utils_accepted_range_stg_ine_demography__population_province_code__52__1  [[32mPASS[0m in 0.06s]
+[0m18:18:03  17 of 71 START test not_null_stg_ine_demography__population_population_total ... [RUN]
+[0m18:18:03  16 of 71 PASS not_null_stg_ine_demography__population_municipality_name ........ [[32mPASS[0m in 0.04s]
+[0m18:18:03  15 of 71 PASS not_null_stg_ine_demography__population_data_year ................ [[32mPASS[0m in 0.05s]
+[0m18:18:03  18 of 71 START test dbt_utils_accepted_range_stg_ine_codes_data__provinces_autonomous_community_code__19__1  [RUN]
+[0m18:18:03  17 of 71 PASS not_null_stg_ine_demography__population_population_total ......... [[32mPASS[0m in 0.04s]
+[0m18:18:03  19 of 71 START test dbt_utils_accepted_range_stg_ine_codes_data__provinces_province_code__52__1  [RUN]
+[0m18:18:03  20 of 71 START test not_null_stg_ine_codes_data__provinces_autonomous_community_code  [RUN]
+[0m18:18:03  18 of 71 PASS dbt_utils_accepted_range_stg_ine_codes_data__provinces_autonomous_community_code__19__1  [[32mPASS[0m in 0.03s]
+[0m18:18:03  21 of 71 START test not_null_stg_ine_codes_data__provinces_autonomous_community_name  [RUN]
+[0m18:18:03  20 of 71 PASS not_null_stg_ine_codes_data__provinces_autonomous_community_code . [[32mPASS[0m in 0.02s]
+[0m18:18:03  19 of 71 PASS dbt_utils_accepted_range_stg_ine_codes_data__provinces_province_code__52__1  [[32mPASS[0m in 0.03s]
+[0m18:18:03  22 of 71 START test not_null_stg_ine_codes_data__provinces_province_code ....... [RUN]
+[0m18:18:03  23 of 71 START test not_null_stg_ine_codes_data__provinces_province_name ....... [RUN]
+[0m18:18:03  21 of 71 PASS not_null_stg_ine_codes_data__provinces_autonomous_community_name . [[32mPASS[0m in 0.02s]
+[0m18:18:03  24 of 71 START test unique_stg_ine_codes_data__provinces_province_code ......... [RUN]
+[0m18:18:03  23 of 71 PASS not_null_stg_ine_codes_data__provinces_province_name ............. [[32mPASS[0m in 0.02s]
+[0m18:18:03  25 of 71 START test accepted_values_stg_sepe__contracts_municipality_code_completed__True__False  [RUN]
+[0m18:18:03  22 of 71 PASS not_null_stg_ine_codes_data__provinces_province_code ............. [[32mPASS[0m in 0.03s]
+[0m18:18:03  26 of 71 START test dbt_utils_accepted_range_stg_sepe__contracts_men_contracts_percentage__100__0  [RUN]
+[0m18:18:03  24 of 71 PASS unique_stg_ine_codes_data__provinces_province_code ............... [[32mPASS[0m in 0.02s]
+[0m18:18:03  27 of 71 START test dbt_utils_accepted_range_stg_sepe__contracts_municipality_code__99999__0  [RUN]
+[0m18:18:03  8 of 71 PASS assert_municipality_count_consistency_stg_ine_demography_population  [[32mPASS[0m in 0.28s]
+[0m18:18:03  28 of 71 START test dbt_utils_accepted_range_stg_sepe__contracts_permanent_contracts_percentage__100__0  [RUN]
+[0m18:18:04  26 of 71 WARN 36495 dbt_utils_accepted_range_stg_sepe__contracts_men_contracts_percentage__100__0  [[33mWARN 36495[0m in 1.35s]
+[0m18:18:04  29 of 71 START test dbt_utils_accepted_range_stg_sepe__contracts_province_code__52__1  [RUN]
+[0m18:18:04  28 of 71 WARN 36525 dbt_utils_accepted_range_stg_sepe__contracts_permanent_contracts_percentage__100__0  [[33mWARN 36525[0m in 1.36s]
+[0m18:18:04  30 of 71 START test dbt_utils_accepted_range_stg_sepe__contracts_total_contracts__0  [RUN]
+[0m18:18:04  29 of 71 PASS dbt_utils_accepted_range_stg_sepe__contracts_province_code__52__1  [[32mPASS[0m in 0.09s]
+[0m18:18:04  31 of 71 START test dbt_utils_accepted_range_stg_sepe__contracts_total_men_contracts__0  [RUN]
+[0m18:18:05  30 of 71 PASS dbt_utils_accepted_range_stg_sepe__contracts_total_contracts__0 .. [[32mPASS[0m in 0.68s]
+[0m18:18:05  32 of 71 START test dbt_utils_accepted_range_stg_sepe__contracts_total_women_contracts__0  [RUN]
+[0m18:18:05  31 of 71 PASS dbt_utils_accepted_range_stg_sepe__contracts_total_men_contracts__0  [[32mPASS[0m in 0.71s]
+[0m18:18:05  33 of 71 START test dbt_utils_accepted_range_stg_sepe__contracts_women_contracts_percentage__100__0  [RUN]
+[0m18:18:06  32 of 71 PASS dbt_utils_accepted_range_stg_sepe__contracts_total_women_contracts__0  [[32mPASS[0m in 0.66s]
+[0m18:18:06  34 of 71 START test dbt_utils_not_empty_string_stg_sepe__contracts_municipality_name  [RUN]
+[0m18:18:06  33 of 71 WARN 26503 dbt_utils_accepted_range_stg_sepe__contracts_women_contracts_percentage__100__0  [[33mWARN 26503[0m in 0.98s]
+[0m18:18:06  35 of 71 START test not_null_stg_sepe__contracts_municipality_code ............. [RUN]
+[0m18:18:06  34 of 71 PASS dbt_utils_not_empty_string_stg_sepe__contracts_municipality_name . [[32mPASS[0m in 0.61s]
+[0m18:18:06  36 of 71 START test not_null_stg_sepe__contracts_municipality_code_completed ... [RUN]
+[0m18:18:06  25 of 71 PASS accepted_values_stg_sepe__contracts_municipality_code_completed__True__False  [[32mPASS[0m in 3.47s]
+[0m18:18:06  37 of 71 START test not_null_stg_sepe__contracts_municipality_name ............. [RUN]
+[0m18:18:07  37 of 71 PASS not_null_stg_sepe__contracts_municipality_name ................... [[32mPASS[0m in 0.21s]
+[0m18:18:07  38 of 71 START test not_null_stg_sepe__contracts_total_contracts ............... [RUN]
+[0m18:18:07  27 of 71 PASS dbt_utils_accepted_range_stg_sepe__contracts_municipality_code__99999__0  [[32mPASS[0m in 3.80s]
+[0m18:18:07  39 of 71 START test not_null_stg_sepe__contracts_total_men_contracts ........... [RUN]
+[0m18:18:07  38 of 71 PASS not_null_stg_sepe__contracts_total_contracts ..................... [[32mPASS[0m in 0.65s]
+[0m18:18:07  40 of 71 START test not_null_stg_sepe__contracts_total_women_contracts ......... [RUN]
+[0m18:18:07  39 of 71 PASS not_null_stg_sepe__contracts_total_men_contracts ................. [[32mPASS[0m in 0.63s]
+[0m18:18:07  41 of 71 START test test_province_data_completeness_contracts .................. [RUN]
+[0m18:18:08  40 of 71 PASS not_null_stg_sepe__contracts_total_women_contracts ............... [[32mPASS[0m in 0.63s]
+[0m18:18:08  42 of 71 START test accepted_values_stg_sepe__unemployment_municipality_code_completed__True__False  [RUN]
+[0m18:18:09  35 of 71 PASS not_null_stg_sepe__contracts_municipality_code ................... [[32mPASS[0m in 3.04s]
+[0m18:18:09  43 of 71 START test dbt_utils_accepted_range_stg_sepe__unemployment_data_month__12__1  [RUN]
+[0m18:18:09  43 of 71 PASS dbt_utils_accepted_range_stg_sepe__unemployment_data_month__12__1  [[32mPASS[0m in 0.17s]
+[0m18:18:09  44 of 71 START test dbt_utils_accepted_range_stg_sepe__unemployment_data_year__2025__2005  [RUN]
+[0m18:18:09  36 of 71 PASS not_null_stg_sepe__contracts_municipality_code_completed ......... [[32mPASS[0m in 3.03s]
+[0m18:18:09  45 of 71 START test dbt_utils_accepted_range_stg_sepe__unemployment_men_unemployment_percentage__100__0  [RUN]
+[0m18:18:10  44 of 71 PASS dbt_utils_accepted_range_stg_sepe__unemployment_data_year__2025__2005  [[32mPASS[0m in 0.18s]
+[0m18:18:10  46 of 71 START test dbt_utils_accepted_range_stg_sepe__unemployment_municipality_code__99999__0  [RUN]
+[0m18:18:10  45 of 71 WARN 40703 dbt_utils_accepted_range_stg_sepe__unemployment_men_unemployment_percentage__100__0  [[33mWARN 40703[0m in 1.06s]
+[0m18:18:10  47 of 71 START test dbt_utils_accepted_range_stg_sepe__unemployment_province_code__52__1  [RUN]
+[0m18:18:10  47 of 71 PASS dbt_utils_accepted_range_stg_sepe__unemployment_province_code__52__1  [[32mPASS[0m in 0.05s]
+[0m18:18:10  48 of 71 START test dbt_utils_accepted_range_stg_sepe__unemployment_total_men_unemployment__0  [RUN]
+[0m18:18:11  42 of 71 PASS accepted_values_stg_sepe__unemployment_municipality_code_completed__True__False  [[32mPASS[0m in 2.97s]
+[0m18:18:11  49 of 71 START test dbt_utils_accepted_range_stg_sepe__unemployment_total_unemployment__0  [RUN]
+[0m18:18:11  48 of 71 PASS dbt_utils_accepted_range_stg_sepe__unemployment_total_men_unemployment__0  [[32mPASS[0m in 0.61s]
+[0m18:18:11  50 of 71 START test dbt_utils_accepted_range_stg_sepe__unemployment_total_women_unemployment__0  [RUN]
+[0m18:18:12  41 of 71 WARN 18 test_province_data_completeness_contracts ..................... [[33mWARN 18[0m in 4.14s]
+[0m18:18:12  51 of 71 START test dbt_utils_accepted_range_stg_sepe__unemployment_women_unemployment_percentage__100__0  [RUN]
+[0m18:18:12  49 of 71 PASS dbt_utils_accepted_range_stg_sepe__unemployment_total_unemployment__0  [[32mPASS[0m in 0.69s]
+[0m18:18:12  52 of 71 START test dbt_utils_not_empty_string_stg_sepe__unemployment_municipality_name  [RUN]
+[0m18:18:12  50 of 71 PASS dbt_utils_accepted_range_stg_sepe__unemployment_total_women_unemployment__0  [[32mPASS[0m in 0.68s]
+[0m18:18:12  53 of 71 START test not_null_stg_sepe__unemployment_data_month ................. [RUN]
+[0m18:18:12  53 of 71 PASS not_null_stg_sepe__unemployment_data_month ....................... [[32mPASS[0m in 0.23s]
+[0m18:18:12  54 of 71 START test not_null_stg_sepe__unemployment_data_year .................. [RUN]
+[0m18:18:12  54 of 71 PASS not_null_stg_sepe__unemployment_data_year ........................ [[32mPASS[0m in 0.20s]
+[0m18:18:12  55 of 71 START test not_null_stg_sepe__unemployment_municipality_code .......... [RUN]
+[0m18:18:12  52 of 71 PASS dbt_utils_not_empty_string_stg_sepe__unemployment_municipality_name  [[32mPASS[0m in 0.73s]
+[0m18:18:12  56 of 71 START test not_null_stg_sepe__unemployment_municipality_code_completed  [RUN]
+[0m18:18:13  51 of 71 WARN 45743 dbt_utils_accepted_range_stg_sepe__unemployment_women_unemployment_percentage__100__0  [[33mWARN 45743[0m in 1.14s]
+[0m18:18:13  57 of 71 START test not_null_stg_sepe__unemployment_municipality_name .......... [RUN]
+[0m18:18:13  57 of 71 PASS not_null_stg_sepe__unemployment_municipality_name ................ [[32mPASS[0m in 0.22s]
+[0m18:18:13  58 of 71 START test not_null_stg_sepe__unemployment_province_name .............. [RUN]
+[0m18:18:13  46 of 71 PASS dbt_utils_accepted_range_stg_sepe__unemployment_municipality_code__99999__0  [[32mPASS[0m in 3.51s]
+[0m18:18:13  59 of 71 START test not_null_stg_sepe__unemployment_reporting_date ............. [RUN]
+[0m18:18:14  58 of 71 PASS not_null_stg_sepe__unemployment_province_name .................... [[32mPASS[0m in 0.76s]
+[0m18:18:14  60 of 71 START test not_null_stg_sepe__unemployment_total_men_unemployment ..... [RUN]
+[0m18:18:14  59 of 71 PASS not_null_stg_sepe__unemployment_reporting_date ................... [[32mPASS[0m in 0.66s]
+[0m18:18:14  61 of 71 START test not_null_stg_sepe__unemployment_total_unemployment ......... [RUN]
+[0m18:18:14  60 of 71 PASS not_null_stg_sepe__unemployment_total_men_unemployment ........... [[32mPASS[0m in 0.65s]
+[0m18:18:14  62 of 71 START test not_null_stg_sepe__unemployment_total_women_unemployment ... [RUN]
+[0m18:18:14  61 of 71 PASS not_null_stg_sepe__unemployment_total_unemployment ............... [[32mPASS[0m in 0.64s]
+[0m18:18:14  63 of 71 START test test_province_data_completeness_unemployment ............... [RUN]
+[0m18:18:15  62 of 71 PASS not_null_stg_sepe__unemployment_total_women_unemployment ......... [[32mPASS[0m in 0.63s]
+[0m18:18:15  64 of 71 START test test_sepe_data_quality_summary ............................. [RUN]
+[0m18:18:16  55 of 71 PASS not_null_stg_sepe__unemployment_municipality_code ................ [[32mPASS[0m in 3.39s]
+[0m18:18:16  65 of 71 START sql view model public_staging.stg_ine_codes_data__municipalities  [RUN]
+[0m18:18:16  65 of 71 OK created sql view model public_staging.stg_ine_codes_data__municipalities  [[32mCREATE VIEW[0m in 0.05s]
+[0m18:18:16  66 of 71 START test dbt_utils_accepted_range_stg_ine_codes_data__municipalities_autonomous_community_code__19__1  [RUN]
+[0m18:18:16  66 of 71 PASS dbt_utils_accepted_range_stg_ine_codes_data__municipalities_autonomous_community_code__19__1  [[32mPASS[0m in 0.01s]
+[0m18:18:16  67 of 71 START test dbt_utils_accepted_range_stg_ine_codes_data__municipalities_province_code__52__1  [RUN]
+[0m18:18:16  67 of 71 PASS dbt_utils_accepted_range_stg_ine_codes_data__municipalities_province_code__52__1  [[32mPASS[0m in 0.01s]
+[0m18:18:16  68 of 71 START test not_null_stg_ine_codes_data__municipalities_autonomous_community_code  [RUN]
+[0m18:18:16  68 of 71 PASS not_null_stg_ine_codes_data__municipalities_autonomous_community_code  [[32mPASS[0m in 0.01s]
+[0m18:18:16  69 of 71 START test not_null_stg_ine_codes_data__municipalities_municipality_code  [RUN]
+[0m18:18:16  69 of 71 PASS not_null_stg_ine_codes_data__municipalities_municipality_code .... [[32mPASS[0m in 0.01s]
+[0m18:18:16  70 of 71 START test not_null_stg_ine_codes_data__municipalities_municipality_name  [RUN]
+[0m18:18:16  56 of 71 PASS not_null_stg_sepe__unemployment_municipality_code_completed ...... [[32mPASS[0m in 3.35s]
+[0m18:18:16  71 of 71 START test not_null_stg_ine_codes_data__municipalities_province_code .. [RUN]
+[0m18:18:16  70 of 71 PASS not_null_stg_ine_codes_data__municipalities_municipality_name .... [[32mPASS[0m in 0.02s]
+[0m18:18:16  71 of 71 PASS not_null_stg_ine_codes_data__municipalities_province_code ........ [[32mPASS[0m in 0.01s]
+[0m18:18:18  63 of 71 WARN 10 test_province_data_completeness_unemployment .................. [[33mWARN 10[0m in 3.75s]
+[0m18:18:24  64 of 71 WARN 2 test_sepe_data_quality_summary ................................. [[33mWARN 2[0m in 9.03s]
+[0m18:18:24  
+[0m18:18:24  Finished running 3 seeds, 5 view models, 63 tests in 0 hours 0 minutes and 24.63 seconds (24.63s).
+[0m18:18:24  
+[0m18:18:24  [33mCompleted with 8 warnings:[0m
+[0m18:18:24  
+[0m18:18:24  [33mWarning in test dbt_utils_accepted_range_stg_sepe__contracts_men_contracts_percentage__100__0 (models/staging/sepe/_models.yml)[0m
+[0m18:18:24  Got 36495 results, configured to warn if > 1000
+[0m18:18:24  
+[0m18:18:24    compiled Code at target/compiled/municipality_analytics/models/staging/sepe/_models.yml/dbt_utils_accepted_range_stg_s_8b624a6fea37c1524f540daf17b4b4be.sql
+[0m18:18:24  
+[0m18:18:24  [33mWarning in test dbt_utils_accepted_range_stg_sepe__contracts_permanent_contracts_percentage__100__0 (models/staging/sepe/_models.yml)[0m
+[0m18:18:24  Got 36525 results, configured to warn if > 1000
+[0m18:18:24  
+[0m18:18:24    compiled Code at target/compiled/municipality_analytics/models/staging/sepe/_models.yml/dbt_utils_accepted_range_stg_s_573a66fe1c3e14839d3bfb6f7338f46f.sql
+[0m18:18:24  
+[0m18:18:24  [33mWarning in test dbt_utils_accepted_range_stg_sepe__contracts_women_contracts_percentage__100__0 (models/staging/sepe/_models.yml)[0m
+[0m18:18:24  Got 26503 results, configured to warn if > 1000
+[0m18:18:24  
+[0m18:18:24    compiled Code at target/compiled/municipality_analytics/models/staging/sepe/_models.yml/dbt_utils_accepted_range_stg_s_4eec473c5d8f3a106f3a839fe1482995.sql
+[0m18:18:24  
+[0m18:18:24  [33mWarning in test dbt_utils_accepted_range_stg_sepe__unemployment_men_unemployment_percentage__100__0 (models/staging/sepe/_models.yml)[0m
+[0m18:18:24  Got 40703 results, configured to warn if > 1000
+[0m18:18:24  
+[0m18:18:24    compiled Code at target/compiled/municipality_analytics/models/staging/sepe/_models.yml/dbt_utils_accepted_range_stg_s_04bc25ecf39694fcd961f6e2d135f527.sql
+[0m18:18:24  
+[0m18:18:24  [33mWarning in test test_province_data_completeness_contracts (tests/test_province_data_completeness_contracts.sql)[0m
+[0m18:18:24  Got 18 results, configured to warn if != 0
+[0m18:18:24  
+[0m18:18:24    compiled Code at target/compiled/municipality_analytics/tests/test_province_data_completeness_contracts.sql
+[0m18:18:24  
+[0m18:18:24  [33mWarning in test dbt_utils_accepted_range_stg_sepe__unemployment_women_unemployment_percentage__100__0 (models/staging/sepe/_models.yml)[0m
+[0m18:18:24  Got 45743 results, configured to warn if > 1000
+[0m18:18:24  
+[0m18:18:24    compiled Code at target/compiled/municipality_analytics/models/staging/sepe/_models.yml/dbt_utils_accepted_range_stg_s_a640ca90da27630e5bbe24252b746380.sql
+[0m18:18:24  
+[0m18:18:24  [33mWarning in test test_province_data_completeness_unemployment (tests/test_province_data_completeness_unemployment.sql)[0m
+[0m18:18:24  Got 10 results, configured to warn if != 0
+[0m18:18:24  
+[0m18:18:24    compiled Code at target/compiled/municipality_analytics/tests/test_province_data_completeness_unemployment.sql
+[0m18:18:24  
+[0m18:18:24  [33mWarning in test test_sepe_data_quality_summary (tests/test_sepe_data_quality_summary.sql)[0m
+[0m18:18:24  Got 2 results, configured to warn if != 0
+[0m18:18:24  
+[0m18:18:24    compiled Code at target/compiled/municipality_analytics/tests/test_sepe_data_quality_summary.sql
+[0m18:18:24  
+[0m18:18:24  Done. PASS=63 WARN=8 ERROR=0 SKIP=0 TOTAL=71
