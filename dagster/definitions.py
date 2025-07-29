@@ -35,7 +35,9 @@ from municipality_analytics.assets.sepe_unemployment import (
     sepe_raw_xls_files, 
     sepe_files_inventory,
     sepe_clean_data,
-    sepe_data_summary
+    sepe_data_summary,
+    load_sepe_unemployment_to_postgres,
+    load_sepe_contracts_to_postgres
 )
 
 # Import all jobs from pipelines module
@@ -70,7 +72,9 @@ defs = Definitions(
         sepe_raw_xls_files,
         sepe_files_inventory,
         sepe_clean_data,
-        sepe_data_summary
+        sepe_data_summary,
+        load_sepe_unemployment_to_postgres,
+        load_sepe_contracts_to_postgres
     ],
     jobs=[
         # Domain-specific pipelines for focused execution

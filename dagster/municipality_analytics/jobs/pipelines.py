@@ -19,7 +19,14 @@ from ..assets.codes_data import (
     validate_codes_data
 )
 from ..assets.dbt_models import municipality_dbt_models
-from ..assets.sepe_unemployment import sepe_raw_xls_files, sepe_files_inventory
+from ..assets.sepe_unemployment import (
+    sepe_raw_xls_files, 
+    sepe_files_inventory, 
+    sepe_clean_data,
+    sepe_data_summary,
+    load_sepe_unemployment_to_postgres,
+    load_sepe_contracts_to_postgres
+)
 
 
 @job
@@ -75,17 +82,20 @@ def full_analytics_pipeline():
     Executes the full municipality analytics workflow:
     1. Geographic codes data processing and validation
     2. Demographic data extraction, transformation, and loading
-    3. dbt transformations: staging → intermediate → marts
+    3. SEPE unemployment and contracts data processing
+    4. dbt transformations: staging → intermediate → marts
     
     Execution flow:
     ```
     Codes Data Processing ─┐
-                          ├─→ dbt Transformations
-    Demography Data ETL ──┘
+                          │
+    Demography Data ETL ──┼─→ dbt Transformations
+                          │
+    SEPE Data ETL ────────┘
     ```
     
     Dependencies are automatically resolved:
-    - dbt models wait for both data sources to be ready
+    - dbt models wait for all data sources to be ready
     - All data quality validations must pass
     - Comprehensive error handling and rollback capabilities
     
@@ -107,31 +117,47 @@ def full_analytics_pipeline():
     schema_creation = create_raw_schema()
     db_loading = load_demography_to_postgres()
     
-    # dbt transformations (depends on both data sources being ready)
+    # SEPE employment data processing  
+    sepe_raw = sepe_raw_xls_files()
+    sepe_inventory = sepe_files_inventory()
+    sepe_cleaned = sepe_clean_data()
+    sepe_summary = sepe_data_summary()
+    sepe_unemployment_db = load_sepe_unemployment_to_postgres()
+    sepe_contracts_db = load_sepe_contracts_to_postgres()
+    
+    # dbt transformations (depends on all data sources being ready)
     dbt_models = municipality_dbt_models()
 
 
 @job
 def sepe_unemployment_etl_pipeline():
     """
-    ETL pipeline for SEPE unemployment data extraction.
+    Complete ETL pipeline for SEPE unemployment and contracts data.
     
-    Downloads raw XLS files from SEPE (Servicio Público de Empleo Estatal) website:
-    1. Scrapes SEPE municipality unemployment statistics page
-    2. Downloads "Libro completo" XLS files for available months
-    3. Creates inventory of downloaded files
+    Full end-to-end processing of SEPE employment data:
+    1. Downloads raw XLS files from SEPE website
+    2. Cleans and processes files into organized CSV format
+    3. Loads unemployment and contracts data to PostgreSQL raw schema
+    4. Generates comprehensive data summary
     
     Key features:
     - Respectful web scraping with delays
-    - Downloads latest data and historical files (last 2 years)
-    - Handles complex SEPE website structure
-    - Raw file storage for later manual processing
+    - Optimized parallel file processing
+    - Dual format support (OLD/NEW SEPE formats)
+    - Consolidated monthly CSV output
+    - PostgreSQL integration with proper schema management
     
     Outputs:
     - Raw XLS files in raw/sepe/ directory
-    - File inventory with metadata
+    - Clean CSV files in clean/sepe/ directory  
+    - PostgreSQL tables: raw.raw_sepe_unemployment, raw.raw_sepe_contracts
+    - Processing summary and data quality metrics
     
-    Use case: Run to collect SEPE unemployment data files for manual analysis
+    Use case: Complete SEPE data pipeline from extraction to database loading
     """
     raw_files = sepe_raw_xls_files()
     inventory = sepe_files_inventory()
+    clean_data = sepe_clean_data()
+    summary = sepe_data_summary()
+    unemployment_db = load_sepe_unemployment_to_postgres()
+    contracts_db = load_sepe_contracts_to_postgres()

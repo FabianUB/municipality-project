@@ -1,15 +1,19 @@
 """
 SEPE Unemployment Data Assets
-Dagster assets for extracting raw SEPE unemployment XLS files
+Dagster assets for extracting raw SEPE unemployment XLS files and loading to PostgreSQL
 """
 
 import os
 import pandas as pd
+import glob
+from pathlib import Path
+from sqlalchemy import text
 from dagster import asset, AssetExecutionContext, get_dagster_logger, Output
 from typing import List, Dict
 
 from ..utils.sepe_scraper import SepeScraper
 from ..utils.sepe_data_cleaner import SepeDataCleaner
+from ..resources.database import get_db_connection
 
 
 @asset(
@@ -310,6 +314,302 @@ def sepe_data_summary(context: AssetExecutionContext) -> Output[Dict]:
         
     except Exception as e:
         logger.error(f"Failed to generate SEPE summary: {e}")
+        import traceback
+        logger.error(f"Traceback: {traceback.format_exc()}")
+        raise
+
+
+@asset(
+    description="Load SEPE unemployment data into PostgreSQL raw schema",
+    group_name="sepe_etl",
+    deps=[sepe_clean_data]
+)
+def load_sepe_unemployment_to_postgres(context: AssetExecutionContext) -> Output[dict]:
+    """
+    Load cleaned SEPE unemployment CSV files into PostgreSQL raw schema.
+    
+    This asset loads all unemployment CSV files from clean/sepe/ directory
+    into a single PostgreSQL table in the raw schema with proper data types
+    and metadata.
+    
+    Returns:
+        Output containing loading statistics and metadata
+    """
+    logger = get_dagster_logger()
+    
+    clean_path = "/opt/dagster/clean/sepe"
+    unemployment_files = glob.glob(f"{clean_path}/*_unemployment.csv")
+    
+    logger.info(f"Found {len(unemployment_files)} unemployment CSV files in {clean_path}")
+    
+    if len(unemployment_files) == 0:
+        logger.warning("No unemployment CSV files found! Check if SEPE cleaning worked.")
+        return Output(
+            {"rows_loaded": 0, "files_processed": 0},
+            metadata={"error": "No unemployment CSV files found to load"}
+        )
+    
+    try:
+        engine = get_db_connection()
+        logger.info("Database connection established")
+        
+        # Ensure raw schema exists
+        with engine.connect() as conn:
+            conn.execute(text("CREATE SCHEMA IF NOT EXISTS raw;"))
+            conn.commit()
+            logger.info("Raw schema ensured")
+        
+        # Read and combine all unemployment CSV files
+        all_dataframes = []
+        files_processed = 0
+        
+        for csv_file in unemployment_files:
+            filename = Path(csv_file).name
+            
+            try:
+                logger.info(f"Loading unemployment CSV: {filename}")
+                
+                df = pd.read_csv(csv_file)
+                
+                if len(df) == 0:
+                    logger.warning(f"Skipping {filename} - empty CSV file")
+                    continue
+                
+                # Add metadata columns
+                df['source_file'] = filename
+                df['data_source'] = 'SEPE'
+                df['data_source_full'] = 'Servicio Público de Empleo Estatal'
+                df['data_category'] = 'unemployment'
+                df['ingestion_timestamp'] = pd.Timestamp.now()
+                
+                all_dataframes.append(df)
+                files_processed += 1
+                
+                logger.info(f"Successfully loaded {len(df)} unemployment records from {filename}")
+                
+            except Exception as e:
+                logger.error(f"Failed to read {filename}: {e}")
+                continue
+        
+        if not all_dataframes:
+            logger.error("No unemployment dataframes were successfully processed!")
+            return Output(
+                {"rows_loaded": 0, "files_processed": 0},
+                metadata={"error": "No unemployment dataframes were successfully processed"}
+            )
+        
+        # Combine all dataframes
+        combined_df = pd.concat(all_dataframes, ignore_index=True)
+        logger.info(f"Combined unemployment dataframe shape: {combined_df.shape}")
+        
+        # Load to PostgreSQL
+        table_name = "raw_sepe_unemployment"
+        
+        with engine.connect() as conn:
+            # Check if table exists
+            table_exists_query = text("""
+                SELECT EXISTS (
+                    SELECT FROM information_schema.tables 
+                    WHERE table_schema = 'raw' 
+                    AND table_name = 'raw_sepe_unemployment'
+                );
+            """)
+            table_exists = conn.execute(table_exists_query).fetchone()[0]
+            
+            if table_exists:
+                logger.info("Table exists, truncating data to preserve dependent views")
+                truncate_query = text("TRUNCATE TABLE raw.raw_sepe_unemployment")
+                conn.execute(truncate_query)
+                conn.commit()
+                
+                combined_df.to_sql(
+                    name=table_name,
+                    con=engine,
+                    schema='raw',
+                    if_exists='append',
+                    index=False,
+                    method='multi',
+                    chunksize=10000
+                )
+            else:
+                logger.info("Creating new unemployment table")
+                combined_df.to_sql(
+                    name=table_name,
+                    con=engine,
+                    schema='raw',
+                    if_exists='replace',
+                    index=False,
+                    method='multi',
+                    chunksize=10000
+                )
+        
+        logger.info(f"Successfully loaded {len(combined_df)} unemployment rows to PostgreSQL")
+        
+        return Output(
+            {
+                "rows_loaded": len(combined_df),
+                "files_processed": files_processed,
+                "table_name": "raw.raw_sepe_unemployment"
+            },
+            metadata={
+                "table_name": "raw.raw_sepe_unemployment",
+                "total_rows": len(combined_df),
+                "files_processed": files_processed,
+                "columns": list(combined_df.columns),
+                "date_range": f"{combined_df['year'].min()}-{combined_df['year'].max()}" if 'year' in combined_df.columns else "unknown"
+            }
+        )
+        
+    except Exception as e:
+        logger.error(f"Failed to load unemployment data to PostgreSQL: {e}")
+        import traceback
+        logger.error(f"Traceback: {traceback.format_exc()}")
+        raise
+
+
+@asset(
+    description="Load SEPE contracts data into PostgreSQL raw schema",
+    group_name="sepe_etl",
+    deps=[sepe_clean_data]
+)
+def load_sepe_contracts_to_postgres(context: AssetExecutionContext) -> Output[dict]:
+    """
+    Load cleaned SEPE contracts CSV files into PostgreSQL raw schema.
+    
+    This asset loads all contracts CSV files from clean/sepe/ directory
+    into a single PostgreSQL table in the raw schema with proper data types
+    and metadata.
+    
+    Returns:
+        Output containing loading statistics and metadata
+    """
+    logger = get_dagster_logger()
+    
+    clean_path = "/opt/dagster/clean/sepe"
+    contracts_files = glob.glob(f"{clean_path}/*_contracts.csv")
+    
+    logger.info(f"Found {len(contracts_files)} contracts CSV files in {clean_path}")
+    
+    if len(contracts_files) == 0:
+        logger.warning("No contracts CSV files found! Check if SEPE cleaning worked.")
+        return Output(
+            {"rows_loaded": 0, "files_processed": 0},
+            metadata={"error": "No contracts CSV files found to load"}
+        )
+    
+    try:
+        engine = get_db_connection()
+        logger.info("Database connection established")
+        
+        # Ensure raw schema exists
+        with engine.connect() as conn:
+            conn.execute(text("CREATE SCHEMA IF NOT EXISTS raw;"))
+            conn.commit()
+            logger.info("Raw schema ensured")
+        
+        # Read and combine all contracts CSV files
+        all_dataframes = []
+        files_processed = 0
+        
+        for csv_file in contracts_files:
+            filename = Path(csv_file).name
+            
+            try:
+                logger.info(f"Loading contracts CSV: {filename}")
+                
+                df = pd.read_csv(csv_file)
+                
+                if len(df) == 0:
+                    logger.warning(f"Skipping {filename} - empty CSV file")
+                    continue
+                
+                # Add metadata columns
+                df['source_file'] = filename
+                df['data_source'] = 'SEPE'
+                df['data_source_full'] = 'Servicio Público de Empleo Estatal'
+                df['data_category'] = 'contracts'
+                df['ingestion_timestamp'] = pd.Timestamp.now()
+                
+                all_dataframes.append(df)
+                files_processed += 1
+                
+                logger.info(f"Successfully loaded {len(df)} contracts records from {filename}")
+                
+            except Exception as e:
+                logger.error(f"Failed to read {filename}: {e}")
+                continue
+        
+        if not all_dataframes:
+            logger.error("No contracts dataframes were successfully processed!")
+            return Output(
+                {"rows_loaded": 0, "files_processed": 0},
+                metadata={"error": "No contracts dataframes were successfully processed"}
+            )
+        
+        # Combine all dataframes
+        combined_df = pd.concat(all_dataframes, ignore_index=True)
+        logger.info(f"Combined contracts dataframe shape: {combined_df.shape}")
+        
+        # Load to PostgreSQL
+        table_name = "raw_sepe_contracts"
+        
+        with engine.connect() as conn:
+            # Check if table exists
+            table_exists_query = text("""
+                SELECT EXISTS (
+                    SELECT FROM information_schema.tables 
+                    WHERE table_schema = 'raw' 
+                    AND table_name = 'raw_sepe_contracts'
+                );
+            """)
+            table_exists = conn.execute(table_exists_query).fetchone()[0]
+            
+            if table_exists:
+                logger.info("Table exists, truncating data to preserve dependent views")
+                truncate_query = text("TRUNCATE TABLE raw.raw_sepe_contracts")
+                conn.execute(truncate_query)
+                conn.commit()
+                
+                combined_df.to_sql(
+                    name=table_name,
+                    con=engine,
+                    schema='raw',
+                    if_exists='append',
+                    index=False,
+                    method='multi',
+                    chunksize=10000
+                )
+            else:
+                logger.info("Creating new contracts table")
+                combined_df.to_sql(
+                    name=table_name,
+                    con=engine,
+                    schema='raw',
+                    if_exists='replace',
+                    index=False,
+                    method='multi',
+                    chunksize=10000
+                )
+        
+        logger.info(f"Successfully loaded {len(combined_df)} contracts rows to PostgreSQL")
+        
+        return Output(
+            {
+                "rows_loaded": len(combined_df),
+                "files_processed": files_processed,
+                "table_name": "raw.raw_sepe_contracts"
+            },
+            metadata={
+                "table_name": "raw.raw_sepe_contracts",
+                "total_rows": len(combined_df),
+                "files_processed": files_processed,
+                "columns": list(combined_df.columns),
+                "date_range": f"{combined_df['year'].min()}-{combined_df['year'].max()}" if 'year' in combined_df.columns else "unknown"
+            }
+        )
+        
+    except Exception as e:
+        logger.error(f"Failed to load contracts data to PostgreSQL: {e}")
         import traceback
         logger.error(f"Traceback: {traceback.format_exc()}")
         raise
