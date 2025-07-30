@@ -8,6 +8,7 @@ RUN pip install --no-cache-dir \
     pandas \
     openpyxl \
     xlrd \
+    python-calamine \
     sqlalchemy \
     psycopg2-binary \
     requests \

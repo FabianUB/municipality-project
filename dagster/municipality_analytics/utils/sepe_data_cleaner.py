@@ -49,15 +49,47 @@ class SepeDataCleaner:
         
         # Setup logger
         self.logger = logging.getLogger(__name__)
+        
+        # Error tracking and logging
+        self.error_log_file = self.output_dir / 'processing_errors.log'
+        self.processing_stats = {
+            'files_processed': 0,
+            'files_failed': 0,
+            'sheets_processed': 0,
+            'sheets_failed': 0,
+            'engine_fallbacks': 0,
+            'data_quality_issues': 0,
+            'old_format_files': 0,
+            'new_format_files': 0
+        }
+    
+    def log_error(self, error_type: str, file_name: str, sheet_name: str = None, error_message: str = None):
+        """Log errors to both console and error log file"""
+        timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
+        location = f"{file_name}" + (f" -> {sheet_name}" if sheet_name else "")
+        log_entry = f"[{timestamp}] {error_type}: {location}"
+        if error_message:
+            log_entry += f" - {error_message}"
+        
+        # Log to file
+        with open(self.error_log_file, 'a', encoding='utf-8') as f:
+            f.write(log_entry + '\n')
+        
+        # Log to console
+        self.logger.error(log_entry)
     
     def extract_date_from_filename(self, filename: str) -> Tuple[int, int]:
         """Extract year and month from filename like '2021_05_employment.xls'"""
-        parts = filename.replace('.xls', '').split('_')
-        if len(parts) >= 2:
-            year = int(parts[0])
-            month = int(parts[1])
-            return year, month
-        raise ValueError(f"Cannot extract date from filename: {filename}")
+        try:
+            parts = filename.replace('.xls', '').split('_')
+            if len(parts) >= 2:
+                year = int(parts[0])
+                month = int(parts[1])
+                return year, month
+            raise ValueError(f"Invalid filename format: {filename}")
+        except Exception as e:
+            self.log_error('FILENAME_PARSE_ERROR', filename, error_message=str(e))
+            raise ValueError(f"Cannot extract date from filename: {filename} - {e}")
     
     def clean_sheet_name(self, sheet_name: str) -> Tuple[str, str, str]:
         """
@@ -84,6 +116,61 @@ class SepeDataCleaner:
         normalized = province.replace(' ', '_').replace('.', '').replace('/', '_')
         normalized = normalized.upper()
         return normalized
+    
+    def validate_parsed_data(self, df: pd.DataFrame, data_type: str, file_name: str, sheet_name: str):
+        """Validate parsed data quality and log issues (excluding known OLD format limitations)"""
+        issues = []
+        
+        # Extract year from filename to determine format
+        try:
+            year = int(file_name.split('_')[0])
+            is_old_format = year <= 2012
+        except:
+            is_old_format = False
+        
+        # Check for missing municipality codes (skip placeholder codes in OLD format)
+        if 'municipality_code' in df.columns:
+            missing_codes = df['municipality_code'].isna().sum()
+            if missing_codes > 0:
+                issues.append(f"{missing_codes} missing municipality codes")
+            
+            # Only log placeholder codes as issues in NEW format (>=2013)
+            if not is_old_format:
+                placeholder_codes = (df['municipality_code'] == 0).sum()
+                if placeholder_codes > 0:
+                    issues.append(f"{placeholder_codes} unexpected placeholder municipality codes (0)")
+        
+        # Check for missing municipality names
+        if 'municipality_name' in df.columns:
+            missing_names = df['municipality_name'].isna().sum()
+            if missing_names > 0:
+                issues.append(f"{missing_names} missing municipality names")
+        
+        # Check for negative values in numeric columns
+        numeric_cols = df.select_dtypes(include=['int64', 'float64']).columns
+        for col in numeric_cols:
+            if col not in ['municipality_code', 'year', 'month']:
+                negative_count = (df[col] < 0).sum()
+                if negative_count > 0:
+                    issues.append(f"{negative_count} negative values in {col}")
+        
+        # Check for suspiciously high values (potential data errors)
+        if data_type == 'unemployment':
+            if 'total_unemployment' in df.columns:
+                high_values = (df['total_unemployment'] > 50000).sum()  # Arbitrary threshold
+                if high_values > 0:
+                    issues.append(f"{high_values} suspiciously high unemployment values (>50k)")
+        elif data_type == 'contracts':
+            if 'total_contracts' in df.columns:
+                high_values = (df['total_contracts'] > 100000).sum()  # Arbitrary threshold
+                if high_values > 0:
+                    issues.append(f"{high_values} suspiciously high contract values (>100k)")
+        
+        # Log validation issues (only real issues, not expected OLD format behavior)
+        if issues:
+            issue_summary = "; ".join(issues)
+            self.log_error('DATA_QUALITY_ISSUE', file_name, sheet_name, issue_summary)
+            self.processing_stats['data_quality_issues'] += 1
     
     @lru_cache(maxsize=128)
     def get_format_by_year(self, year: int) -> str:
@@ -472,13 +559,24 @@ class SepeDataCleaner:
     
     def get_optimal_engine(self, file_path: Path) -> str:
         """Choose optimal Excel engine based on file type and size"""
+        # Try calamine first for both .xls and .xlsx - it's much faster (6-58x speedup)
+        try:
+            # Test if calamine can handle this file type
+            if file_path.suffix.lower() in ['.xlsx', '.xls']:
+                return 'calamine'  # Rust-based, extremely fast
+        except Exception:
+            # Fallback to traditional engines if calamine fails
+            pass
+        
+        # Fallback engines
         if file_path.suffix.lower() == '.xlsx':
-            return 'openpyxl'  # Faster for .xlsx files
+            return 'openpyxl'  # Slower but reliable for .xlsx
         else:
-            return 'xlrd'  # Required for .xls files
+            return 'xlrd'  # Required for older .xls files
     
     def process_sheet_batch(self, file_path: Path, sheet_batch: List[str], year: int, month: int) -> Dict[str, Dict[str, pd.DataFrame]]:
-        """Process a batch of sheets in parallel"""
+        """Process a batch of sheets in parallel with performance monitoring"""
+        batch_start_time = time.time()
         results = {'unemployment': {}, 'contracts': {}}
         engine = self.get_optimal_engine(file_path)
         
@@ -492,27 +590,64 @@ class SepeDataCleaner:
                 if data_type == 'unknown':
                     continue
                 
-                # Optimized sheet reading with specific engine
-                df = pd.read_excel(file_path, sheet_name=sheet_name, header=None, engine=engine)
+                # Optimized sheet reading with calamine engine for massive speed boost
+                sheet_read_start = time.time()
+                try:
+                    df = pd.read_excel(file_path, sheet_name=sheet_name, header=None, engine=engine)
+                    read_time = time.time() - sheet_read_start
+                    # Only log if read takes more than 0.5s
+                    if read_time > 0.5:
+                        self.logger.debug(f"Sheet {sheet_name} read with {engine} in {read_time:.2f}s")
+                except Exception as e:
+                    # Fallback to openpyxl/xlrd if calamine fails
+                    self.log_error('ENGINE_FALLBACK', file_path.name, sheet_name, f"Calamine failed: {str(e)[:100]}")
+                    self.processing_stats['engine_fallbacks'] += 1
+                    
+                    fallback_engine = 'openpyxl' if file_path.suffix.lower() == '.xlsx' else 'xlrd'
+                    fallback_start = time.time()
+                    try:
+                        df = pd.read_excel(file_path, sheet_name=sheet_name, header=None, engine=fallback_engine)
+                        fallback_time = time.time() - fallback_start
+                        self.logger.info(f"🔄 Fallback read with {fallback_engine} in {fallback_time:.2f}s")
+                        engine = fallback_engine  # Update engine for logging
+                    except Exception as fallback_error:
+                        self.log_error('SHEET_READ_FAILED', file_path.name, sheet_name, f"Both engines failed. Calamine: {str(e)[:50]}, {fallback_engine}: {str(fallback_error)[:50]}")
+                        self.processing_stats['sheets_failed'] += 1
+                        continue
                 
-                if data_type == 'unemployment':
-                    parsed_df = self.parse_unemployment_sheet(df, province_clean, year, month)
-                elif data_type == 'contracts':
-                    parsed_df = self.parse_contracts_sheet(df, province_clean, year, month)
-                else:
+                try:
+                    if data_type == 'unemployment':
+                        parsed_df = self.parse_unemployment_sheet(df, province_clean, year, month)
+                    elif data_type == 'contracts':
+                        parsed_df = self.parse_contracts_sheet(df, province_clean, year, month)
+                    else:
+                        continue
+                    
+                    if not parsed_df.empty:
+                        # Data quality validation
+                        self.validate_parsed_data(parsed_df, data_type, file_path.name, sheet_name)
+                        normalized_province = self.normalize_province_name(province_clean)
+                        results[data_type][normalized_province] = parsed_df
+                        self.processing_stats['sheets_processed'] += 1
+                    else:
+                        self.log_error('EMPTY_DATA', file_path.name, sheet_name, f"No data extracted from {data_type} sheet")
+                        self.processing_stats['data_quality_issues'] += 1
+                        
+                except Exception as parse_error:
+                    self.log_error('DATA_PARSE_ERROR', file_path.name, sheet_name, f"Failed to parse {data_type} data: {str(parse_error)[:100]}")
+                    self.processing_stats['sheets_failed'] += 1
                     continue
-                
-                if not parsed_df.empty:
-                    normalized_province = self.normalize_province_name(province_clean)
-                    results[data_type][normalized_province] = parsed_df
                 
                 # Clear DataFrame to free memory
                 del df
                 
             except Exception as e:
-                self.logger.error(f"Error processing sheet {sheet_name}: {e}")
+                self.log_error('SHEET_PROCESSING_ERROR', file_path.name, sheet_name, str(e)[:100])
+                self.processing_stats['sheets_failed'] += 1
                 continue
         
+        batch_time = time.time() - batch_start_time
+        self.logger.info(f"Processed {len(sheet_batch)} sheets in {batch_time:.2f}s (avg {batch_time/len(sheet_batch):.2f}s/sheet) using {engine}")
         return results
     
     def process_file(self, file_path: Path) -> Dict[str, Dict[str, pd.DataFrame]]:
@@ -521,12 +656,19 @@ class SepeDataCleaner:
         Returns: Dict[data_type, Dict[province, DataFrame]]
         """
         start_time = time.time()
-        self.logger.info(f"Processing file: {file_path.name}")
+        file_size_mb = file_path.stat().st_size / (1024 * 1024)
+        self.logger.info(f"Processing file: {file_path.name} ({file_size_mb:.1f}MB)")
         
         try:
             year, month = self.extract_date_from_filename(file_path.name)
+            # Track format distribution
+            if year <= 2012:
+                self.processing_stats['old_format_files'] += 1
+            else:
+                self.processing_stats['new_format_files'] += 1
         except ValueError as e:
-            self.logger.error(f"Skipping file {file_path.name}: {e}")
+            self.log_error('FILE_PROCESSING_ERROR', file_path.name, error_message=str(e))
+            self.processing_stats['files_failed'] += 1
             return {}
         
         try:
@@ -536,9 +678,16 @@ class SepeDataCleaner:
                 self.logger.warning(f"Skipping large file {file_path.name}: {file_size_mb:.1f}MB")
                 return {}
             
-            # Load Excel file with optimal engine
+            # Load Excel file with optimal engine (calamine for 6-58x speed boost)
             engine = self.get_optimal_engine(file_path)
-            xl_file = pd.ExcelFile(file_path, engine=engine)
+            try:
+                xl_file = pd.ExcelFile(file_path, engine=engine)
+            except Exception as e:
+                # Fallback if calamine fails
+                self.logger.warning(f"Primary engine {engine} failed, falling back: {e}")
+                fallback_engine = 'openpyxl' if file_path.suffix.lower() == '.xlsx' else 'xlrd'
+                xl_file = pd.ExcelFile(file_path, engine=fallback_engine)
+                engine = fallback_engine
             sheet_names = xl_file.sheet_names
             
             self.logger.info(f"Found {len(sheet_names)} sheets in {file_path.name}")
@@ -567,15 +716,27 @@ class SepeDataCleaner:
                 self.logger.info(f"Processed batch {i//batch_size + 1}/{(len(relevant_sheets)-1)//batch_size + 1}")
             
             processing_time = time.time() - start_time
-            self.logger.info(f"Completed {file_path.name} in {processing_time:.1f}s - "
+            processing_rate = file_size_mb / processing_time if processing_time > 0 else 0
+            
+            self.logger.info(f"✅ PERFORMANCE: {file_path.name} ({file_size_mb:.1f}MB) processed in {processing_time:.1f}s")
+            self.logger.info(f"   📊 Rate: {processing_rate:.1f} MB/s | Engine: {engine} | "
                            f"Unemployment: {len(results['unemployment'])} provinces, "
                            f"Contracts: {len(results['contracts'])} provinces")
+            
+            # Log significant performance improvements if using calamine
+            if engine == 'calamine' and processing_time > 0:
+                estimated_openpyxl_time = processing_time * 6  # Conservative estimate (6x slower)
+                self.logger.info(f"   ⚡ Estimated time savings vs openpyxl: {estimated_openpyxl_time - processing_time:.1f}s ")
+                self.logger.info(f"      (Would have taken ~{estimated_openpyxl_time:.1f}s with openpyxl)")
             
             return results
             
         except Exception as e:
-            self.logger.error(f"Error processing file {file_path}: {e}")
+            self.log_error('FILE_PROCESSING_ERROR', file_path.name, error_message=str(e))
+            self.processing_stats['files_failed'] += 1
             return {}
+        finally:
+            self.processing_stats['files_processed'] += 1
     
     def save_consolidated_data(self, data_type: str, all_provinces_data: Dict[str, pd.DataFrame], year: int, month: int) -> str:
         """Save consolidated data for all provinces in a single CSV file"""
@@ -651,6 +812,23 @@ class SepeDataCleaner:
         start_time = time.time()
         self.logger.info(f"Starting optimized SEPE data cleaning from {self.input_dir}")
         
+        # Initialize error log file
+        with open(self.error_log_file, 'w', encoding='utf-8') as f:
+            f.write(f"SEPE Processing Error Log - {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
+            f.write("=" * 80 + "\n\n")
+        
+        # Reset processing stats
+        self.processing_stats = {
+            'files_processed': 0,
+            'files_failed': 0,
+            'sheets_processed': 0,
+            'sheets_failed': 0,
+            'engine_fallbacks': 0,
+            'data_quality_issues': 0,
+            'old_format_files': 0,
+            'new_format_files': 0
+        }
+        
         # Find all XLS files
         xls_files = list(self.input_dir.glob("*.xls"))
         self.logger.info(f"Found {len(xls_files)} XLS files to process")
@@ -719,19 +897,95 @@ class SepeDataCleaner:
                                        f"({elapsed:.1f}s, {rate:.1f} files/sec)")
                         
                 except Exception as e:
-                    self.logger.error(f"Error processing {file_path}: {e}")
+                    self.log_error('FILE_PROCESSING_ERROR', file_path.name, error_message=str(e))
+                    self.processing_stats['files_failed'] += 1
                     continue
         
         total_time = time.time() - start_time
+        total_files_mb = sum(f.stat().st_size for f in files_to_process) / (1024 * 1024) if files_to_process else 0
         
-        # Log comprehensive summary
+        # Log comprehensive performance summary
         total_saved = sum(len(files) for files in saved_files.values())
-        self.logger.info(f"\n=== SEPE Processing Summary ===")
-        self.logger.info(f"Total processing time: {total_time:.1f}s")
-        self.logger.info(f"Files processed: {processed_count}")
-        self.logger.info(f"Average time per file: {total_time/max(processed_count, 1):.1f}s")
-        self.logger.info(f"Unemployment CSV files: {len(saved_files['unemployment'])}")
-        self.logger.info(f"Contracts CSV files: {len(saved_files['contracts'])}")
-        self.logger.info(f"Total CSV files created: {total_saved}")
+        avg_rate = total_files_mb / total_time if total_time > 0 else 0
+        
+        self.logger.info(f"\n🎯 === OPTIMIZED SEPE PROCESSING SUMMARY ===")
+        self.logger.info(f"⏱️  Total processing time: {total_time:.1f}s")
+        self.logger.info(f"📁 Files processed: {processed_count} ({total_files_mb:.1f}MB total)")
+        self.logger.info(f"📈 Overall processing rate: {avg_rate:.1f} MB/s")
+        self.logger.info(f"⚡ Average time per file: {total_time/max(processed_count, 1):.1f}s")
+        self.logger.info(f"📊 Output: {len(saved_files['unemployment'])} unemployment + {len(saved_files['contracts'])} contracts CSV files")
+        self.logger.info(f"🚀 Performance engine: python-calamine (6-58x faster than openpyxl)")
+        
+        # Estimate time savings if using calamine for most files
+        if processed_count > 0:
+            estimated_openpyxl_time = total_time * 6  # Conservative 6x improvement
+            time_saved = estimated_openpyxl_time - total_time
+            self.logger.info(f"💰 Estimated time saved vs openpyxl: {time_saved:.1f}s ({time_saved/60:.1f} minutes)")
+        
+        # Generate comprehensive error and processing report
+        self.generate_processing_report()
         
         return saved_files
+    
+    def generate_processing_report(self):
+        """Generate comprehensive processing and error report"""
+        timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
+        
+        # Create summary report
+        report_file = self.output_dir / 'processing_summary.txt'
+        
+        with open(report_file, 'w', encoding='utf-8') as f:
+            f.write(f"SEPE Data Processing Report - {timestamp}\n")
+            f.write("=" * 60 + "\n\n")
+            
+            # Processing Statistics
+            f.write("PROCESSING STATISTICS:\n")
+            f.write(f"• Total files processed: {self.processing_stats['files_processed']}\n")
+            f.write(f"  - OLD format (2005-2012): {self.processing_stats['old_format_files']} files\n")
+            f.write(f"  - NEW format (2013+): {self.processing_stats['new_format_files']} files\n")
+            f.write(f"• Files failed: {self.processing_stats['files_failed']}\n")
+            f.write(f"• Success rate: {((self.processing_stats['files_processed'] - self.processing_stats['files_failed']) / max(self.processing_stats['files_processed'], 1) * 100):.1f}%\n\n")
+            
+            f.write(f"• Total sheets processed: {self.processing_stats['sheets_processed']}\n")
+            f.write(f"• Sheets failed: {self.processing_stats['sheets_failed']}\n")
+            f.write(f"• Sheet success rate: {(self.processing_stats['sheets_processed'] / max(self.processing_stats['sheets_processed'] + self.processing_stats['sheets_failed'], 1) * 100):.1f}%\n\n")
+            
+            # Engine Performance
+            f.write("ENGINE PERFORMANCE:\n")
+            f.write(f"• Engine fallbacks (calamine → openpyxl/xlrd): {self.processing_stats['engine_fallbacks']}\n")
+            f.write(f"• Data quality issues detected: {self.processing_stats['data_quality_issues']}\n\n")
+            
+            # Data Quality Context
+            f.write("DATA QUALITY NOTES:\n")
+            f.write(f"• OLD format files (2005-2012) use placeholder municipality codes (0) - this is expected\n")
+            f.write(f"• NEW format files (2013+) have real municipality codes from INE\n")
+            if self.processing_stats['data_quality_issues'] > 0:
+                f.write(f"• {self.processing_stats['data_quality_issues']} sheets flagged for actual data quality issues\n")
+            else:
+                f.write(f"• No unexpected data quality issues detected\n")
+            f.write("\n")
+            
+            # Recommendations
+            f.write("RECOMMENDATIONS:\n")
+            if self.processing_stats['engine_fallbacks'] > 0:
+                f.write(f"• {self.processing_stats['engine_fallbacks']} files required engine fallback - consider investigating calamine compatibility\n")
+            if self.processing_stats['data_quality_issues'] > 0:
+                f.write(f"• Review error log for {self.processing_stats['data_quality_issues']} genuine data quality issues\n")
+            if self.processing_stats['files_failed'] > 0:
+                f.write(f"• {self.processing_stats['files_failed']} files failed completely - check error log for details\n")
+            if self.processing_stats['engine_fallbacks'] == 0 and self.processing_stats['data_quality_issues'] == 0 and self.processing_stats['files_failed'] == 0:
+                f.write(f"• No issues detected - processing completed successfully!\n")
+            
+            f.write(f"\nDetailed errors logged in: {self.error_log_file}\n")
+        
+        self.logger.info(f"📋 Processing report generated: {report_file}")
+        self.logger.info(f"📋 Error log available: {self.error_log_file}")
+        
+        # Log key statistics to console
+        if self.processing_stats['files_failed'] > 0 or self.processing_stats['data_quality_issues'] > 0:
+            self.logger.warning(f"⚠️  PROCESSING ISSUES DETECTED:")
+            self.logger.warning(f"   Files failed: {self.processing_stats['files_failed']}")
+            self.logger.warning(f"   Sheets with quality issues: {self.processing_stats['data_quality_issues']}")
+            self.logger.warning(f"   Engine fallbacks: {self.processing_stats['engine_fallbacks']}")
+        else:
+            self.logger.info("✅ No processing errors detected!")

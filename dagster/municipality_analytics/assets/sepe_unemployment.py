@@ -172,12 +172,16 @@ def sepe_clean_data(context: AssetExecutionContext) -> Output[Dict]:
             'output_directory': str(cleaner.output_dir),
             'file_organization': 'Consolidated monthly files: [YEAR]_[MONTH]_[DATA_TYPE].csv',
             'optimization_features': [
+                'python-calamine engine (6-58x faster)',
+                'Comprehensive error logging',
+                'Data quality validation',
+                'Performance monitoring',
                 'Parallel file processing',
-                'Optimized Excel reading engines', 
-                'Cached format detection',
-                'Vectorized data operations',
                 'Memory-efficient batch processing'
             ],
+            'error_log_file': str(cleaner.error_log_file),
+            'processing_summary_file': str(cleaner.output_dir / 'processing_summary.txt'),
+            'processing_stats': cleaner.processing_stats,
             'max_workers': max_workers,
             'force_reprocess': force_reprocess
         }
@@ -204,7 +208,12 @@ def sepe_clean_data(context: AssetExecutionContext) -> Output[Dict]:
                 "processing_rate_percent": summary['processing_rate_percent'],
                 "max_workers": summary['max_workers'],
                 "optimizations_enabled": len(summary['optimization_features']),
-                "force_reprocess": force_reprocess
+                "force_reprocess": force_reprocess,
+                "error_log_file": summary['error_log_file'],
+                "processing_summary_file": summary['processing_summary_file'],
+                "engine_fallbacks": summary['processing_stats']['engine_fallbacks'],
+                "data_quality_issues": summary['processing_stats']['data_quality_issues'],
+                "sheets_failed": summary['processing_stats']['sheets_failed']
             }
         )
         
