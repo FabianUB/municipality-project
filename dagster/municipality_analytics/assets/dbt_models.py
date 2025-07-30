@@ -15,8 +15,11 @@ from dagster import asset, Output, AssetExecutionContext
 DBT_PROJECT_PATH = "/opt/dagster/dbt"
 
 
-@asset(deps=["load_demography_to_postgres", "validate_codes_data"])
-def municipality_dbt_models(context: AssetExecutionContext) -> Output[dict]:
+@asset(
+    deps=["load_demography_to_postgres", "validate_codes_data", "load_sepe_unemployment_to_postgres", "load_sepe_contracts_to_postgres"],
+    group_name="transformations"
+)
+def dbt_build_all_models(context: AssetExecutionContext) -> Output[dict]:
     """
     Execute all dbt models in the municipality analytics project.
     

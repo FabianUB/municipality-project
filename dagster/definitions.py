@@ -30,7 +30,7 @@ from municipality_analytics.assets.codes_data import (
     convert_provinces_mapping_to_csv,
     validate_codes_data
 )
-from municipality_analytics.assets.dbt_models import municipality_dbt_models
+from municipality_analytics.assets.dbt_models import dbt_build_all_models
 from municipality_analytics.assets.sepe_unemployment import (
     sepe_raw_xls_files, 
     sepe_files_inventory,
@@ -66,7 +66,7 @@ defs = Definitions(
         validate_codes_data,
         
         # dbt transformation assets
-        municipality_dbt_models,
+        dbt_build_all_models,
         
         # SEPE unemployment data assets
         sepe_raw_xls_files,

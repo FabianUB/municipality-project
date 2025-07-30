@@ -104,7 +104,10 @@ def download_ine_demography_zip(context: AssetExecutionContext) -> Output[dict]:
         raise
 
 
-@asset(deps=[download_ine_demography_zip])
+@asset(
+    deps=[download_ine_demography_zip],
+    group_name="demography_etl"
+)
 def convert_demography_excel_to_csv(context: AssetExecutionContext) -> Output[dict]:
     """
     Convert Excel files from raw/ine/demography/ to CSV files in clean/ine/demography/.
@@ -193,7 +196,10 @@ def convert_demography_excel_to_csv(context: AssetExecutionContext) -> Output[di
     )
 
 
-@asset(deps=[convert_demography_excel_to_csv])
+@asset(
+    group_name="infrastructure",
+    description="Create raw schema in PostgreSQL - shared infrastructure for all ETL pipelines"
+)
 def create_raw_schema(context: AssetExecutionContext) -> Output[str]:
     """
     Create raw schema in PostgreSQL if it doesn't exist.
@@ -227,7 +233,10 @@ def create_raw_schema(context: AssetExecutionContext) -> Output[str]:
         raise Exception(f"Failed to create raw schema: {e}")
 
 
-@asset(deps=[create_raw_schema])
+@asset(
+    deps=[create_raw_schema, convert_demography_excel_to_csv],
+    group_name="demography_etl"
+)
 def load_demography_to_postgres(context: AssetExecutionContext) -> Output[dict]:
     """
     Load CSV files from clean/ine/demography/ into PostgreSQL raw schema.
@@ -256,44 +265,92 @@ def load_demography_to_postgres(context: AssetExecutionContext) -> Output[dict]:
     engine = get_db_connection()
     context.log.info("Database connection established")
     
-    # Step 1: Read and standardize ALL CSV files first
-    all_dataframes = []
+    # Use batch processing with proper transaction management
     loaded_tables = []
+    table_name = "raw_demography_population"
     
-    context.log.info("STEP 1: Reading and standardizing all CSV files")
+    # Get source config once (not per row)
+    source_config = get_data_source_config('demography')
+    ingestion_timestamp = pd.Timestamp.now()
     
+    context.log.info("Processing CSV files with batch loading")
+    
+    # First, check if table exists and truncate if needed
+    with engine.connect() as conn:
+        table_exists_query = text("""
+            SELECT EXISTS (
+                SELECT FROM information_schema.tables 
+                WHERE table_schema = 'raw' 
+                AND table_name = 'raw_demography_population'
+            );
+        """)
+        table_exists = conn.execute(table_exists_query).fetchone()[0]
+        
+        if table_exists:
+            context.log.info("Table exists, truncating data to preserve dependent views")
+            truncate_query = text("TRUNCATE TABLE raw.raw_demography_population")
+            conn.execute(truncate_query)
+            conn.commit()
+    
+    # Process files with fresh connections to avoid transaction issues
+    first_file = True
     for csv_file in csv_files:
         filename = Path(csv_file).stem
         year = _extract_year_from_filename(filename)
         
         try:
-            context.log.info(f"Loading CSV: {filename}")
+            context.log.info(f"Processing {filename} (year {year})")
             
-            # Read CSV file
+            # Read and process CSV
             df = pd.read_csv(csv_file)
-            context.log.info(f"CSV shape: {df.shape}")
             
-            # Skip empty files
             if len(df) == 0:
                 context.log.warning(f"Skipping {filename} - empty CSV file")
                 continue
                 
             # Apply standardized column names
             df = standardize_demography_columns(df, year)
-            context.log.info(f"Standardized columns: {list(df.columns)[:10]}")
             
-            # Add metadata columns for data lineage
-            source_config = get_data_source_config('demography')
-            df['data_year'] = year
-            df['source_file'] = filename
-            df['data_source'] = source_config['source_name']
-            df['data_source_full'] = source_config['source_full_name']
-            df['data_category'] = source_config['category']
-            df['source_url'] = source_config['url']
-            df['source_description'] = source_config['description']
-            df['ingestion_timestamp'] = pd.Timestamp.now()
+            # Add metadata columns efficiently
+            df = df.assign(
+                data_year=year,
+                source_file=filename,
+                data_source=source_config['source_name'],
+                data_source_full=source_config['source_full_name'],
+                data_category=source_config['category'],
+                source_url=source_config['url'],
+                source_description=source_config['description'],
+                ingestion_timestamp=ingestion_timestamp
+            )
             
-            all_dataframes.append(df)
+            # Load to PostgreSQL with fresh connection
+            if first_file and not table_exists:
+                # Create new table
+                df.to_sql(
+                    name=table_name,
+                    con=engine,
+                    schema='raw',
+                    if_exists='replace',
+                    index=False,
+                    method='multi',
+                    chunksize=5000
+                )
+                context.log.info(f"Created new table with {len(df):,} rows from {filename}")
+                first_file = False
+            else:
+                # Append to existing table
+                df.to_sql(
+                    name=table_name,
+                    con=engine,
+                    schema='raw',
+                    if_exists='append',
+                    index=False,
+                    method='multi',
+                    chunksize=5000
+                )
+                context.log.info(f"Appended {len(df):,} rows from {filename}")
+                first_file = False
+            
             loaded_tables.append({
                 "source_file": filename,
                 "year": year,
@@ -301,92 +358,32 @@ def load_demography_to_postgres(context: AssetExecutionContext) -> Output[dict]:
                 "columns": list(df.columns),
             })
             
-            context.log.info(f"Successfully standardized {len(df)} rows from {filename}")
-            
         except Exception as e:
-            context.log.error(f"Failed to read/standardize {filename}: {e}")
+            context.log.error(f"Failed to process {filename}: {e}")
             import traceback
             context.log.error(f"Traceback: {traceback.format_exc()}")
             continue
     
-    if not all_dataframes:
-        context.log.error("No dataframes were successfully processed!")
+    if not loaded_tables:
+        context.log.error("No files were successfully processed!")
         return Output(
             {"loaded_tables": []},
-            metadata={"error": "No dataframes were successfully processed"}
+            metadata={"error": "No files were successfully processed"}
         )
     
-    # Step 2: Combine all dataframes and load to PostgreSQL
-    context.log.info("STEP 2: Combining all standardized dataframes")
-    
-    try:
-        # Combine all dataframes with consistent columns
-        combined_df = pd.concat(all_dataframes, ignore_index=True)
-        context.log.info(f"Combined dataframe shape: {combined_df.shape}")
-        context.log.info(f"Final columns: {list(combined_df.columns)}")
+    total_rows = sum(table["rows_loaded"] for table in loaded_tables)
+    context.log.info(f"Successfully loaded {total_rows:,} total rows to PostgreSQL")
         
-        # Load the combined dataframe to PostgreSQL
-        table_name = "raw_demography_population"
-        context.log.info(f"Loading combined data to {table_name}")
-        
-        # Handle existing table that might have dependent views
-        with engine.connect() as conn:
-            # Check if table exists
-            table_exists_query = text("""
-                SELECT EXISTS (
-                    SELECT FROM information_schema.tables 
-                    WHERE table_schema = 'raw' 
-                    AND table_name = 'raw_demography_population'
-                );
-            """)
-            table_exists = conn.execute(table_exists_query).fetchone()[0]
-            
-            if table_exists:
-                # Truncate existing table instead of dropping (to preserve dependent views)
-                context.log.info("Table exists, truncating data to preserve dependent views")
-                truncate_query = text("TRUNCATE TABLE raw.raw_demography_population")
-                conn.execute(truncate_query)
-                conn.commit()
-                
-                # Use append mode since table structure already exists
-                combined_df.to_sql(
-                    name=table_name,
-                    con=engine,
-                    schema='raw',
-                    if_exists='append',
-                    index=False,
-                    method='multi'
-                )
-            else:
-                # Create new table normally
-                context.log.info("Creating new table")
-                combined_df.to_sql(
-                    name=table_name,
-                    con=engine,
-                    schema='raw',
-                    if_exists='replace',
-                    index=False,
-                    method='multi'
-                )
-        
-        context.log.info(f"Successfully loaded {len(combined_df)} total rows to PostgreSQL")
-        
-        return Output(
-            {"loaded_tables": loaded_tables},
-            metadata={
-                "table_name": "raw.raw_demography_population",
-                "years_loaded": [table["year"] for table in loaded_tables],
-                "total_rows": len(combined_df),
-                "files_processed": len(loaded_tables),
-                "final_columns": list(combined_df.columns),
-            }
-        )
-        
-    except Exception as e:
-        context.log.error(f"Failed to combine and load dataframes: {e}")
-        import traceback
-        context.log.error(f"Traceback: {traceback.format_exc()}")
-        raise
+    return Output(
+        {"loaded_tables": loaded_tables},
+        metadata={
+            "table_name": "raw.raw_demography_population",
+            "years_loaded": [table["year"] for table in loaded_tables],
+            "total_rows": total_rows,
+            "files_processed": len(loaded_tables),
+            "final_columns": list(loaded_tables[0]["columns"]) if loaded_tables else [],
+        }
+    )
 
 
 def _extract_year_from_filename(filename: str) -> int:

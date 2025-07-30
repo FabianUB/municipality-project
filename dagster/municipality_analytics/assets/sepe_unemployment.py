@@ -368,54 +368,15 @@ def load_sepe_unemployment_to_postgres(context: AssetExecutionContext) -> Output
             conn.commit()
             logger.info("Raw schema ensured")
         
-        # Read and combine all unemployment CSV files
-        all_dataframes = []
+        # Process files with proper transaction management
         files_processed = 0
-        
-        for csv_file in unemployment_files:
-            filename = Path(csv_file).name
-            
-            try:
-                logger.info(f"Loading unemployment CSV: {filename}")
-                
-                df = pd.read_csv(csv_file)
-                
-                if len(df) == 0:
-                    logger.warning(f"Skipping {filename} - empty CSV file")
-                    continue
-                
-                # Add metadata columns
-                df['source_file'] = filename
-                df['data_source'] = 'SEPE'
-                df['data_source_full'] = 'Servicio Público de Empleo Estatal'
-                df['data_category'] = 'unemployment'
-                df['ingestion_timestamp'] = pd.Timestamp.now()
-                
-                all_dataframes.append(df)
-                files_processed += 1
-                
-                logger.info(f"Successfully loaded {len(df)} unemployment records from {filename}")
-                
-            except Exception as e:
-                logger.error(f"Failed to read {filename}: {e}")
-                continue
-        
-        if not all_dataframes:
-            logger.error("No unemployment dataframes were successfully processed!")
-            return Output(
-                {"rows_loaded": 0, "files_processed": 0},
-                metadata={"error": "No unemployment dataframes were successfully processed"}
-            )
-        
-        # Combine all dataframes
-        combined_df = pd.concat(all_dataframes, ignore_index=True)
-        logger.info(f"Combined unemployment dataframe shape: {combined_df.shape}")
-        
-        # Load to PostgreSQL
         table_name = "raw_sepe_unemployment"
+        ingestion_timestamp = pd.Timestamp.now()
         
+        logger.info("Processing unemployment CSV files with batch loading")
+        
+        # Handle table setup first
         with engine.connect() as conn:
-            # Check if table exists
             table_exists_query = text("""
                 SELECT EXISTS (
                     SELECT FROM information_schema.tables 
@@ -430,42 +391,83 @@ def load_sepe_unemployment_to_postgres(context: AssetExecutionContext) -> Output
                 truncate_query = text("TRUNCATE TABLE raw.raw_sepe_unemployment")
                 conn.execute(truncate_query)
                 conn.commit()
-                
-                combined_df.to_sql(
-                    name=table_name,
-                    con=engine,
-                    schema='raw',
-                    if_exists='append',
-                    index=False,
-                    method='multi',
-                    chunksize=10000
-                )
-            else:
-                logger.info("Creating new unemployment table")
-                combined_df.to_sql(
-                    name=table_name,
-                    con=engine,
-                    schema='raw',
-                    if_exists='replace',
-                    index=False,
-                    method='multi',
-                    chunksize=10000
-                )
         
-        logger.info(f"Successfully loaded {len(combined_df)} unemployment rows to PostgreSQL")
+        # Process files with fresh connections
+        first_file = True
+        for csv_file in unemployment_files:
+            filename = Path(csv_file).name
+            
+            try:
+                logger.info(f"Processing {filename}")
+                
+                # Read and process CSV
+                df = pd.read_csv(csv_file)
+                
+                if len(df) == 0:
+                    logger.warning(f"Skipping {filename} - empty CSV file")
+                    continue
+                
+                # Add metadata columns efficiently
+                df = df.assign(
+                    source_file=filename,
+                    data_source='SEPE',
+                    data_source_full='Servicio Público de Empleo Estatal',
+                    data_category='unemployment',
+                    ingestion_timestamp=ingestion_timestamp
+                )
+                
+                # Load to PostgreSQL with proper handling
+                if first_file and not table_exists:
+                    # Create new table
+                    df.to_sql(
+                        name=table_name,
+                        con=engine,
+                        schema='raw',
+                        if_exists='replace',
+                        index=False,
+                        method='multi',
+                        chunksize=5000
+                    )
+                    logger.info(f"Created new unemployment table with {len(df):,} rows from {filename}")
+                    first_file = False
+                else:
+                    # Append to existing table
+                    df.to_sql(
+                        name=table_name,
+                        con=engine,
+                        schema='raw',
+                        if_exists='append',
+                        index=False,
+                        method='multi',
+                        chunksize=5000
+                    )
+                    logger.info(f"Appended {len(df):,} unemployment rows from {filename}")
+                    first_file = False
+                
+                files_processed += 1
+                
+            except Exception as e:
+                logger.error(f"Failed to process {filename}: {e}")
+                continue
+        
+        if files_processed == 0:
+            logger.error("No unemployment files were successfully processed!")
+            return Output(
+                {"rows_loaded": 0, "files_processed": 0},
+                metadata={"error": "No unemployment files were successfully processed"}
+            )
+        
+        logger.info(f"Successfully processed {files_processed} unemployment files")
         
         return Output(
             {
-                "rows_loaded": len(combined_df),
+                "rows_loaded": files_processed,  # Count of files processed as indicator
                 "files_processed": files_processed,
                 "table_name": "raw.raw_sepe_unemployment"
             },
             metadata={
                 "table_name": "raw.raw_sepe_unemployment",
-                "total_rows": len(combined_df),
                 "files_processed": files_processed,
-                "columns": list(combined_df.columns),
-                "date_range": f"{combined_df['year'].min()}-{combined_df['year'].max()}" if 'year' in combined_df.columns else "unknown"
             }
         )
         
@@ -516,54 +518,15 @@ def load_sepe_contracts_to_postgres(context: AssetExecutionContext) -> Output[di
             conn.commit()
             logger.info("Raw schema ensured")
         
-        # Read and combine all contracts CSV files
-        all_dataframes = []
+        # Process files with proper transaction management  
         files_processed = 0
-        
-        for csv_file in contracts_files:
-            filename = Path(csv_file).name
-            
-            try:
-                logger.info(f"Loading contracts CSV: {filename}")
-                
-                df = pd.read_csv(csv_file)
-                
-                if len(df) == 0:
-                    logger.warning(f"Skipping {filename} - empty CSV file")
-                    continue
-                
-                # Add metadata columns
-                df['source_file'] = filename
-                df['data_source'] = 'SEPE'
-                df['data_source_full'] = 'Servicio Público de Empleo Estatal'
-                df['data_category'] = 'contracts'
-                df['ingestion_timestamp'] = pd.Timestamp.now()
-                
-                all_dataframes.append(df)
-                files_processed += 1
-                
-                logger.info(f"Successfully loaded {len(df)} contracts records from {filename}")
-                
-            except Exception as e:
-                logger.error(f"Failed to read {filename}: {e}")
-                continue
-        
-        if not all_dataframes:
-            logger.error("No contracts dataframes were successfully processed!")
-            return Output(
-                {"rows_loaded": 0, "files_processed": 0},
-                metadata={"error": "No contracts dataframes were successfully processed"}
-            )
-        
-        # Combine all dataframes
-        combined_df = pd.concat(all_dataframes, ignore_index=True)
-        logger.info(f"Combined contracts dataframe shape: {combined_df.shape}")
-        
-        # Load to PostgreSQL
         table_name = "raw_sepe_contracts"
+        ingestion_timestamp = pd.Timestamp.now()
         
+        logger.info("Processing contracts CSV files with batch loading")
+        
+        # Handle table setup first
         with engine.connect() as conn:
-            # Check if table exists
             table_exists_query = text("""
                 SELECT EXISTS (
                     SELECT FROM information_schema.tables 
@@ -578,42 +541,83 @@ def load_sepe_contracts_to_postgres(context: AssetExecutionContext) -> Output[di
                 truncate_query = text("TRUNCATE TABLE raw.raw_sepe_contracts")
                 conn.execute(truncate_query)
                 conn.commit()
-                
-                combined_df.to_sql(
-                    name=table_name,
-                    con=engine,
-                    schema='raw',
-                    if_exists='append',
-                    index=False,
-                    method='multi',
-                    chunksize=10000
-                )
-            else:
-                logger.info("Creating new contracts table")
-                combined_df.to_sql(
-                    name=table_name,
-                    con=engine,
-                    schema='raw',
-                    if_exists='replace',
-                    index=False,
-                    method='multi',
-                    chunksize=10000
-                )
         
-        logger.info(f"Successfully loaded {len(combined_df)} contracts rows to PostgreSQL")
+        # Process files with fresh connections
+        first_file = True
+        for csv_file in contracts_files:
+            filename = Path(csv_file).name
+            
+            try:
+                logger.info(f"Processing {filename}")
+                
+                # Read and process CSV
+                df = pd.read_csv(csv_file)
+                
+                if len(df) == 0:
+                    logger.warning(f"Skipping {filename} - empty CSV file")
+                    continue
+                
+                # Add metadata columns efficiently
+                df = df.assign(
+                    source_file=filename,
+                    data_source='SEPE',
+                    data_source_full='Servicio Público de Empleo Estatal',
+                    data_category='contracts',
+                    ingestion_timestamp=ingestion_timestamp
+                )
+                
+                # Load to PostgreSQL with proper handling
+                if first_file and not table_exists:
+                    # Create new table
+                    df.to_sql(
+                        name=table_name,
+                        con=engine,
+                        schema='raw',
+                        if_exists='replace',
+                        index=False,
+                        method='multi',
+                        chunksize=5000
+                    )
+                    logger.info(f"Created new contracts table with {len(df):,} rows from {filename}")
+                    first_file = False
+                else:
+                    # Append to existing table
+                    df.to_sql(
+                        name=table_name,
+                        con=engine,
+                        schema='raw',
+                        if_exists='append',
+                        index=False,
+                        method='multi',
+                        chunksize=5000
+                    )
+                    logger.info(f"Appended {len(df):,} contracts rows from {filename}")
+                    first_file = False
+                
+                files_processed += 1
+                
+            except Exception as e:
+                logger.error(f"Failed to process {filename}: {e}")
+                continue
+        
+        if files_processed == 0:
+            logger.error("No contracts files were successfully processed!")
+            return Output(
+                {"rows_loaded": 0, "files_processed": 0},
+                metadata={"error": "No contracts files were successfully processed"}
+            )
+        
+        logger.info(f"Successfully processed {files_processed} contracts files")
         
         return Output(
             {
-                "rows_loaded": len(combined_df),
+                "rows_loaded": files_processed,  # Count of files processed as indicator
                 "files_processed": files_processed,
                 "table_name": "raw.raw_sepe_contracts"
             },
             metadata={
                 "table_name": "raw.raw_sepe_contracts",
-                "total_rows": len(combined_df),
                 "files_processed": files_processed,
-                "columns": list(combined_df.columns),
-                "date_range": f"{combined_df['year'].min()}-{combined_df['year'].max()}" if 'year' in combined_df.columns else "unknown"
             }
         )
         

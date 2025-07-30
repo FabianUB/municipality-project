@@ -166,7 +166,10 @@ def download_provinces_ccaa_data(context: AssetExecutionContext) -> Output[dict]
         raise
 
 
-@asset(deps=[download_ine_dictionary])
+@asset(
+    deps=[download_ine_dictionary],
+    group_name="codes_data_etl"
+)
 def convert_municipality_dictionary_to_csv(context: AssetExecutionContext) -> Output[dict]:
     """
     Convert municipality dictionary Excel to CSV with standardized columns.
@@ -267,7 +270,10 @@ def convert_municipality_dictionary_to_csv(context: AssetExecutionContext) -> Ou
         raise
 
 
-@asset(deps=[download_provinces_ccaa_data])
+@asset(
+    deps=[download_provinces_ccaa_data],
+    group_name="codes_data_etl"
+)
 def convert_provinces_mapping_to_csv(context: AssetExecutionContext) -> Output[dict]:
     """
     Convert provinces-autonomous communities mapping Excel to CSV with cleaning.
@@ -370,7 +376,10 @@ def convert_provinces_mapping_to_csv(context: AssetExecutionContext) -> Output[d
         raise
 
 
-@asset(deps=[convert_municipality_dictionary_to_csv, convert_provinces_mapping_to_csv])
+@asset(
+    deps=[convert_municipality_dictionary_to_csv, convert_provinces_mapping_to_csv],
+    group_name="codes_data_etl"
+)
 def validate_codes_data(context: AssetExecutionContext) -> Output[dict]:
     """
     Validate consistency between municipality dictionary and provinces mapping.

@@ -18,7 +18,7 @@ from ..assets.codes_data import (
     convert_provinces_mapping_to_csv,
     validate_codes_data
 )
-from ..assets.dbt_models import municipality_dbt_models
+from ..assets.dbt_models import dbt_build_all_models
 from ..assets.sepe_unemployment import (
     sepe_raw_xls_files, 
     sepe_files_inventory, 
@@ -35,9 +35,10 @@ def codes_data_etl_pipeline():
     ETL pipeline for geographic codes data processing.
     
     Processes Spanish municipality and province reference data:
-    1. Municipality dictionary: Official INE municipality codes and names
-    2. Province mapping: Province to autonomous community relationships
-    3. Data validation: Consistency checks across datasets
+    1. PostgreSQL schema initialization (shared infrastructure)
+    2. Municipality dictionary: Official INE municipality codes and names
+    3. Province mapping: Province to autonomous community relationships
+    4. Data validation: Consistency checks across datasets
     
     Outputs:
     - Clean CSV files in clean/ine/codes_data/
@@ -46,6 +47,7 @@ def codes_data_etl_pipeline():
     
     Use case: Run independently to refresh geographic reference data
     """
+    schema_creation = create_raw_schema()
     dictionary_conversion = convert_municipality_dictionary_to_csv()
     mapping_conversion = convert_provinces_mapping_to_csv()
     validation = validate_codes_data()
@@ -57,8 +59,8 @@ def demography_etl_pipeline():
     ETL pipeline for demographic data processing.
     
     Processes 28 years of Spanish municipality population data (1996-2024):
-    1. Excel to CSV conversion with smart header detection
-    2. PostgreSQL schema initialization
+    1. PostgreSQL schema initialization (shared infrastructure)
+    2. Excel to CSV conversion with smart header detection
     3. Data standardization and loading to raw tables
     
     Key features:
@@ -69,8 +71,8 @@ def demography_etl_pipeline():
     
     Use case: Run independently to refresh demographic data
     """
-    csv_conversion = convert_demography_excel_to_csv()
     schema_creation = create_raw_schema()
+    csv_conversion = convert_demography_excel_to_csv()
     db_loading = load_demography_to_postgres()
 
 
@@ -107,6 +109,9 @@ def full_analytics_pipeline():
     
     Use case: Primary production pipeline for complete analytics refresh
     """
+    # Shared infrastructure
+    schema_creation = create_raw_schema()
+    
     # Geographic reference data processing
     dictionary_conversion = convert_municipality_dictionary_to_csv()
     mapping_conversion = convert_provinces_mapping_to_csv()
@@ -114,7 +119,6 @@ def full_analytics_pipeline():
     
     # Demographic data processing
     csv_conversion = convert_demography_excel_to_csv()
-    schema_creation = create_raw_schema()
     db_loading = load_demography_to_postgres()
     
     # SEPE employment data processing  
@@ -126,7 +130,7 @@ def full_analytics_pipeline():
     sepe_contracts_db = load_sepe_contracts_to_postgres()
     
     # dbt transformations (depends on all data sources being ready)
-    dbt_models = municipality_dbt_models()
+    dbt_models = dbt_build_all_models()
 
 
 @job
@@ -135,14 +139,15 @@ def sepe_unemployment_etl_pipeline():
     Complete ETL pipeline for SEPE unemployment and contracts data.
     
     Full end-to-end processing of SEPE employment data:
-    1. Downloads raw XLS files from SEPE website
-    2. Cleans and processes files into organized CSV format
-    3. Loads unemployment and contracts data to PostgreSQL raw schema
-    4. Generates comprehensive data summary
+    1. PostgreSQL schema initialization (shared infrastructure)
+    2. Downloads raw XLS files from SEPE website
+    3. Cleans and processes files into organized CSV format
+    4. Loads unemployment and contracts data to PostgreSQL raw schema
+    5. Generates comprehensive data summary
     
     Key features:
     - Respectful web scraping with delays
-    - Optimized parallel file processing
+    - Optimized parallel file processing with python-calamine
     - Dual format support (OLD/NEW SEPE formats)
     - Consolidated monthly CSV output
     - PostgreSQL integration with proper schema management
@@ -155,6 +160,7 @@ def sepe_unemployment_etl_pipeline():
     
     Use case: Complete SEPE data pipeline from extraction to database loading
     """
+    schema_creation = create_raw_schema()
     raw_files = sepe_raw_xls_files()
     inventory = sepe_files_inventory()
     clean_data = sepe_clean_data()
