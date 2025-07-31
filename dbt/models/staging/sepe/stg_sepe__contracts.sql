@@ -5,53 +5,31 @@
   )
 }}
 
--- Create a municipality name to code mapping from records that have both
-with municipality_code_mapping as (
-    select distinct
-        upper(trim(municipality_name)) as municipality_name_clean,
-        municipality_code
-    from {{ source('raw', 'raw_sepe_contracts') }}
-    where municipality_code is not null 
-      and municipality_name is not null
-      and municipality_name != ''
-),
-
--- Validate the mapping - ensure one-to-one relationship between names and codes
-municipality_mapping_validated as (
-    select 
-        municipality_name_clean,
-        municipality_code,
-        count(*) over (partition by municipality_name_clean) as codes_per_name,
-        count(*) over (partition by municipality_code) as names_per_code
-    from municipality_code_mapping
-),
-
--- Final mapping table (only include clean one-to-one mappings)
-municipality_lookup as (
-    select distinct
-        municipality_name_clean,
-        municipality_code
-    from municipality_mapping_validated
-    where codes_per_name = 1 and names_per_code = 1
+-- Enhanced municipality lookup with province context using reusable macro
+with municipality_lookup as (
+    {{ get_enhanced_municipality_lookup('raw_sepe_contracts', province_context=true) }}
 ),
 
 source_data as (
     select 
-        -- Geographic identifiers with municipality code completion
+        -- Geographic identifiers with enhanced municipality code completion
         coalesce(
-            c.municipality_code,
-            ml.municipality_code
+            case when c.municipality_code != 0 then c.municipality_code else null end,
+            ml.municipality_code,
+            ine_muni.municipality_code  -- Additional lookup from INE reference
         ) as municipality_code,
         c.municipality_name,
         
-        -- Track whether municipality code was completed
+        -- Track municipality code completion method
         case 
-            when c.municipality_code is null and ml.municipality_code is not null then true
-            else false
-        end as municipality_code_completed,
+            when c.municipality_code is not null and c.municipality_code != 0 then 'original'
+            when ml.municipality_code is not null then 'sepe_lookup'
+            when ine_muni.municipality_code is not null then 'ine_reference'
+            else 'not_found'
+        end as municipality_code_source,
         
-        -- Get province_code by joining with provinces mapping
-        p.province_code,
+        -- Get province_code with enhanced mapping using macro
+        {{ get_enhanced_province_code('c.province') }} as province_code,
         upper(trim(c.province)) as province_name,
         
         -- Date dimensions
@@ -98,8 +76,15 @@ source_data as (
     from {{ source('raw', 'raw_sepe_contracts') }} c
     left join municipality_lookup ml
         on upper(trim(c.municipality_name)) = ml.municipality_name_clean
-    left join {{ ref('provinces_autonomous_communities') }} p
-        on upper(trim(c.province)) = upper(trim(p.province_name))
+        and upper(trim(c.province)) = ml.province_name_clean
+    
+    -- Enhanced province mapping using macro
+    {{ join_enhanced_province_mapping('c.province') }}
+    
+    -- Additional municipality lookup from INE reference data (with province context)
+    left join {{ ref('stg_ine_codes_data__municipalities') }} ine_muni
+        on upper(trim(c.municipality_name)) = upper(trim(ine_muni.municipality_name))
+        and coalesce(p_direct.province_code, p_mapped.province_code) = ine_muni.province_code
     
     -- Data quality filters
     where c.municipality_name is not null
