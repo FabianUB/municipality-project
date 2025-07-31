@@ -12,21 +12,28 @@ with municipality_lookup as (
 
 source_data as (
     select 
-        -- Geographic identifiers with enhanced municipality code completion
+        -- Geographic identifiers with enhanced municipality code completion (including fuzzy matching)
         coalesce(
             case when u.municipality_code != 0 then u.municipality_code else null end,
             ml.municipality_code,
-            ine_muni.municipality_code  -- Additional lookup from INE reference
+            ine_muni.municipality_code,  -- INE exact reference lookup
+            fuzzy_match.ine_municipality_code  -- NEW: Fuzzy matching lookup
         ) as municipality_code,
         u.municipality_name,
         
-        -- Track municipality code completion method
+        -- Track municipality code completion method with fuzzy matching
         case 
             when u.municipality_code is not null and u.municipality_code != 0 then 'original'
             when ml.municipality_code is not null then 'sepe_lookup'
             when ine_muni.municipality_code is not null then 'ine_reference'
+            when fuzzy_match.ine_municipality_code is not null then 'fuzzy_match'
             else 'not_found'
         end as municipality_code_source,
+        
+        -- NEW: Fuzzy matching metadata
+        fuzzy_match.match_method,
+        fuzzy_match.confidence_score,
+        fuzzy_match.ine_municipality_name as fuzzy_matched_name,
         
         -- Get province_code with enhanced mapping using macro
         {{ get_enhanced_province_code('u.province') }} as province_code,
@@ -81,6 +88,25 @@ source_data as (
     left join {{ ref('stg_ine_codes_data__municipalities') }} ine_muni
         on upper(trim(u.municipality_name)) = upper(trim(ine_muni.municipality_name))
         and coalesce(p_direct.province_code, p_mapped.province_code) = ine_muni.province_code
+    
+    -- NEW: Basic fuzzy municipality matching (exact normalized match only for now)
+    left join (
+        select distinct
+            {{ normalize_municipality_name('raw.municipality_name') }} as sepe_normalized_name,
+            upper(trim(raw.municipality_name)) as sepe_municipality_name,
+            upper(trim(raw.province)) as sepe_province_name,
+            ine.municipality_code as ine_municipality_code,
+            ine.municipality_name as ine_municipality_name,
+            'fuzzy_normalized' as match_method,
+            95 as confidence_score
+        from {{ source('raw', 'raw_sepe_unemployment') }} raw
+        join {{ ref('stg_ine_codes_data__municipalities') }} ine
+            on {{ normalize_municipality_name('raw.municipality_name') }} = {{ normalize_municipality_name('ine.municipality_name') }}
+        where (raw.municipality_code is null or raw.municipality_code = 0)
+            and raw.municipality_name is not null
+            and raw.municipality_name != ''
+    ) fuzzy_match
+        on upper(trim(u.municipality_name)) = fuzzy_match.sepe_municipality_name
     
     -- Data quality filters
     where u.municipality_name is not null
