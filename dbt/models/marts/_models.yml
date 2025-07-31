@@ -1,0 +1,99 @@
+version: 2
+
+models:
+  - name: mart_municipality_population_trends
+    description: >
+      Business-ready mart showing total population by municipality and year with 
+      year-over-year trends, rankings, and trend classifications.
+      
+      This mart aggregates population data across all age groups and genders to 
+      provide a comprehensive view of demographic trends at the municipality level.
+      Ready for consumption by dashboards, reports, and analysis.
+    columns:
+      - name: municipality_code
+        description: "INE municipality code"
+        tests:
+          - not_null
+      
+      - name: municipality_name
+        description: "Official municipality name"
+        tests:
+          - not_null
+      
+      - name: province_code
+        description: "INE province code"
+        tests:
+          - not_null
+      
+      - name: autonomous_community_code
+        description: "INE autonomous community code"
+        tests:
+          - not_null
+      
+      - name: data_year
+        description: "Year of the population data"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+      
+      - name: total_population
+        description: "Total population (sum of all age groups and genders)"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: true
+      
+      - name: previous_year_population
+        description: "Population in the previous year for comparison"
+      
+      - name: population_change
+        description: "Absolute change in population from previous year"
+      
+      - name: population_change_pct
+        description: "Percentage change in population from previous year"
+      
+      - name: population_rank_national
+        description: "Rank of municipality by population within the year (nationally)"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 1
+              inclusive: true
+      
+      - name: population_rank_provincial
+        description: "Rank of municipality by population within province and year"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 1
+              inclusive: true
+      
+      - name: population_trend
+        description: "Classification of population trend (growth, decline, stable, no_data)"
+        tests:
+          - accepted_values:
+              values: ['growth', 'decline', 'stable', 'no_data']
+      
+      - name: population_trend_category
+        description: "Detailed classification of growth/decline magnitude"
+        tests:
+          - accepted_values:
+              values: ['high_growth', 'moderate_growth', 'stable', 'moderate_decline', 'high_decline', 'no_data']
+      
+      - name: created_at
+        description: "Timestamp when the record was created"
+        tests:
+          - not_null
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - municipality_code
+            - data_year
+      
+      # Test that population changes make sense
+      - dbt_utils.expression_is_true:
+          expression: >
+            (population_change is null and previous_year_population is null) or
+            (population_change = total_population - previous_year_population)
+          name: assert_population_change_calculation_correct
