@@ -47,21 +47,21 @@ docker-compose.override.yml
 .dockerignore
 kubernetes/secrets/
 
-# Raw Data Files (sensitive)
-raw/demography/*.xls
-raw/demography/*.xlsx
-raw/
-clean/
-raw/*.csv
-raw/*.json
-raw/*.parquet
-clean/*.csv
-clean/*.json
-clean/*.parquet
-processed/
-exports/
+# Raw Data Files (sensitive) - Keep directories but ignore contents
+raw/**/*
 !raw/.gitkeep
 !raw/README.md
+!raw/**/.gitkeep
+clean/**/*
+!clean/.gitkeep
+!clean/README.md
+!clean/**/.gitkeep
+processed/**/*
+!processed/.gitkeep
+!processed/**/.gitkeep
+exports/**/*
+!exports/.gitkeep
+!exports/**/.gitkeep
 
 # OS Files
 .DS_Store
