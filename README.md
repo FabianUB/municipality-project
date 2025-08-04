@@ -1,6 +1,6 @@
 # Spanish Municipality Local Data Stack
 
-This project tries to get all the possible data for each Spanish municipality or city from multiple sources of data (multiple ministeries, local entities, agencies...), parse and clean the data to then model it, and display the information on a dashboard.
+This purpose of this project is to get all the possible data for each Spanish municipality or city from multiple sources of data (multiple ministeries, local entities, agencies...), parse and clean the data to then model it, and display the information on a dashboard.
 
 
 ## 🏗️ Architecture
@@ -13,7 +13,7 @@ graph TB
         end
         
         subgraph "Dagster Container"
-            B[Python ETL Scripts<br/>Data Transformation]
+            B[Python ELT Scripts<br/>Data Transformation]
             C[Dagster Orchestrator<br/>Pipeline Management]
         end
         
@@ -55,7 +55,7 @@ graph TB
     style H fill:#fce4ec
 ```
 
-### Project Structure
+### 📁 Project Structure
 ```
 municipality-project/
 ├── dagster/                    # ETL pipeline code
@@ -81,30 +81,45 @@ municipality-project/
 ## 🚀 Quick Start
 
 ### Prerequisites
+- Docker and Docker Compose
+- 8GB+ RAM recommended
+- Ports 3000, 5050, 5432, 8080, 8501 available
 
 ### Installation Steps
 ```bash
-# Step 1
+# Start all services
+docker-compose up -d
 
-# Step 2
-
-# Step 3
+# Verify all services are running
+docker-compose ps
 ```
 
 ### Access Points
-- **Service 1**: Description
-- **Service 2**: Description
+- **🎯 Streamlit Dashboard**: http://localhost:8501 (Main BI interface)
+- **⚙️ Dagster UI**: http://localhost:3000 (Pipeline monitoring)
+- **📚 dbt Documentation**: http://localhost:8080 (Data lineage & models)
+- **🗄️ pgAdmin**: http://localhost:5050 (Database administration)
 
+## 📊 Data Sources
 
-## 🔮 Future Plans
+### ✅ Implemented
+- **Demography** (INE) - Population statistics and demographic trends
+- **Employment** (SEPE) - Unemployment rates and employment contracts
 
-### Planned Features
+### 🎯 Planned Implementation
+**High Priority:**
+- **Income** (Hacienda) - Municipality income levels and tax revenue
+- **Municipal Debt** (Hacienda) - Debt levels and financial obligations
 
-### Enhancement Roadmap
+**Medium Priority:**
+- **Business Activity** (INE) - Number of businesses and commercial data
+- **Budget Allocation** (Hacienda) - Municipal spending and budget distribution
+- **Crime Statistics** (Interior) - Crime rates and public safety metrics
+- **Real Estate** (INE) - Property values and housing market data
 
-## 📚 Documentation
+**Future:**
+- **Weather** (AEMET) - Climate and meteorological information
 
-- **[Documentation Link](./path)**: Description
-- **[Documentation Link](./path)**: Description
-- **[Documentation Link](./path)**: Description
+---
 
+*Spanish Municipality Local Data Stack - Comprehensive analytics for all Spanish municipalities*
