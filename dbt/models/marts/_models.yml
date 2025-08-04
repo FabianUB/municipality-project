@@ -1,6 +1,136 @@
 version: 2
 
 models:
+  - name: mart_municipality_socioeconomic_trends
+    description: >
+      Comprehensive socioeconomic analysis mart combining demographic and employment data.
+      Handles temporal granularity alignment (yearly demographics vs monthly employment)
+      and provides derived indicators for unemployment rates, economic resilience,
+      and socioeconomic trend analysis. Covers 2005-2024 overlap period.
+    columns:
+      - name: municipality_code
+        description: "INE municipality code"
+        tests:
+          - not_null
+      
+      - name: municipality_name
+        description: "Municipality name"
+        tests:
+          - not_null
+      
+      - name: data_year
+        description: "Year of analysis"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+      
+      - name: has_demographic_data
+        description: "Flag indicating availability of population data for this municipality-year"
+        tests:
+          - not_null
+      
+      - name: has_employment_data
+        description: "Flag indicating availability of unemployment data for this municipality-year"
+        tests:
+          - not_null
+      
+      - name: total_population
+        description: "Total population from demographic data"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: true
+      
+      - name: primary_total_unemployment
+        description: "Primary unemployment metric (Dec > Q4 avg > yearly avg)"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: true
+      
+      - name: unemployment_rate
+        description: "Unemployment rate as percentage of total population"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 100
+              inclusive: true
+      
+      - name: unemployment_category
+        description: "Classification of unemployment level"
+        tests:
+          - accepted_values:
+              values: ['no_employment_data', 'low_unemployment', 'moderate_unemployment', 'high_unemployment', 'very_high_unemployment']
+      
+      - name: socioeconomic_health_status
+        description: "Overall socioeconomic health assessment"
+        tests:
+          - accepted_values:
+              values: ['thriving', 'growing', 'stable', 'struggling', 'critical']
+      
+      - name: economic_resilience_category
+        description: "Population stability during unemployment changes"
+        tests:
+          - accepted_values:
+              values: ['resilient', 'exodus', 'attractive', 'stable']
+      
+      - name: socioeconomic_trend_pattern
+        description: "Combined population and unemployment trend analysis"
+        tests:
+          - accepted_values:
+              values: ['positive_growth', 'economic_decline', 'growing_with_challenges', 'declining_but_improving', 'stable']
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - municipality_code
+            - data_year
+
+  - name: mart_municipality_unemployment_rates
+    description: >
+      Streamlined socioeconomic mart focusing on core unemployment rates with incremental materialization.
+      Optimized for performance by combining demographic and employment data with essential metrics only.
+      Covers 2005-2024 overlap period with year-over-year trend analysis.
+    columns:
+      - name: municipality_code
+        description: "INE municipality code"
+        tests:
+          - not_null
+      
+      - name: data_year
+        description: "Year of analysis (2005-2024)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+      
+      - name: unemployment_rate
+        description: "Core metric: unemployment rate as percentage of total population"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 100
+              inclusive: true
+      
+      - name: unemployment_category
+        description: "Classification of unemployment level"
+        tests:
+          - accepted_values:
+              values: ['no_data', 'low_unemployment', 'moderate_unemployment', 'high_unemployment', 'very_high_unemployment']
+      
+      - name: socioeconomic_health
+        description: "Overall socioeconomic health assessment"
+        tests:
+          - accepted_values:
+              values: ['thriving', 'growing', 'stable', 'struggling', 'critical']
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - municipality_code
+            - data_year
   - name: mart_municipality_population_trends
     description: >
       Business-ready mart showing total population by municipality and year with 
@@ -84,6 +214,51 @@ models:
         description: "Timestamp when the record was created"
         tests:
           - not_null
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - municipality_code
+            - data_year
+
+  - name: mart_municipality_unemployment_rates
+    description: >
+      Streamlined socioeconomic mart focusing on core unemployment rates with incremental materialization.
+      Optimized for performance by combining demographic and employment data with essential metrics only.
+      Covers 2005-2024 overlap period with year-over-year trend analysis.
+    columns:
+      - name: municipality_code
+        description: "INE municipality code"
+        tests:
+          - not_null
+      
+      - name: data_year
+        description: "Year of analysis (2005-2024)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+      
+      - name: unemployment_rate
+        description: "Core metric: unemployment rate as percentage of total population"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 100
+              inclusive: true
+      
+      - name: unemployment_category
+        description: "Classification of unemployment level"
+        tests:
+          - accepted_values:
+              values: ['no_data', 'low_unemployment', 'moderate_unemployment', 'high_unemployment', 'very_high_unemployment']
+      
+      - name: socioeconomic_health
+        description: "Overall socioeconomic health assessment"
+        tests:
+          - accepted_values:
+              values: ['thriving', 'growing', 'stable', 'struggling', 'critical']
 
     tests:
       - dbt_utils.unique_combination_of_columns:

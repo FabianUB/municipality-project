@@ -1,0 +1,84 @@
+version: 2
+
+models:
+  - name: int_sepe_unemployment_yearly
+    description: >
+      Intermediate model aggregating monthly SEPE unemployment data to yearly metrics
+      to align temporal granularity with demographic data. Provides comprehensive
+      yearly unemployment analysis with seasonality, volatility, and trend indicators.
+    columns:
+      - name: municipality_code
+        description: "INE municipality code"
+        tests:
+          - not_null
+      
+      - name: municipality_name
+        description: "Municipality name"
+        tests:
+          - not_null
+      
+      - name: province_code
+        description: "INE province code"
+        tests:
+          - not_null
+      
+      - name: data_year
+        description: "Year of the aggregated unemployment data"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]
+      
+      - name: months_with_data
+        description: "Number of months with unemployment data in the year (1-12)"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 12
+      
+      - name: data_coverage_quality
+        description: "Quality classification based on month coverage"
+        tests:
+          - accepted_values:
+              values: ['complete', 'partial', 'limited']
+      
+      - name: primary_total_unemployment
+        description: "Primary yearly unemployment metric (December > Q4 avg > yearly avg)"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: true
+      
+      - name: dec_total_unemployment
+        description: "December unemployment (most stable for year-end comparison)"
+      
+      - name: avg_total_unemployment
+        description: "Average monthly unemployment across the year"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: true
+      
+      - name: unemployment_change_pct
+        description: "Year-over-year percentage change in unemployment"
+      
+      - name: unemployment_trend
+        description: "Classification of unemployment trend"
+        tests:
+          - accepted_values:
+              values: ['high_increase', 'moderate_increase', 'stable', 'moderate_decrease', 'high_decrease', 'no_comparison_data']
+      
+      - name: unemployment_volatility_pct
+        description: "Coefficient of variation for monthly unemployment (seasonality indicator)"
+      
+      - name: seasonal_variation_pct
+        description: "Percentage difference between winter and summer unemployment"
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - municipality_code
+            - data_year

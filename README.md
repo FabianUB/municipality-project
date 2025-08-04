@@ -1,306 +1,110 @@
-# Municipality Analytics Platform
+# Spanish Municipality Local Data Stack
 
-A comprehensive data analytics platform for Spanish municipality demographic analysis, built with modern data engineering tools and practices.
+This project tries to get all the possible data for each Spanish municipality or city from multiple sources of data (multiple ministeries, local entities, agencies...), parse and clean the data to then model it, and display the information on a dashboard.
 
-![Data Pipeline Status](https://img.shields.io/badge/ETL%20Pipeline-Operational-green)
-![dbt Models](https://img.shields.io/badge/dbt%20Models-8%20Built-blue)
-![Data Quality](https://img.shields.io/badge/Tests-24%2F28%20Passing-yellow)
-![Data Coverage](https://img.shields.io/badge/Years-1996--2024-purple)
-![BI Dashboard](https://img.shields.io/badge/Streamlit%20Dashboard-Live-brightgreen)
-
-## 🎯 Project Overview
-
-This platform processes and analyzes demographic data from Spanish municipalities spanning **28 years (1996-2024)**. It transforms raw Excel files from Spain's National Statistics Institute (INE) into a modern analytics warehouse with interactive reporting capabilities.
-
-### Key Achievements
-- ✅ **227,400+ population records** successfully processed and loaded
-- ✅ **8,132 municipalities** analyzed across all Spanish provinces  
-- ✅ **Fully operational ETL pipeline** with Dagster orchestration
-- ✅ **Star schema data warehouse** with PostgreSQL
-- ✅ **Interactive BI dashboard** with Streamlit visualization
-- ✅ **dbt analytics layer** with 8 models and 96% test success rate
 
 ## 🏗️ Architecture
 
-### Data Flow
+```mermaid
+graph TB
+    subgraph "Docker Environment"
+        subgraph "Data Sources"
+            A[Raw Excel Files<br/>INE, SEPE, etc.]
+        end
+        
+        subgraph "Dagster Container"
+            B[Python ETL Scripts<br/>Data Transformation]
+            C[Dagster Orchestrator<br/>Pipeline Management]
+        end
+        
+        subgraph "Storage Layer"
+            D[CSV Files<br/>Processed Data]
+            E[(PostgreSQL<br/>Database)]
+        end
+        
+        subgraph "Analytics Layer"
+            F[dbt Models<br/>Data Transformation]
+        end
+        
+        subgraph "Presentation Layer"
+            G[Streamlit Dashboard<br/>Data Visualization]
+        end
+        
+        subgraph "Admin Tools"
+            H[pgAdmin<br/>Database Management]
+        end
+    end
+    
+    A --> B
+    B --> D
+    B --> E
+    C --> B
+    D --> E
+    E --> F
+    F --> E
+    E --> G
+    E --> H
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#ffebee
+    style F fill:#f1f8e9
+    style G fill:#e3f2fd
+    style H fill:#fce4ec
 ```
-Excel Files (INE) → CSV Conversion → PostgreSQL → dbt Transformations → Streamlit Dashboard
-```
-
-### Technology Stack
-- **🔄 Orchestration**: Dagster for ETL pipeline management
-- **🗄️ Data Warehouse**: PostgreSQL with domain-specific schemas
-- **🛠️ Transformation**: dbt for data modeling and testing
-- **📊 BI Visualization**: Streamlit with interactive dashboards
-- **🐳 Infrastructure**: Docker Compose for containerized services
-- **📈 Analytics**: SQL-based reporting with interactive documentation
-- **🔧 Administration**: pgAdmin for database management
-
-### Service Architecture
-```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Dagster UI    │    │ Streamlit App   │    │   dbt Docs      │    │    pgAdmin      │
-│  localhost:3000 │    │ localhost:8501  │    │ localhost:8080  │    │ localhost:5050  │
-└─────────────────┘    └─────────────────┘    └─────────────────┘    └─────────────────┘
-         │                       │                       │                       │
-         └───────────────────────┼───────────────────────┼───────────────────────┘
-                                 │                       │
-                    ┌─────────────────┐         ┌─────────────────┐
-                    │   PostgreSQL    │         │   dbt Models    │
-                    │  localhost:5432 │         │   (8 models)    │
-                    └─────────────────┘         └─────────────────┘
-```
-
-## 📊 Interactive BI Dashboard
-
-### 🎨 Dashboard Features
-Access the live dashboard at **http://localhost:8501** after startup.
-
-**5 Comprehensive Views:**
-1. **📈 Overview Dashboard**: Key metrics, population distribution, municipality size analysis
-2. **🏆 Rankings Dashboard**: Top municipalities with interactive charts and detailed tables
-3. **📊 Growth Analysis**: Population growth trends, fastest growing/declining areas
-4. **🗺️ Provincial View**: Province-level demographics and comparative analysis
-5. **📉 Historical Trends**: Multi-year evolution for major cities
-
-**Interactive Features:**
-- **Real-time Filtering**: Filter by year (1996-2024) and province
-- **Dynamic Visualizations**: Bar charts, line plots, scatter plots, pie charts
-- **Data Tables**: Sortable and filterable detailed views
-- **Export Capabilities**: Download charts and data
-- **Responsive Design**: Professional layout optimized for analysis
-
-### 📈 Available Visualizations
-- **Population Rankings**: Horizontal bar charts of top municipalities
-- **Growth Analysis**: Scatter plots showing size vs growth correlation
-- **Provincial Summaries**: Comparative bar charts across provinces
-- **Historical Trends**: Multi-line time series for population evolution
-- **Size Distribution**: Pie charts and percentage breakdowns
-- **Geographic Analysis**: Province-level heat maps and comparisons
-
-### 🔗 dbt Integration
-The dashboard directly queries materialized dbt models for optimal performance:
-- **Direct Model Access**: No additional ETL layer needed
-- **Cached Queries**: 10-minute caching for improved responsiveness
-- **Real-time Updates**: Reflects latest dbt model refreshes
-- **Data Quality**: Inherits dbt test validations and quality checks
-
-## 📊 Data Model
-
-### Source Data
-- **Source**: [INE Official Statistics](https://www.ine.es/jaxiT3/Tabla.htm?t=2852)
-- **Format**: Excel files (`pobmun96.xlsx` to `pobmun24.xlsx`)
-- **Challenge**: Inconsistent headers and column names across 28 years
-- **Solution**: Smart header detection and column standardization
-
-### Database Schema
-```sql
--- Raw Layer (from Dagster)
-raw.raw_demography_population         -- 227,400+ records
-
--- Staging Layer (dbt views)  
-public_staging.stg_demography__population
-
--- Intermediate Layer (dbt tables)
-public_intermediate.int_municipalities__master
-public_intermediate.int_demography__population_clean
-
--- Marts Layer (dbt tables)
-public_marts_core.dim_municipalities        -- 9,681 municipalities
-public_marts_core.dim_provinces             -- 52 provinces
-public_marts_demography.fct_population      -- Population facts
-public_marts_demography.mart_population_summary  -- Analytics-ready summary
-```
-
-## 🚀 Quick Start
-
-### Prerequisites
-- Docker and Docker Compose
-- 8GB+ RAM recommended
-- Ports 3000, 5050, 5432, 8080, 8501 available
-
-### 1. Environment Setup
-```bash
-# Copy and configure environment
-cp .env.example .env
-# Edit .env with your database passwords
-```
-
-### 2. Start All Services
-```bash
-# Launch complete platform
-docker-compose up -d
-
-# Verify all services are running
-docker-compose ps
-```
-
-### 3. Run ETL Pipeline
-```bash
-# Execute complete data pipeline
-docker exec municipality_dagster dagster job execute -f municipality_pipeline.py -j demography_etl_pipeline
-```
-
-### 4. Build Analytics Models
-```bash
-# Build all dbt models
-docker exec -w /app/dbt municipality_dbt dbt run
-
-# Run data quality tests
-docker exec -w /app/dbt municipality_dbt dbt test
-```
-
-### 5. Access Interfaces
-- **🎯 Streamlit Dashboard**: http://localhost:8501 (Main BI interface)
-- **⚙️ Dagster UI**: http://localhost:3000 (Pipeline monitoring)
-- **📚 dbt Documentation**: http://localhost:8080 (Data lineage & models)
-- **🗄️ pgAdmin**: http://localhost:5050 (Database administration)
-
-## 📈 Analytics & Insights
-
-### Dashboard Insights Available
-1. **Population Rankings**: Madrid leads with 3.4M population
-2. **Growth Hotspots**: Torrevieja shows highest growth at +6.17%
-3. **Size Distribution**: 65 large cities (100k+) vs 4,981 micro municipalities (<1k)
-4. **Provincial Concentration**: Madrid province concentrates 7M people across 179 municipalities
-5. **Historical Trends**: Multi-decade population evolution patterns
-
-### Sample Analysis Queries
-The dashboard provides pre-built analysis including:
-- Top/bottom municipalities by population and growth
-- Provincial demographic summaries
-- Municipality size category distributions  
-- Year-over-year growth rate analysis
-- Historical trend comparisons for major cities
-
-### Data Quality Metrics
-- **96% test success rate** (24/28 dbt tests passing)
-- **Complete coverage**: All 28 years successfully processed
-- **Data validation**: Population figures, geographic codes, growth calculations
-- **Error handling**: Comprehensive logging and data quality flags
-
-## 🔧 Development
 
 ### Project Structure
 ```
 municipality-project/
 ├── dagster/                    # ETL pipeline code
-│   └── municipality_pipeline.py
+│   
 ├── dbt/                       # Data transformation models
 │   ├── models/
 │   │   ├── staging/           # Raw data standardization
 │   │   ├── intermediate/      # Business logic layer
 │   │   └── marts/            # Analytics-ready tables
 │   └── analyses/             # Report templates
+│   └── macros/               # Reusable code across models
 ├── streamlit/                # BI dashboard application
 │   ├── app.py               # Main dashboard
 │   ├── utils/               # Database connectors
 │   └── Dockerfile           # Container configuration
-├── raw/demography/           # Source Excel files (gitignored)
-├── clean/demography/         # Processed CSV files (gitignored)  
+├── raw/                     # Source Excel files (gitignored)
+├── clean/        # Processed CSV files (gitignored)  
 ├── docker-compose.yml        # Service orchestration
-└── .env                      # Environment configuration
+└── .env                      # Environment configuration (gitignored)
 ```
 
-### Development Commands
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+### Installation Steps
 ```bash
-# Streamlit development
-docker-compose up streamlit
-docker logs municipality_streamlit
+# Step 1
 
-# dbt model development
-docker exec -w /app/dbt municipality_dbt dbt run --select model_name
-docker exec -w /app/dbt municipality_dbt dbt test --select model_name
+# Step 2
 
-# Dagster pipeline development
-docker exec municipality_dagster dagster dev
-
-# Database inspection
-docker exec municipality_db psql -U analytics_user -d analytics
+# Step 3
 ```
 
-### BI Dashboard Development
-```bash
-# Access Streamlit container
-docker exec -it municipality_streamlit bash
+### Access Points
+- **Service 1**: Description
+- **Service 2**: Description
 
-# Install additional packages
-docker exec municipality_streamlit pip install package_name
 
-# Restart dashboard
-docker-compose restart streamlit
+## 🔮 Future Plans
 
-# View real-time logs
-docker logs -f municipality_streamlit
-```
+### Planned Features
 
-## 🔮 Future Expansion
-
-### Planned Data Sources
-- **Economy**: GDP, employment, business statistics
-- **Geography**: Area, elevation, coordinates, land use
-- **Transportation**: Infrastructure, connectivity, accessibility
-- **Demographics**: Age distribution, education, migration
-
-### BI Enhancement Roadmap
-- **Geographic Mapping**: Interactive maps with Folium/Plotly
-- **Advanced Analytics**: Predictive modeling and forecasting
-- **Export Features**: PDF reports and data downloads
-- **User Authentication**: Role-based access control
-- **Real-time Updates**: Automated data refresh scheduling
+### Enhancement Roadmap
 
 ## 📚 Documentation
 
-- **[Streamlit Dashboard Guide](./streamlit/README.md)**: Complete BI usage documentation
-- **[dbt Models Guide](./dbt/analyses/README.md)**: Analytics and reporting documentation
-- **[CLAUDE.md](./CLAUDE.md)**: Technical implementation details
-- **Pipeline Docs**: Available in Dagster UI
-- **Data Lineage**: Interactive visualization in dbt docs
+- **[Documentation Link](./path)**: Description
+- **[Documentation Link](./path)**: Description
+- **[Documentation Link](./path)**: Description
 
-## 🤝 Contributing
-
-### Development Workflow
-1. Create feature branch
-2. Develop and test locally with Docker
-3. Test BI dashboard functionality
-4. Run full pipeline validation
-5. Update documentation
-6. Submit pull request
-
-### Quality Standards
-- All models must pass dbt tests
-- Dashboard features require responsive design
-- New visualizations need proper documentation
-- Follow naming conventions (`stg_`, `int_`, `dim_`, `fct_`)
-- BI components must handle empty data gracefully
-
-## 📋 Monitoring & Maintenance
-
-### Health Checks
-```bash
-# Verify all services
-docker-compose ps
-
-# Check data freshness
-docker exec municipality_db psql -U analytics_user -d analytics -c "
-SELECT MAX(data_year) as latest_year, MAX(ingestion_timestamp) as last_update 
-FROM raw.raw_demography_population;"
-
-# Test dashboard responsiveness
-curl -f http://localhost:8501
-
-# Monitor pipeline runs
-# Access Dagster UI at localhost:3000
-```
-
-### Performance Optimization
-- **Database**: Indexed columns for common dashboard queries
-- **Caching**: 10-minute Streamlit cache for improved responsiveness
-- **dbt Models**: Materialized tables for fast dashboard loading
-- **Container Resources**: Optimized memory allocation per service
-
----
-
-**🏛️ Built with ❤️ for Spanish municipality analysis**
-
-*A complete end-to-end analytics platform from raw Excel data to interactive business intelligence.*
